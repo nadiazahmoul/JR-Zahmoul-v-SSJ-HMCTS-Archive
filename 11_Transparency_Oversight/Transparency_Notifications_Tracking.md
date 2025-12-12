@@ -67,3 +67,10 @@ parliamentary committees, ministers, regulators, and civil-society organisations
 | +14 days | Send follow-up if no acknowledgement | NZ |  |
 | +30 days | Assess whether further escalation is appropriate | NZ |  |
 | Ongoing | Update GitHub transparency records | NZ |  |
+
+## Evidence Custody & Audit Requests
+
+| Date | Recipient | Purpose | Deadline | CC’d Parties | Attachments | Notes |
+|------|-----------|---------|----------|--------------|-------------|-------|
+| 2025-12-12 | HFC (Ms Caroline Park) | Request for confirmation of custody and audit trail relating to Imerman electronic devices | 16:00 UK | litigation@justice.gov.uk; hmctslegal@justice.gov.uk; pslordchancellor@justice.gov.uk; Withers LLP; Justice Committee; Autism Committee | Imerman Solicitor Correspondence (open); Imerman Correspondence Timeline | Request issued in context of public JR (AC-2025-LON-004293) concerning misadministration of court-controlled evidence. |
+
