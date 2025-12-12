@@ -74,3 +74,7 @@ parliamentary committees, ministers, regulators, and civil-society organisations
 |------|-----------|---------|----------|--------------|-------------|-------|
 | 2025-12-12 | HFC (Ms Caroline Park) | Request for confirmation of custody and audit trail relating to Imerman electronic devices | 16:00 UK | litigation@justice.gov.uk; hmctslegal@justice.gov.uk; pslordchancellor@justice.gov.uk; Withers LLP; Justice Committee; Autism Committee | Imerman Solicitor Correspondence (open); Imerman Correspondence Timeline | Request issued in context of public JR (AC-2025-LON-004293) concerning misadministration of court-controlled evidence. |
 
+
+| 2025-12-12 | GitHub Upload | Published redacted public OC-compliant evidence bundle accompanying N463 (1 Dec 2025) | N/A | N/A | 2025-12-01_Exhibits_Public_Version_Minimal_Redaction.pdf | Redacted per README_Redaction_Protocol.md; third-party identifiers only |
+Log upload of redacted OC-compliant N463 exhibits
+
