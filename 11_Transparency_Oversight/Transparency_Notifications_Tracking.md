@@ -76,5 +76,8 @@ parliamentary committees, ministers, regulators, and civil-society organisations
 
 
 | 2025-12-12 | GitHub Upload | Published redacted public OC-compliant evidence bundle accompanying N463 (1 Dec 2025) | N/A | N/A | 2025-12-01_Exhibits_Public_Version_Minimal_Redaction.pdf | Redacted per README_Redaction_Protocol.md; third-party identifiers only |
-Log upload of redacted OC-compliant N463 exhibits
+Log upload of redacted OC-compliant N463 exhibits 
+
+| 2025-12-12 | GitHub Upload | Published redacted public OC-compliant evidence bundle accompanying N463 (1 Dec 2025) | N/A | N/A | 2025-12-01_Exhibits_Public_Version_Minimal_Redaction.pdf | Redacted per README_Redaction_Protocol.md; third-party identifiers only |
+
 
