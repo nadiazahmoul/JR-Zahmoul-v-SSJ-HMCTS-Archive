@@ -10,7 +10,7 @@ These documents comprise the contemporaneous open correspondence and timeline
 relating to the handling, custody, and proposed review of electronic devices 
 identified as “Imerman material” in the underlying family proceedings. The 
 correspondence (Withers LLP ↔ HFC) records the delivery of the devices on 
-16 April 2021, the suspension and reinstatement of the Imerman review process, 
+13 April 2021, the suspension and reinstatement of the Imerman review process, 
 and the parties’ respective statements concerning their duties to the Court. 
 The timeline provides a structured summary of the sequence of events.
 
