@@ -16,3 +16,5 @@ The timeline provides a structured summary of the sequence of events.
 
 These documents are uploaded for evidential transparency and form part of the 
 public archive for the Judicial Review.
+
+This folder contains public redacted versions of evidence bundles, including the OC-compliant bundle accompanying the N463 urgent application dated 1 December 2025.
