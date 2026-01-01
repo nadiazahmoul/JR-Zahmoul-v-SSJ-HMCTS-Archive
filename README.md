@@ -19,3 +19,14 @@ See individual folder README files for scope and document descriptions.
 This repository is maintained for transparency, accountability, and ease of reference
 by the Court, oversight bodies, journalists, and researchers.
 
+Judicial Review – Permission Stage
+
+This repository contains materials relating to the permission stage of Judicial Review AC-2025-LON-004293.
+
+Only the following folders are relied upon at the permission stage:
+
+05_PLEADINGS_AND_FORMAL_FILINGS
+
+05_JR_Procedural_Service_Urgency
+
+All other folders contain archived, background, or deferred material and are not relied upon at this stage.
