@@ -8,3 +8,5 @@ for counsel.
 
 These materials organise and present evidence drawn from the canonical
 evidence record. They do not constitute primary source evidence themselves.
+
+NZ7 is the consolidated public exhibits bundle prepared for December 2025 reconsideration.
