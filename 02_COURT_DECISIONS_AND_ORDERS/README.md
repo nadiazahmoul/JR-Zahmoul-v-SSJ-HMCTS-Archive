@@ -1,9 +1,14 @@
-# 01 — Court Orders & Judgments  
-This folder contains all official court orders, judgments, sealed applications, and procedural decisions relevant to the judicial proceedings involving **Zahmoul v Secretary of State for Justice & HMCTS**.
+# Court Decisions and Orders
+
+This folder contains judicial outputs, including orders, judgments,
+directions, and procedural decisions issued by the courts.
+
+These documents represent institutional responses to the evidential record
+and submissions. They are preserved separately from evidence to allow
+clear scrutiny of how the courts engaged with (or failed to engage with)
+the underlying material.
 
 These documents form the authoritative procedural history of the litigation and are essential for understanding the timeline, judicial engagement, and the appellate pathway that preceded the current Judicial Review **AC-2025-LON-004293**.
-
----
 
 ## Contents  
 This folder includes:
@@ -55,7 +60,4 @@ This folder provides the neutral, official document trail against which all late
 
 ---
 
-## Notes  
-- Only official judicial documents are stored here.  
-- Claimant filings belong in folder `08_Administrative_Court_Filings_&_Orders`.  
-- Evidence, annexes, and exhibits belong in `09_Evidence_Bundles_Exhibits`. 
+
