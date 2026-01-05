@@ -1,3 +1,11 @@
+## Medical and Clinical Records — Index
+
+This index lists the medical and clinical records contained in this folder
+in chronological order by document date.
+
+All documents are primary source materials.
+No interpretation, analysis, or annotation has been added.
+
 FILENAMES
 JR-Zahmoul-v-SSJ-HMCTS-Archive /  01_EVIDENCE_RECORD
 
