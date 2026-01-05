@@ -1,7 +1,10 @@
-# 3 — Evidence Bundles & Exhibits
 
-This folder contains evidential documents referenced in the Judicial Review 
-*Zahmoul v Secretary of State for Justice & HMCTS* (AC-2025-LON-004293). 
-The materials in this section include documentary exhibits, correspondence, 
-and structured timelines relevant to the handling and custody of evidence.
 
+## Formal Exhibit Bundles and Indexes
+
+This folder contains compiled exhibit bundles and indexes prepared for
+external scrutiny, including bundles filed with the court or prepared
+for counsel.
+
+These materials organise and present evidence drawn from the canonical
+evidence record. They do not constitute primary source evidence themselves.
