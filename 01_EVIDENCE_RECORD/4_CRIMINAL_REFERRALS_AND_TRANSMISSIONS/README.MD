@@ -72,10 +72,16 @@ CR-CROSSREF_Notice_and_Transmissions.md
 
 ---
 
-This README does three important things simultaneously:
+Purpose of this folder
 
-* it **protects JR jurisdiction**,
-* it **signals seriousness without sensationalism**, and
-* it makes the folder **safe to read** for courts, journalists, and oversight bodies.
+This folder records formal criminal referrals and transmissions made by the Claimant to competent authorities during the relevant period.
 
-When you’re ready, send the **next substantive sub-folder**, and we’ll place it just as cleanly.
+It preserves a factual record of what was transmitted, when, and to whom, without asserting outcomes or conclusions.
+
+Status and scope
+
+These materials are not pleadings and not evidence filed in the JR unless expressly relied upon.
+
+Their inclusion does not invite adjudication of criminal matters.
+
+The folder exists to preserve transparency, chronology, and auditability of referrals made outside the JR process.
