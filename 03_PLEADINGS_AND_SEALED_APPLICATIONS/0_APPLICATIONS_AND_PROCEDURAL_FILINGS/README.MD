@@ -64,3 +64,22 @@ Procedural note
 
 Inclusion of a document in this folder reflects that it has been filed or prepared for filing with the court as a procedural matter.
 It does not imply that the application has been granted or determined.
+
+This folder remains the home for applications as procedural acts, regardless of what they relate to substantively.
+
+Includes:
+
+D11, N244, N461, N463, etc.
+
+Applications for permission to rely on further material
+
+Applications for extensions of time
+
+Applications for adjournment / directions
+
+Covering letters that file or issue an application
+
+Sealed procedural orders responding to those applications
+
+Key rule:
+If the document’s primary function is to ask the court to do something procedurally, it stays in 0.
