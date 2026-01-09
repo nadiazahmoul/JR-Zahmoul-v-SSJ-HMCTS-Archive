@@ -16,3 +16,20 @@ Covering letters accompanying pleaded submissions
 
 Note: Where multiple versions exist, the most recent dated version should be treated as the operative pleading, with superseded versions archived elsewhere.
 This folder contains formal pleadings and procedural filings, including claim forms, applications, notices, acknowledgments of service, and summary grounds.
+
+This is where the formal statements of case live.
+
+Includes:
+
+Grounds of Claim (original / amended)
+
+Summary Grounds of Response
+
+Replies
+
+Statements of Case
+
+Covering letters accompanying pleadings (not applications)
+
+Key rule:
+If the document defines what the case is, it goes here.
