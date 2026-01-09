@@ -57,3 +57,19 @@ These materials organise and present evidence drawn from the canonical
 evidence record. They do not constitute primary source evidence themselves.
 
 NZ7 is the consolidated public exhibits bundle prepared for December 2025 reconsideration.
+
+Purpose of this folder
+
+This folder contains formal exhibit bundles prepared for filing or use in court pursuant to judicial directions or procedural requirements.
+
+Typical contents
+
+Indexed and paginated exhibit bundles (e.g. NZ-series)
+
+Public or sealed exhibit compilations
+
+Bundle indexes and maps
+
+Status
+Inclusion here reflects a procedural step (formal assembly and designation), not merely organisation.
+These bundles organise evidence drawn from the canonical record; they do not replace it.
