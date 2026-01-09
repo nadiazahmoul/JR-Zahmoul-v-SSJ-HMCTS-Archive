@@ -1,5 +1,6 @@
 # 01_EVIDENCE_RECORD
 
+
 ## Purpose of this folder
 
 This folder contains the canonical evidential record underlying the Judicial Review
@@ -185,6 +186,22 @@ It is maintained to support:
 - parliamentary and journalistic oversight,
 - and an auditable public record.
 
+Purpose of this folder
+
+This folder contains the canonical evidential record underlying the Judicial Review
+Zahmoul v Secretary of State for Justice & HMCTS (AC-2025-LON-004293).
+
+It preserves evidence independently of pleadings, submissions, or advocacy, and is designed to maintain:
+
+accuracy and provenance,
+
+a clear distinction between source material and analysis,
+
+transparency for judicial, parliamentary, and public scrutiny,
+
+and an auditable record that cannot be retrospectively distorted.
+
+Documents in this folder are organised by evidential function, not by litigation stage.
 
 
 
