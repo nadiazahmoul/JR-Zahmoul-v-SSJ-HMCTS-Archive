@@ -1,3 +1,18 @@
+Purpose of this folder
+
+This folder contains formal applications, notices, and procedural filings made to the Administrative Court, including applications issued under the CPR and associated supporting documents.
+
+These materials relate to case management, permission-stage procedure, and procedural directions, rather than substantive legal argument.
+
+Typical contents
+
+Application notices (e.g. N461, N463, or equivalent)
+
+Applications for permission to rely on further material
+
+Covering letters accompanying applications
+
+Sealed procedural orders relating to applications
 Applications and Procedural Filings
 Purpose of this folder
 
