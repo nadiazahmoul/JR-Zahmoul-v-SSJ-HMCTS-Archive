@@ -56,3 +56,23 @@ of any legal analysis, referrals, or evidential work products.
 
 Materials here include medical records, court source documents,
 original correspondence, transcripts, and other contemporaneous records.
+
+Purpose of this folder
+
+This folder contains raw primary source evidence generated contemporaneously with events relevant to the proceedings.
+
+These materials constitute the original evidential substrate of the case and exist independently of the Judicial Review.
+
+Typical contents
+
+Medical and clinical records
+
+Original correspondence with courts or public bodies
+
+Official letters, notices, emails
+
+Contemporaneous records and source documents
+
+Status
+Documents here are preserved in their original form (subject only to necessary redaction).
+No analytical commentary or synthesis is embedded within these files.
