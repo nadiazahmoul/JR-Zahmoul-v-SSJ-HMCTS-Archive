@@ -61,3 +61,21 @@ Files and sub-folders use structured, date-led naming to preserve chronology, fo
 E1_YYYY-MM-DD_Description.pdf
 IMERMAN_Timeline_YYYY-MM-DD.pdf
 MASTER_EXHIBIT_INDEX_vX.pdf
+
+Purpose of this folder
+
+This folder contains materials relating to the handling, custody, disclosure, and forensic treatment of electronic devices and data, commonly described as Imerman material.
+
+Typical contents
+
+Imerman exhibit sets and indices
+
+Chain-of-custody records
+
+Correspondence regarding electronic material
+
+Timelines and master exhibit tables
+
+Status
+These are primary evidential records concerning custody and integrity of electronic material.
+They are preserved to ensure forensic transparency and chronological accuracy.
