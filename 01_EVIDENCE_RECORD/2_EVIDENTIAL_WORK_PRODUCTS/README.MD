@@ -50,3 +50,23 @@ Procedural note
 
 Inclusion of a document in this folder does not imply judicial endorsement or admission into evidence.
 Its purpose is explanatory and organisational, pending directions from the court.
+
+Purpose of this folder
+
+This folder contains evidential work products created to organise, analyse, or explain patterns and sequences reflected in the raw primary evidence.
+
+These materials are derived from source evidence but are not themselves contemporaneous records.
+
+Typical contents
+
+Chronologies and timelines
+
+Change logs and side-by-side comparisons
+
+Explanatory or contextual notes
+
+Structured analyses linking evidence to pleaded issues
+
+Status
+These documents are explanatory and analytical.
+They are not formal exhibits unless and until the court directs otherwise.
