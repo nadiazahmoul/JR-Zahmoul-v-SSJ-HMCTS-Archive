@@ -55,3 +55,13 @@ Files use ISO-style date prefixes and descriptive titles, for example:
 YYYY-MM-DD_PAP_Letter_Before_Claim.pdf
 YYYY-MM-DD_PAP_Follow_Up.pdf
 YYYY-MM-DD_Final_Notice.pdf
+
+Purpose of this folder
+
+This folder contains Pre-Action Protocol correspondence and formal notices exchanged prior to the commencement of the Judicial Review.
+
+It documents notice, forewarning, escalation, and opportunity to respond afforded to public authorities in accordance with public law pre-action principles.
+
+Status
+These documents are procedural records demonstrating compliance with the PAP.
+They are not pleadings and do not expand the scope of the Judicial Review.
