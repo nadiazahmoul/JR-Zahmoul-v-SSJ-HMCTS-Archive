@@ -27,3 +27,4 @@ failure to apply the correct analytical framework,
 distortion of evidential control,
 
 and procedural unfairness under Article 6, without inviting re-litigation of merits.
+“This folder maintains a strict separation between findings, legal analysis, and JR narrative to preserve clarity and procedural discipline.”
