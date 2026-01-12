@@ -1,0 +1,1 @@
+A redacted version of Exhibit A (Part 1) is published here. An unredacted version was transmitted to public authorities on 19 November 2025 and can be made available to competent authorities or any formal inquiry.
