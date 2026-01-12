@@ -1,1 +1,1 @@
-
+This folder contains the Court of Appeal filing of 18 September 2025 relating to Oxus Acquisition Corp, including an application for an extension of time to seek permission to appeal. The appeal was not ultimately pursued. The Oxus issue is instead relied upon as a central element of the Judicial Review, evidencing systemic failure to engage with material evidence.
