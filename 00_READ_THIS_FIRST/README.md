@@ -76,5 +76,5 @@ This repository is maintained to preserve an accurate and intelligible
 record. No document should be assumed to represent findings of fact unless
 it is a court-issued decision.
 
-
+For an overview of what material exists and where it is located, see the Consolidated Accountability Record.
 
