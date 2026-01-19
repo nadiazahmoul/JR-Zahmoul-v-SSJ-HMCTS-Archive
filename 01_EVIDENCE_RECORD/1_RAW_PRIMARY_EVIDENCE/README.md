@@ -1,4 +1,7 @@
 ## Raw / Primary Evidence
+This folder contains original source documents that exist independently of litigation, including original .eml email files.
+
+If you are looking for the raw correspondence underlying the case, start here.
 
 1_RAW_PRIMARY_EVIDENCE / README.md
 Purpose of this folder
