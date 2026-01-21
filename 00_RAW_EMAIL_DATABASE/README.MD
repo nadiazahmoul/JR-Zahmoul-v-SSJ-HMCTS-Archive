@@ -69,4 +69,4 @@ This folder is intended to function as a **stable, auditable evidential record**
 Any later additions or supplements are logged separately and do not replace the original material.
 
 ---
-
+Some published emails omit non-substantive signature graphics (e.g. company logos) to comply with platform file size limits; the full original .eml files are retained unaltered.
