@@ -70,3 +70,5 @@ Any later additions or supplements are logged separately and do not replace the 
 
 ---
 Some published emails omit non-substantive signature graphics (e.g. company logos) to comply with platform file size limits; the full original .eml files are retained unaltered.
+
+The dataset was uploaded on a rolling basis and subsequently reviewed for confidentiality and relevance; any removals reflect lawful data-minimisation and do not affect the integrity or chronology of the remaining record.
