@@ -1,0 +1,1321 @@
+Received: from LOYP265MB2301.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:122::10)
+ by CWLP265MB3379.GBRP265.PROD.OUTLOOK.COM with HTTPS; Mon, 18 Mar 2024
+ 09:15:27 +0000
+Received: from LO2P265CA0298.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:a5::22)
+ by LOYP265MB2301.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:122::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7386.27; Mon, 18 Mar
+ 2024 09:15:25 +0000
+Received: from LN2PEPF000100CA.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:a5:cafe::dd) by LO2P265CA0298.outlook.office365.com
+ (2603:10a6:600:a5::22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7386.26 via Frontend
+ Transport; Mon, 18 Mar 2024 09:15:25 +0000
+Authentication-Results: spf=pass (sender IP is 185.58.85.153)
+ smtp.mailfrom=afpbloom.com; dkim=pass (signature was verified)
+ header.d=afpbloom.com;dmarc=pass action=none
+ header.from=afpbloom.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of afpbloom.com designates
+ 185.58.85.153 as permitted sender) receiver=protection.outlook.com;
+ client-ip=185.58.85.153; helo=eu-smtp-delivery-153.mimecast.com; pr=C
+Received: from eu-smtp-delivery-153.mimecast.com (185.58.85.153) by
+ LN2PEPF000100CA.mail.protection.outlook.com (10.167.240.4) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7409.10 via Frontend Transport; Mon, 18 Mar 2024 09:15:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=afpbloom.com;
+	s=mimecast20240116; t=1710753325;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=9bWS1U/M8CLXte9c0rq+LC/+2dOlAhWYBR9UVYpYpXY=;
+	b=HrkOwWpFviCxSkWN7Om9mQZ6RmIR5Oun8zcjjFJDMQORIuF//to/b10xrGAH6Sri0MrVHN
+	oV6bhGi6JBrMh0IAhSD3vNZKvg7fbUDb73DZM0kn7dnbqXl9WUrX2xsg05GN7SiYPP2YuM
+	q0ERMWKwAJq0EgzTJd8wAkzskHKnXzA=
+Received: from GBR01-LO4-obe.outbound.protection.outlook.com
+ (mail-lo4gbr01lp2104.outbound.protection.outlook.com [104.47.85.104]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ uk-mta-220-iYNT6Vy6NTKajnOFVV53ZA-1; Mon, 18 Mar 2024 09:15:18 +0000
+X-MC-Unique: iYNT6Vy6NTKajnOFVV53ZA-1
+Received: from CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM (2603:10a6:400:227::11)
+ by LO0P302MB0114.GBRP302.PROD.OUTLOOK.COM (2603:10a6:600:368::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7386.26; Mon, 18 Mar
+ 2024 09:15:17 +0000
+Received: from CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM
+ ([fe80::12ee:adde:e9de:c96d]) by CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM
+ ([fe80::12ee:adde:e9de:c96d%6]) with mapi id 15.20.7386.025; Mon, 18 Mar 2024
+ 09:15:16 +0000
+From: Faye Simpson <faye.simpson@afpbloom.com>
+To: Nadia <nadia@rosekross.com>
+CC: =?utf-8?B?Wm/DqyBCbG9vbQ==?= <Zoe.Bloom@afpbloom.com>
+Subject: RE: Private and Confidential: financial proceedings
+Thread-Topic: Private and Confidential: financial proceedings
+Thread-Index: Adp26+FJPZJZCh+gTeeDNRW0QJxiygABImwAAIjemGA=
+Date: Mon, 18 Mar 2024 09:15:16 +0000
+Message-ID: <CWLP302MB0379372286B6FF4A948E11A8E12D2@CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM>
+References: <CWLP302MB0379274BEBDD9998ECC285D7E1282@CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM>
+ <660FAF5E-D6BA-4C96-8D7E-8DC9C7685E90@rosekross.com>
+In-Reply-To: <660FAF5E-D6BA-4C96-8D7E-8DC9C7685E90@rosekross.com>
+Accept-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+x-codetwoprocessed: true
+x-codetwo-clientsignature-inserted: true
+x-ms-traffictypediagnostic:
+ CWLP302MB0379:EE_|LO0P302MB0114:EE_|LN2PEPF000100CA:EE_|LOYP265MB2301:EE_|CWLP265MB3379:EE_
+X-MS-Office365-Filtering-Correlation-Id: 94421ccf-2d7b-4c44-9e1c-08dc472bf249
+x-antiloop-smarthost: true
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0
+X-Microsoft-Antispam-Message-Info-Original:
+ XwAbz84/WeN9mDv9O4TPJuogXjJZTHwmrzsgXVeyBBpwWQ9cj+1FXWcy8yd2ES+k/iW7FOkCCWRp8loZ96rio5F+NBV8BcFJWVTy+2uzhA4x4NeX8SsJ5EgR82gX7FGDeoK4RTJHqH+Hxy0kiT9wc1aydhPCj2Ge+nrWy1OfXD9fS9t1POiAhgZb+CRYTyqma/jOU7HiT7VINPHqIsEB8b6uE/hFLRpP1Fv52MElVHlgc3JW2AascEOxrQ8ExAARHQ41wTSOg1c71NJvLjhzcqrYC4vRqKqdIC0TL/oiHYoYVVj+A38QcbHtf0eedQuSUPbJwKc7sTTUFLYZyMrw6iBruaZt4nz1Qt+1Fa7z6eawEMsAFP0W4E6c3GxTulvSZmkBxgrcGytrvchUZ79Uw9MsWOlaERfHLzT5DhrRTh0XGbClNnsN6F0vjjxGvLzx9olQAA4qK15dxEWU9okAWnx8coWUP5W/MbFjqL/AXYe+5nSOAwjOTAH7Vpb4N4bdyK3ybCPPcG6JikW7edhx5+q3k/Z1mrla90RyXvQ5lUipz/vys7RT+uEDbAZRbCkOShgRl0fyi+Kelmg0i5Jp0S7NTP2Wt2tW2NMMqU6W0vWMTxmV6F33GSN/3wLtkjL1ltwrNFHBrZG7sCYl5mM0XJydXKb9EK8vGQelvasNJ1I=
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230031)(366007)(1800799015)(376005)(38070700009);DIR:OUT;SFP:1102
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LO0P302MB0114
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: afpbloom.com
+Content-Language: en-US
+	type="multipart/alternative"
+Return-Path: faye.simpson@afpbloom.com
+X-MS-Exchange-Organization-ExpirationStartTime: 18 Mar 2024 09:15:25.3844
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 94421ccf-2d7b-4c44-9e1c-08dc472bf249
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 615372fc-d750-4bc9-b399-cc84f3fe3e95:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ LN2PEPF000100CA.GBRP265.PROD.OUTLOOK.COM
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource:
+ LN2PEPF000100CA.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+ 975e8cdd-88ab-4e39-c64f-08dc472bed18
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-Forefront-Antispam-Report:
+ CIP:185.58.85.153;CTRY:GB;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:eu-smtp-delivery-153.mimecast.com;PTR:eu-smtp-delivery-153.mimecast.com;CAT:NONE;SFS:(13230031);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Mar 2024 09:15:25.3219
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 94421ccf-2d7b-4c44-9e1c-08dc472bf249
+X-MS-Exchange-CrossTenant-Id: 615372fc-d750-4bc9-b399-cc84f3fe3e95
+X-MS-Exchange-CrossTenant-AuthSource: LN2PEPF000100CA.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LOYP265MB2301
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.4224173
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.7386.023
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?us-ascii?Q?r0jmNzvu+WBE5tAN3VHbqZ8N4nKC8OOgz5uyu+1KwQ73RLGQr6TWsqVgLApp?=
+ =?us-ascii?Q?q9a5pulaI/YBWhV09dryMaLNnU2hdLskkp4qNYZ+6X5huN/NsHMNTxZ45+oI?=
+ =?us-ascii?Q?2gLiw5QJv32KYQMrpQWmSlP32pQ8WGGErJvxI6EcJf2n1xb4hfgLMD+ebTLH?=
+ =?us-ascii?Q?nFd/f31rg+W8JM3ZGnsZkWmoVWZGwQnbjl60gnG1Vsjxoeu03NTCc/YC/m2V?=
+ =?us-ascii?Q?W1bCVXPc7hildTOvoJGTFIzw9jHcbJOFjF4Yr0VgzW4bT89sm8nZNeA/QiwI?=
+ =?us-ascii?Q?tPZOQMgkcEzNbhifq2osTcdBpxLReK5qkSeD2WDzSDm9SZ5PqSpJWHRWRCXc?=
+ =?us-ascii?Q?7pHspz8gan2Vd11g4c69tnql6kQbjpGBbdIX1D4gcyaGHYCe1dza9UIZzcWE?=
+ =?us-ascii?Q?pCsxy30X54uPKTutJnhdCATGa8y6NtUU36IOxJe8P9hV0YX8YQJpC9Rii8a1?=
+ =?us-ascii?Q?m+NZQAwHU21/2An4lia3aCwhPAOdlYET5TQWmE5xhmYhA/CWwRRxl2jGuACy?=
+ =?us-ascii?Q?i7i6kdep2aw+fxz2Ng4aoFjdzdfYLzCvUTp7MG6uO4xLajbiiWdZvat1BxGp?=
+ =?us-ascii?Q?ZscF8T2ns37nz+EeyTNakFGrD8hXo5dT64igAd+MsqpMs5RgfqZ1qMXv8Che?=
+ =?us-ascii?Q?l6x7gzrvZtPVxhKb8KYlYinFd1wxnwPNx+vkeyPcFes8bHwfUO7oWygvoZBR?=
+ =?us-ascii?Q?hYTsMmF+wa8/bJFJWBQV0eKqTxlIacKDU2YGdeMlnoXVFBDnhenhnu+qatsm?=
+ =?us-ascii?Q?+2CBK/IP5Bk4fRVJgw939IaFQanrchbhcflM3u0mO4x502SVHZijhzIhBAka?=
+ =?us-ascii?Q?KhBCnWGqQXifsruWZ9odg+KfKHcgJ51XYp1+3AMfuydPUbqVVf3Z3lAF4h67?=
+ =?us-ascii?Q?oadfY+X44v/g3LbOcIhBLy11lI+dOvtUMHdukyD2cI4e7HqmCTgp5UCz7zxX?=
+ =?us-ascii?Q?FE+uwqEBcCrACUvzD6y5jFDm2uHtox+Gu4IVF7SxnI33wwKPtABTEhTO2DY7?=
+ =?us-ascii?Q?Ei8BFjFmkAM1QXbT8YFGVnL1Udha4BaRKqhKJH3Jw5EbpTkGIGQ4xTvOAC9b?=
+ =?us-ascii?Q?FXfFCbajYMUzB+1Xd3vGWBKJsmfo0h5a4+mT32WvJNQPJ3nMZsL+RZnnIzTz?=
+ =?us-ascii?Q?CD61JHYUNkSbUoGYtpanD2fEXllVnshM5EPQkmMnmBRnUeQ+rkkGq/5ab9x0?=
+ =?us-ascii?Q?UBz5kVUd2QLVu9qWmga7m87PHD7vhBADVr0vLDUjxp9EO4k3deYroe7RoVze?=
+ =?us-ascii?Q?k4MDOLG0f9rUkElMvHkZv4Q6xNvTJXVdKQU3N9XAQA7xIgxUSVrxUpYCRKVe?=
+ =?us-ascii?Q?io1tKYOqGOmAgrzbsBzIzOuo4TxzAi696SdEcbaI0oY+xnBM2aG/v1mJypbG?=
+ =?us-ascii?Q?dZpmZyUF9qBgBQ0Qy112BD8UcLjgvtOhcrREGFzzWRyqVZWNhOTmg/ayCuen?=
+ =?us-ascii?Q?q0tL+gOoOHozN0E9krLUjKUtcdwzZtbzAoJQj588Cq3RSgRjhhY8ZZItVDeQ?=
+ =?us-ascii?Q?eaTM9v+fONCANJBAE3OxeKMIJpdat9QQJqtmguB3HKA6/BTdpBeVSletxHtF?=
+ =?us-ascii?Q?gVTLfCcrpEbTTAlfoTO/SHk2D9bsz72FtWEiMUkTsvuVlhe11FLBr0l29Frm?=
+ =?us-ascii?Q?IPRge41r24wvPnv+NLhSsxR5qVLAlrR7RxT28ZsXccOeudhi8z7UC7ksFzuk?=
+ =?us-ascii?Q?ImKCYM76M1nJmUrH7DQS6vMbM+YI7fxwS4hDBHi7Ya3sxfT39RXw1r06N1mq?=
+ =?us-ascii?Q?yU3F9XH4vg=3D=3D?=
+Content-type: multipart/mixed;
+	boundary="B_3851697099_2540228119"
+
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3851697099_2540228119
+Content-type: multipart/related;
+	boundary="B_3851697099_3315858738"
+
+--B_3851697099_3315858738
+Content-type: multipart/alternative;
+	boundary="B_3851697099_2770964447"
+
+
+--B_3851697099_2770964447
+Content-type: text/plain;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+Dear Nadia,=20
+
+=20
+
+Thank you for your email.=20
+
+=20
+
+We are currently off the record and don=E2=80=99t have instructions to come back =
+on the record for the purposes of receipt of judgment and drafting the order=
+. In the event that you find yourself in funds so that you can give us that =
+instruction, we can discuss it then.=20
+
+=20
+
+Please can you confirm that you are happy for the below draft emails to be =
+sent?
+
+=20
+
+Kind regards,=20
+
+=20
+
+Faye
+
+Faye Simpson | Associate
+faye.simpson@afpbloom.com=20
+T: 020 7409 1222 | M: =E2=80=8B07425854346
+AFP Bloom LLP | 106-108 Wigmore Street, London, W1U 3LR
+www=E2=80=8B.afpbloom=E2=80=8B=E2=80=8B.com=E2=80=8B =20
+ AFP Bloom LLP is a limited liability partnership registered in England and=
+ Wales under number OC414418 and is authorised and regulated by the Solicito=
+rs Regulation Authority with number 635195. A list of members is available t=
+o view at our registered office at 106-108 Wigmore Street, London, W1U 3LR, =
+United Kingdom. This email and the information it contains are confidential =
+and may be privileged. If you have received this email in error, please noti=
+fy us immediately and refrain from disclosing its contents to any other pers=
+on. AFP Bloom LLP does not accept service of documents by email. We use the =
+term =E2=80=98partner=E2=80=99 to refer to a member of AFP Bloom LLP or to an employee o=
+r consultant with equivalent status.
+ =20
+=20
+
+From: Nadia <nadia@rosekross.com>=20
+Sent: Friday, March 15, 2024 3:50 PM
+To: Faye Simpson <faye.simpson@afpbloom.com>
+Cc: Zo=C3=AB Bloom <Zoe.Bloom@afpbloom.com>
+Subject: Re: Private and Confidential: financial proceedings
+
+=20
+
+Dear Faye,
+
+=20
+
+Thank you for your email and for the correspondence.
+
+=20
+
+Will you be coming back on the record before we attend the judgement? If so=
+, could you please amend your draft accordingly.
+
+=20
+
+With my kind wishes,
+
+Nadia
+
+=20
+
+BV20D01752
+
+Fraud Unravels All=20
+
+Veritas Numquam Perit
+
+UK: +44 79 1332 8615
+
+US: +1 424 426 9226
+
+=20
+
+=20
+
+=20
+
+=20
+
+=20
+
+On 15/03/2024, 3:21=E2=80=AFPM, "Faye Simpson" <faye.simpson@afpbloom.com> wrote:
+
+=20
+
+Dear Nadia,=20
+
+=20
+
+I hope you are well.
+
+=20
+
+Please find attached further final hearing notes, as requested.=20
+
+=20
+
+Under the letter of instruction of 22 September 2023, which you signed as p=
+art of your Detach loan (attached for ease), we were instructed to:
+
+=20
+
+=E2=80=98D.  Use all reasonable endeavours to ensure that repayment of all sums u=
+nder the loan agreement(s) with Detach Lending are provided for within the t=
+erms of any court order made in respect of my legal proceedings to included =
+where applicable the order to place a registered charge against assets.=20
+
+=20
+
+E. Receive the proceeds of the Proceedings (and the disposal proceeds that =
+I am entitled to in relation to my properties (if any) into your client acco=
+unt and use such proceeds to settle all outstanding sums under the Loan Agre=
+ement(s), where required also provide the conveyancing solicitor with these =
+instructions     including the Schedule 1 notice (Deed of Assignment)=E2=80=99=20
+
+=20
+
+Similarly, we made certain agreements with Gateley legal in relation to the=
+ judgment and final order =E2=80=93 please see the correspondence attached.=20
+
+=20
+
+We will therefore need to update Detach and Gateley Legal that you are now =
+acting in person.=20
+
+=20
+
+Please see a below drafts for your review. Please let us know if you are ha=
+ppy for these to be sent.=20
+
+=20
+
+Separately, did you hear anything back from Karim=E2=80=99s solicitors in relatio=
+n to Oxus?=20
+
+=20
+
+DRAFT TO DETACH
+
+=20
+
+Dear Hannah,=20
+
+=20
+
+We write in relation to Nadia Zahmoul.=20
+
+=20
+
+In terms of update, the final hearing finished on 28 February, with judgmen=
+t being reserved until at least the end of term (which is 27 March 2024).
+
+=20
+
+Nadia has been acting in person since 6 March 2024, as there were a number =
+of matters she wished to pursue but we were not in funds to be able to assis=
+t. Please see a copy of the notice of acting attached. .=20
+
+=20
+
+Kind regards,=20
+
+=20
+
+=20
+
+DRAFT TO GATELEY LEGAL
+
+=20
+
+Dear Amrit,=20
+
+=20
+
+We write in relation to Nadia Zahmoul.=20
+
+=20
+
+Nadia has been acting in person since 6 March 2024, as there were a number =
+of matters she wished to pursue but we were not in funds to be able to assis=
+t. Please see a copy of the notice of acting attached.=20
+
+=20
+
+Kind regards,=20
+
+=20
+
+Faye=20
+
+=20
+
+Faye Simpson | Associate
+faye.simpson@afpbloom.com=20
+T: 020 7409 1222 | M: =E2=80=8B07425854346
+AFP Bloom LLP | 106-108 Wigmore Street, London, W1U 3LR
+www=E2=80=8B.afpbloom=E2=80=8B=E2=80=8B.com=E2=80=8B =20
+ AFP Bloom LLP is a limited liability partnership registered in England and=
+ Wales under number OC414418 and is authorised and regulated by the Solicito=
+rs Regulation Authority with number 635195. A list of members is available t=
+o view at our registered office at 106-108 Wigmore Street, London, W1U 3LR, =
+United Kingdom. This email and the information it contains are confidential =
+and may be privileged. If you have received this email in error, please noti=
+fy us immediately and refrain from disclosing its contents to any other pers=
+on. AFP Bloom LLP does not accept service of documents by email. We use the =
+term =E2=80=98partner=E2=80=99 to refer to a member of AFP Bloom LLP or to an employee o=
+r consultant with equivalent status.
+ =20
+
+=20
+
+[Evolve:142bf7d8-ceb5-4c22-9b03-b6c868103a6d]
+
+
+--B_3851697099_2770964447
+Content-type: text/html;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsof=
+t-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" xmlns:m=
+=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http://www.w3.org=
+/TR/REC-html40"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><meta na=
+me=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)"><!--[if !mso]><=
+style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Gill Sans MT";
+	panose-1:2 11 5 2 2 1 4 2 2 3;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:"Baguet Script";}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ligatures:standardcontextual;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+span.EmailStyle20
+	{mso-style-type:personal-reply;
+	font-family:"Arial",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3D"EN-GB" link=3D"#0563C1" =
+vlink=3D"#954F72" style=3D"word-wrap:break-word"><div class=3D"WordSection1"><p cl=
+ass=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,=
+sans-serif;mso-fareast-language:EN-US">Dear Nadia, <o:p></o:p></span></p><p =
+class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot=
+;,sans-serif;mso-fareast-language:EN-US"><o:p>&nbsp;</o:p></span></p><p clas=
+s=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sa=
+ns-serif;mso-fareast-language:EN-US">Thank you for your email. <o:p></o:p></=
+span></p><p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quo=
+t;Arial&quot;,sans-serif;mso-fareast-language:EN-US"><o:p>&nbsp;</o:p></span=
+></p><p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,sans-serif;mso-fareast-language:EN-US">We are currently off the re=
+cord and don=E2=80=99t have instructions to come back on the record for the purpos=
+es of receipt of judgment and drafting the order. In the event that you find=
+ yourself in funds so that you can give us that instruction, we can discuss =
+it then. <o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:1=
+0.0pt;font-family:&quot;Arial&quot;,sans-serif;mso-fareast-language:EN-US"><=
+o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:10.0p=
+t;font-family:&quot;Arial&quot;,sans-serif;mso-fareast-language:EN-US">Pleas=
+e can you confirm that you are happy for the below draft emails to be sent?<=
+o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font=
+-family:&quot;Arial&quot;,sans-serif;mso-fareast-language:EN-US"><o:p>&nbsp;=
+</o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-fam=
+ily:&quot;Arial&quot;,sans-serif;mso-fareast-language:EN-US">Kind regards, <=
+o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font=
+-family:&quot;Arial&quot;,sans-serif;mso-fareast-language:EN-US"><o:p>&nbsp;=
+</o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-fam=
+ily:&quot;Arial&quot;,sans-serif;mso-fareast-language:EN-US">Faye<o:p></o:p>=
+</span></p><div><table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0" width=3D"100%" style=3D"width:100.0%"><tbody><tr style=3D"height:22.5=
+pt"><td colspan=3D"2" style=3D"padding:0cm 0cm 0cm 0cm;height:22.5pt"></td></tr>=
+<tr><td valign=3D"top" style=3D"padding:0cm 0cm 0cm 0cm"><p><b><span style=3D"font=
+-size:12.0pt;font-family:&quot;Gill Sans MT&quot;,sans-serif;color:black">Fa=
+ye</span></b><span style=3D"font-size:12.0pt;font-family:&quot;Gill Sans MT&qu=
+ot;,sans-serif;color:black"> <b>Simpson</b> | Associate</span><b><i><span st=
+yle=3D"font-size:12.0pt;font-family:&quot;Gill Sans MT&quot;,sans-serif;color:=
+#D59A40"><br></span></i></b><span style=3D"font-size:12.0pt;font-family:&quot;=
+Gill Sans MT&quot;,sans-serif;color:#D59A40"><a href=3D"mailto:faye.simpson@af=
+pbloom.com" target=3D"_blank"><span style=3D"color:#D59A40">faye.simpson@afpbloo=
+m.com </span></a><br></span><b><span style=3D"font-size:12.0pt;font-family:&qu=
+ot;Gill Sans MT&quot;,sans-serif;color:black;border:none windowtext 1.0pt;pa=
+dding:0cm">T</span></b><span style=3D"font-size:12.0pt;font-family:&quot;Gill =
+Sans MT&quot;,sans-serif;color:black;border:none windowtext 1.0pt;padding:0c=
+m">: 020 7409 1222 | <b>M</b>: </span><span style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Arial&quot;,sans-serif;color:black;border:none windowtext 1.0pt;pa=
+dding:0cm">=E2=80=8B</span><span style=3D"font-size:12.0pt;font-family:&quot;Gill Sa=
+ns MT&quot;,sans-serif;color:black;border:none windowtext 1.0pt;padding:0cm"=
+>07425854346</span><span style=3D"font-size:12.0pt;font-family:&quot;Gill Sans=
+ MT&quot;,sans-serif;color:black"><br>AFP Bloom LLP |&nbsp;106-108 Wigmore S=
+treet, London, W1U 3LR</span><span style=3D"font-size:12.0pt;font-family:&quot=
+;Gill Sans MT&quot;,sans-serif;color:#D59A40"><br><a href=3D"https://www.afpbl=
+oom.com"><span style=3D"color:#D59A40">www</span><span style=3D"font-family:&quo=
+t;Arial&quot;,sans-serif;color:#D59A40">=E2=80=8B</span><span style=3D"color:#D59A40=
+">.afpbloom</span><span style=3D"font-family:&quot;Arial&quot;,sans-serif;colo=
+r:#D59A40">=E2=80=8B=E2=80=8B</span><span style=3D"color:#D59A40">.com</span><span style=3D"=
+font-family:&quot;Arial&quot;,sans-serif;color:#D59A40">=E2=80=8B</span></a>&nbsp;=
+</span><span style=3D"font-size:12.0pt;font-family:&quot;Gill Sans MT&quot;,sa=
+ns-serif;color:#D59A40"><o:p></o:p></span></p><p><a href=3D"https://www.linked=
+in.com/company/bloombudd-llp"><span style=3D"font-size:10.0pt;font-family:&quo=
+t;Arial&quot;,sans-serif;color:windowtext;mso-fareast-language:EN-US;text-de=
+coration:none"><img border=3D"0" width=3D"23" height=3D"23" style=3D"width:.2395in;h=
+eight:.2395in" id=3D"Picture_x0020_8" src=3D"cid:image008.png@01DA7914.BDF9C320"=
+></span></a><span style=3D"font-size:12.0pt;font-family:&quot;Gill Sans MT&quo=
+t;,sans-serif;color:#D59A40">&nbsp;</span><a href=3D"https://www.instagram.com=
+/afpbloom/" title=3D" "><span style=3D"font-size:10.0pt;font-family:&quot;Arial&=
+quot;,sans-serif;color:windowtext;mso-fareast-language:EN-US;text-decoration=
+:none"><img border=3D"0" width=3D"23" height=3D"23" style=3D"width:.2395in;height:.2=
+395in" id=3D"Picture_x0020_9" src=3D"cid:image009.png@01DA7914.BDF9C320"></span>=
+</a><span style=3D"font-size:12.0pt;font-family:&quot;Gill Sans MT&quot;,sans-=
+serif;color:#D59A40"><o:p></o:p></span></p></td><td valign=3D"top" style=3D"padd=
+ing:0cm 0cm 0cm 0cm"><p class=3D"MsoNormal" align=3D"center" style=3D"text-align:c=
+enter"><span style=3D"font-size:10.0pt;font-family:&quot;Gill Sans MT&quot;,sa=
+ns-serif;mso-ligatures:none"><img border=3D"0" width=3D"91" height=3D"150" style=3D"=
+width:.9479in;height:1.5625in" id=3D"Picture_x0020_10" src=3D"cid:image010.png@0=
+1DA7914.BDF9C320" alt=3D"AFP-BLOOM-LOZENGE-01.png"></span><span style=3D"font-si=
+ze:10.0pt;font-family:&quot;Gill Sans MT&quot;,sans-serif"><o:p></o:p></span=
+></p></td></tr><tr><td colspan=3D"2" style=3D"padding:0cm 0cm 0cm 0cm"><p align=3D=
+"center" style=3D"text-align:center"><span style=3D"font-size:10.0pt;font-family=
+:&quot;Gill Sans MT&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p style=3D"=
+margin-bottom:12.0pt"><span style=3D"font-size:8.0pt;font-family:&quot;Gill Sa=
+ns MT&quot;,sans-serif;color:#BFBFBF">AFP Bloom LLP is a limited liability p=
+artnership registered in England and Wales under number OC414418 and is auth=
+orised and regulated by the Solicitors Regulation Authority with number 6351=
+95. A list of members is available to view at our registered office at 106-1=
+08 Wigmore Street, London, W1U 3LR, United Kingdom. This email and the infor=
+mation it contains are confidential and may be privileged. If you have recei=
+ved this email in error, please notify us immediately and refrain from discl=
+osing its contents to any other person. AFP Bloom LLP does not accept servic=
+e of documents by email. We use the term =E2=80=98partner=E2=80=99 to refer to a member =
+of AFP Bloom LLP or to an employee or consultant with equivalent status.<o:p=
+></o:p></span></p></td></tr><tr><td colspan=3D"2" style=3D"padding:0cm 0cm 0cm 0=
+cm"><p><span style=3D"font-size:10.0pt;font-family:&quot;Gill Sans MT&quot;,sa=
+ns-serif;color:navy"><img border=3D"0" width=3D"66" height=3D"55" style=3D"width:.68=
+75in;height:.5729in" id=3D"Picture_x0020_11" src=3D"cid:image011.png@01DA7914.BD=
+F9C320" alt=3D"1. AFP Bloom_UK 2024_RI.png"><img border=3D"0" width=3D"66" height=3D=
+"55" style=3D"width:.6875in;height:.5729in" id=3D"Picture_x0020_12" src=3D"cid:ima=
+ge012.png@01DA7914.BDF9C320" alt=3D"2. AFP Bloom_HNW 2023_RI.png"><img border=3D=
+"0" width=3D"73" height=3D"55" style=3D"width:.7604in;height:.5729in" id=3D"Picture_=
+x0020_13" src=3D"cid:image013.png@01DA7914.BDF9C320" alt=3D"3. TheTimes_BLF2024_=
+Logo_19to24.png">&nbsp;&nbsp;<img border=3D"0" width=3D"38" height=3D"55" style=3D"w=
+idth:.3958in;height:.5729in" id=3D"Picture_x0020_14" src=3D"cid:image014.png@01D=
+A7914.BDF9C320" alt=3D"6. uk-leading-firm-2024.png"><o:p></o:p></span></p></td=
+></tr></tbody></table></div><p class=3D"MsoNormal"><span style=3D"font-size:10.0=
+pt;font-family:&quot;Arial&quot;,sans-serif;mso-fareast-language:EN-US"><o:p=
+>&nbsp;</o:p></span></p><div><div style=3D"border:none;border-top:solid #E1E1E=
+1 1.0pt;padding:3.0pt 0cm 0cm 0cm"><p class=3D"MsoNormal"><b><span lang=3D"EN-US=
+" style=3D"mso-ligatures:none">From:</span></b><span lang=3D"EN-US" style=3D"mso-l=
+igatures:none"> Nadia &lt;nadia@rosekross.com&gt; <br><b>Sent:</b> Friday, M=
+arch 15, 2024 3:50 PM<br><b>To:</b> Faye Simpson &lt;faye.simpson@afpbloom.c=
+om&gt;<br><b>Cc:</b> Zo=C3=AB Bloom &lt;Zoe.Bloom@afpbloom.com&gt;<br><b>Subject=
+:</b> Re: Private and Confidential: financial proceedings<o:p></o:p></span><=
+/p></div></div><p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p><p class=3D"MsoNormal=
+"><span lang=3D"EN-US" style=3D"font-size:12.0pt;font-family:&quot;Arial&quot;,s=
+ans-serif;mso-ligatures:none">Dear Faye,<o:p></o:p></span></p><p class=3D"MsoN=
+ormal"><span lang=3D"EN-US" style=3D"font-size:12.0pt;font-family:&quot;Arial&qu=
+ot;,sans-serif;mso-ligatures:none"><o:p>&nbsp;</o:p></span></p><p class=3D"Mso=
+Normal"><span lang=3D"EN-US" style=3D"font-size:12.0pt;font-family:&quot;Arial&q=
+uot;,sans-serif;mso-ligatures:none">Thank you for your email and for the cor=
+respondence.<o:p></o:p></span></p><p class=3D"MsoNormal"><span lang=3D"EN-US" st=
+yle=3D"font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;mso-ligatures=
+:none"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><span lang=3D"EN-US" s=
+tyle=3D"font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;mso-ligature=
+s:none">Will you be coming back on the record before we attend the judgement=
+? If so, could you please amend your draft accordingly.<o:p></o:p></span></p=
+><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:12.0pt;font-family=
+:&quot;Arial&quot;,sans-serif;mso-ligatures:none"><o:p>&nbsp;</o:p></span></=
+p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:12.0pt;font-famil=
+y:&quot;Arial&quot;,sans-serif;mso-ligatures:none">With my kind wishes,<o:p>=
+</o:p></span></p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:12=
+.0pt;font-family:&quot;Arial&quot;,sans-serif;mso-ligatures:none">Nadia<o:p>=
+</o:p></span></p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:12=
+.0pt;font-family:&quot;Arial&quot;,sans-serif;mso-ligatures:none"><o:p>&nbsp=
+;</o:p></span></p><div><div><p class=3D"MsoNormal"><b><span style=3D"font-family=
+:&quot;Baguet Script&quot;;color:red;mso-ligatures:none">BV20D01752<o:p></o:=
+p></span></b></p><p class=3D"MsoNormal"><b><span style=3D"font-family:&quot;Bagu=
+et Script&quot;;color:black;mso-ligatures:none">Fraud Unravels All <o:p></o:=
+p></span></b></p><p class=3D"MsoNormal"><b><span style=3D"font-family:&quot;Bagu=
+et Script&quot;;color:black;mso-ligatures:none">Veritas Numquam Perit<o:p></=
+o:p></span></b></p><p class=3D"MsoNormal"><span style=3D"font-family:&quot;Bague=
+t Script&quot;;color:black;mso-ligatures:none">UK: +44 79 1332 8615<o:p></o:=
+p></span></p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quo=
+t;Baguet Script&quot;;color:black;mso-ligatures:none">US: +1 424 426 9226</s=
+pan><span lang=3D"EN-US" style=3D"mso-ligatures:none"><o:p></o:p></span></p><p c=
+lass=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Baguet Script&q=
+uot;;color:black;mso-ligatures:none"><o:p>&nbsp;</o:p></span></p><p class=3D"M=
+soNormal"><span lang=3D"EN-US" style=3D"font-size:12.0pt;font-family:&quot;Aptos=
+&quot;,sans-serif;mso-ligatures:none"><o:p>&nbsp;</o:p></span></p><p class=3D"=
+MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Baguet Script&quot;;c=
+olor:black;mso-ligatures:none"><o:p>&nbsp;</o:p></span></p></div></div><p cl=
+ass=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:12.0pt;font-family:&quot=
+;Arial&quot;,sans-serif;mso-ligatures:none"><o:p>&nbsp;</o:p></span></p><p c=
+lass=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:12.0pt;font-family:&quo=
+t;Arial&quot;,sans-serif;mso-ligatures:none"><o:p>&nbsp;</o:p></span></p><di=
+v><div><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;=
+Aptos&quot;,sans-serif;mso-ligatures:none">On 15/03/2024, 3:21</span><span s=
+tyle=3D"font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;mso-ligature=
+s:none">=E2=80=AF</span><span style=3D"font-size:12.0pt;font-family:&quot;Aptos&quot=
+;,sans-serif;mso-ligatures:none">PM, &quot;Faye Simpson&quot; &lt;<a href=3D"m=
+ailto:faye.simpson@afpbloom.com">faye.simpson@afpbloom.com</a>&gt; wrote:<o:=
+p></o:p></span></p></div></div><div><p class=3D"MsoNormal"><span style=3D"font-s=
+ize:12.0pt;font-family:&quot;Aptos&quot;,sans-serif;mso-ligatures:none"><o:p=
+>&nbsp;</o:p></span></p></div><p class=3D"MsoNormal"><span style=3D"font-size:10=
+.0pt;font-family:&quot;Arial&quot;,sans-serif">Dear Nadia, <o:p></o:p></span=
+></p><p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><span=
+ style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif">I hope yo=
+u are well.<o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size=
+:10.0pt;font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></=
+p><p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Arial=
+&quot;,sans-serif">Please find attached further final hearing notes, as requ=
+ested. <o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:10.=
+0pt;font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p=
+ class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quo=
+t;,sans-serif">Under the letter of instruction of 22 September 2023, which y=
+ou signed as part of your Detach loan (attached for ease), we were instructe=
+d to:<o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:10.0p=
+t;font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p c=
+lass=3D"MsoNormal" style=3D"text-autospace:none"><i><span style=3D"font-size:10.0p=
+t;font-family:&quot;Arial&quot;,sans-serif;color:black">=E2=80=98</span></i><span =
+style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif;color:black=
+">D. &nbsp;Use all reasonable endeavours to ensure that repayment of all sum=
+s under the loan agreement(s) with Detach Lending are provided for within th=
+e terms of any court order made in respect of my legal proceedings to includ=
+ed where applicable the order to place a registered charge against assets. <=
+o:p></o:p></span></p><p class=3D"MsoNormal" style=3D"text-autospace:none"><span =
+style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif;color:black=
+"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal" style=3D"text-autospace:non=
+e"><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif;co=
+lor:black">E. Receive the proceeds of the Proceedings (and the disposal proc=
+eeds that I am entitled to in relation to my properties (if any) into your c=
+lient account and use such proceeds to settle all outstanding sums under the=
+ Loan Agreement(s), where required also provide the conveyancing solicitor w=
+ith these instructions &nbsp;&nbsp;&nbsp;&nbsp;including the Schedule 1 noti=
+ce (Deed of Assignment)=E2=80=99 <o:p></o:p></span></p><p class=3D"MsoNormal" style=3D=
+"text-autospace:none"><span style=3D"font-size:10.0pt;font-family:&quot;Arial&=
+quot;,sans-serif;color:black"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNorma=
+l" style=3D"text-autospace:none"><span style=3D"font-size:10.0pt;font-family:&qu=
+ot;Arial&quot;,sans-serif;color:black">Similarly, we made certain agreements=
+ with Gateley legal in relation to the judgment and final order =E2=80=93 please s=
+ee the correspondence attached. </span><span style=3D"font-size:12.0pt;font-fa=
+mily:&quot;Arial&quot;,sans-serif;color:black"><o:p></o:p></span></p><p clas=
+s=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-size:12.0pt;font=
+-family:&quot;Arial&quot;,sans-serif;color:black"><o:p>&nbsp;</o:p></span></=
+p><p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Arial=
+&quot;,sans-serif">We will therefore need to update Detach and Gateley Legal=
+ that you are now acting in person. <o:p></o:p></span></p><p class=3D"MsoNorma=
+l"><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif"><=
+o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:10.0p=
+t;font-family:&quot;Arial&quot;,sans-serif">Please see a below drafts for yo=
+ur review. Please let us know if you are happy for these to be sent. <o:p></=
+o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-famil=
+y:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNor=
+mal"><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif"=
+>Separately, did you hear anything back from Karim=E2=80=99s solicitors in relatio=
+n to Oxus? <o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size=
+:10.0pt;font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></=
+p><p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,sans-serif">DRAFT TO DETACH<o:p></o:p></span></b></p><p class=3D"Mso=
+Normal"><b><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-=
+serif"><o:p>&nbsp;</o:p></span></b></p><p class=3D"MsoNormal"><i><span style=3D"=
+font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif">Dear Hannah, <o:p=
+></o:p></span></i></p><p class=3D"MsoNormal"><i><span style=3D"font-size:10.0pt;=
+font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></i></p><p=
+ class=3D"MsoNormal"><i><span style=3D"font-size:10.0pt;font-family:&quot;Arial&=
+quot;,sans-serif">We write in relation to Nadia Zahmoul. <o:p></o:p></span><=
+/i></p><p class=3D"MsoNormal"><i><span style=3D"font-size:10.0pt;font-family:&qu=
+ot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></i></p><p class=3D"MsoNorm=
+al"><i><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-seri=
+f">In terms of update, the final hearing finished on 28 February, with judgm=
+ent being reserved until at least the end of term (which is 27 March 2024).<=
+o:p></o:p></span></i></p><p class=3D"MsoNormal"><i><span style=3D"font-size:10.0=
+pt;font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></i></p=
+><p class=3D"MsoNormal"><i><span style=3D"font-size:10.0pt;font-family:&quot;Ari=
+al&quot;,sans-serif">Nadia has been acting in person since 6 March 2024, as =
+there were a number of matters she wished to pursue but we were not in funds=
+ to be able to assist. Please see a copy of the notice of acting attached. .=
+ <o:p></o:p></span></i></p><p class=3D"MsoNormal"><i><span style=3D"font-size:10=
+.0pt;font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></i><=
+/p><p class=3D"MsoNormal"><i><span style=3D"font-size:10.0pt;font-family:&quot;A=
+rial&quot;,sans-serif">Kind regards, <o:p></o:p></span></i></p><p class=3D"Mso=
+Normal"><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-ser=
+if"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><b><span style=3D"font-si=
+ze:10.0pt;font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span>=
+</b></p><p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&q=
+uot;Arial&quot;,sans-serif">DRAFT TO GATELEY LEGAL<o:p></o:p></span></b></p>=
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot;Aria=
+l&quot;,sans-serif"><o:p>&nbsp;</o:p></span></b></p><p class=3D"MsoNormal"><i>=
+<span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif;mso-l=
+igatures:none">Dear Amrit, <o:p></o:p></span></i></p><p class=3D"MsoNormal"><i=
+><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif;mso-=
+ligatures:none"><o:p>&nbsp;</o:p></span></i></p><p class=3D"MsoNormal"><i><spa=
+n style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif;mso-ligat=
+ures:none">We write in relation to Nadia Zahmoul. <o:p></o:p></span></i></p>=
+<p class=3D"MsoNormal"><i><span style=3D"font-size:10.0pt;font-family:&quot;Aria=
+l&quot;,sans-serif;mso-ligatures:none"><o:p>&nbsp;</o:p></span></i></p><p cl=
+ass=3D"MsoNormal"><i><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quo=
+t;,sans-serif;mso-ligatures:none">Nadia has been acting in person since 6 Ma=
+rch 2024, as there were a number of matters she wished to pursue but we were=
+ not in funds to be able to assist. Please see a copy of the notice of actin=
+g attached. <o:p></o:p></span></i></p><p class=3D"MsoNormal"><i><span style=3D"f=
+ont-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p><=
+/span></i></p><p class=3D"MsoNormal"><i><span style=3D"font-size:10.0pt;font-fam=
+ily:&quot;Arial&quot;,sans-serif;mso-ligatures:none">Kind regards, <o:p></o:=
+p></span></i></p><p class=3D"MsoNormal"><i><span style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif;mso-ligatures:none"><o:p>&nbsp;</o:p></s=
+pan></i></p><p class=3D"MsoNormal"><i><span style=3D"font-size:10.0pt;font-famil=
+y:&quot;Arial&quot;,sans-serif;mso-ligatures:none">Faye <o:p></o:p></span></=
+i></p><p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;A=
+rial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><table class=3D"MsoNormalTa=
+ble" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" style=3D"width:10=
+0.0%"><tbody><tr style=3D"height:22.5pt"><td colspan=3D"2" style=3D"padding:0cm 0c=
+m 0cm 0cm;height:22.5pt"></td></tr><tr><td valign=3D"top" style=3D"padding:0cm 0=
+cm 0cm 0cm"><p><b><span style=3D"font-family:&quot;Gill Sans MT&quot;,sans-ser=
+if;color:black">Faye</span></b><span style=3D"font-family:&quot;Gill Sans MT&q=
+uot;,sans-serif;color:black"> <b>Simpson</b> | Associate</span><b><i><span s=
+tyle=3D"font-family:&quot;Gill Sans MT&quot;,sans-serif;color:#D59A40"><br></s=
+pan></i></b><span style=3D"font-family:&quot;Gill Sans MT&quot;,sans-serif;col=
+or:#D59A40"><a href=3D"mailto:faye.simpson@afpbloom.com" target=3D"_blank"><span=
+ style=3D"color:#D59A40">faye.simpson@afpbloom.com </span></a><br></span><b><s=
+pan style=3D"font-family:&quot;Gill Sans MT&quot;,sans-serif;color:black;borde=
+r:none windowtext 1.0pt;padding:0cm">T</span></b><span style=3D"font-family:&q=
+uot;Gill Sans MT&quot;,sans-serif;color:black;border:none windowtext 1.0pt;p=
+adding:0cm">: 020 7409 1222 | <b>M</b>: </span><span style=3D"font-family:&quo=
+t;Arial&quot;,sans-serif;color:black;border:none windowtext 1.0pt;padding:0c=
+m">=E2=80=8B</span><span style=3D"font-family:&quot;Gill Sans MT&quot;,sans-serif;co=
+lor:black;border:none windowtext 1.0pt;padding:0cm">07425854346</span><span =
+style=3D"font-family:&quot;Gill Sans MT&quot;,sans-serif;color:black"><br>AFP =
+Bloom LLP |&nbsp;106-108 Wigmore Street, London, W1U 3LR</span><span style=3D"=
+font-family:&quot;Gill Sans MT&quot;,sans-serif;color:#D59A40"><br><a href=3D"=
+https://www.afpbloom.com"><span style=3D"color:#D59A40">www</span><span style=3D=
+"font-family:&quot;Arial&quot;,sans-serif;color:#D59A40">=E2=80=8B</span><span sty=
+le=3D"color:#D59A40">.afpbloom</span><span style=3D"font-family:&quot;Arial&quot=
+;,sans-serif;color:#D59A40">=E2=80=8B=E2=80=8B</span><span style=3D"color:#D59A40">.com</s=
+pan><span style=3D"font-family:&quot;Arial&quot;,sans-serif;color:#D59A40">=E2=80=8B=
+</span></a>&nbsp;<o:p></o:p></span></p><p><a href=3D"https://www.linkedin.com/=
+company/bloombudd-llp"><span style=3D"font-size:10.0pt;font-family:&quot;Arial=
+&quot;,sans-serif;color:windowtext;text-decoration:none"><img border=3D"0" wid=
+th=3D"23" height=3D"23" style=3D"width:.2395in;height:.2395in" id=3D"Picture_x0020_1=
+" src=3D"cid:image015.png@01DA7914.BDF9C320"></span></a><span style=3D"font-fami=
+ly:&quot;Gill Sans MT&quot;,sans-serif;color:#D59A40">&nbsp;</span><a href=3D"=
+https://www.instagram.com/afpbloom/" title=3D" "><span style=3D"font-size:10.0pt=
+;font-family:&quot;Arial&quot;,sans-serif;color:windowtext;text-decoration:n=
+one"><img border=3D"0" width=3D"23" height=3D"23" style=3D"width:.2395in;height:.239=
+5in" id=3D"Picture_x0020_2" src=3D"cid:image016.png@01DA7914.BDF9C320"></span></=
+a><span style=3D"font-family:&quot;Gill Sans MT&quot;,sans-serif;color:#D59A40=
+"><o:p></o:p></span></p></td><td valign=3D"top" style=3D"padding:0cm 0cm 0cm 0cm=
+"><p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span style=3D=
+"font-size:10.0pt;font-family:&quot;Gill Sans MT&quot;,sans-serif;mso-ligatu=
+res:none"><img border=3D"0" width=3D"91" height=3D"149" style=3D"width:.9479in;heigh=
+t:1.552in" id=3D"_x0030_.jcb4z7swwg" src=3D"cid:image017.png@01DA7914.BDF9C320" =
+alt=3D"AFP-BLOOM-LOZENGE-01.png"></span><span style=3D"font-size:10.0pt;font-fam=
+ily:&quot;Gill Sans MT&quot;,sans-serif"><o:p></o:p></span></p></td></tr><tr=
+><td colspan=3D"2" style=3D"padding:0cm 0cm 0cm 0cm"><p align=3D"center" style=3D"te=
+xt-align:center"><span style=3D"font-size:10.0pt;font-family:&quot;Gill Sans M=
+T&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p style=3D"margin-bottom:12.0=
+pt"><span style=3D"font-size:8.0pt;font-family:&quot;Gill Sans MT&quot;,sans-s=
+erif;color:#BFBFBF">AFP Bloom LLP is a limited liability partnership registe=
+red in England and Wales under number OC414418 and is authorised and regulat=
+ed by the Solicitors Regulation Authority with number 635195. A list of memb=
+ers is available to view at our registered office at 106-108 Wigmore Street,=
+ London, W1U 3LR, United Kingdom. This email and the information it contains=
+ are confidential and may be privileged. If you have received this email in =
+error, please notify us immediately and refrain from disclosing its contents=
+ to any other person. AFP Bloom LLP does not accept service of documents by =
+email. We use the term =E2=80=98partner=E2=80=99 to refer to a member of AFP Bloom LLP o=
+r to an employee or consultant with equivalent status.<o:p></o:p></span></p>=
+</td></tr><tr><td colspan=3D"2" style=3D"padding:0cm 0cm 0cm 0cm"><p><span style=
+=3D"font-size:10.0pt;font-family:&quot;Gill Sans MT&quot;,sans-serif;color:nav=
+y"><img border=3D"0" width=3D"66" height=3D"55" style=3D"width:.6875in;height:.5729i=
+n" id=3D"_x0030_.n3af5qaprj" src=3D"cid:image018.png@01DA7914.BDF9C320" alt=3D"1. =
+AFP Bloom_UK 2024_RI.png"><img border=3D"0" width=3D"66" height=3D"55" style=3D"widt=
+h:.6875in;height:.5729in" id=3D"_x0030_.7gslol8ttwx" src=3D"cid:image019.png@01D=
+A7914.BDF9C320" alt=3D"2. AFP Bloom_HNW 2023_RI.png"><img border=3D"0" width=3D"73=
+" height=3D"55" style=3D"width:.7604in;height:.5729in" id=3D"_x0030_.8i353da1iel" =
+src=3D"cid:image020.png@01DA7914.BDF9C320" alt=3D"3. TheTimes_BLF2024_Logo_19to2=
+4.png"></span><span style=3D"font-size:10.0pt;font-family:&quot;Gill Sans MT&q=
+uot;,sans-serif;color:navy">&nbsp;&nbsp;<img border=3D"0" width=3D"38" height=3D"5=
+5" style=3D"width:.3958in;height:.5729in" id=3D"_x0030_.gybfx7b41nc" src=3D"cid:im=
+age021.png@01DA7914.BDF9C320" alt=3D"6. uk-leading-firm-2024.png"><o:p></o:p><=
+/span></p></td></tr></tbody></table><p class=3D"MsoNormal"><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span=
+></p><p class=3D"MsoNormal"><span style=3D"font-size:7.0pt;color:#7F7F7F">[Evolv=
+e:142bf7d8-ceb5-4c22-9b03-b6c868103a6d]<o:p></o:p></span></p></div></body></=
+html>
+
+--B_3851697099_2770964447--
+
+
+--B_3851697099_3315858738
+Content-type: image/png; name="image008.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image008.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image008.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAMAAABhTZc9AAAAAXNSR0IArs4c6QAAAARnQU1B
+AACxjwv8YQUAAAHgUExURQAAAAAAAP///4CAgP+AgKpVVdeXSMmTRsuPS9GXS8yTSsyZStKZ
+StWaSsuTSc+XSc2WR8+WSdKWSdCXSNGXStGYSdCWSdCWS9OYS9OZTNKYS8+VSc+WSc6VSM+X
+StGXStGYSs+XSdOZS8+WSc+XStCWStWaTNKYS9GYS9CXStGYStWbTNacTNCXStCWStSaS8+X
+StKYStKZStKZS8uKNM2PPM2QPM2QPc2RP82RQM6SQM6SQc6SQs6TQ86TRM6URc+TQ8+URM+U
+Rc+URs+VRs+VR8+VSM+WSNCWSNCWSdCXSdCXStCYS9GXStGYStGaT9KYS9KZS9KbUtKcU9OZ
+S9OdVdOdVtOeVtOeV9SaS9SfWNWiXtWjX9acTdakYdamY9ecTdemZtidTdmqatmsbtufTtuf
+T9uvdduwdtyfTtygTtyyet2zet2ze920fd6hT962gN+hT9+iT9+3gt+4hOC6iOG8i+G9jOG+
+jeK+juK+j+K/j+O/kePAkuTEmeXEmebIn+fKo+jMpurQrurQr+rRr+vTtO3Yuu/bwO/cwvDe
+xfHfyPHgyPHhyvLiy/LizPLk0PPjz/Pl0vjv4/jw5Pnz6Pnz6fn06/v48v37+P37+f38+f78
++v79/f7+/P///62EEdgAAAA0dFJOUwABAQICAyAhIiwtLS0wOzs9UFBRU1RtbW2srq+vsLCw
+sLG+wMHC293e39/p6vf4+Pr6+vpiltOgAAAACXBIWXMAABcRAAAXEQHKJvM/AAABu0lEQVQ4
+T4WTh1MTQRTGn2AIiBQBiYXeJCpNRURqIAc5lhYIQohEPDBI88RGR4oovUmT9v5VtyWUMJNv
+5u72vt/s7GsLPkWYks35zfnmZFOEdHy6EZeWp2uOBtLg0PS8tLs3pc9lvN/V7yReOT9oD4yS
+UEVmfXFIImTXsyIlg6gnA9I9V//TaAGN2QzayquELzXwOJTBoIc6/VHr3nUqwpfSE4Mpjem2
+U1j58/iv+9Jue3csgCHDQ5c2yzLix1LhS3kyDXDrOU/F6p4frbcUF1tLi15ZOSTOZ7fBNMKX
+te+/Dje5v3/r6Jv90WrhFhm5B6kaW6hlv/DINYFnW4i40y4C0FLAzOugli3iiWsS8XR1F3Hm
+dR0zHWbIbRR0Af+5xhBnX/Qc41K1jZmNOcA+F+hgYcsBrimcEnJ176eitj1cFZTu9Z7L6Din
++15Kz02RMf9GfDuN+Pnlm0PcFlRLgnier1oxtbnSObSx3lvS8mdzroZT3QRholaE1MvH+ybO
+gnAwpLM600orClEVhSZaKyP2ZBgA7nTRHl0j3iPZX3/pCay/EPLIf3B8sxFgrgLMZIB5DnAX
+mPzvEcB/rrncLN2Z35gAAAAASUVORK5CYII=
+--B_3851697099_3315858738
+Content-type: image/png; name="image009.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image009.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image009.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAMAAABhTZc9AAAAAXNSR0IArs4c6QAAAARnQU1B
+AACxjwv8YQUAAAJzUExURQAAAAAAAP///4CAgP+AgKpVVdeXSMmTRsuPS9GXS8yTSsyZStKZ
+StWaSsuTSc+XSc2WR8+WSdKWSdCXSNGXStGYSdCWSdCWS9OYS9OZTNKYS8+VSc+WSc6VSM+X
+StGXStGYSs+XSdOZS8+WSc+XStCWStWaTNKYS9GYS9CXStGYStWbTNacTNCXStCWStSaS8+X
+StKYStKZStKZS8uMN8uMOMuNOMyNOMyNOcyOO8yPO8yPPM2PPM2PPc2QPc2QPs2RP82RQM2S
+Qc2SQs6RP86RQM6SQc6SQs6TQs6TQ86TRM6URM6URc+TRM+URM+URc+URs+VRs+VSM+WSNCW
+SNCWSdCXSdCXStGXStGYStGYTNGZTdGZTtGaTtKYS9KZS9KbUNKbUdKcU9KcVNOZS9OeVtOe
+V9SaS9SgWdSgWtShWtWhXNWhXdWiXNWiXdWiXtWjXtacTdakYdalYtecTdenZteoZ9idTdip
+admqbNmrbdqucdquctqvdNufTtufT9uuctyfTtygTt2yet2zet20fd20ft21fd6hT961f962
+gN+hT9+iT9+4gt+4g9+4hN+6h+C6huC6iOC7ieC8iuG+juK/kOPCleTEmOXGm+bIn+fKo+fL
+pejMpejMpujMp+nOq+rRruvUtOzUtezWt+zWuO7av+/bwO/cwfDdxPDdxfDexvDex/Hfx/Li
+zfPk0PPl0fTl0fTm1Pft3/ft4Pfu4vjv4/jv5Pjw5Pjx5vnx5vnx5/ny6Pny6fnz6vrz6vrz
+6/rz7Pr06/r17fv27/v38Pz38vz48fz48vz48/z59f379/78+v78+/79+/79/P7+/dKVVQEA
+AAA0dFJOUwABAQICAyAhIiwtLS0wOzs9UFBRU1RtbW2srq+vsLCwsLG+wMHC293e39/p6vf4
++Pr6+vpiltOgAAAACXBIWXMAABcRAAAXEQHKJvM/AAACHUlEQVQ4T2OAA15xeU2DOANNeXFe
+qAgcMIoo6XeUp0SER6SUd+gribJAxcGAXbKwMT0cBtLryqXYoTJAwKfWkwKVgYD4DjU+qBwD
+v3YTVBQBGnUEIJLsGlDJ0NCQkJDQUAinSYsDJMkk3QHm+to6evn5+Xk52vqC+R2yzEBZoZJ4
+EMe9aNbSZcuXL1+2dFaRO0ggvkSYgYFVpR7Edms/sX/j2tVrVq9dt+14K1i6XpWVgcsY5JWA
+tMPLE+ztLEwsLGMqlx1MDQCKpRvxMIh3g9Q5TD5a4BDoU9ZVYbpgb9W+SQ4gwW4JBsVyEMNm
+1tYYz5glZ4+cW9zQl7hllg1IsFyBQRMcDtazN4c4LzwzMaf/7DyToM2zrUGCKZoMepEghtXc
+Ld7Jp2aYu5tPP5nkvWWuFUgwUpcBRAFl52/xzL9Q6xDuUn0hz3PLfLBseDhM75zN/rF7FzvY
+2y/aGe2/eQ5ML9zeUNfJ51dMW35+gmsowl4FiJtn7kjw9+zacGhTr6d/wvaZEDfLMYiB/evU
+crrGzN3KL8rfysOs+nSzE0iwQ5yBExxWwWEbdncWF+RmZecXt+1aHxoMFEs35GZgVQaHs3fm
+ypMHdu/Zt2f3vmOrMrxBQvUqrAwMgoXgOPIPKO2bPGXqlMn9ZQH+IAFwHMHjN9TL0cHB3sHB
+0SsEzO+QAcUvA5s6ZsKBpw0C6YpAmiSQngnkBRDAzEcMDADn3AZ4XSRB8wAAAABJRU5ErkJg
+gg==
+--B_3851697099_3315858738
+Content-type: image/png; name="image010.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image010.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image010.png"
+Content-transfer-encoding: base64
+
+
+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
+AABJRU5ErkJggg==
+--B_3851697099_3315858738
+Content-type: image/png; name="image011.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image011.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image011.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAAEIAAAA3CAMAAACPZWyoAAAAV1BMVEX///94iJfe4ua/xs0X
+MksOKUTn6u3+/v78/P0EIDyJlqOut8DS19xabX/w8vSAj50AFzRkdofJz9Vuf4/3+PmdqLO2
+vsamsLqUoKxPY3cnQFg2TWNDWG3rAr++AAAD4klEQVRIx+VX6ZKjIBBuQG4ElcMr7/+c22hm
+Jhozk9mq/bVUYhloPuj++grAPxpKSvX46/cI8v6U20AwdX99B0vthw9UhPQ5OQ2gnmVeIdSP
+AmK8vRWRnBeUUh+NACqEw6+6y3yDUAo+REMhzbm3JJDQ5j5OMYTQxnZ2qcqw1xgSN3MKkJYB
+6DzMxcQw9qxvi2kM9BnaFjdT3giQLy8RtCaQoBhq+9L3hJAcbSSjsTMjWbA2SSBam1fXQNO3
+ms+Vw+RBJqUSDlUJTuC9SsrXY2auW0ivriF7rfvNoJAEQim8kUoiCUSR28n1GI4y10rYlYHV
+2u4mL8SNzOZibDHDZJM147CvjFWGrc82VdB33MLcbpZCQMKCscTEbKdhzD7nOO6bJMqMuotP
+EBJ15I3Hm8udG+EEdX7AR6GWAjoFvS+lShxvr26hG50/4uHCWh/ujeaYUDReQFicD5/z8muo
+asuHAFEQUfTSv9ruNeFn9+meSVECoyo27j2IgZNK+yH2gPGlpyCefG3PHFKdDwTaL81jACOE
+5ro5qSc/zCovwpFrzh8hJPiGN6fwkeAC5opCMWoiPa7QKr6kx0lMEV3zSMjO0QIwG7Z8OBw8
+UtJ0R9tjAMwd57cjbLkhTdNwI+tZmZXzrj1NIkZY9HpSeINwel39UY+06MVc+p9zJwiEnCfX
+QNufyB7cBdmJjSzB8TC/RNPQsmBMHMiSm/iQjmqkVWvdmBMGDQRT4CiBsYcFfAsNit+eg6zh
+6LbyXE7U/pXHUODIHzkx4lfEaPR4nFZqd011IHuqot2ajriY+TEn6m4G+XOpu3Va89af4wl/
+uslY/0Ot2i7krZncRUHa04FPAD/VO0zvn/LnRYfRVwNWfqfFh5C6TOE1+jBg7ctuAC077kK8
+XGBUCKQKTb3F1DPKnjTmrspcQ9RkdMPMXJ2/li3Yy08lVd1zr/T4FhY8aX6R3nCSssEDjeuy
+EgFfPrWZbpuOAvzA6Eub75ffEhLvBnBZACvg84D7HbBusxT7UuqVvVxTLdJhqiK2H0go2bYU
+bhNm52oGjr3H970XJiR0PV0ztJRTnpggwGIyIaNGEVd0R37I8lgJc98GV9/aANbkMc/Ck36u
+Jw+k7bOHtxrAjQxjMkwGRlNbrWHrFd5sGFUdz2RtBb+O3zShFWn7qOuIeKP9VTuG+ovtj/VL
+3e9Ty7tS6jcIo6dTGTArsMkx8Qz9M4K/sTK7YFog2LU6OwrjkBkG795DQb5F24rQM8DWM2Ts
+gacY8fVtCAmZWmzwRgynMYxjyZMjpRRmf6PJZ0//OPMrZvb/HluOQC7k/fF37P5X4w9RhTKM
+wl4W0QAAAABJRU5ErkJggg==
+--B_3851697099_3315858738
+Content-type: image/png; name="image012.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image012.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image012.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAAEIAAAA3CAMAAACPZWyoAAAAWlBMVEX///8TLkje4ubm6ewL
+J0L19veCkJ7+/v78/PwCHzqosrx5iJfK0NaLmKVwgJBdb4HT2N2/xs1neYnu8PKfqrUaNE1T
+Z3qvuMGVoa23v8dJXXIAFjMnQFg2TWO2rqcHAAAEQUlEQVRIx+VX2ZKrOAwVNl7wihcMhuT/
+f3NkoPtm7UnfqnkaJ6SMJQ6ypCMrAP/RkELI27vfI4jzV+wDweQ5/QRLHi83hHL2vbgYkM86
+7xDaV4K2bF5rYmOihBAWbQJC6UgSlafODwh1xp80EZAle+W45j5HtzjOuY++jAzFc3iPIYB2
+HQFgFwOkmFJt5DmG6CufLMQM3uPDpJ8oiLdG8GHQzRZOZl9j1FpnNzut7FyCXmjwTIAeBvvO
+DHR96fvSYsgSCCYlY/jTAixxRTKZ2mvWvvc/xNnv4vYORlGtzSSjjCKK2N+MS74f4ptNzNcA
+ahjmw+VVjyqopdq5WrPMbLbKHJJdJ1yffYroWz9DKbunENAFbZW2Ls+LUTnl7NT50FpA9Zt7
+ghBtj1OLmThiQ0dKxmQoNZXMBEZCySliLXDNZ89WDNOQv/z0yltneqM7FlR1LyBmXOff6ycn
+5H7Jgy7fqg5VX+aXfwy42J98nT7PQZEUWeW68RZCHGTAzABxRzMwnW5hv18M3SUSoA9bC2Cr
+wakd750jKRB/6W4JjBBDP3T325NgnVlVrXaJPj/SsRv6/hZCIDm76YE+6PiVF2ujy3wp5EYk
+gHT91F/YvbreptuAHFYgN9GE1bgQbyH2kEzbg+9BrlvXr6deC+KeXpIk47mnibA/iYHj2vdb
+ecgexOCX4XpTOvdwtlka4ftenrqX4cJf5t84fk0kO6eUIMPHU5uQL9PN+CJ7WVBBwsmx1ZEC
+BkwEdAO6AgIkqmyO6aTJrs4etnEdhmHiZz65ovmy6uWaILoSK482audzKebgIZ9QfX0IdBym
+rtviAVHGq/eOV8xifVUTLcaXVLlaeN634reum/YSeWsGuw7dtFMVb2wyy+jmhKE0OVlQ3iyU
+aBVmcxJ16oarfEhZSKUfhm0Pq3g418Qt71pl2Yah9+mRqnhrFjun/axqvDqPQrFX0C+6IwbK
+k7LL+OJAOvImsR/Pql3IGNzl2a1w9JfpcpfKL06rLyX5soT3yD4k7Pz2lMA95e5Qqi8wGkTf
+4dj2Iv6McpQdpBKOvq+vzTArylryy4NUcneekId3oR1wmFUXfNM6vvYYLpJgsA9w18tV03Pp
+SPnGkLbsKCQTyFufH8bP+243A2NOECqk3KYEwtacMIU/m3rnrxFzd+o2DUmraDSvGXOTK4/M
+2VDSt95D/Bx2t2GW9rrNrVoC1RBcAtsWXJNs+ufEaaUqR8/3clCQHDbnXGhaxpJamdA+5gQf
+NYAtGIxj7Vw4wtikdAUh5KcNo2zjXT/YOpbf9K+ItH+P62/aX3k+LP6i+b2pEPK0p3H+V6YI
+UIksNWDbi1egz9D/jpDWUNeRWw86cm6UonzEyAT41A6k9OpmT3kMgK0nz5qXJTqn3ccQAjKZ
+scFTSCfFlarLYnSda5h/s5P2Of9EwO898d1p7Y+LsxB//Hfk/z3+ASBZPEUU521EAAAAAElF
+TkSuQmCC
+--B_3851697099_3315858738
+Content-type: image/png; name="image013.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image013.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image013.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAAEkAAAA3CAMAAAB3hZdfAAABAlBMVEUvmcwxmswumcz///8v
+mcwsmM0rmMwvmcwtmMzVuYI1nM47ns9brtdUob85ns+TyeXgyp9Mp9NBotE+oNDhzKRSqtVE
+pNLbv4tqttumt6pyud2azeZ5vd6isZ7o1rZXpsev1+vdwpHp9PrXu4SJxOLl0Kmg0Ojs3L+E
+wuG42+7e7/en0+o9ncjm06+pvrfbvIP4/P7hx5jJ5PLw+PzPuYnSvpGuxcN/v+BipbqNxuPT
+w5y2t5qYtK9jstmIrKlIn8V6qrLT6fV2scbA4PDXyKS6wKuTr6jc0LPdx5zFyrrVy6zU0b3K
+vJXFv6BjqcTf1buWvMTi2cOJtLxMo8rCtowynf8daPmDAAAAVnRSTlP3////////+vf5////
+////////////////////////////////////////////////////////////////////////
+////////////////////////97FSQVcAAAbwSURBVEjHrZcLW6pKF8djBjnnwMgIBCLgDhWJ
+W2WYonm/ddMuu/r+n+VdoGlWu9PzPuefyrBm1q+ZxVoDHBx80N+pNr8by86e2TYDDj6J3ROv
+aZqs8Yoswy/LMgwSZIZHiJFTuyLzSMy6FI3Zd2Q/kBDxfMezlS6lVCcc0hPVo8QwRMELzcQ2
+fI91HdrVE89Q0LckmNNMIjFxu9Qd8NLAsl3X7ZohUfgwEX2dxsT3TJcMYov/fk4sUmaSOpPM
+LjWJ7Pm2bfu+Hfqhw4QJ6+u67ZqOaRLJiAn3LyQtVNVQ8RzHMQYD2jVgVonuUEswLdE1dKJ7
+XtczHMPSPq+O35OoCKIiKiBZFAWB52VZBKMIptTK81mXIAv7bhkJxoPETGkj+6QGQdget71v
+pm17Y1mvDqH1VdY0heHQl2LSXhH9Wbs4MVZQtc3JTP9wRVgkponDO0HVlxD7jd5ISGpik/dx
+VUUsx3Hgg7IDIqEAJxxp4HANyuybTjhBn0lVbHImbgw4nhi6gpCiG7rMW9XqQHtHQoxqWIRX
+CSEyI7IaUZmvSPwMx4oYBrQaa1rs6hOXBLhpG2hHYmjsBU2qVxuxrPoymVhfkWZ205c4Dwdq
+gGmCbYVQWG8gs7s5IS3AuosDDewaxZY6E9AXJFufAGqGAwOoFsaBIzHgobyLE+KpT2xclYxG
+I4nxzKF/iBO4uzGuOt2uJdsY45DfJyFVILYPIyRlgoO42ZjsamafpDewna4HroyqWhPcVPdI
+SAj1ADsukDiKG7qPJyL6MgsYFzd1o4G7sqRZNi9PAg1WogobEiPSIGngJIT/wKnNmNcbu8W9
+y8xJYNPYNxjGC6qxq+pB6M0spAdNX4fwOEEwM8NJrPrNmVutOgwTWpzgv9sQtqRsl1SYNNkU
+VeI5VlYHablrqgzXmZHTbk1WWBE6JVWE7QeqVmG+2FXeygfJlpckiedJ3YnLIzYzvnWj9fl6
+YPr9Zn+CEnMxNnWz6U1wVfu20r7f6SC4DsYGh0xrYCcMx7EMy0CVwTJ4xKX3BpgIz6Ofk3iN
+WG4ok67tmDNdp3Y3jKlux6aAiAln/A9JFu8pCiSgBgkWNHFIYcEmfLvQpUxiwZjI6Gck354o
+yIYUhXwNLZsYMM1BA8qsianabJrSp3vUn0ie6spvJJdjufckIYaK9Jgfx0njtyS0T0Jk1sDN
+Affja8f+aU6aJ+oTnPyAxEBonfSiz6DkSBPbPIs8iDTQHKg+Vwo8xU036X8jIdmjNNEQkhxK
+BzqljoREi1IDmsaAUk9yQkrJT/Ip3fLR23HTfmuuv5CqP8rM/1cHB8x/pINyptJap2u1T9tb
+rS2b/vInlbaeB/+cnRWLlUrl/Py8UDis1+snJ79Ax2tB6+SkXj88LBRgQKVSLBbPUtXSn+LO
+sXB4ePBPrVYstnql0v1NoTA/PV1cb0m/f78j3dyXSr0WOPfK5dda7QIOq4x0s7i82ZJa4/xw
+lF8UFkcP/Zfp9fJ5+nR8fDudTtspqZ6RSqNxJxq3WsPRcDwqX3TywyjfS0ml/P1uTqtR/rLD
+jecPzGn9Ofd8PeWmx8sX4XbKt7M5HQLpme33mKhXZjq112hUjvIXndwYSL1RtCPVWr3eJdgX
+THRbP0Uv16doetxGL7/b3MPjG+mydFkCEgyrXeRzw15vTbrvMO9IaeTuo2jRz43u6qeAy0jM
+y7LNvix/ndzd3c3nhZvz83FuvALIWco4O+tFUa+4GvejD6Qx3z/fIz1O+ek0Jd0+gBZAuh/l
+V63RhlSrjaMyBPgKgPe7iBcrvXz/ZtFnIiCxo2VKOl6220/s0eOv69vFYgFzuhl3VitYHZDS
+iZXz5WIPoj5imM7lNk7FVT4/HHYWI35Rf+amv1LS8uH5+Il72mVBPxoPO1dXOYj4KOq95jvg
+AZl5FUX93ZxWnRzKcaPLUjRdHB3dXj9zD8vly1H76GG5JZWiHGjY6ozKw2j4mnrkRq1KBRZS
+2pJqq6urq36/NC8snp/7dyfLp6en2+Pbp6f247t86vdhVK94UR4Oy7XXq1TlVmXVB8fLd3H6
+WC3He9VyuK6WyrpaarX0865abjZzuri4aLVal6D5fA5X/Br0+Pj4OxUc4SzNgnk6AMa1LnZK
+TzPH1HN+kN/qKH+Ufr5W/jtlbgd/53bi0sC/KTNkj8vZYzN0ps8o2kAVVVXkLdMQ1k4oG8jl
+9vdMJMFASYLnGkmVVFUiBoFfRZMMQxcVeOejJmzitGvq8az74aawT+IITQaGlRgJdVzqJfBy
+llCLuHBf8Iho0q5tAox2fcsymzr3DQnJRNLgoV0kukGISgbQhjmlTUnm4ZXMInr6Z0nE6Uro
+27fX7SsP8/klZ9fc3nT2SH/9R/ofqsZHmAnHNiUAAAAASUVORK5CYII=
+--B_3851697099_3315858738
+Content-type: image/png; name="image014.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image014.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image014.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAACYAAAA3CAMAAABXaciiAAAAXVBMVEUAAABnaWkiJCQbHh4v
+MTIGCQkNEBADBgYFCAgHCgooKysUFxdwcnPn6Ok2ODjv8PFUVldERkY9QECPkZJdX19MT0+F
+h4je3+B6fH3R0tOvsLGkpqaYmpvBwsP8/f32g7VzAAAC9UlEQVRIx7WVB5KjMBBFWxFllMm+
+/zFX4DTY49mprVoZkATPCr8/DXS/KvCfMSF+hQF07O8Y11rAR4xzLmW7dM5ninVryuPWGWOE
+YKXapaMxoKwVJu1o5wkTnSoYgEYcMHNtMCAUSKGPya61BHOJAKslcwlJJw5mBncZQb5gqKcA
+aeiKXxJUDnUDZc0nTFM/JfAalglU/xHDLgwV4o7Jz9jkI7YVeCfbwD9gc9B95ZRzYxVumPgG
+k2kqAfcj6hXPvdsxLd8wRtOgYhnG3Csd+0IaFvkbRnwduPPTmK1SoUc7ht4wHNBoIfu55ovS
+eBhJj2Blr1Ggs0lWTQGlPBcn7YIvJm+3TdyDRj0NRAXqORQKyvGgFGo2ODtEwritaRlb+GdX
+K7RSTZwVyLORYO5tPzlwgyXpskK3XAztBwfsbMsScmhjLHbCabA0WGvoYNcTJkBHgpcV82kY
+SLI2mx2zwyY78dWWjILY+g1vV8x/izGotrJtsm7dJ7UDvk2abnu4TzpfFtj6ibdHOl3qsQXV
+T/hlbaRGvM0OwM0xjdCBXMfSBDlFoXHAiQYQDIBw2FcLmsCdemCKKqXoUdTRbhesKH55neFW
+uuPX6j1JHPVXjMeIQkHZ+0JyyD40tWMu3p+Dxc2YFpNNNSbMqC7JVLTmtKz8JC9Qpykm2EXF
+lcMYRxd1aPlCvu70ubrreeudt8CYYEIIxtjePBrtBmP/kFSPVYr9n2w/bmlVtIYQT5MfLdk1
+2+95EmSLyGGHq3Z3jDX3E4RJkahEXzyhJWiCXC7IIe4PA8P+HmRKEo+rNrwiWj0qnSaVIp8w
+QuMT8z4aF5BHIaCAx5BzJEYbP3qHULxhLQZEE8Klbp7QWopO45bQW7cdneZPQXY9j/CLQ9Cj
+81z/Q5BHuYpxrb/ceJO3qSe++R7B+6don1nyHzDRuZEi58YuEhCfR2sSjnnsDK0R2EesxQP5
+MXuEK3pk529GEzRyql3syI+TXrU6bCl+2undjK+S/NKWfwC8IEZ9TS7r+wAAAABJRU5ErkJg
+gg==
+--B_3851697099_3315858738
+Content-type: image/png; name="image015.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image015.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image015.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAMAAABhTZc9AAAAAXNSR0IArs4c6QAAAARnQU1B
+AACxjwv8YQUAAAHgUExURQAAAAAAAP///4CAgP+AgKpVVdeXSMmTRsuPS9GXS8yTSsyZStKZ
+StWaSsuTSc+XSc2WR8+WSdKWSdCXSNGXStGYSdCWSdCWS9OYS9OZTNKYS8+VSc+WSc6VSM+X
+StGXStGYSs+XSdOZS8+WSc+XStCWStWaTNKYS9GYS9CXStGYStWbTNacTNCXStCWStSaS8+X
+StKYStKZStKZS8uKNM2PPM2QPM2QPc2RP82RQM6SQM6SQc6SQs6TQ86TRM6URc+TQ8+URM+U
+Rc+URs+VRs+VR8+VSM+WSNCWSNCWSdCXSdCXStCYS9GXStGYStGaT9KYS9KZS9KbUtKcU9OZ
+S9OdVdOdVtOeVtOeV9SaS9SfWNWiXtWjX9acTdakYdamY9ecTdemZtidTdmqatmsbtufTtuf
+T9uvdduwdtyfTtygTtyyet2zet2ze920fd6hT962gN+hT9+iT9+3gt+4hOC6iOG8i+G9jOG+
+jeK+juK+j+K/j+O/kePAkuTEmeXEmebIn+fKo+jMpurQrurQr+rRr+vTtO3Yuu/bwO/cwvDe
+xfHfyPHgyPHhyvLiy/LizPLk0PPjz/Pl0vjv4/jw5Pnz6Pnz6fn06/v48v37+P37+f38+f78
++v79/f7+/P///62EEdgAAAA0dFJOUwABAQICAyAhIiwtLS0wOzs9UFBRU1RtbW2srq+vsLCw
+sLG+wMHC293e39/p6vf4+Pr6+vpiltOgAAAACXBIWXMAABcRAAAXEQHKJvM/AAABu0lEQVQ4
+T4WTh1MTQRTGn2AIiBQBiYXeJCpNRURqIAc5lhYIQohEPDBI88RGR4oovUmT9v5VtyWUMJNv
+5u72vt/s7GsLPkWYks35zfnmZFOEdHy6EZeWp2uOBtLg0PS8tLs3pc9lvN/V7yReOT9oD4yS
+UEVmfXFIImTXsyIlg6gnA9I9V//TaAGN2QzayquELzXwOJTBoIc6/VHr3nUqwpfSE4Mpjem2
+U1j58/iv+9Jue3csgCHDQ5c2yzLix1LhS3kyDXDrOU/F6p4frbcUF1tLi15ZOSTOZ7fBNMKX
+te+/Dje5v3/r6Jv90WrhFhm5B6kaW6hlv/DINYFnW4i40y4C0FLAzOugli3iiWsS8XR1F3Hm
+dR0zHWbIbRR0Af+5xhBnX/Qc41K1jZmNOcA+F+hgYcsBrimcEnJ176eitj1cFZTu9Z7L6Din
++15Kz02RMf9GfDuN+Pnlm0PcFlRLgnier1oxtbnSObSx3lvS8mdzroZT3QRholaE1MvH+ybO
+gnAwpLM600orClEVhSZaKyP2ZBgA7nTRHl0j3iPZX3/pCay/EPLIf3B8sxFgrgLMZIB5DnAX
+mPzvEcB/rrncLN2Z35gAAAAASUVORK5CYIIA
+--B_3851697099_3315858738
+Content-type: image/png; name="image016.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image016.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image016.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAMAAABhTZc9AAAAAXNSR0IArs4c6QAAAARnQU1B
+AACxjwv8YQUAAAJzUExURQAAAAAAAP///4CAgP+AgKpVVdeXSMmTRsuPS9GXS8yTSsyZStKZ
+StWaSsuTSc+XSc2WR8+WSdKWSdCXSNGXStGYSdCWSdCWS9OYS9OZTNKYS8+VSc+WSc6VSM+X
+StGXStGYSs+XSdOZS8+WSc+XStCWStWaTNKYS9GYS9CXStGYStWbTNacTNCXStCWStSaS8+X
+StKYStKZStKZS8uMN8uMOMuNOMyNOMyNOcyOO8yPO8yPPM2PPM2PPc2QPc2QPs2RP82RQM2S
+Qc2SQs6RP86RQM6SQc6SQs6TQs6TQ86TRM6URM6URc+TRM+URM+URc+URs+VRs+VSM+WSNCW
+SNCWSdCXSdCXStGXStGYStGYTNGZTdGZTtGaTtKYS9KZS9KbUNKbUdKcU9KcVNOZS9OeVtOe
+V9SaS9SgWdSgWtShWtWhXNWhXdWiXNWiXdWiXtWjXtacTdakYdalYtecTdenZteoZ9idTdip
+admqbNmrbdqucdquctqvdNufTtufT9uuctyfTtygTt2yet2zet20fd20ft21fd6hT961f962
+gN+hT9+iT9+4gt+4g9+4hN+6h+C6huC6iOC7ieC8iuG+juK/kOPCleTEmOXGm+bIn+fKo+fL
+pejMpejMpujMp+nOq+rRruvUtOzUtezWt+zWuO7av+/bwO/cwfDdxPDdxfDexvDex/Hfx/Li
+zfPk0PPl0fTl0fTm1Pft3/ft4Pfu4vjv4/jv5Pjw5Pjx5vnx5vnx5/ny6Pny6fnz6vrz6vrz
+6/rz7Pr06/r17fv27/v38Pz38vz48fz48vz48/z59f379/78+v78+/79+/79/P7+/dKVVQEA
+AAA0dFJOUwABAQICAyAhIiwtLS0wOzs9UFBRU1RtbW2srq+vsLCwsLG+wMHC293e39/p6vf4
++Pr6+vpiltOgAAAACXBIWXMAABcRAAAXEQHKJvM/AAACHUlEQVQ4T2OAA15xeU2DOANNeXFe
+qAgcMIoo6XeUp0SER6SUd+gribJAxcGAXbKwMT0cBtLryqXYoTJAwKfWkwKVgYD4DjU+qBwD
+v3YTVBQBGnUEIJLsGlDJ0NCQkJDQUAinSYsDJMkk3QHm+to6evn5+Xk52vqC+R2yzEBZoZJ4
+EMe9aNbSZcuXL1+2dFaRO0ggvkSYgYFVpR7Edms/sX/j2tVrVq9dt+14K1i6XpWVgcsY5JWA
+tMPLE+ztLEwsLGMqlx1MDQCKpRvxMIh3g9Q5TD5a4BDoU9ZVYbpgb9W+SQ4gwW4JBsVyEMNm
+1tYYz5glZ4+cW9zQl7hllg1IsFyBQRMcDtazN4c4LzwzMaf/7DyToM2zrUGCKZoMepEghtXc
+Ld7Jp2aYu5tPP5nkvWWuFUgwUpcBRAFl52/xzL9Q6xDuUn0hz3PLfLBseDhM75zN/rF7FzvY
+2y/aGe2/eQ5ML9zeUNfJ51dMW35+gmsowl4FiJtn7kjw9+zacGhTr6d/wvaZEDfLMYiB/evU
+crrGzN3KL8rfysOs+nSzE0iwQ5yBExxWwWEbdncWF+RmZecXt+1aHxoMFEs35GZgVQaHs3fm
+ypMHdu/Zt2f3vmOrMrxBQvUqrAwMgoXgOPIPKO2bPGXqlMn9ZQH+IAFwHMHjN9TL0cHB3sHB
+0SsEzO+QAcUvA5s6ZsKBpw0C6YpAmiSQngnkBRDAzEcMDADn3AZ4XSRB8wAAAABJRU5ErkJg
+ggA=
+--B_3851697099_3315858738
+Content-type: image/png; name="image017.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image017.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image017.png"
+Content-transfer-encoding: base64
+
+
+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
+AABJRU5ErkJgggA=
+--B_3851697099_3315858738
+Content-type: image/png; name="image018.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image018.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image018.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAAEIAAAA3CAMAAACPZWyoAAAAV1BMVEX///94iJfe4ua/xs0X
+MksOKUTn6u3+/v78/P0EIDyJlqOut8DS19xabX/w8vSAj50AFzRkdofJz9Vuf4/3+PmdqLO2
+vsamsLqUoKxPY3cnQFg2TWNDWG3rAr++AAAD4klEQVRIx+VX6ZKjIBBuQG4ElcMr7/+c22hm
+Jhozk9mq/bVUYhloPuj++grAPxpKSvX46/cI8v6U20AwdX99B0vthw9UhPQ5OQ2gnmVeIdSP
+AmK8vRWRnBeUUh+NACqEw6+6y3yDUAo+REMhzbm3JJDQ5j5OMYTQxnZ2qcqw1xgSN3MKkJYB
+6DzMxcQw9qxvi2kM9BnaFjdT3giQLy8RtCaQoBhq+9L3hJAcbSSjsTMjWbA2SSBam1fXQNO3
+ms+Vw+RBJqUSDlUJTuC9SsrXY2auW0ivriF7rfvNoJAEQim8kUoiCUSR28n1GI4y10rYlYHV
+2u4mL8SNzOZibDHDZJM147CvjFWGrc82VdB33MLcbpZCQMKCscTEbKdhzD7nOO6bJMqMuotP
+EBJ15I3Hm8udG+EEdX7AR6GWAjoFvS+lShxvr26hG50/4uHCWh/ujeaYUDReQFicD5/z8muo
+asuHAFEQUfTSv9ruNeFn9+meSVECoyo27j2IgZNK+yH2gPGlpyCefG3PHFKdDwTaL81jACOE
+5ro5qSc/zCovwpFrzh8hJPiGN6fwkeAC5opCMWoiPa7QKr6kx0lMEV3zSMjO0QIwG7Z8OBw8
+UtJ0R9tjAMwd57cjbLkhTdNwI+tZmZXzrj1NIkZY9HpSeINwel39UY+06MVc+p9zJwiEnCfX
+QNufyB7cBdmJjSzB8TC/RNPQsmBMHMiSm/iQjmqkVWvdmBMGDQRT4CiBsYcFfAsNit+eg6zh
+6LbyXE7U/pXHUODIHzkx4lfEaPR4nFZqd011IHuqot2ajriY+TEn6m4G+XOpu3Va89af4wl/
+uslY/0Ot2i7krZncRUHa04FPAD/VO0zvn/LnRYfRVwNWfqfFh5C6TOE1+jBg7ctuAC077kK8
+XGBUCKQKTb3F1DPKnjTmrspcQ9RkdMPMXJ2/li3Yy08lVd1zr/T4FhY8aX6R3nCSssEDjeuy
+EgFfPrWZbpuOAvzA6Eub75ffEhLvBnBZACvg84D7HbBusxT7UuqVvVxTLdJhqiK2H0go2bYU
+bhNm52oGjr3H970XJiR0PV0ztJRTnpggwGIyIaNGEVd0R37I8lgJc98GV9/aANbkMc/Ck36u
+Jw+k7bOHtxrAjQxjMkwGRlNbrWHrFd5sGFUdz2RtBb+O3zShFWn7qOuIeKP9VTuG+ovtj/VL
+3e9Ty7tS6jcIo6dTGTArsMkx8Qz9M4K/sTK7YFog2LU6OwrjkBkG795DQb5F24rQM8DWM2Ts
+gacY8fVtCAmZWmzwRgynMYxjyZMjpRRmf6PJZ0//OPMrZvb/HluOQC7k/fF37P5X4w9RhTKM
+wl4W0QAAAABJRU5ErkJgggA=
+--B_3851697099_3315858738
+Content-type: image/png; name="image019.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image019.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image019.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAAEIAAAA3CAMAAACPZWyoAAAAWlBMVEX///8TLkje4ubm6ewL
+J0L19veCkJ7+/v78/PwCHzqosrx5iJfK0NaLmKVwgJBdb4HT2N2/xs1neYnu8PKfqrUaNE1T
+Z3qvuMGVoa23v8dJXXIAFjMnQFg2TWO2rqcHAAAEQUlEQVRIx+VX2ZKrOAwVNl7wihcMhuT/
+f3NkoPtm7UnfqnkaJ6SMJQ6ypCMrAP/RkELI27vfI4jzV+wDweQ5/QRLHi83hHL2vbgYkM86
+7xDaV4K2bF5rYmOihBAWbQJC6UgSlafODwh1xp80EZAle+W45j5HtzjOuY++jAzFc3iPIYB2
+HQFgFwOkmFJt5DmG6CufLMQM3uPDpJ8oiLdG8GHQzRZOZl9j1FpnNzut7FyCXmjwTIAeBvvO
+DHR96fvSYsgSCCYlY/jTAixxRTKZ2mvWvvc/xNnv4vYORlGtzSSjjCKK2N+MS74f4ptNzNcA
+ahjmw+VVjyqopdq5WrPMbLbKHJJdJ1yffYroWz9DKbunENAFbZW2Ls+LUTnl7NT50FpA9Zt7
+ghBtj1OLmThiQ0dKxmQoNZXMBEZCySliLXDNZ89WDNOQv/z0yltneqM7FlR1LyBmXOff6ycn
+5H7Jgy7fqg5VX+aXfwy42J98nT7PQZEUWeW68RZCHGTAzABxRzMwnW5hv18M3SUSoA9bC2Cr
+wakd750jKRB/6W4JjBBDP3T325NgnVlVrXaJPj/SsRv6/hZCIDm76YE+6PiVF2ujy3wp5EYk
+gHT91F/YvbreptuAHFYgN9GE1bgQbyH2kEzbg+9BrlvXr6deC+KeXpIk47mnibA/iYHj2vdb
+ecgexOCX4XpTOvdwtlka4ftenrqX4cJf5t84fk0kO6eUIMPHU5uQL9PN+CJ7WVBBwsmx1ZEC
+BkwEdAO6AgIkqmyO6aTJrs4etnEdhmHiZz65ovmy6uWaILoSK482audzKebgIZ9QfX0IdBym
+rtviAVHGq/eOV8xifVUTLcaXVLlaeN634reum/YSeWsGuw7dtFMVb2wyy+jmhKE0OVlQ3iyU
+aBVmcxJ16oarfEhZSKUfhm0Pq3g418Qt71pl2Yah9+mRqnhrFjun/axqvDqPQrFX0C+6IwbK
+k7LL+OJAOvImsR/Pql3IGNzl2a1w9JfpcpfKL06rLyX5soT3yD4k7Pz2lMA95e5Qqi8wGkTf
+4dj2Iv6McpQdpBKOvq+vzTArylryy4NUcneekId3oR1wmFUXfNM6vvYYLpJgsA9w18tV03Pp
+SPnGkLbsKCQTyFufH8bP+243A2NOECqk3KYEwtacMIU/m3rnrxFzd+o2DUmraDSvGXOTK4/M
+2VDSt95D/Bx2t2GW9rrNrVoC1RBcAtsWXJNs+ufEaaUqR8/3clCQHDbnXGhaxpJamdA+5gQf
+NYAtGIxj7Vw4wtikdAUh5KcNo2zjXT/YOpbf9K+ItH+P62/aX3k+LP6i+b2pEPK0p3H+V6YI
+UIksNWDbi1egz9D/jpDWUNeRWw86cm6UonzEyAT41A6k9OpmT3kMgK0nz5qXJTqn3ccQAjKZ
+scFTSCfFlarLYnSda5h/s5P2Of9EwO898d1p7Y+LsxB//Hfk/z3+ASBZPEUU521EAAAAAElF
+TkSuQmCCAA==
+--B_3851697099_3315858738
+Content-type: image/png; name="image020.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image020.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image020.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAAEkAAAA3CAMAAAB3hZdfAAABAlBMVEUvmcwxmswumcz///8v
+mcwsmM0rmMwvmcwtmMzVuYI1nM47ns9brtdUob85ns+TyeXgyp9Mp9NBotE+oNDhzKRSqtVE
+pNLbv4tqttumt6pyud2azeZ5vd6isZ7o1rZXpsev1+vdwpHp9PrXu4SJxOLl0Kmg0Ojs3L+E
+wuG42+7e7/en0+o9ncjm06+pvrfbvIP4/P7hx5jJ5PLw+PzPuYnSvpGuxcN/v+BipbqNxuPT
+w5y2t5qYtK9jstmIrKlIn8V6qrLT6fV2scbA4PDXyKS6wKuTr6jc0LPdx5zFyrrVy6zU0b3K
+vJXFv6BjqcTf1buWvMTi2cOJtLxMo8rCtowynf8daPmDAAAAVnRSTlP3////////+vf5////
+////////////////////////////////////////////////////////////////////////
+////////////////////////97FSQVcAAAbwSURBVEjHrZcLW6pKF8djBjnnwMgIBCLgDhWJ
+W2WYonm/ddMuu/r+n+VdoGlWu9PzPuefyrBm1q+ZxVoDHBx80N+pNr8by86e2TYDDj6J3ROv
+aZqs8Yoswy/LMgwSZIZHiJFTuyLzSMy6FI3Zd2Q/kBDxfMezlS6lVCcc0hPVo8QwRMELzcQ2
+fI91HdrVE89Q0LckmNNMIjFxu9Qd8NLAsl3X7ZohUfgwEX2dxsT3TJcMYov/fk4sUmaSOpPM
+LjWJ7Pm2bfu+Hfqhw4QJ6+u67ZqOaRLJiAn3LyQtVNVQ8RzHMQYD2jVgVonuUEswLdE1dKJ7
+XtczHMPSPq+O35OoCKIiKiBZFAWB52VZBKMIptTK81mXIAv7bhkJxoPETGkj+6QGQdget71v
+pm17Y1mvDqH1VdY0heHQl2LSXhH9Wbs4MVZQtc3JTP9wRVgkponDO0HVlxD7jd5ISGpik/dx
+VUUsx3Hgg7IDIqEAJxxp4HANyuybTjhBn0lVbHImbgw4nhi6gpCiG7rMW9XqQHtHQoxqWIRX
+CSEyI7IaUZmvSPwMx4oYBrQaa1rs6hOXBLhpG2hHYmjsBU2qVxuxrPoymVhfkWZ205c4Dwdq
+gGmCbYVQWG8gs7s5IS3AuosDDewaxZY6E9AXJFufAGqGAwOoFsaBIzHgobyLE+KpT2xclYxG
+I4nxzKF/iBO4uzGuOt2uJdsY45DfJyFVILYPIyRlgoO42ZjsamafpDewna4HroyqWhPcVPdI
+SAj1ADsukDiKG7qPJyL6MgsYFzd1o4G7sqRZNi9PAg1WogobEiPSIGngJIT/wKnNmNcbu8W9
+y8xJYNPYNxjGC6qxq+pB6M0spAdNX4fwOEEwM8NJrPrNmVutOgwTWpzgv9sQtqRsl1SYNNkU
+VeI5VlYHablrqgzXmZHTbk1WWBE6JVWE7QeqVmG+2FXeygfJlpckiedJ3YnLIzYzvnWj9fl6
+YPr9Zn+CEnMxNnWz6U1wVfu20r7f6SC4DsYGh0xrYCcMx7EMy0CVwTJ4xKX3BpgIz6Ofk3iN
+WG4ok67tmDNdp3Y3jKlux6aAiAln/A9JFu8pCiSgBgkWNHFIYcEmfLvQpUxiwZjI6Gck354o
+yIYUhXwNLZsYMM1BA8qsianabJrSp3vUn0ie6spvJJdjufckIYaK9Jgfx0njtyS0T0Jk1sDN
+Affja8f+aU6aJ+oTnPyAxEBonfSiz6DkSBPbPIs8iDTQHKg+Vwo8xU036X8jIdmjNNEQkhxK
+BzqljoREi1IDmsaAUk9yQkrJT/Ip3fLR23HTfmuuv5CqP8rM/1cHB8x/pINyptJap2u1T9tb
+rS2b/vInlbaeB/+cnRWLlUrl/Py8UDis1+snJ79Ax2tB6+SkXj88LBRgQKVSLBbPUtXSn+LO
+sXB4ePBPrVYstnql0v1NoTA/PV1cb0m/f78j3dyXSr0WOPfK5dda7QIOq4x0s7i82ZJa4/xw
+lF8UFkcP/Zfp9fJ5+nR8fDudTtspqZ6RSqNxJxq3WsPRcDwqX3TywyjfS0ml/P1uTqtR/rLD
+jecPzGn9Ofd8PeWmx8sX4XbKt7M5HQLpme33mKhXZjq112hUjvIXndwYSL1RtCPVWr3eJdgX
+THRbP0Uv16doetxGL7/b3MPjG+mydFkCEgyrXeRzw15vTbrvMO9IaeTuo2jRz43u6qeAy0jM
+y7LNvix/ndzd3c3nhZvz83FuvALIWco4O+tFUa+4GvejD6Qx3z/fIz1O+ek0Jd0+gBZAuh/l
+V63RhlSrjaMyBPgKgPe7iBcrvXz/ZtFnIiCxo2VKOl6220/s0eOv69vFYgFzuhl3VitYHZDS
+iZXz5WIPoj5imM7lNk7FVT4/HHYWI35Rf+amv1LS8uH5+Il72mVBPxoPO1dXOYj4KOq95jvg
+AZl5FUX93ZxWnRzKcaPLUjRdHB3dXj9zD8vly1H76GG5JZWiHGjY6ozKw2j4mnrkRq1KBRZS
+2pJqq6urq36/NC8snp/7dyfLp6en2+Pbp6f247t86vdhVK94UR4Oy7XXq1TlVmXVB8fLd3H6
+WC3He9VyuK6WyrpaarX0865abjZzuri4aLVal6D5fA5X/Br0+Pj4OxUc4SzNgnk6AMa1LnZK
+TzPH1HN+kN/qKH+Ufr5W/jtlbgd/53bi0sC/KTNkj8vZYzN0ps8o2kAVVVXkLdMQ1k4oG8jl
+9vdMJMFASYLnGkmVVFUiBoFfRZMMQxcVeOejJmzitGvq8az74aawT+IITQaGlRgJdVzqJfBy
+llCLuHBf8Iho0q5tAox2fcsymzr3DQnJRNLgoV0kukGISgbQhjmlTUnm4ZXMInr6Z0nE6Uro
+27fX7SsP8/klZ9fc3nT2SH/9R/ofqsZHmAnHNiUAAAAASUVORK5CYIIA
+--B_3851697099_3315858738
+Content-type: image/png; name="image021.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <image021.png@01DA7914.BDF9C320>
+Content-disposition: inline;
+	filename="image021.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAACYAAAA3CAMAAABXaciiAAAAXVBMVEUAAABnaWkiJCQbHh4v
+MTIGCQkNEBADBgYFCAgHCgooKysUFxdwcnPn6Ok2ODjv8PFUVldERkY9QECPkZJdX19MT0+F
+h4je3+B6fH3R0tOvsLGkpqaYmpvBwsP8/f32g7VzAAAC9UlEQVRIx7WVB5KjMBBFWxFllMm+
+/zFX4DTY49mprVoZkATPCr8/DXS/KvCfMSF+hQF07O8Y11rAR4xzLmW7dM5ninVryuPWGWOE
+YKXapaMxoKwVJu1o5wkTnSoYgEYcMHNtMCAUSKGPya61BHOJAKslcwlJJw5mBncZQb5gqKcA
+aeiKXxJUDnUDZc0nTFM/JfAalglU/xHDLgwV4o7Jz9jkI7YVeCfbwD9gc9B95ZRzYxVumPgG
+k2kqAfcj6hXPvdsxLd8wRtOgYhnG3Csd+0IaFvkbRnwduPPTmK1SoUc7ht4wHNBoIfu55ovS
+eBhJj2Blr1Ggs0lWTQGlPBcn7YIvJm+3TdyDRj0NRAXqORQKyvGgFGo2ODtEwritaRlb+GdX
+K7RSTZwVyLORYO5tPzlwgyXpskK3XAztBwfsbMsScmhjLHbCabA0WGvoYNcTJkBHgpcV82kY
+SLI2mx2zwyY78dWWjILY+g1vV8x/izGotrJtsm7dJ7UDvk2abnu4TzpfFtj6ibdHOl3qsQXV
+T/hlbaRGvM0OwM0xjdCBXMfSBDlFoXHAiQYQDIBw2FcLmsCdemCKKqXoUdTRbhesKH55neFW
+uuPX6j1JHPVXjMeIQkHZ+0JyyD40tWMu3p+Dxc2YFpNNNSbMqC7JVLTmtKz8JC9Qpykm2EXF
+lcMYRxd1aPlCvu70ubrreeudt8CYYEIIxtjePBrtBmP/kFSPVYr9n2w/bmlVtIYQT5MfLdk1
+2+95EmSLyGGHq3Z3jDX3E4RJkahEXzyhJWiCXC7IIe4PA8P+HmRKEo+rNrwiWj0qnSaVIp8w
+QuMT8z4aF5BHIaCAx5BzJEYbP3qHULxhLQZEE8Klbp7QWopO45bQW7cdneZPQXY9j/CLQ9Cj
+81z/Q5BHuYpxrb/ceJO3qSe++R7B+6don1nyHzDRuZEi58YuEhCfR2sSjnnsDK0R2EesxQP5
+MXuEK3pk529GEzRyql3syI+TXrU6bCl+2undjK+S/NKWfwC8IEZ9TS7r+wAAAABJRU5ErkJg
+ggA=
+--B_3851697099_3315858738--
+
+
+--B_3851697099_2540228119--
+
