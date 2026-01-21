@@ -1,0 +1,1129 @@
+Received: from LO0P265MB3225.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:155::5)
+ by CWLP265MB3379.GBRP265.PROD.OUTLOOK.COM with HTTPS; Wed, 6 Mar 2024
+ 08:22:23 +0000
+Received: from CWLP265CA0298.GBRP265.PROD.OUTLOOK.COM (2603:10a6:401:5d::22)
+ by LO0P265MB3225.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:155::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7339.39; Wed, 6 Mar
+ 2024 08:22:21 +0000
+Received: from CW2PEPF000056BF.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:401:5d:cafe::83) by CWLP265CA0298.outlook.office365.com
+ (2603:10a6:401:5d::22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7362.24 via Frontend
+ Transport; Wed, 6 Mar 2024 08:22:21 +0000
+Authentication-Results: spf=pass (sender IP is 185.58.85.182)
+ smtp.mailfrom=29br.co.uk; dkim=pass (signature was verified)
+ header.d=29br.co.uk;dmarc=pass action=none
+ header.from=29br.co.uk;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of 29br.co.uk designates
+ 185.58.85.182 as permitted sender) receiver=protection.outlook.com;
+ client-ip=185.58.85.182; helo=eu-smtp-delivery-182.mimecast.com; pr=C
+Received: from eu-smtp-delivery-182.mimecast.com (185.58.85.182) by
+ CW2PEPF000056BF.mail.protection.outlook.com (10.167.240.21) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7362.11 via Frontend Transport; Wed, 6 Mar 2024 08:22:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=29br.co.uk;
+	s=mimecast20230922; t=1709713340;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=O1iQNlMzkNeGxSZ8O6WCqi3/No0MLGHUM3Ux8HHJ5wc=;
+	b=WphAxltGvhyWwT/gCitSeH1yQ3j+4EcSKHoGF6sg14bM/aZ7Tdy3UfrCHVoWQSbZ6YeH93
+	xppRTt+MxKXx3tYSaBpnq7gfjQ6+p0NXiy/uUslmLfwJgjVHn8ADgKYKqr/MWpPS6IADLl
+	AWrvSMSL2IIJYg6sCfngBODni9Lsibo=
+Received: from GBR01-LO4-obe.outbound.protection.outlook.com
+ (mail-lo4gbr01lp2105.outbound.protection.outlook.com [104.47.85.105]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ uk-mta-194-sCheUARROdKlCVMUpE-mhw-1; Wed, 06 Mar 2024 08:22:18 +0000
+X-MC-Unique: sCheUARROdKlCVMUpE-mhw-1
+Received: from LO4P123MB6741.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:2e2::13)
+ by LO0P123MB4395.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:16f::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7362.24; Wed, 6 Mar
+ 2024 08:22:17 +0000
+Received: from LO4P123MB6741.GBRP123.PROD.OUTLOOK.COM
+ ([fe80::e9bf:92f5:d32f:a3b9]) by LO4P123MB6741.GBRP123.PROD.OUTLOOK.COM
+ ([fe80::e9bf:92f5:d32f:a3b9%6]) with mapi id 15.20.7339.035; Wed, 6 Mar 2024
+ 08:22:17 +0000
+From: Brent Molyneux KC <BMolyneux@29br.co.uk>
+To: Alexis Campbell KC <ACampbellKC@29br.co.uk>, Nadia <nadia@rosekross.com>,
+	"Knight, Anita" <Anita.Knight@Justice.gov.uk>
+CC: Sassa-Ann Amaouche <samaouche@29br.co.uk>, Henry Crisp
+	<Henry.Crisp@stowefamilylaw.co.uk>, Lucy Birch
+	<Lucy.Birch@stowefamilylaw.co.uk>, AFP BLOOM <Zoe.Bloom@afpbloom.com>
+Subject: RE: BV20D01752  Zahmoul vs Zahmoul - FW: Material Event - SPAC merger
+ effective date 8 February 2024 -Nasdaq ticker  BRLS
+Thread-Topic: BV20D01752  Zahmoul vs Zahmoul - FW: Material Event - SPAC
+ merger effective date 8 February 2024 -Nasdaq ticker  BRLS
+Thread-Index: AQHab4Z7rW3jNH4rF0+t4MmEc37zbrEqW5AQgAADCFA=
+Date: Wed, 6 Mar 2024 08:22:17 +0000
+Message-ID: <LO4P123MB6741DB5A1550D54A8C95240880212@LO4P123MB6741.GBRP123.PROD.OUTLOOK.COM>
+References: <50538D54-E6D1-44EC-AA54-C38B71A22018@rosekross.com>
+ <CWLP123MB4833DE0D8468C0EABCDFD60182212@CWLP123MB4833.GBRP123.PROD.OUTLOOK.COM>
+In-Reply-To: <CWLP123MB4833DE0D8468C0EABCDFD60182212@CWLP123MB4833.GBRP123.PROD.OUTLOOK.COM>
+Accept-Language: en-GB, en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-ms-traffictypediagnostic:
+ LO4P123MB6741:EE_|LO0P123MB4395:EE_|CW2PEPF000056BF:EE_|LO0P265MB3225:EE_|CWLP265MB3379:EE_
+X-MS-Office365-Filtering-Correlation-Id: 665edabd-68e3-4529-384b-08dc3db68b57
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0
+X-Microsoft-Antispam-Message-Info-Original:
+ 3QieVE4GgwGvwi6YoYgr59pDwpKa9ouZdOQvAXPF/Fg+W3MqUnpaICiRxCmE1kLOCt1yrGt3wEv8Qw9nYDNX/mgTCN16GA4n7xt+zN9WtmtjnLYcTUzAoHU0oSTGKqIfQy2r/iYmHTkwrcXMvkaWZkesu39JSR6EQG9izMW8r+6yPaXlItMLspM8lUgAUf1DBzamguRH/QHS0i8/cTAW7yTMoQzpQeGSxRFgEgNdGuXIWmC1nM9bstClRQ1YdLXoMVLeY0/a1OiV7yYBLAs/1kU9JL99tY4EZ/e7BRM1RuHXENifG6W355imMGFBIMz3hqskQgc8LzFe1UD+S2oDz557TTrTzGJuoh7GiqiZ2dbgQL9vHFHr58P+O2JrtfwszFKPUzezGIw6eiw7GEqyPYfXuHT1hO33pwq4AUvU4KKoNiSxZkLLcohQCnqdBGzD4G3toZp1Td/ZHkw1nntY21732LkSjYgNX4KQh5JNtdMZxLWgf9jhYQJhcGeB8y/mSC8oASGVl5KmsmzQuvhM47X1EeAqahPuP2N9xStQESGcQ35CStAhX0K4VeuXJSKn0N8IUWYFlz5kvlrR+w/LKV8xFN1qQz1raXItFAvq6k7zpIc92sUPP9g/h3j142ckqcBYhdodYaKJxypfg7vBIATWiL3lQgiRyIPXtLMc0H/fUYf4k8FbTjd2mByIPIFLn7eKfqhkbW36Lp6/T2IMkJGj48hxAYMazwEnE1fzAJg=
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:LO4P123MB6741.GBRP123.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230031)(376005)(38070700009);DIR:OUT;SFP:1102
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LO0P123MB4395
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: 29br.co.uk
+Return-Path: bmolyneux@29br.co.uk
+X-MS-Exchange-Organization-ExpirationStartTime: 06 Mar 2024 08:22:21.0859
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 665edabd-68e3-4529-384b-08dc3db68b57
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 615372fc-d750-4bc9-b399-cc84f3fe3e95:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ CW2PEPF000056BF.GBRP265.PROD.OUTLOOK.COM
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource:
+ CW2PEPF000056BF.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+ b21024fa-c29e-4382-ff09-08dc3db6890f
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-Forefront-Antispam-Report:
+ CIP:185.58.85.182;CTRY:GB;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:eu-smtp-delivery-182.mimecast.com;PTR:eu-smtp-delivery-182.mimecast.com;CAT:NONE;SFS:(13230031)(1143399003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Mar 2024 08:22:21.0077
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 665edabd-68e3-4529-384b-08dc3db68b57
+X-MS-Exchange-CrossTenant-Id: 615372fc-d750-4bc9-b399-cc84f3fe3e95
+X-MS-Exchange-CrossTenant-AuthSource: CW2PEPF000056BF.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LO0P265MB3225
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.3181821
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.7339.034
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?us-ascii?Q?/5sHy3hKg/Y1EmEmEfGxLnmuvTa3jYH15dQNuqHHILY+tHwPuEkgsq0HUaEQ?=
+ =?us-ascii?Q?4jNeyvE/B1p3aYxexFtrmGvOPo5m0QNmYCoobzmgNPJY2+d1wOkcF7dLEOHg?=
+ =?us-ascii?Q?LELzwoPwa4E9bripX5LJ0j9WLgX0IGbqhQtm9nA2lG+1C4o8+q1UOaKJiZDw?=
+ =?us-ascii?Q?cMoVaOO2i9UPDnJOJtqv3d6blGPxjDb08ICQKOs+2+h7e/w0mFG91Z+iroEk?=
+ =?us-ascii?Q?CukEPNB0nw1JjykiNSyvyb64WEZEsYuhJ/1nWJJnwJsuzJ5qE7km4YBAoFfX?=
+ =?us-ascii?Q?nBQgqyOYHn2KOwLwBkf2r2Jq99f/RzEOhkIrlTXnhftrQw6Gkkl+cYVgarKZ?=
+ =?us-ascii?Q?janUpiLfmJk2890Lu5fL643W8IZnJrcq6KXPjCJO9gNSM66OANUM2eE9vmB6?=
+ =?us-ascii?Q?RELtsVlBevr70PxyucoUtCgsj+OChH9aI/kmvvnV8EQmtgAY+Ci79mHJXnyB?=
+ =?us-ascii?Q?5gKcWk2PN3M7dm3imFnA6jxE+jXHD57IlHgeYm2DESnaPqDd00oBkeD5ajda?=
+ =?us-ascii?Q?FT3uV8iW0jceCGXtwVK1RRoAyqtPjlti6l9Dw1NYktDy2eKhW3j1Kx+4nCOP?=
+ =?us-ascii?Q?nf+mJbJjCj2WOjqjHHZBhbpSP/5tt650bGBpZPaXeNSJ+slDWV3oBrGGLU0l?=
+ =?us-ascii?Q?zku5VSh4+Rbt/z5G1kUXBTlr59n4sDU0CJAWT216JvkAcr3p6sUnbnnlfRBG?=
+ =?us-ascii?Q?HEWTygBRn0MI/cIwTrPAFmuWNYRFeUIxaWgWP38+YDsbsypUNVEJQoOup2v5?=
+ =?us-ascii?Q?Fn62U8ZUEWVET8VvEufXB1Kh6YSukFxqCNdmBt002vo5e4lPouVbM4oLUCCh?=
+ =?us-ascii?Q?sL503JmAKZZFPpQi8y102N44XULWnSQwRVzba9Wf2tTJyp/kfcVMdRN1Dmir?=
+ =?us-ascii?Q?nYvHVQt57jLQn6eJdrmB4rXijeHC89zSHzlX5DrpJwxKgd+t4uaJzd4hS10B?=
+ =?us-ascii?Q?BtwbRZ6Kr7/N1iTVzGBdFcum7LEcYPu4z0z4KDMgNTQ9afKjh2dOdPgS8vTS?=
+ =?us-ascii?Q?p2yYAAzPjXnFSIFiR9d4xEg2D+w80lXGgrXtE69weWNIMiv4P21HsZmsToQl?=
+ =?us-ascii?Q?ByE5Hjrn8B3pyQ1xA6GUY4dVrv/+y0c9LB05LmSeRoZTVSLjW/koSZY1XMbh?=
+ =?us-ascii?Q?SoraBY7AnMZjHwT9oadw3TBOFhqQRWYVfqbfIZHNIMLkrWzyIZSmFpU6+M8u?=
+ =?us-ascii?Q?ZOWMxsyuulcwEqd9DS0OrIiXGwqjsGSwnPG64zFGDtAxW2jMN8GoVSIL2Y+k?=
+ =?us-ascii?Q?k1PM4hbS3LOOyGE25efgH0kpe50pxZlO1E8NcsarIIGV03q2zUOL85gFl32i?=
+ =?us-ascii?Q?KMXCw0gnE/USpZPOQGMRndiepTT2H6lx0US+i3nTQuCkEjffEW9OF7jmyu78?=
+ =?us-ascii?Q?HMrW//dB6mb+zO/mYyPxPDCbMU057al6jBngBi8WNx5+pj6dYGy7Za30/CgX?=
+ =?us-ascii?Q?K/59cwQhdV3JchO8yqKQf1FZ7lj4JRmtfsTrHAoslN69xw8V1PNWKPimhJcn?=
+ =?us-ascii?Q?/ftsjwue8ATKfjyrdZjHx05wsd00ffCyMlrUu1Igkti2tct+0Xz12/5bM6Bn?=
+ =?us-ascii?Q?98VW5W0kclzeF05XZpKpzS7WgeoBKGB1OkCnVPY4hEXbAbXtV2n6MQG/55vx?=
+ =?us-ascii?Q?QP+1pQgKVNuYY1ZtAC0Vo1xWuWoO7LNkFWbVRuyvjssiqJ5wIb+k7l6my98k?=
+ =?us-ascii?Q?22wlrWIHWMdSVFyPGJY9Ohp2PzLkqugm0aHgUqbV/HCF3taBcDA9QbuNT0i0?=
+ =?us-ascii?Q?xrRLLoA4INpkl/ywH5lsXEhOCwiD1hhzzhBmm9LpgpZIa+zZoSEfNKxrvGfC?=
+ =?us-ascii?Q?U3Hn2ZupsNkeTF0ejpSwctsQbxo3fZ4YXxuSViEmQlOfm2yGhpzBtovwyAmj?=
+ =?us-ascii?Q?+SLGhFmEWrA6GQl7Hon4/iWiFb5JmJ87yJ209elEfBCgoKwa+2rrWioX3uvs?=
+ =?us-ascii?Q?56jdoIs1lovMJsBmx+iBZXfxBlyB1cR4X944tM51IWOYxqyuS27FBrnRXB0N?=
+ =?us-ascii?Q?VilO2EYTwM1LStjORWTuIBephhrbgH+zaVefKcBW3uKjSNuhuvupWRqPXC41?=
+ =?us-ascii?Q?maAbwp3j?=
+Content-type: multipart/mixed;
+	boundary="B_3851697305_4187281530"
+
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3851697305_4187281530
+Content-type: multipart/related;
+	boundary="B_3851697305_1567603331"
+
+--B_3851697305_1567603331
+Content-type: multipart/alternative;
+	boundary="B_3851697305_3802791071"
+
+
+--B_3851697305_3802791071
+Content-type: text/plain;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+
+Dear Ms Knight
+
+I have just seen the email and the application for an order (if it is an ap=
+plication =E2=80=93 I have seen no D11 if one has been issued?).
+
+I am not in a position to respond to this, but ask that no orders are made =
+without Mrs Zahmoul having an opportunity to be heard.
+
+Yours sincerely
+
+Brent Molyneux=20
+
+=20
+
+Brent Molyneux KC - Barrister=20
+
+Chambers of Alexis Campbell KC and Nicholas Allen KC=20
+
+A 29 Bedford Row, London WC1R 4HE DX LDE 1044=20
+T 020 7404 1044 E bmolyneux@29br.co.uk=20
+
+This e-mail is intended for the use of the addressee only and may contain i=
+nformation that is confidential, privileged and/or exempt from disclosure. I=
+f you are not the intended recipient you must not read, copy, distribute or =
+disseminate this communication or any attachments to anyone other than the a=
+ddressee or use the information it contains or otherwise take any action in =
+reliance on it. If you receive this communication in error, please inform me=
+ or a member of staff at 29BR by telephone immediately and permanently delet=
+e it from your computer.=20
+
+29BR is committed to safeguarding your privacy. 29BR collects, uses and is =
+responsible for personal information about you.=20
+
+Please click here to read our privacy policy in order to understand how you=
+r information will be treated. It also explains your rights in relation to y=
+our personal data and how to contact us.=20
+
+Regulated by the Bar Standards Board.=20
+From: Alexis Campbell KC <ACampbellKC@29br.co.uk>=20
+Sent: Wednesday, March 6, 2024 8:15 AM
+To: Nadia <nadia@rosekross.com>; Knight, Anita <Anita.Knight@Justice.gov.uk=
+>
+Cc: Brent Molyneux KC <BMolyneux@29br.co.uk>; Sassa-Ann Amaouche <samaouche=
+@29br.co.uk>; Henry Crisp <Henry.Crisp@stowefamilylaw.co.uk>; Lucy Birch <Lu=
+cy.Birch@stowefamilylaw.co.uk>; AFP BLOOM <Zoe.Bloom@afpbloom.com>
+Subject: RE: BV20D01752 Zahmoul vs Zahmoul - FW: Material Event - SPAC merg=
+er effective date 8 February 2024 -Nasdaq ticker BRLS
+
+=20
+
+Dear Ms Knight,
+
+Would you please ask his Lordship not to read any of the information sent t=
+o you by Mrs Zahmoul, in this message, or any other and pass the following t=
+o his Lordship?
+
+Thank you,
+
+Alexis
+
+=20
+
+Dear Judge,
+
+In respect of Mrs Zahmoul message below, I would ask you not to read the in=
+formation she has submitted.
+
+Mrs Zahmoul did not send a copy of her message to my instructing solicitors=
+ in advance or when she sent the note to his Lordship.
+
+I have not had a chance to look at the information. I am now engaged on oth=
+er cases (as I am sure you are) and I cannot continue to give proper attenti=
+on to these ad hoc to these further messages.
+
+I understand Mrs Zahmoul continues to write directly to third parties about=
+ the case. This must stop.=20
+
+Would you please order Mrs Zahmoul to desist with contacting third parties =
+about the case or sending evidence to the court pending your determination?
+
+The evidence is closed. Mrs Zahmoul has solicitors on the record. If she wi=
+shes to re-open the evidence (without our consent) she needs to make a forma=
+l application to do so.=20
+
+I apologise for the unsolicited message.
+
+Best wishes,
+
+Alexis Campbell
+
+=20
+
+From: Nadia <nadia@rosekross.com>=20
+Sent: Wednesday, March 6, 2024 5:24 AM
+To: Knight, Anita <Anita.Knight@Justice.gov.uk>
+Cc: Alexis Campbell KC <ACampbellKC@29br.co.uk>; Brent Molyneux KC <BMolyne=
+ux@29br.co.uk>
+Subject: BV20D01752 Zahmoul vs Zahmoul - FW: Material Event - SPAC merger e=
+ffective date 8 February 2024 -Nasdaq ticker BRLS
+Importance: High
+
+=20
+
+Dear Anita,
+
+=20
+
+I hope you are well.
+
+I would be most grateful if you could please pass this on to His Lordship.=20
+
+This is material to the case and to the Final Hearing which took place befo=
+re His Lordship on 19th - 28th February 2024.=20
+
+I am copying counsels on both sides.
+
+Thank you very much.
+
+=20
+
+With my kind wishes,
+
+Nadia
+
+=20
+
+=20
+
+Your Lordship,
+
+=20
+
+I am sincerely sorry to trouble Your Lordship so soon after the Final Heari=
+ng. The matter of Oxus Acquisition Corp. is very material to the case and ca=
+me to my attention almost immediately after the trial ended.  Despite writin=
+g to the respondent one week ago to request an explanation, we have not rece=
+ived a reply.=20
+
+=20
+
+This open-ended situation is very harmful to me. I feel powerless, vulnerab=
+le, and extremely distressed. I find it impossible to put the children=E2=80=99s a=
+nd my future into the respondent=E2=80=99s hands and wait without knowing how long=
+ I must wait.
+
+=20
+
+I put the matter into Your Lordship=E2=80=99s hands and if one week is not enough=
+, I am happy to wait as long as Your Lordship would like me to.=20
+
+=20
+
+At the Final Hearing and under oath, the respondent represented that his sh=
+ares in Oxus Acquisition Corp. were =E2=80=9Cworth zero=E2=80=9D. In the asset schedule =
+submitted for the Final Hearing, he reported 50,000 shares at a value of $0.=
+00.=20
+
+=20
+
+This is factually incorrect and constitutes a false statement.
+
+=20
+The respondent was appointed to the Board of Directors of Oxus Acquisition =
+Corp. on 1st June 2022 and=20
+On 7th June 2022 Form 3 =E2=80=9CInitial Statement of Beneficial Ownership of Sec=
+urities=E2=80=9D was filed with the SEC.
+PAGE 340 of SEC PROSPECTUS (attached): =E2=80=9COn June 7, 2022, 50,000 Founder S=
+hares were transferred to Mr. Karim Zahmoul by the Sponsor. The fair value o=
+f the 50,000 Founder Shares granted to the Mr. Karim Zahmoul on June 7, 2022=
+, was $0.02 million or $0.33 per share. The Founder Shares were granted subj=
+ect to a performance condition (i.e., the occurrence of a Business Combinati=
+on)=E2=80=9D.
+The Founder Shares were granted subject to a performance condition (i.e., t=
+he occurrence of a Business Combination).
+The Business Combination occurred on 7th February 2024.
+Newco began trading on Nasdaq on 8th February 2024 under the ticker symbol =
+BRLS.
+The Founder Shares lock-up period is defined in page 43 of the Prospectus f=
+iled with the SEC (attached) and in the attached SEC Filings Excerpts.
+=20
+
+Conclusion:=20
+
+The Final Hearing started on 19th February 2024.=20
+
+At the time of the Final Hearing and when he testified under oath, the resp=
+ondent knew (i) that the Business Combination had occurred and (ii) that the=
+ value of his 50,000 Founders Shares was not zero.
+
+=20
+
+Email sent to the respondent=E2=80=99s solicitors on 29th February 2024 (attached=
+):
+
+=E2=80=9CDear Valeria,
+
+We attach documents in relation to the SPAC merger between Oxus and Boreali=
+s which closed on 7th February 2024. The post-merger stock has been trading =
+on the NASDAQ since the 8th February 2024. In his ES2 dated 19.02.2024 he as=
+cribes a nil value to his OXUS equity. Given that the merged entity (ticker =
+BRLS) is trading at a stock price of $9.20 (and your client had 50,000 share=
+s in the pre-merger OXUS) please can you explain the value of his stockholdi=
+ng with reference to the attached documents and any others in your clients p=
+ossession =E2=80=93 and why he ascribed a nil value to his equity in the ES2.=20
+
+We look forward to hearing from you.=E2=80=9D
+
+=20
+
+Respectfully,
+
+=20
+
+Nadia Zahmoul
+
+=20
+
+On 29/02/2024, 3:41=E2=80=AFPM, "Nadia" <nadia@rosekross.com> wrote:
+
+=20
+
+Dear Brent,
+
+=20
+
+THE FOLLOWING SHOWS THAT ONCE AGAIN, THE RESPONDENT IS TAKING ME AND THE CO=
+URT FOR FOOLS. Please send to the judge
+
+=20
+
+The Oxus and Borealis M&A closed on 7 February 2024 and the Newco began tra=
+ding on Nasdaq on 8 February 2024 under the ticker symbol BRSL.
+
+=20
+The attached forms from the SEC provide documentary evidence of the followi=
+ng facts:
+=20
+The respondent has 50,000 Founder shares
+The grant value is $0.33 per share
+The shares are now listed on Nasdaq under ticker symbol BRLS
+The current market price is $9.20
+The current price appreciation (book value): 2588%
+The current market value of the respondent=E2=80=99s shares: $443,500
+Lock-up period: one year=20
+=20
+Warrants and Options granted to directors and founders have not been disclo=
+sed.
+=20
+
+=20
+The Final Hearing before Justice MacDonald started on Monday 19th February.=
+ During his testimonies under oath the respondent represented that his share=
+s in Oxus Acquisition Fund were worth zero. He also instructed his counsel t=
+o represent to the Court that his =E2=80=9Cshares in Oxus were on the side and wer=
+e worth zero=E2=80=9D. This is a false representation. The shares owned by the res=
+pondent are worth $443,500. The lock-up period does not define the value of =
+the shares. The respondent can borrow against the shares during the lock-up =
+and can monetize them. He knows this. The key metric which determines the va=
+lue of the shares is the CLOSING OF THE MERGER TRANSACTION. This happened on=
+ 7 February 2024, 11 days before the trial started.=20
+THAT IS THE DATE WHICH DETERMINES THE VALUE OF THE RESPONDENT=E2=80=99S SHARES.
+
+=20
+
+=20
+
+With kind wishes,
+
+Nadia
+
+=20
+
+=20
+
+BV20D01752
+
+Fraud Unravels All=20
+
+Veritas Numquam Perit
+
+UK: +44 79 1332 8615
+
+US: +1 424 426 9226
+
+
+
+--B_3851697305_3802791071
+Content-type: text/html;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><meta na=
+me=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:"Baguet Script";}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;
+	mso-ligatures:standardcontextual;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#467886;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;
+	mso-ligatures:standardcontextual;}
+span.EmailStyle21
+	{mso-style-type:personal-reply;
+	font-family:"Aptos",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:1065448367;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-761746760 67698703 67698713 67698715 67698703 67698=
+713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l1
+	{mso-list-id:1229880539;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1167070308 67698711 67698713 67698715 67698703 67698=
+713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%1\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l1:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l1:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l2
+	{mso-list-id:1305230881;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1643305396 495241498 67698691 67698693 67698689 6769=
+8691 67698693 67698689 67698691 67698693;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Aptos;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3D"EN-GB" link=3D"#467886" =
+vlink=3D"#96607D" style=3D"word-wrap:break-word"><br><div class=3D"WordSection1"><=
+p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-fareast-language:EN-US=
+">Dear Ms Knight<o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font=
+-size:11.0pt;mso-fareast-language:EN-US">I have just seen the email and the =
+application for an order (if it is an application =E2=80=93 I have seen no D11 if =
+one has been issued?).<o:p></o:p></span></p><p class=3D"MsoNormal"><span style=
+=3D"font-size:11.0pt;mso-fareast-language:EN-US">I am not in a position to res=
+pond to this, but ask that no orders are made without Mrs Zahmoul having an =
+opportunity to be heard.<o:p></o:p></span></p><p class=3D"MsoNormal"><span sty=
+le=3D"font-size:11.0pt;mso-fareast-language:EN-US">Yours sincerely<o:p></o:p><=
+/span></p><p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-fareast-lan=
+guage:EN-US">Brent Molyneux <o:p></o:p></span></p><p class=3D"MsoNormal"><span=
+ style=3D"font-size:11.0pt;mso-fareast-language:EN-US"><o:p>&nbsp;</o:p></span=
+></p><font face=3D"Calibri"><font size=3D"3"><br><b>Brent Molyneux KC </b>- Barr=
+ister <br><b><br>Chambers of Alexis Campbell KC and Nicholas Allen KC </b><p=
+><b><span style=3D"color: Navy;">A</span> </b>29 Bedford Row, London WC1R 4HE<=
+b><span style=3D"color: Navy;"> DX</span></b> LDE 1044 <br><b><span style=3D"col=
+or: Navy;">T</span></b> 020 7404 1044 <b><span style=3D"color: Navy;">E</span>=
+</b> <a href=3D"mailto:bmolyneux@29br.co.uk">bmolyneux@29br.co.uk</a> <br><fon=
+t face=3D"Calibri"><font size=3D"3"><br><table border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0"><tbody><tr><td><a href=3D"https://www.29br.co.uk"><img border=3D"0" sr=
+c=3D"cid:124030608222000373@uk-mta-194.uk.mimecast.lan"></a></td></tr></tbody>=
+</table></font></font></p><font face=3D"Calibri"><font size=3D"2"><p style=3D"text=
+-align:justify">This e-mail is intended for the use of the addressee only an=
+d may contain information that is confidential, privileged and/or exempt fro=
+m disclosure. If you are not the intended recipient you must not read, copy,=
+ distribute or disseminate this communication or any attachments to anyone o=
+ther than the addressee or use the information it contains or otherwise take=
+ any action in reliance on it. If you receive this communication in error, p=
+lease inform me or a member of staff at 29BR by telephone immediately and pe=
+rmanently delete it from your computer. <br><br>29BR is committed to safegua=
+rding your privacy. 29BR collects, uses and is responsible for personal info=
+rmation about you. <br><br>Please <a href=3D"https://www.29br.co.uk/images/upl=
+oads/documents/Privacy_notice_-_lay_clients.pdf" target=3D"_blank">click here<=
+/a> to read our privacy policy in order to understand how your information w=
+ill be treated. It also explains your rights in relation to your personal da=
+ta and how to contact us. <br><br>Regulated by the Bar Standards Board. <br>=
+</p><div><div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0p=
+t 0cm 0cm 0cm"><p class=3D"MsoNormal"><b><span lang=3D"EN-US" style=3D"font-size:1=
+1.0pt;font-family:&quot;Calibri&quot;,sans-serif;mso-ligatures:none">From:</=
+span></b><span lang=3D"EN-US" style=3D"font-size:11.0pt;font-family:&quot;Calibr=
+i&quot;,sans-serif;mso-ligatures:none"> Alexis Campbell KC &lt;ACampbellKC@2=
+9br.co.uk&gt; <br><b>Sent:</b> Wednesday, March 6, 2024 8:15 AM<br><b>To:</b=
+> Nadia &lt;nadia@rosekross.com&gt;; Knight, Anita &lt;Anita.Knight@Justice.=
+gov.uk&gt;<br><b>Cc:</b> Brent Molyneux KC &lt;BMolyneux@29br.co.uk&gt;; Sas=
+sa-Ann Amaouche &lt;samaouche@29br.co.uk&gt;; Henry Crisp &lt;Henry.Crisp@st=
+owefamilylaw.co.uk&gt;; Lucy Birch &lt;Lucy.Birch@stowefamilylaw.co.uk&gt;; =
+AFP BLOOM &lt;Zoe.Bloom@afpbloom.com&gt;<br><b>Subject:</b> RE: BV20D01752 Z=
+ahmoul vs Zahmoul - FW: Material Event - SPAC merger effective date 8 Februa=
+ry 2024 -Nasdaq ticker BRLS<o:p></o:p></span></p></div></div><p class=3D"MsoNo=
+rmal"><o:p>&nbsp;</o:p></p><p class=3D"MsoNormal"><span style=3D"font-size:11.0p=
+t;mso-fareast-language:EN-US">Dear Ms Knight,<o:p></o:p></span></p><p class=3D=
+"MsoNormal"><span style=3D"font-size:11.0pt;mso-fareast-language:EN-US">Would =
+you please ask his Lordship not to read any of the information sent to you b=
+y Mrs Zahmoul, in this message, or any other and pass the following to his L=
+ordship?<o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:11=
+.0pt;mso-fareast-language:EN-US">Thank you,<o:p></o:p></span></p><p class=3D"M=
+soNormal"><span style=3D"font-size:11.0pt;mso-fareast-language:EN-US">Alexis<o=
+:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-f=
+areast-language:EN-US"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><spa=
+n style=3D"font-size:11.0pt;mso-fareast-language:EN-US">Dear Judge,<o:p></o:p>=
+</span></p><p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-fareast-la=
+nguage:EN-US">In respect of Mrs Zahmoul message below, I would ask you not t=
+o read the information she has submitted.<o:p></o:p></span></p><p class=3D"Mso=
+Normal"><span style=3D"font-size:11.0pt;mso-fareast-language:EN-US">Mrs Zahmou=
+l did not send a copy of her message to my instructing solicitors in advance=
+ or when she sent the note to his Lordship.<o:p></o:p></span></p><p class=3D"M=
+soNormal"><span style=3D"font-size:11.0pt;mso-fareast-language:EN-US">I have n=
+ot had a chance to look at the information. I am now engaged on other cases =
+(as I am sure you are) and I cannot continue to give proper attention to the=
+se ad hoc to these further messages.<o:p></o:p></span></p><p class=3D"MsoNorma=
+l"><span style=3D"font-size:11.0pt;mso-fareast-language:EN-US">I understand Mr=
+s Zahmoul continues to write directly to third parties about the case. This =
+must stop. <o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size=
+:11.0pt;mso-fareast-language:EN-US">Would you please order Mrs Zahmoul to de=
+sist with contacting third parties about the case or sending evidence to the=
+ court pending your determination?<o:p></o:p></span></p><p class=3D"MsoNormal"=
+><span style=3D"font-size:11.0pt;mso-fareast-language:EN-US">The evidence is c=
+losed. Mrs Zahmoul has solicitors on the record. If she wishes to re-open th=
+e evidence (without our consent) she needs to make a formal application to d=
+o so. <o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:11.0=
+pt;mso-fareast-language:EN-US">I apologise for the unsolicited message.<o:p>=
+</o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-fare=
+ast-language:EN-US">Best wishes,<o:p></o:p></span></p><p class=3D"MsoNormal"><=
+span style=3D"font-size:11.0pt;mso-fareast-language:EN-US">Alexis Campbell<o:p=
+></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-far=
+east-language:EN-US"><o:p>&nbsp;</o:p></span></p><div><div style=3D"border:non=
+e;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm"><p class=3D"MsoNor=
+mal"><b><span lang=3D"EN-US" style=3D"font-size:11.0pt;font-family:&quot;Calibri=
+&quot;,sans-serif;mso-ligatures:none">From:</span></b><span lang=3D"EN-US" sty=
+le=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;mso-ligature=
+s:none"> Nadia &lt;<a href=3D"mailto:nadia@rosekross.com">nadia@rosekross.com<=
+/a>&gt; <br><b>Sent:</b> Wednesday, March 6, 2024 5:24 AM<br><b>To:</b> Knig=
+ht, Anita &lt;<a href=3D"mailto:Anita.Knight@Justice.gov.uk">Anita.Knight@Just=
+ice.gov.uk</a>&gt;<br><b>Cc:</b> Alexis Campbell KC &lt;<a href=3D"mailto:ACam=
+pbellKC@29br.co.uk">ACampbellKC@29br.co.uk</a>&gt;; Brent Molyneux KC &lt;<a=
+ href=3D"mailto:BMolyneux@29br.co.uk">BMolyneux@29br.co.uk</a>&gt;<br><b>Subje=
+ct:</b> BV20D01752 Zahmoul vs Zahmoul - FW: Material Event - SPAC merger eff=
+ective date 8 February 2024 -Nasdaq ticker BRLS<br><b>Importance:</b> High<o=
+:p></o:p></span></p></div></div><p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p><p=
+ class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,s=
+ans-serif;mso-ligatures:none">Dear Anita,<o:p></o:p></span></p><p class=3D"Mso=
+Normal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif;m=
+so-ligatures:none"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><span la=
+ng=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif;mso-ligatures:non=
+e">I hope you are well.<o:p></o:p></span></p><p class=3D"MsoNormal"><span lang=
+=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif;mso-ligatures:none"=
+>I would be most grateful if you could please pass this on to His Lordship. =
+<o:p></o:p></span></p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-fa=
+mily:&quot;Arial&quot;,sans-serif;mso-ligatures:none">This is material to th=
+e case and to the Final Hearing which took place before His Lordship on 19<s=
+up>th</sup> - 28<sup>th</sup> February 2024. <o:p></o:p></span></p><p class=3D=
+"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-ser=
+if;mso-ligatures:none">I am copying counsels on both sides.<o:p></o:p></span=
+></p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&=
+quot;,sans-serif;mso-ligatures:none">Thank you very much.<o:p></o:p></span><=
+/p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&qu=
+ot;,sans-serif;mso-ligatures:none"><o:p>&nbsp;</o:p></span></p><p class=3D"Mso=
+Normal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif;m=
+so-ligatures:none">With my kind wishes,<o:p></o:p></span></p><p class=3D"MsoNo=
+rmal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif;mso=
+-ligatures:none">Nadia<o:p></o:p></span></p><div style=3D"border:none;border-b=
+ottom:dotted windowtext 3.0pt;padding:0cm 0cm 1.0pt 0cm"><p class=3D"MsoNormal=
+"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif;mso-lig=
+atures:none"><o:p>&nbsp;</o:p></span></p></div><p class=3D"MsoNormal"><span la=
+ng=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif;mso-ligatures:non=
+e"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=
+=3D"font-family:&quot;Arial&quot;,sans-serif;mso-ligatures:none">Your Lordship=
+,<o:p></o:p></span></p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-f=
+amily:&quot;Arial&quot;,sans-serif;mso-ligatures:none"><o:p>&nbsp;</o:p></sp=
+an></p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Aria=
+l&quot;,sans-serif;mso-ligatures:none">I am sincerely sorry to trouble Your =
+Lordship so soon after the Final Hearing. The matter of <b>Oxus Acquisition =
+Corp</b>. is very material to the case and came to my attention almost immed=
+iately after the trial ended. &nbsp;Despite writing to the respondent one we=
+ek ago to request an explanation, we have not received a reply. <o:p></o:p><=
+/span></p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;A=
+rial&quot;,sans-serif;mso-ligatures:none"><o:p>&nbsp;</o:p></span></p><p cla=
+ss=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-=
+serif;mso-ligatures:none">This open-ended situation is very harmful to me. I=
+ feel powerless, vulnerable, and extremely distressed. I find it impossible =
+to put the children=E2=80=99s and my future into the respondent=E2=80=99s hands and <u>w=
+ait without knowing how long I must wait.</u><o:p></o:p></span></p><p class=3D=
+"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-ser=
+if;mso-ligatures:none"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><spa=
+n lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif;mso-ligatures=
+:none">I put the matter into Your Lordship=E2=80=99s hands and if one week is not =
+enough, I am happy to wait as long as Your Lordship would like me to. <o:p><=
+/o:p></span></p><p class=3D"MsoNormal" style=3D"text-align:justify;text-autospac=
+e:none"><span lang=3D"EN-US" style=3D"font-size:11.0pt;font-family:&quot;Arial&q=
+uot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal" style=3D"tex=
+t-align:justify;text-autospace:none"><span lang=3D"EN-US" style=3D"font-family:&=
+quot;Arial&quot;,sans-serif">At the Final Hearing and under oath, the respon=
+dent represented that his shares in Oxus Acquisition Corp. were =E2=80=9C<b><i>wor=
+th zero</i></b>=E2=80=9D. In the asset schedule submitted for the Final Hearing, h=
+e reported 50,000 shares at a <b><i>value of $0.00.</i></b> <o:p></o:p></spa=
+n></p><p class=3D"MsoNormal" style=3D"text-align:justify;text-autospace:none"><s=
+pan lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp=
+;</o:p></span></p><p class=3D"MsoNormal" style=3D"text-align:justify;text-autosp=
+ace:none"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif=
+">This is factually incorrect and constitutes a false statement.<o:p></o:p><=
+/span></p><p class=3D"MsoNormal" style=3D"text-align:justify;text-autospace:none=
+"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif"><o:p>&=
+nbsp;</o:p></span></p><ol style=3D"margin-top:0cm" start=3D"1" type=3D"a"><li clas=
+s=3D"MsoListParagraph" style=3D"margin-left:0cm;text-align:justify;mso-list:l1 l=
+evel1 lfo1;text-autospace:none"><span lang=3D"EN-US" style=3D"font-family:&quot;=
+Arial&quot;,sans-serif">The respondent was appointed to the <b><i>Board of D=
+irectors of Oxus Acquisition Corp. on <u>1<sup>st</sup> June 2022</u></i></b=
+> and <o:p></o:p></span></li><li class=3D"MsoListParagraph" style=3D"margin-left=
+:0cm;text-align:justify;mso-list:l1 level1 lfo1;text-autospace:none"><span l=
+ang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif">On <b><i><u>7<s=
+up>th</sup> June 2022</u></i></b> Form 3 =E2=80=9C<i>Initial Statement of Benefici=
+al Ownership of Securities=E2=80=9D</i> was filed with the SEC.<o:p></o:p></span><=
+/li><li class=3D"MsoListParagraph" style=3D"margin-left:0cm;text-align:justify;m=
+so-list:l1 level1 lfo1;text-autospace:none"><b><span lang=3D"EN-US" style=3D"fon=
+t-family:&quot;Arial&quot;,sans-serif">PAGE 340 of SEC PROSPECTUS (attached)=
+</span></b><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-seri=
+f">: =E2=80=9C<b><i><span style=3D"color:black">On <u>June 7, 2022</u>, 50,000 Found=
+er Shares were transferred to Mr. Karim Zahmoul by the Sponsor. The fair val=
+ue of the 50,000 Founder Shares granted to the Mr. Karim Zahmoul on June 7, =
+2022, was $0.02 million or $0.33 per share. The Founder Shares were granted =
+subject to a performance condition (i.e., the occurrence of a Business Combi=
+nation)=E2=80=9D.</span><o:p></o:p></i></b></span></li><li class=3D"MsoNormal" style=
+=3D"color:black;mso-list:l1 level1 lfo1"><span lang=3D"EN-US" style=3D"font-family=
+:&quot;Arial&quot;,sans-serif;mso-ligatures:none">The Founder Shares were gr=
+anted&nbsp;<b><i>subject to a&nbsp;performance condition&nbsp;(i.e.,&nbsp;th=
+e occurrence of a Business Combination).</i></b><o:p></o:p></span></li><li c=
+lass=3D"MsoNormal" style=3D"color:black;mso-list:l1 level1 lfo1"><b><i><span lan=
+g=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif;mso-ligatures:none=
+">The Business Combination occurred on <u>7<sup>th</sup>&nbsp;February 2024<=
+/u>.</span></i></b><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,s=
+ans-serif;mso-ligatures:none"><o:p></o:p></span></li><li class=3D"MsoNormal" s=
+tyle=3D"color:black;mso-list:l1 level1 lfo1"><span lang=3D"EN-US" style=3D"font-fa=
+mily:&quot;Arial&quot;,sans-serif;mso-ligatures:none">Newco began trading on=
+&nbsp;<b><i>Nasdaq on <u>8<sup>th</sup>&nbsp;February 2024</u> under the tic=
+ker symbol BRLS.</i></b><o:p></o:p></span></li><li class=3D"MsoListParagraph" =
+style=3D"margin-left:0cm;text-align:justify;mso-list:l1 level1 lfo1;text-autos=
+pace:none"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-seri=
+f;color:black;mso-ligatures:none">The Founder Shares&nbsp;<b><i>lock-up peri=
+od</i></b>&nbsp;is defined <b><i>in page 43 </i></b>of the Prospectus filed =
+with the SEC (attached) and in the attached SEC Filings Excerpts.</span><spa=
+n lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif"><o:p></o:p><=
+/span></li></ol><p class=3D"MsoNormal" style=3D"text-align:justify;text-autospac=
+e:none"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif">=
+<o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><b><u><span lang=3D"EN-US" st=
+yle=3D"font-family:&quot;Arial&quot;,sans-serif;mso-ligatures:none">Conclusion=
+: <o:p></o:p></span></u></b></p><p class=3D"MsoNormal"><b><span lang=3D"EN-US" s=
+tyle=3D"font-family:&quot;Arial&quot;,sans-serif;mso-ligatures:none">The Final=
+ Hearing started on 19<sup>th</sup> February 2024. <o:p></o:p></span></b></p=
+><p class=3D"MsoNormal"><b><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&q=
+uot;,sans-serif;mso-ligatures:none">At the time of the Final Hearing and whe=
+n he testified under oath, the respondent knew (i) that the <u>Business Comb=
+ination had occurred</u> and (ii) that the value of his 50,000 Founders Shar=
+es <u>was not zero.<o:p></o:p></u></span></b></p><p class=3D"MsoNormal" style=3D=
+"text-align:justify;text-autospace:none"><span lang=3D"EN-US" style=3D"font-fami=
+ly:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNo=
+rmal" style=3D"text-align:justify;text-autospace:none"><span lang=3D"EN-US" styl=
+e=3D"font-family:&quot;Arial&quot;,sans-serif">Email sent to the respondent=E2=80=99=
+s solicitors on 29<sup>th</sup> February 2024 (attached):<o:p></o:p></span><=
+/p><p class=3D"MsoNormal" style=3D"text-align:justify;text-autospace:none"><i><s=
+pan lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif">=E2=80=9CDear Va=
+leria,<o:p></o:p></span></i></p><p class=3D"MsoNormal" style=3D"text-align:justi=
+fy;text-autospace:none"><i><span lang=3D"EN-US" style=3D"font-family:&quot;Arial=
+&quot;,sans-serif">We attach documents in relation to the SPAC merger betwee=
+n Oxus and Borealis which closed on 7<sup>th</sup> February 2024. The post-m=
+erger stock has been trading on the NASDAQ since the 8<sup>th</sup> February=
+ 2024. In his ES2 dated 19.02.2024 he ascribes a nil value to his OXUS equit=
+y. Given that the merged entity (ticker BRLS) is trading at a stock price of=
+ $9.20 (and your client had 50,000 shares in the pre-merger OXUS) please can=
+ you explain the value of his stockholding with reference to the attached do=
+cuments and any others in your clients possession =E2=80=93 and why he ascribed a =
+nil value to his equity in the ES2. <o:p></o:p></span></i></p><p class=3D"MsoN=
+ormal" style=3D"text-align:justify;text-autospace:none"><i><span lang=3D"EN-US" =
+style=3D"font-family:&quot;Arial&quot;,sans-serif">We look forward to hearing =
+from you.=E2=80=9D<o:p></o:p></span></i></p><p class=3D"MsoNormal"><span lang=3D"EN-US=
+" style=3D"font-family:&quot;Arial&quot;,sans-serif;mso-ligatures:none"><o:p>&=
+nbsp;</o:p></span></p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-fa=
+mily:&quot;Arial&quot;,sans-serif;mso-ligatures:none">Respectfully,<o:p></o:=
+p></span></p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quo=
+t;Arial&quot;,sans-serif;mso-ligatures:none"><o:p>&nbsp;</o:p></span></p><p =
+class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sa=
+ns-serif;mso-ligatures:none">Nadia Zahmoul<o:p></o:p></span></p><p class=3D"Ms=
+oNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif;=
+mso-ligatures:none"><o:p>&nbsp;</o:p></span></p><div><div><p class=3D"MsoNorma=
+l"><span lang=3D"EN-US" style=3D"mso-ligatures:none">On 29/02/2024, 3:41</span><=
+span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif;mso-ligatu=
+res:none">=E2=80=AF</span><span lang=3D"EN-US" style=3D"mso-ligatures:none">PM, &quot;=
+Nadia&quot; &lt;<a href=3D"mailto:nadia@rosekross.com">nadia@rosekross.com</a>=
+&gt; wrote:<o:p></o:p></span></p></div></div><div><p class=3D"MsoNormal"><span=
+ lang=3D"EN-US" style=3D"mso-ligatures:none"><o:p>&nbsp;</o:p></span></p></div><=
+p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,=
+sans-serif">Dear Brent,<o:p></o:p></span></p><p class=3D"MsoNormal"><span lang=
+=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p><=
+/span></p><p class=3D"MsoNormal"><b><u><span lang=3D"EN-US" style=3D"font-family:&=
+quot;Arial&quot;,sans-serif">THE FOLLOWING SHOWS THAT ONCE AGAIN, THE RESPON=
+DENT IS TAKING ME AND THE COURT FOR FOOLS. Please send to the judge<o:p></o:=
+p></span></u></b></p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-fam=
+ily:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoN=
+ormal"><b><u><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif">The Oxus and Borealis M&amp;A closed on 7 February 2024 and the Newco b=
+egan trading on Nasdaq on 8 February 2024 under the ticker symbol BRSL.<o:p>=
+</o:p></span></u></b></p><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font=
+-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><ol style=3D=
+"margin-top:0cm" start=3D"1" type=3D"1"><li class=3D"MsoListParagraph" style=3D"marg=
+in-left:0cm;mso-list:l0 level1 lfo2"><span lang=3D"EN-US" style=3D"font-family:&=
+quot;Arial&quot;,sans-serif">The attached forms from the SEC provide documen=
+tary evidence of the following facts:<o:p></o:p></span></li></ol><p class=3D"M=
+soNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif=
+"><o:p>&nbsp;</o:p></span></p><ul style=3D"margin-top:0cm" type=3D"disc"><li cla=
+ss=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-list:l2 level1 lfo3"><span =
+lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif">The respondent=
+ has 50,000 Founder shares<o:p></o:p></span></li><li class=3D"MsoListParagraph=
+" style=3D"margin-left:0cm;mso-list:l2 level1 lfo3"><span lang=3D"EN-US" style=3D"=
+font-family:&quot;Arial&quot;,sans-serif">The grant value is $0.33 per share=
+<o:p></o:p></span></li><li class=3D"MsoListParagraph" style=3D"margin-left:0cm;m=
+so-list:l2 level1 lfo3"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&qu=
+ot;,sans-serif">The shares are now listed on Nasdaq under ticker symbol BRLS=
+<o:p></o:p></span></li><li class=3D"MsoListParagraph" style=3D"margin-left:0cm;m=
+so-list:l2 level1 lfo3"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&qu=
+ot;,sans-serif">The current market price is $9.20<o:p></o:p></span></li><li =
+class=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-list:l2 level1 lfo3"><sp=
+an lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif">The current=
+ price appreciation (book value): 2588%<o:p></o:p></span></li><li class=3D"Mso=
+ListParagraph" style=3D"margin-left:0cm;mso-list:l2 level1 lfo3"><b><span lang=
+=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif">The current market=
+ value of the respondent=E2=80=99s shares: $443,500<o:p></o:p></span></b></li><li =
+class=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-list:l2 level1 lfo3"><sp=
+an lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif">Lock-up per=
+iod: one year <o:p></o:p></span></li></ul><p class=3D"MsoNormal"><span lang=3D"E=
+N-US" style=3D"font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></sp=
+an></p><ol style=3D"margin-top:0cm" start=3D"2" type=3D"1"><li class=3D"MsoListParag=
+raph" style=3D"margin-left:0cm;mso-list:l0 level1 lfo2"><span lang=3D"EN-US" sty=
+le=3D"font-family:&quot;Arial&quot;,sans-serif">Warrants and Options granted t=
+o directors and founders have not been disclosed.<o:p></o:p></span></li></ol=
+><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot=
+;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><span lang=3D"E=
+N-US" style=3D"font-family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></sp=
+an></p><ol style=3D"margin-top:0cm" start=3D"3" type=3D"1"><li class=3D"MsoListParag=
+raph" style=3D"margin-left:0cm;mso-list:l0 level1 lfo2"><span lang=3D"EN-US" sty=
+le=3D"font-family:&quot;Arial&quot;,sans-serif">The Final Hearing before Justi=
+ce MacDonald started on Monday 19<sup>th</sup> February. During his testimon=
+ies under oath the respondent represented that his shares in Oxus Acquisitio=
+n Fund were worth zero. He also instructed his counsel to represent to the C=
+ourt that his =E2=80=9Cshares in Oxus were on the side and were worth zero=E2=80=9D. Thi=
+s is a false representation. The shares owned by the respondent are worth $4=
+43,500. The lock-up period does not define the value of the shares. The resp=
+ondent can borrow against the shares during the lock-up and can monetize the=
+m. He knows this. The key metric which determines the value of the shares is=
+ the <b><u>CLOSING OF THE MERGER TRANSACTION. This happened on 7 February 20=
+24, 11 days before the trial started. <o:p></o:p></u></b></span></li></ol><p=
+ class=3D"MsoListParagraph"><b><u><span lang=3D"EN-US" style=3D"font-family:&quot;=
+Arial&quot;,sans-serif">THAT IS THE DATE WHICH DETERMINES THE VALUE OF THE R=
+ESPONDENT=E2=80=99S SHARES.<o:p></o:p></span></u></b></p><p class=3D"MsoListParagrap=
+h"><b><u><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif"=
+><o:p><span style=3D"text-decoration:none">&nbsp;</span></o:p></span></u></b><=
+/p><p class=3D"MsoListParagraph"><span lang=3D"EN-US" style=3D"font-family:&quot;A=
+rial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoListParagrap=
+h"><span lang=3D"EN-US" style=3D"font-family:&quot;Arial&quot;,sans-serif">With =
+kind wishes,<o:p></o:p></span></p><p class=3D"MsoListParagraph"><span lang=3D"EN=
+-US" style=3D"font-family:&quot;Arial&quot;,sans-serif">Nadia<o:p></o:p></span=
+></p><div><p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:=
+&quot;Baguet Script&quot;;color:black;mso-ligatures:none"><o:p>&nbsp;</o:p><=
+/span></b></p><p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-fam=
+ily:&quot;Baguet Script&quot;;color:black;mso-ligatures:none"><o:p>&nbsp;</o=
+:p></span></b></p><p class=3D"MsoNormal"><b><i><span style=3D"font-size:11.0pt;f=
+ont-family:&quot;Baguet Script&quot;;color:black;mso-ligatures:none">BV20D01=
+752<o:p></o:p></span></i></b></p><p class=3D"MsoNormal"><b><span style=3D"font-s=
+ize:11.0pt;font-family:&quot;Baguet Script&quot;;color:black;mso-ligatures:n=
+one">Fraud Unravels All <o:p></o:p></span></b></p><p class=3D"MsoNormal"><b><s=
+pan style=3D"font-size:11.0pt;font-family:&quot;Baguet Script&quot;;color:blac=
+k;mso-ligatures:none">Veritas Numquam Perit<o:p></o:p></span></b></p><p clas=
+s=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Baguet Script&=
+quot;;color:black;mso-ligatures:none">UK: +44 79 1332 8615<o:p></o:p></span>=
+</p></div><p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:11.0pt;fo=
+nt-family:&quot;Baguet Script&quot;;color:black;mso-ligatures:none">US: +1 4=
+24 426 9226</span><span lang=3D"EN-US"><o:p></o:p></span></p></div><p></p><p><=
+/p><p></p></font></font></font></font></body></html>
+
+--B_3851697305_3802791071--
+
+
+--B_3851697305_1567603331
+Content-type: image/png; name="0.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <124030608222000373@uk-mta-194.uk.mimecast.lan>
+Content-disposition: inline;
+	filename="0.png"
+Content-transfer-encoding: base64
+
+
+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
+--B_3851697305_1567603331--
+
+
+--B_3851697305_4187281530--
+
