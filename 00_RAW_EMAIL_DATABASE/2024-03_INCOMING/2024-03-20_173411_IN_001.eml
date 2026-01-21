@@ -1,0 +1,647 @@
+Received: from LO3P265MB1836.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:b7::9) by
+ CWLP265MB3379.GBRP265.PROD.OUTLOOK.COM with HTTPS; Wed, 20 Mar 2024 17:34:26
+ +0000
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=pass;
+ b=arH63qRMjmyAwCmLY4VxZ3pkqGUd/yFhI+Y+yR0h7Oq+AwYsxFjhnSGq3zx+eB2Kvz0scqmtUQT1SUNs7oOQlra+Cwbn8fuwQDa020NANKENwsWPrda/P4HCdW6PYO1gGOtFhwVl8Nplg4A+pUcEfNCcGwPTwgj6SxuJ9J0oHpv2s8KWs5sRlyasTVQszd/stiWAbmNwn7CFRi5ipDCr6SCEdWb9XR7fV22efAbeuNPDNBXZwsn2mcd1cMU0gj1Flc+SCR9jDS7aNmCah022D2q4D0oajmESXHUZZ9noIaTAh+HzkLYemSyYK237wyS5ho4Nml3AEFbOVvDspQC2ZA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=2SIw91mAksVsi96sUmgUuOUrR3tbPfKZbzxORPzilco=;
+ b=PswyeF/cj2JnkhA6/+e0gA+c/fa/fXi7PfWLliN0VBy40hwyFNfm7BLhsJIlugjJaDJg70iEHhfWNzsThJsjsR92/S1u3iEf0hx/s2mlWzOzpKQ9klVRfTFsF+5AXgoEzsLDSqCsasgerCButFWuLaXEc7+D+Jv+8pslk95DHiSLuuLierHNV3cOlhhMsNJhfT1gt+fJVqsWsu6y/fItqcwRRxqwKHHsPJeK7KsUmVuKSU16Lmzo+cszSRx3upQTBrUAuaIZTu0NjSEXvDVzVKfT3BvD6W5qIggcztX2D3+k698SG+0oCPiWIirdHq9i6J6MEMtCNpUtQrSeNLmghg==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 52.100.228.225) smtp.rcpttodomain=rosekross.com
+ smtp.helo=gbr01-lo4-obe.outbound.protection.outlook.com; dmarc=pass (p=none
+ sp=none pct=100) action=none header.from=afpbloom.com; dkim=pass (signature
+ was verified) header.d=afpbloom.com; arc=pass (0 oda=0 ltdi=1)
+Received: from LO4P123CA0532.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:2c5::14)
+ by LO3P265MB1836.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:b7::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7386.34; Wed, 20 Mar
+ 2024 17:34:25 +0000
+Received: from LO1PEPF000022FE.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:2c5:cafe::e2) by LO4P123CA0532.outlook.office365.com
+ (2603:10a6:600:2c5::14) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7386.26 via Frontend
+ Transport; Wed, 20 Mar 2024 17:34:25 +0000
+Authentication-Results: spf=pass (sender IP is 52.100.228.225)
+ smtp.helo=GBR01-LO4-obe.outbound.protection.outlook.com; dkim=pass (signature
+ was verified) header.d=afpbloom.com;dmarc=pass action=none
+ header.from=afpbloom.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of
+ GBR01-LO4-obe.outbound.protection.outlook.com designates 52.100.228.225 as
+ permitted sender) receiver=protection.outlook.com; client-ip=52.100.228.225;
+ helo=GBR01-LO4-obe.outbound.protection.outlook.com; pr=C
+Received: from GBR01-LO4-obe.outbound.protection.outlook.com (52.100.228.225)
+ by LO1PEPF000022FE.mail.protection.outlook.com (10.167.240.22) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7409.10 via Frontend Transport; Wed, 20 Mar 2024 17:34:24 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=QBDZhNUfEsb/+Hq+zxnz9C3EWU6+3GQXvjxuO+8hrnkJ7Vw67vqtOXB7eWebGJ72LoP/AKS/39+zvEOcOIUFVcg88UgIWE5xcDeK0MOqsrA6zzKEu+RgxQSuv/nKLRAotv+tpJMlsW1T9172/pRG6Z+5Aa0XRtHM6Px20ITTFUkyar6mer5TKaYC+5fTKwvx63wcvEIxJiASKUxac59KQrA7W+KvrVZoT+5mGLhgCCnUQMRY/omBVi0mvgVpTZYgedI7EmIx5v9Iz9TA24xBaq6HjEI2sRLgdr9bR0VrZODVOUlxJclu/ksgkmWI5a98d1n0O1eekE+9fUdRSmWQKA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=2SIw91mAksVsi96sUmgUuOUrR3tbPfKZbzxORPzilco=;
+ b=C6EnAcjy2tgTyIskhAy0parQCbmVEBCgW4EPphnRDM/i+kfk1LbX3+fW4ThzG2+DIhc7S99Exa3ek0osR+jAUoDbJq50V3Vkeyxdu3kRtLS4KgjUBL/2NaJQVbi7DF+1I4ECIMao4ih9OTkI3XZ/M1KCnBNHByOcNA26gEW/eaMzK5jdF2chH+UCcEupD+rwLqbLt45P/+xAg0BM9opi+B/ll05bcubDlz8O6GaVGKZOW1yNF7M4YcVRGGwO6LE/w5RXKtNoqGgZRXcLnrX0EqmLnEVIpCbiUAjXIALlv3jHc9Wx4iJqPQv2RC6mp/qZQLUR0M4dlsz5bRdrIUOWIQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 20.58.22.103) smtp.rcpttodomain=rosekross.com
+ smtp.helo=uk1-emailsignatures-cloud.codetwo.com; dmarc=fail (p=none sp=none
+ pct=100) action=none header.from=afpbloom.com; dkim=none (message not
+ signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=afpbloom.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=2SIw91mAksVsi96sUmgUuOUrR3tbPfKZbzxORPzilco=;
+ b=kVliobzCx2YJ8N6LsHKxxK3K7cGDMjdS3MI8ob95y0VFWWNFfuLNIhBk5r8EVFYBNU5XH91SSccrxVrASfYgV/wrI8Gy5EOwyD4xsmP5XKt2VTRPoG1/TKyYgqpQICgv0UIV3Hs+NBfbyfHyoaadMAmi5i/x+TOxFBP079hnQyrfeNi/JOIsG84TNMMSezaxN96RgEK4OTQpw6KpyCdnB/eiXfaS08oVSzmdM1NIPb49PcFmQip8ziwGaawf9KQSwx9myKksPlDzSrFnZOxdZCQYltrRxZEFpON8G5ZD6s5hPFXNZLIFA5jqNYvuyQHNOg0SCfF7/E/jRB8JMYt5gA==
+Received: from LO4P123CA0288.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:195::23)
+ by LO7P302MB0474.GBRP302.PROD.OUTLOOK.COM (2603:10a6:600:423::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7386.30; Wed, 20 Mar
+ 2024 17:34:23 +0000
+Received: from LO1PEPF000028CE.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:195:cafe::34) by LO4P123CA0288.outlook.office365.com
+ (2603:10a6:600:195::23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7386.27 via Frontend
+ Transport; Wed, 20 Mar 2024 17:34:23 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.58.22.103)
+ smtp.helo=uk1-emailsignatures-cloud.codetwo.com; dkim=none (message not
+ signed) header.d=none;dmarc=fail action=none header.from=afpbloom.com;
+Received-SPF: Pass (protection.outlook.com: domain of
+ uk1-emailsignatures-cloud.codetwo.com designates 20.58.22.103 as permitted
+ sender) receiver=protection.outlook.com; client-ip=20.58.22.103;
+ helo=uk1-emailsignatures-cloud.codetwo.com; pr=C
+Received: from uk1-emailsignatures-cloud.codetwo.com (20.58.22.103) by
+ LO1PEPF000028CE.mail.protection.outlook.com (10.167.240.38) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7409.10 via Frontend Transport; Wed, 20 Mar 2024 17:34:22 +0000
+Received: from GBR01-CWX-obe.outbound.protection.outlook.com (104.47.85.40) by uk1-emailsignatures-cloud.codetwo.com with CodeTwo SMTP Server (TLS12) via SMTP; Wed, 20 Mar 2024 17:34:11 +0000
+Received: from CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM (2603:10a6:400:227::11)
+ by LO6P302MB0255.GBRP302.PROD.OUTLOOK.COM (2603:10a6:600:382::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7386.31; Wed, 20 Mar
+ 2024 17:34:11 +0000
+Received: from CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM ([::1]) by
+ CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM ([fe80::12ee:adde:e9de:c96d%6]) with
+ Microsoft SMTP Server id 15.20.7386.031; Wed, 20 Mar 2024 17:34:11 +0000
+From: Faye Simpson <faye.simpson@afpbloom.com>
+To: Nadia <nadia@rosekross.com>
+Subject: Automatic reply: Private and Confidential: financial proceedings
+Thread-Topic: Private and Confidential: financial proceedings
+Thread-Index: Adp26+FJPZJZCh+gTeeDNRW0QJxiygABImwAAIjemGAABhOIgAADsccAAAAjpHAAAFTogAA81AOAAABT3FAACnSVAAAkTY4AAAATPzY=
+Date: Wed, 20 Mar 2024 17:34:11 +0000
+Message-ID: <2a34e57d83164d6692a8fd4fd41f842c@CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM>
+References: <CWLP302MB0379274BEBDD9998ECC285D7E1282@CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM>
+ <660FAF5E-D6BA-4C96-8D7E-8DC9C7685E90@rosekross.com>
+ <CWLP302MB0379372286B6FF4A948E11A8E12D2@CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM>
+ <EF329729-198D-4750-BA76-26DC0F90AE71@rosekross.com>
+ <3B8E2550-4B56-4784-AB73-97C4B8BC950F@rosekross.com>
+ <CWLP302MB0379BD2D9EE15B22681DDCBBE12D2@CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM>
+ <E473F1A4-AF35-4D31-9C97-659B2386734E@rosekross.com>
+ <97D07FAB-2D93-4FBA-8ED8-BC6F2EBDBE2E@rosekross.com>
+ <CWLP302MB03793F2F9B2BD49A7067EE2EE12C2@CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM>
+ <844A3B71-E609-4670-8AB6-8107E43725FD@rosekross.com>
+ <108DD29E-159A-47C2-892D-C3AB5D955F18@rosekross.com>
+ <8161aa05-4e79-418a-97de-2b93eb8f2db6.f3be4cfc-114c-4016-a270-c5d128f3050e.16fbe620-d80c-4817-841a-7428c5ecee2d@emailsignatures365.codetwo.com>
+In-Reply-To: <108DD29E-159A-47C2-892D-C3AB5D955F18@rosekross.com>
+X-MS-Has-Attach:
+X-Auto-Response-Suppress: All
+X-MS-Exchange-Inbox-Rules-Loop: faye.simpson@afpbloom.com
+X-MS-TNEF-Correlator:
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=afpbloom.com;
+x-ms-exchange-parent-message-id: <108DD29E-159A-47C2-892D-C3AB5D955F18@rosekross.com>
+auto-submitted: auto-generated
+x-ms-exchange-generated-message-source: Mailbox Rules Agent
+x-ms-traffictypediagnostic:
+ CWLP302MB0379:EE_|LO6P302MB0255:EE_|LO1PEPF000028CE:EE_|LO7P302MB0474:EE_|LO1PEPF000022FE:EE_|LO3P265MB1836:EE_|CWLP265MB3379:EE_
+X-MS-Office365-Filtering-Correlation-Id: 632691ed-76fd-4693-4d46-08dc4903fc7e
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original:
+ TvLIXf/9fT35n72k+FcNEMZuOoVnbTQp6PJwlNngya1P7LwvAQtgRqxM1Lm6e714uqQ/O68K9/lKcDlgWo1P2fDhGHcbwjDEaL7zdvDJvzNucLLatFEXT/jMJ6vCYQpom+bzBEpk/Gtz381Hnae8LwBHdH1gX59U5mnfvSfArDh7GECobE+Rk9j8Fa6FqICLlEjkCMGeKGav3HGuYg/ODRptuUoONpxDSlwgpZUpnBglFFuP4y45cKSi09aiMV58KBH7jzIbY5vIIVo2UTiylbBQj7+2U7pfYbMBN+K3rsHBeb/Z7ViouylR2xJ/gn56SA2QIu6m7n9s0Rs+YYs8lxLht+bTAW68bW5rE91Bg294QPOZ6YBk0Aitv0cy+qA3LVej8oGGvX6VJ2T9QWpHf52J6hqGNvDXNQVqfKTO7SnnGTV2RhBixMVTbn2jrUV5Xa3sscM9JxiHZxe8WYqBBzfVO6Q5Byh/3qLUb8HiwjJiDBjm/P7ZlPjoJdZ9zlzd0bIYEbJLRNOmAr8buazjkF0x4wqDCr+3xMIXyLsZJCEbLz37UjE1m7aavylQL3cekp6eeSpozxsx7ZgBhOwVffH3uY8+RunL3mN3yRqSqRZnR/Mutg2zjpYdArZCc9Ly2XxVpi18EJbnQ5DS3PQ3C4kwOFgwFQFNSmX66Q6xq0w=
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CWLP302MB0379.GBRP302.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230031)(50650200018)(1800799015)(376005)(366007)(80100003);DIR:OUT;SFP:1501;
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LO6P302MB0255
+X-CodeTwo-MessageID: 6ab422ae-b4ac-4884-ab48-5cd909370d5e.20240320173411@uk1-emailsignatures-cloud.codetwo.com
+X-CodeTwoProcessed: true
+Return-Path: <>
+X-EOPAttributedMessage: 1
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ LO1PEPF000028CE.GBRP265.PROD.OUTLOOK.COM
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+ 46783878-7f58-4ff4-afdc-08dc4903f442
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original:
+ f0qcWrE8FaIo6wHNepM2ZiN4cQvGHkO2g+mSWs9FZhH4Y7/3eDNKSeKW0i8hhDcvxx1VdyfbfPQ5iy1SAyP/HRlueEIzs+a9anY7yjY6ufiTbk3n6+5vmf0xXMSStUjrfg4Sh9MTcVQ9zlnazraCtxSWzp3w2wsP9YZe4flEu6viChfsTSkxDIX/M3x97yWvZq9W05xHasY/rkHXW3w5DtaFaLrOY64ptW74VvJpobWs/sf6Qy3d1waUzRH8DRRhf1z+P5G4h62Y00A8GLsq/YWlOLWHNFr8havjiiO2lMNu80EORExHbp68+khZINqN3oPgTzuo45qZnaHCguheDscd+1MxhmcPW5CRJgTP5dVFOeLdo1sxM5vLyczIgN5+rFHLqrVHWWrqwmLV6pJXCLuY5tk+AMWe3fMYMM/5QaXpc7oAvsGOaV+jrtYrtOhGIsVnNNYxym1zHjRrLvBte+3u5BUj9betPZlmao27D6NcW2nls0EQaDb++SwxxKx6jifXxc/4OMTwrXiCN4A87T4S1CSVnR8bZhLfhg0gCi9wJO4sWvdtZnmtbMnWQf7EQJjVIg0I115kHZfQH6GDFIyYW43NHMGv/4vIQbEaJVQ/W8PbBm2t1tRteiicbUcnzFM4lfgTp37aFtXvV+HKMVbEC0PIpFrM3WNX+UCFSKurbITAY5gkRMw3MVhmFvX6jHdLXbEnixMa0AOtY1RpAg==
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:20.58.22.103;CTRY:GB;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:uk1-emailsignatures-cloud.codetwo.com;PTR:uk1-emailsignatures-cloud.codetwo.com;CAT:NONE;SFS:(13230031)(50650200018)(376005)(1800799015)(35950700004)(82310400014)(80100003);DIR:OUT;SFP:1501;
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LO7P302MB0474
+X-MS-Exchange-Organization-ExpirationStartTime: 20 Mar 2024 17:34:24.9633
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 632691ed-76fd-4693-4d46-08dc4903fc7e
+X-EOPTenantAttributedMessage: 615372fc-d750-4bc9-b399-cc84f3fe3e95:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ LO1PEPF000022FE.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-Transport-CrossTenantHeadersPromoted:
+ LO1PEPF000022FE.GBRP265.PROD.OUTLOOK.COM
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource:
+ LO1PEPF000022FE.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+ 86bd4cf1-14b7-48b1-b501-08dc4903fb44
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-Forefront-Antispam-Report:
+ CIP:52.100.228.225;CTRY:GB;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GBR01-LO4-obe.outbound.protection.outlook.com;PTR:mail-lo4gbr01hn2225.outbound.protection.outlook.com;CAT:NONE;SFS:(13230031);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Mar 2024 17:34:24.9008
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 632691ed-76fd-4693-4d46-08dc4903fc7e
+X-MS-Exchange-CrossTenant-Id: 615372fc-d750-4bc9-b399-cc84f3fe3e95
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=a0a24b86-e669-4e2a-ab80-b771bd50e151;Ip=[20.58.22.103];Helo=[uk1-emailsignatures-cloud.codetwo.com]
+X-MS-Exchange-CrossTenant-AuthSource: LO1PEPF000022FE.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LO3P265MB1836
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:01.6191634
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.7386.023
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?us-ascii?Q?83xEdhqQK9EBggecmKyW972LvkmSXlkDWNEHASqyFoFAhu7ZsAacTcnEYv2/?=
+ =?us-ascii?Q?cYtCUjtEAX7ujVR61qsk5W/obs61xt2aTtQcLTjkdTdSh0RHaaONjBrYYmdp?=
+ =?us-ascii?Q?RUQXFsHnxNitnu+4ITalInJ3B6/zpeZ9kIWo2DcldtoNc3XYjjIy/nNKc8tT?=
+ =?us-ascii?Q?nONkD72IaUkd9t7NXgzSBKWIdHno6jiT/QZ8Y4+KqDpF1iRJXPjk3y23UocV?=
+ =?us-ascii?Q?ZZuiR68xT6BEFegA+iBJIWIV0lqu62oHe49PlF5mui5xf6knCvZORPLZ/HYf?=
+ =?us-ascii?Q?kAvPuoL3kMWaNRMi4gjNxfUSt645shMklJXAU69YoWh8zdV2uUE9209gYNeH?=
+ =?us-ascii?Q?f4ioBoM93dU4I1Md7kUhtQPkfbIBVEzIUB0nO7OLmh4Q/6kghQTA77rrfFnW?=
+ =?us-ascii?Q?pfrWWzLjr1YWOeX8aNFuYtsrRAje2urHFJyV9kGqzBOc21M6Y9VFyuU1mP3Z?=
+ =?us-ascii?Q?oq00Xtw1ppRFsaCXjZF/WoagiOw1d4QD4KU1bg1dm4aBTaMWgn0fRLeWDLWC?=
+ =?us-ascii?Q?fQ9hJcwOVnc4kzFlY6Cq1crXsR7fUdUa615fdL5bSq+mQ223AndB+2oiwvLW?=
+ =?us-ascii?Q?rfQtjlk/b+wjWnj38TFV1Z4e0i0+FdsDfbjVJbCtTsu3db4i/iwqQtnHSeRB?=
+ =?us-ascii?Q?cN3ofCv57Offq/9cnd9PD75opJl4UQEPHj7EpmZcksaGE6uCxJJeMYJhnhic?=
+ =?us-ascii?Q?rtIJHW3gPg3QoBj8TdVd3WfaxQj/62X4DJgsNwLHAesAD2SwVpqvW0pai8Ot?=
+ =?us-ascii?Q?A1bb6Dp0+kPOK+CQfrABFUW58IgjFb4abeHxaEBCRPliXuhETCFPVwSqjemF?=
+ =?us-ascii?Q?mOgxxYRvfgRe74jtj6gImvU6vayRCrU3DnBa01oBJzP+PZ8oQEP5zfWW+Xx7?=
+ =?us-ascii?Q?aDB3jLx1kaxehZ8IK1j+hH+ObZFYyuxwqHnI0aeYeuXHkv7kYZZ41dx551+S?=
+ =?us-ascii?Q?wCaSAYitfDS/c9+v1eIZk36Pj7JjLMfQLDNJQ7P7n6GZXCjU9PckhCf03jVf?=
+ =?us-ascii?Q?UyNjUVw/dAZYZ2/SFTTgHHSuuBe1AVAihyoM4DrdAdeLqZkR+BWzLNIGudDL?=
+ =?us-ascii?Q?775VmzTPaoVWoaohdChoR8bOXD8lKWypQfX4goQqltrP8IFIr2gJwk1v3ZGV?=
+ =?us-ascii?Q?Ja/v6OJ8nTWvsJGMIsJa5iivTyl//JKfbFGB9R+g5xxsLh8VO6Gu0BfbOf5w?=
+ =?us-ascii?Q?or3Y1frcvPfK+J0NKt8Clu8TUMydJUdy7gnQUgEGHYnrOH2zA21eh2ik4fKn?=
+ =?us-ascii?Q?FKplbjT1sp39TxAtOC4aQV0ipSfVx+xLQYr68TzQgHF3/26DziaD6HA/oX7y?=
+ =?us-ascii?Q?WrWWifZ+bFveK2EyE9okovQYwuHXqLnPnHVKuQiMrVRcMIxUcts68AtoJN/K?=
+ =?us-ascii?Q?0zA/iA02hmFRdKEEV+Sr2rYK4nTrbEc8CSyCdJLL05KRyOhephF1vtWYUiYN?=
+ =?us-ascii?Q?xWZeHSFGQtuAWsRHJQl7xVqX/QFL99nsQ5KmqB3uXqaI1x/YH9DJSoVTodxy?=
+ =?us-ascii?Q?PqMks3AwxXkqwFfXz2s3kjdfWeoOHA1CelFq9y8er0rEf6LWRgMmgUOZNkVL?=
+ =?us-ascii?Q?/KGm2Xg+JoSWERAnB8Ewxz+wsZJBFiCuODwhjF1c7MAMPlewKdC0x4gRhLlr?=
+ =?us-ascii?Q?U/RMfeiXVQ5Wsb6mtJ+8T9NR6sVnh5GhAOK+2ihKcBJOZJ3UwVpecLfTpFP/?=
+ =?us-ascii?Q?9yVlx8aS3K5XpPrX/dFWmPH2n20Ss0GiiFbQhh5mrTLUcCov?=
+Content-type: multipart/mixed;
+	boundary="B_3851697046_3529453238"
+
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3851697046_3529453238
+Content-type: multipart/related;
+	boundary="B_3851697046_1485605357"
+
+--B_3851697046_1485605357
+Content-type: multipart/alternative;
+	boundary="B_3851697046_1296119855"
+
+
+--B_3851697046_1296119855
+Content-type: text/plain;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+Thank you for your email.=20
+
+=20
+
+I am out of the office until Monday 25 March 2024.  If your email is urgent=
+, please contact toni.sargeant@afpbloom.com =20
+
+=20
+
+Kind regards,=20
+
+=20
+
+Faye
+
+=20
+Faye Simpson | Associate
+faye.simpson@afpbloom.com=20
+T: 020 7409 1222 | M: =E2=80=8B07425854346
+AFP Bloom LLP | 106-108 Wigmore Street, London, W1U 3LR=20
+www=E2=80=8B.afpbloom=E2=80=8B=E2=80=8B.com=E2=80=8B =20
+
+AFP Bloom LLP is a limited liability partnership registered in England and =
+Wales under number OC414418 and is authorised and regulated by the Solicitor=
+s Regulation Authority with number 635195. A list of members is available to=
+ view at our registered office at 106-108 Wigmore Street, London, W1U 3LR, U=
+nited Kingdom. This email and the information it contains are confidential a=
+nd may be privileged. If you have received this email in error, please notif=
+y us immediately and refrain from disclosing its contents to any other perso=
+n. AFP Bloom LLP does not accept service of documents by email. We use the t=
+erm =E2=80=98partner=E2=80=99 to refer to a member of AFP Bloom LLP or to an employee or=
+ consultant with equivalent status.
+
+ =20
+
+
+
+--B_3851697046_1296119855
+Content-type: text/html;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:w=3D"urn:schema=
+s-microsoft-com:office:word" xmlns:m=3D"http://schemas.microsoft.com/office/20=
+04/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><meta na=
+me=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ligatures:standardcontextual;
+	mso-fareast-language:EN-US;}
+span.EmailStyle17
+	{mso-style-type:personal-compose;
+	font-family:"Segoe UI",sans-serif;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-language:EN-US;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+--></style></head><body lang=3D"EN-GB" link=3D"#0563C1" vlink=3D"#954F72" style=3D"=
+word-wrap:break-word"><div class=3D"WordSection1"><p class=3D"MsoNormal" style=3D"=
+text-autospace:none"><span lang=3D"EN-US" style=3D"font-size:8.0pt;font-family:&=
+quot;Segoe UI&quot;,sans-serif">Thank you for your email. <o:p></o:p></span>=
+</p><p class=3D"MsoNormal" style=3D"text-autospace:none"><span lang=3D"EN-US" styl=
+e=3D"font-size:8.0pt;font-family:&quot;Segoe UI&quot;,sans-serif"><o:p>&nbsp;<=
+/o:p></span></p><p class=3D"MsoNormal" style=3D"text-autospace:none"><span lang=3D=
+"EN-US" style=3D"font-size:8.0pt;font-family:&quot;Segoe UI&quot;,sans-serif">=
+I am out of the office until Monday 25 March 2024.&nbsp; If your email is ur=
+gent, please contact toni.sargeant@afpbloom.com&nbsp; <o:p></o:p></span></p>=
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><span lang=3D"EN-US" style=3D"f=
+ont-size:8.0pt;font-family:&quot;Segoe UI&quot;,sans-serif"><o:p>&nbsp;</o:p=
+></span></p><p class=3D"MsoNormal" style=3D"text-autospace:none"><span lang=3D"EN-=
+US" style=3D"font-size:8.0pt;font-family:&quot;Segoe UI&quot;,sans-serif">Kind=
+ regards, <o:p></o:p></span></p><p class=3D"MsoNormal" style=3D"text-autospace:n=
+one"><span lang=3D"EN-US" style=3D"font-size:8.0pt;font-family:&quot;Segoe UI&qu=
+ot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal" style=3D"text=
+-autospace:none"><span lang=3D"EN-US" style=3D"font-size:8.0pt;font-family:&quot=
+;Segoe UI&quot;,sans-serif">Faye<o:p></o:p></span></p></div><table cellspaci=
+ng=3D"0" cellpadding=3D"0" width=3D"100%" border=3D"0"><tbody><tr><td style=3D"height:=
+ 75px; font-family: &quot;Gill Sans MT&quot;;" class=3D"" colspan=3D"2">&nbsp;</=
+td></tr><tr><td style=3D"text-align: left;" align=3D"left" class=3D"" valign=3D"top"=
+ colspan=3D"1"><p style=3D"text-align: left;" align=3D"left"><span style=3D"color: r=
+gb(213, 154, 64); font-family: &quot;Gill Sans MT&quot;; font-size: 12pt; wh=
+ite-space: nowrap;"><span style=3D"font-size: 12pt; color: rgb(213, 154, 64);"=
+><span style=3D"color: rgb(0, 0, 0);"><b>Faye</b> <b>Simpson</b> | </span></sp=
+an></span><span style=3D"color: rgb(213, 154, 64); font-family: &quot;Gill San=
+s MT&quot;; font-size: 12pt; white-space: nowrap;"><span style=3D"font-size: 1=
+2pt; color: rgb(213, 154, 64);"><span style=3D"color: rgb(0, 0, 0);">Associate=
+</span></span></span><b style=3D"color: rgb(213, 154, 64); font-family: &quot;=
+Gill Sans MT&quot;; font-size: 12pt; white-space: nowrap; font-style: italic=
+;"><br style=3D"font-family: &quot;Gill Sans MT&quot;; font-size: 12pt; color:=
+ rgb(213, 154, 64);"></b><a href=3D"mailto:
+faye.simpson@afpbloom.com
+" target=3D"_blank" style=3D"color: rgb(213, 154, 64); font-family: &quot;Gill =
+Sans MT&quot;; font-size: 12pt; white-space: nowrap;"><span style=3D"color: rg=
+b(213, 154, 64);text-decoration:none">faye.simpson@afpbloom.com </span></a><=
+br style=3D"font-family: &quot;Gill Sans MT&quot;; font-size: 12pt; color: rgb=
+(213, 154, 64);"><span style=3D"color: rgb(213, 154, 64); font-family: &quot;G=
+ill Sans MT&quot;; font-size: 12pt; white-space: nowrap;"><span style=3D"font-=
+size: 12pt; font-family: &quot;Gill Sans MT&quot;, sans-serif; color: rgb(21=
+3, 154, 64); border: 1pt none windowtext; padding: 0cm;"><span style=3D"color:=
+ rgb(0, 0, 0);"><b>T</b>:</span></span></span><span style=3D"color: rgb(0, 0, =
+0); font-family: &quot;Gill Sans MT&quot;, sans-serif; font-size: 12pt; whit=
+e-space: nowrap; border: 1pt none windowtext; padding: 0cm;"> 020 7409 1222 =
+| <span style=3D"color: rgb(0, 0, 0);"><b>M</b>:</span> </span><span style=3D"co=
+lor: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 12pt; white-sp=
+ace: nowrap; border: 1pt none windowtext; padding: 0cm;">=E2=80=8B</span><span sty=
+le=3D"color: rgb(0, 0, 0); font-family: &quot;Gill Sans MT&quot;, sans-serif; =
+font-size: 12pt; white-space: nowrap; border: 1pt none windowtext; padding: =
+0cm;">07425854346</span><br style=3D"font-family: &quot;Gill Sans MT&quot;; co=
+lor: rgb(0, 0, 0);"><font color=3D"#000000" face=3D"Gill Sans MT"><span style=3D"f=
+ont-size: 16px; text-wrap: nowrap;">AFP Bloom LLP |&nbsp;</span><span style=3D=
+"font-size: 12pt; text-wrap: nowrap;">106-108 Wigmore Street, London, W1U 3L=
+R&nbsp;</span></font><br style=3D"font-family: &quot;Gill Sans MT&quot;; color=
+: rgb(213, 154, 64);"><a href=3D"https://www.afpbloom.com" style=3D"color: rgb(2=
+13, 154, 64); font-family: &quot;Gill Sans MT&quot;; font-size: 12pt; white-=
+space: nowrap; text-decoration: none;" title=3D""><span style=3D"color: rgb(213,=
+ 154, 64);">www=E2=80=8B.afpbloom=E2=80=8B=E2=80=8B.com=E2=80=8B</span></a><span style=3D"color: rgb(2=
+13, 154, 64); font-family: &quot;Gill Sans MT&quot;; font-size: 12pt; white-=
+space: nowrap;">&nbsp;</span></p><p style=3D"color: rgb(213, 154, 64); font-fa=
+mily: &quot;Gill Sans MT&quot;; font-size: 12pt; text-decoration: none; text=
+-align: left; white-space: nowrap;" align=3D"left"><a href=3D"https://www.linked=
+in.com/company/bloombudd-llp" style=3D"text-decoration:none" title=3D""><img src=
+=3D"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAMAAABhTZc9AAAAAXNS=
+R0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHgUExURQAAAAAAAP///4CAgP+AgKpVVdeXSMmTRsuP=
+S9GXS8yTSsyZStKZStWaSsuTSc+XSc2WR8+WSdKWSdCXSNGXStGYSdCWSdCWS9OYS9OZTNKYS8+V=
+Sc+WSc6VSM+XStGXStGYSs+XSdOZS8+WSc+XStCWStWaTNKYS9GYS9CXStGYStWbTNacTNCXStCW=
+StSaS8+XStKYStKZStKZS8uKNM2PPM2QPM2QPc2RP82RQM6SQM6SQc6SQs6TQ86TRM6URc+TQ8+U=
+RM+URc+URs+VRs+VR8+VSM+WSNCWSNCWSdCXSdCXStCYS9GXStGYStGaT9KYS9KZS9KbUtKcU9OZ=
+S9OdVdOdVtOeVtOeV9SaS9SfWNWiXtWjX9acTdakYdamY9ecTdemZtidTdmqatmsbtufTtufT9uv=
+dduwdtyfTtygTtyyet2zet2ze920fd6hT962gN+hT9+iT9+3gt+4hOC6iOG8i+G9jOG+jeK+juK+=
+j+K/j+O/kePAkuTEmeXEmebIn+fKo+jMpurQrurQr+rRr+vTtO3Yuu/bwO/cwvDexfHfyPHgyPHh=
+yvLiy/LizPLk0PPjz/Pl0vjv4/jw5Pnz6Pnz6fn06/v48v37+P37+f38+f78+v79/f7+/P///62E=
+EdgAAAA0dFJOUwABAQICAyAhIiwtLS0wOzs9UFBRU1RtbW2srq+vsLCwsLG+wMHC293e39/p6vf4=
++Pr6+vpiltOgAAAACXBIWXMAABcRAAAXEQHKJvM/AAABu0lEQVQ4T4WTh1MTQRTGn2AIiBQBiYXe=
+JCpNRURqIAc5lhYIQohEPDBI88RGR4oovUmT9v5VtyWUMJNv5u72vt/s7GsLPkWYks35zfnmZFOE=
+dHy6EZeWp2uOBtLg0PS8tLs3pc9lvN/V7yReOT9oD4ySUEVmfXFIImTXsyIlg6gnA9I9V//TaAGN=
+2QzayquELzXwOJTBoIc6/VHr3nUqwpfSE4Mpjem2U1j58/iv+9Jue3csgCHDQ5c2yzLix1LhS3ky=
+DXDrOU/F6p4frbcUF1tLi15ZOSTOZ7fBNMKXte+/Dje5v3/r6Jv90WrhFhm5B6kaW6hlv/DINYFn=
+W4i40y4C0FLAzOugli3iiWsS8XR1F3HmdR0zHWbIbRR0Af+5xhBnX/Qc41K1jZmNOcA+F+hgYcsB=
+rimcEnJ176eitj1cFZTu9Z7L6Din+15Kz02RMf9GfDuN+Pnlm0PcFlRLgnier1oxtbnSObSx3lvS=
+8mdzroZT3QRholaE1MvH+ybOgnAwpLM600orClEVhSZaKyP2ZBgA7nTRHl0j3iPZX3/pCay/EPLI=
+f3B8sxFgrgLMZIB5DnAXmPzvEcB/rrncLN2Z35gAAAAASUVORK5CYII=3D" alt=3D"" width=3D"23" =
+height=3D"23" style=3D"aspect-ratio: 23 / 23; width: 23px; height: 23px;"></a>&n=
+bsp;<a href=3D"https://www.instagram.com/afpbloom/" style=3D"text-decoration: no=
+ne" ;=3D"" title=3D" " ???=3D""><img src=3D"data:image/png;base64,iVBORw0KGgoAAAANSU=
+hEUgAAAB0AAAAdCAMAAABhTZc9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJzUExURQ=
+AAAAAAAP///4CAgP+AgKpVVdeXSMmTRsuPS9GXS8yTSsyZStKZStWaSsuTSc+XSc2WR8+WSdKWSd=
+CXSNGXStGYSdCWSdCWS9OYS9OZTNKYS8+VSc+WSc6VSM+XStGXStGYSs+XSdOZS8+WSc+XStCWSt=
+WaTNKYS9GYS9CXStGYStWbTNacTNCXStCWStSaS8+XStKYStKZStKZS8uMN8uMOMuNOMyNOMyNOc=
+yOO8yPO8yPPM2PPM2PPc2QPc2QPs2RP82RQM2SQc2SQs6RP86RQM6SQc6SQs6TQs6TQ86TRM6URM=
+6URc+TRM+URM+URc+URs+VRs+VSM+WSNCWSNCWSdCXSdCXStGXStGYStGYTNGZTdGZTtGaTtKYS9=
+KZS9KbUNKbUdKcU9KcVNOZS9OeVtOeV9SaS9SgWdSgWtShWtWhXNWhXdWiXNWiXdWiXtWjXtacTd=
+akYdalYtecTdenZteoZ9idTdipadmqbNmrbdqucdquctqvdNufTtufT9uuctyfTtygTt2yet2zet=
+20fd20ft21fd6hT961f962gN+hT9+iT9+4gt+4g9+4hN+6h+C6huC6iOC7ieC8iuG+juK/kOPCle=
+TEmOXGm+bIn+fKo+fLpejMpejMpujMp+nOq+rRruvUtOzUtezWt+zWuO7av+/bwO/cwfDdxPDdxf=
+DexvDex/Hfx/LizfPk0PPl0fTl0fTm1Pft3/ft4Pfu4vjv4/jv5Pjw5Pjx5vnx5vnx5/ny6Pny6f=
+nz6vrz6vrz6/rz7Pr06/r17fv27/v38Pz38vz48fz48vz48/z59f379/78+v78+/79+/79/P7+/d=
+KVVQEAAAA0dFJOUwABAQICAyAhIiwtLS0wOzs9UFBRU1RtbW2srq+vsLCwsLG+wMHC293e39/p6v=
+f4+Pr6+vpiltOgAAAACXBIWXMAABcRAAAXEQHKJvM/AAACHUlEQVQ4T2OAA15xeU2DOANNeXFeqA=
+gcMIoo6XeUp0SER6SUd+gribJAxcGAXbKwMT0cBtLryqXYoTJAwKfWkwKVgYD4DjU+qBwDv3YTVB=
+QBGnUEIJLsGlDJ0NCQkJDQUAinSYsDJMkk3QHm+to6evn5+Xk52vqC+R2yzEBZoZJ4EMe9aNbSZc=
+uXL1+2dFaRO0ggvkSYgYFVpR7Edms/sX/j2tVrVq9dt+14K1i6XpWVgcsY5JWAtMPLE+ztLEwsLG=
+Mqlx1MDQCKpRvxMIh3g9Q5TD5a4BDoU9ZVYbpgb9W+SQ4gwW4JBsVyEMNm1tYYz5glZ4+cW9zQl7=
+hllg1IsFyBQRMcDtazN4c4LzwzMaf/7DyToM2zrUGCKZoMepEghtXcLd7Jp2aYu5tPP5nkvWWuFU=
+gwUpcBRAFl52/xzL9Q6xDuUn0hz3PLfLBseDhM75zN/rF7FzvY2y/aGe2/eQ5ML9zeUNfJ51dMW3=
+5+gmsowl4FiJtn7kjw9+zacGhTr6d/wvaZEDfLMYiB/evUcrrGzN3KL8rfysOs+nSzE0iwQ5yBEx=
+xWwWEbdncWF+RmZecXt+1aHxoMFEs35GZgVQaHs3fmypMHdu/Zt2f3vmOrMrxBQvUqrAwMgoXgOP=
+IPKO2bPGXqlMn9ZQH+IAFwHMHjN9TL0cHB3sHB0SsEzO+QAcUvA5s6ZsKBpw0C6YpAmiSQngnkBR=
+DAzEcMDADn3AZ4XSRB8wAAAABJRU5ErkJggg=3D=3D" alt=3D"" style=3D"color: rgb(0, 0, 128);=
+ font-size: 10pt; aspect-ratio: 23 / 23; width: 23px; height: 23px;" width=3D"=
+23" height=3D"23"></a><br></p></td><td valign=3D"top" rowspan=3D"1" colspan=3D"1" st=
+yle=3D"font-size: 10pt; font-family: &quot;Gill Sans MT&quot;; text-align: cen=
+ter;" class=3D""><img src=3D"cid:afp-bloom-lozenge-01_f3756e17-d855-4111-86e9-81=
+3aae44952e.png" border=3D"0" id=3D"0.jcb4z7swwg" alt=3D"AFP-BLOOM-LOZENGE-01.png" =
+style=3D"aspect-ratio: 1181 / 1951;"></td></tr><tr><td align=3D"center" class=3D""=
+ style=3D"font-family: &quot;Gill Sans MT&quot;;" colspan=3D"2"><p style=3D"font-s=
+ize: 10pt; font-family: &quot;Gill Sans MT&quot;;" align=3D"center"><a href=3D"h=
+ttps://www.afplaw.co.uk/" style=3D"font-family: &quot;Gill Sans MT&quot;;"></a=
+><br style=3D"font-family: &quot;Gill Sans MT&quot;;"></p><p style=3D"font-size:=
+ 8pt; font-family: &quot;Gill Sans MT&quot;; text-align: left; color: rgb(19=
+1, 191, 191);" align=3D"center">AFP Bloom LLP is a limited liability partnersh=
+ip registered in England and Wales under number OC414418 and is authorised a=
+nd regulated by the Solicitors Regulation Authority with number 635195. A li=
+st of members is available to view at our registered office at 106-108 Wigmo=
+re Street, London, W1U 3LR, United Kingdom. This email and the information i=
+t contains are confidential and may be privileged. If you have received this=
+ email in error, please notify us immediately and refrain from disclosing it=
+s contents to any other person. AFP Bloom LLP does not accept service of doc=
+uments by email. We use the term =E2=80=98partner=E2=80=99 to refer to a member of AFP B=
+loom LLP or to an employee or consultant with equivalent status.<br><br styl=
+e=3D"font-family: &quot;Gill Sans MT&quot;; color: rgb(191, 191, 191); font-si=
+ze: 8pt;"></p></td></tr><tr><td style=3D"font-size: 10pt; font-family: &quot;G=
+ill Sans MT&quot;; color: rgb(0, 0, 128);" align=3D"center" class=3D"" colspan=3D"=
+2"><p style=3D"font-family: &quot;Gill Sans MT&quot;; text-align: left;"><img =
+src=3D"cid:1.afpbloom_uk2024_ri_36d0dadc-40aa-40d7-9657-d13190861f36.png" bord=
+er=3D"0" id=3D"0.n3af5qaprj" alt=3D"1. AFP Bloom_UK 2024_RI.png" style=3D"aspect-rat=
+io: 1068 / 904;"><img src=3D"cid:2.afpbloom_hnw2023_ri_fe8f452d-51a4-42d1-b31b=
+-6e2cf7e9e596.png" border=3D"0" id=3D"0.7gslol8ttwx" alt=3D"2. AFP Bloom_HNW 2023_=
+RI.png" style=3D"font-size: 10pt; aspect-ratio: 1068 / 904;"><img src=3D"cid:3.t=
+hetimes_blf2024_logo_19to24_99a05953-2c32-4b74-84bd-f06206ff3d2b.png" border=
+=3D"0" id=3D"0.8i353da1iel" alt=3D"3. TheTimes_BLF2024_Logo_19to24.png" style=3D"fon=
+t-size: 10pt; aspect-ratio: 1182 / 903;">&nbsp;&nbsp;<img src=3D"cid:6.uk-lead=
+ing-firm-2024_0e23f319-0c35-400c-97c8-893f213c1228.png" border=3D"0" id=3D"0.gyb=
+fx7b41nc" alt=3D"6. uk-leading-firm-2024.png" style=3D"font-size: 10pt; aspect-r=
+atio: 614 / 889;"></p></td></tr></tbody></table><p style=3D"FONT-SIZE: 10pt; F=
+ONT-FAMILY: ARIAL"></p></body></html>
+
+--B_3851697046_1296119855--
+
+
+--B_3851697046_1485605357
+Content-type: image/png; name="afp-bloom-lozenge-01_f3756e17-d855-4111-86e9-813aae44952e.png";
+ x-mac-creator="4F50494D";
+ x-mac-type="504E4766"
+Content-ID: <afp-bloom-lozenge-01_f3756e17-d855-4111-86e9-813aae44952e.png>
+Content-disposition: inline;
+	filename="afp-bloom-lozenge-01_f3756e17-d855-4111-86e9-813aae44952e.png"
+Content-transfer-encoding: base64
+
+
+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
+AABJRU5ErkJggg==
+--B_3851697046_1485605357
+Content-type: image/png; name="1.afpbloom_uk2024_ri_36d0dadc-40aa-40d7-9657-d13190861f36.png";
+ x-mac-creator="4F50494D"
+Content-ID: <1.afpbloom_uk2024_ri_36d0dadc-40aa-40d7-9657-d13190861f36.png>
+Content-disposition: inline;
+	filename="1.afpbloom_uk2024_ri_36d0dadc-40aa-40d7-9657-d13190861f36.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAAEIAAAA3CAMAAACPZWyoAAAAV1BMVEX///94iJfe4ua/xs0X
+MksOKUTn6u3+/v78/P0EIDyJlqOut8DS19xabX/w8vSAj50AFzRkdofJz9Vuf4/3+PmdqLO2
+vsamsLqUoKxPY3cnQFg2TWNDWG3rAr++AAAD4klEQVRIx+VX6ZKjIBBuQG4ElcMr7/+c22hm
+Jhozk9mq/bVUYhloPuj++grAPxpKSvX46/cI8v6U20AwdX99B0vthw9UhPQ5OQ2gnmVeIdSP
+AmK8vRWRnBeUUh+NACqEw6+6y3yDUAo+REMhzbm3JJDQ5j5OMYTQxnZ2qcqw1xgSN3MKkJYB
+6DzMxcQw9qxvi2kM9BnaFjdT3giQLy8RtCaQoBhq+9L3hJAcbSSjsTMjWbA2SSBam1fXQNO3
+ms+Vw+RBJqUSDlUJTuC9SsrXY2auW0ivriF7rfvNoJAEQim8kUoiCUSR28n1GI4y10rYlYHV
+2u4mL8SNzOZibDHDZJM147CvjFWGrc82VdB33MLcbpZCQMKCscTEbKdhzD7nOO6bJMqMuotP
+EBJ15I3Hm8udG+EEdX7AR6GWAjoFvS+lShxvr26hG50/4uHCWh/ujeaYUDReQFicD5/z8muo
+asuHAFEQUfTSv9ruNeFn9+meSVECoyo27j2IgZNK+yH2gPGlpyCefG3PHFKdDwTaL81jACOE
+5ro5qSc/zCovwpFrzh8hJPiGN6fwkeAC5opCMWoiPa7QKr6kx0lMEV3zSMjO0QIwG7Z8OBw8
+UtJ0R9tjAMwd57cjbLkhTdNwI+tZmZXzrj1NIkZY9HpSeINwel39UY+06MVc+p9zJwiEnCfX
+QNufyB7cBdmJjSzB8TC/RNPQsmBMHMiSm/iQjmqkVWvdmBMGDQRT4CiBsYcFfAsNit+eg6zh
+6LbyXE7U/pXHUODIHzkx4lfEaPR4nFZqd011IHuqot2ajriY+TEn6m4G+XOpu3Va89af4wl/
+uslY/0Ot2i7krZncRUHa04FPAD/VO0zvn/LnRYfRVwNWfqfFh5C6TOE1+jBg7ctuAC077kK8
+XGBUCKQKTb3F1DPKnjTmrspcQ9RkdMPMXJ2/li3Yy08lVd1zr/T4FhY8aX6R3nCSssEDjeuy
+EgFfPrWZbpuOAvzA6Eub75ffEhLvBnBZACvg84D7HbBusxT7UuqVvVxTLdJhqiK2H0go2bYU
+bhNm52oGjr3H970XJiR0PV0ztJRTnpggwGIyIaNGEVd0R37I8lgJc98GV9/aANbkMc/Ck36u
+Jw+k7bOHtxrAjQxjMkwGRlNbrWHrFd5sGFUdz2RtBb+O3zShFWn7qOuIeKP9VTuG+ovtj/VL
+3e9Ty7tS6jcIo6dTGTArsMkx8Qz9M4K/sTK7YFog2LU6OwrjkBkG795DQb5F24rQM8DWM2Ts
+gacY8fVtCAmZWmzwRgynMYxjyZMjpRRmf6PJZ0//OPMrZvb/HluOQC7k/fF37P5X4w9RhTKM
+wl4W0QAAAABJRU5ErkJggg==
+--B_3851697046_1485605357
+Content-type: image/png; name="2.afpbloom_hnw2023_ri_fe8f452d-51a4-42d1-b31b-6e2cf7e9e596.png";
+ x-mac-creator="4F50494D"
+Content-ID: <2.afpbloom_hnw2023_ri_fe8f452d-51a4-42d1-b31b-6e2cf7e9e596.png>
+Content-disposition: inline;
+	filename="2.afpbloom_hnw2023_ri_fe8f452d-51a4-42d1-b31b-6e2cf7e9e596.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAAEIAAAA3CAMAAACPZWyoAAAAWlBMVEX///8TLkje4ubm6ewL
+J0L19veCkJ7+/v78/PwCHzqosrx5iJfK0NaLmKVwgJBdb4HT2N2/xs1neYnu8PKfqrUaNE1T
+Z3qvuMGVoa23v8dJXXIAFjMnQFg2TWO2rqcHAAAEQUlEQVRIx+VX2ZKrOAwVNl7wihcMhuT/
+f3NkoPtm7UnfqnkaJ6SMJQ6ypCMrAP/RkELI27vfI4jzV+wDweQ5/QRLHi83hHL2vbgYkM86
+7xDaV4K2bF5rYmOihBAWbQJC6UgSlafODwh1xp80EZAle+W45j5HtzjOuY++jAzFc3iPIYB2
+HQFgFwOkmFJt5DmG6CufLMQM3uPDpJ8oiLdG8GHQzRZOZl9j1FpnNzut7FyCXmjwTIAeBvvO
+DHR96fvSYsgSCCYlY/jTAixxRTKZ2mvWvvc/xNnv4vYORlGtzSSjjCKK2N+MS74f4ptNzNcA
+ahjmw+VVjyqopdq5WrPMbLbKHJJdJ1yffYroWz9DKbunENAFbZW2Ls+LUTnl7NT50FpA9Zt7
+ghBtj1OLmThiQ0dKxmQoNZXMBEZCySliLXDNZ89WDNOQv/z0yltneqM7FlR1LyBmXOff6ycn
+5H7Jgy7fqg5VX+aXfwy42J98nT7PQZEUWeW68RZCHGTAzABxRzMwnW5hv18M3SUSoA9bC2Cr
+wakd750jKRB/6W4JjBBDP3T325NgnVlVrXaJPj/SsRv6/hZCIDm76YE+6PiVF2ujy3wp5EYk
+gHT91F/YvbreptuAHFYgN9GE1bgQbyH2kEzbg+9BrlvXr6deC+KeXpIk47mnibA/iYHj2vdb
+ecgexOCX4XpTOvdwtlka4ftenrqX4cJf5t84fk0kO6eUIMPHU5uQL9PN+CJ7WVBBwsmx1ZEC
+BkwEdAO6AgIkqmyO6aTJrs4etnEdhmHiZz65ovmy6uWaILoSK482audzKebgIZ9QfX0IdBym
+rtviAVHGq/eOV8xifVUTLcaXVLlaeN634reum/YSeWsGuw7dtFMVb2wyy+jmhKE0OVlQ3iyU
+aBVmcxJ16oarfEhZSKUfhm0Pq3g418Qt71pl2Yah9+mRqnhrFjun/axqvDqPQrFX0C+6IwbK
+k7LL+OJAOvImsR/Pql3IGNzl2a1w9JfpcpfKL06rLyX5soT3yD4k7Pz2lMA95e5Qqi8wGkTf
+4dj2Iv6McpQdpBKOvq+vzTArylryy4NUcneekId3oR1wmFUXfNM6vvYYLpJgsA9w18tV03Pp
+SPnGkLbsKCQTyFufH8bP+243A2NOECqk3KYEwtacMIU/m3rnrxFzd+o2DUmraDSvGXOTK4/M
+2VDSt95D/Bx2t2GW9rrNrVoC1RBcAtsWXJNs+ufEaaUqR8/3clCQHDbnXGhaxpJamdA+5gQf
+NYAtGIxj7Vw4wtikdAUh5KcNo2zjXT/YOpbf9K+ItH+P62/aX3k+LP6i+b2pEPK0p3H+V6YI
+UIksNWDbi1egz9D/jpDWUNeRWw86cm6UonzEyAT41A6k9OpmT3kMgK0nz5qXJTqn3ccQAjKZ
+scFTSCfFlarLYnSda5h/s5P2Of9EwO898d1p7Y+LsxB//Hfk/z3+ASBZPEUU521EAAAAAElF
+TkSuQmCC
+--B_3851697046_1485605357
+Content-type: image/png; name="3.thetimes_blf2024_logo_19to24_99a05953-2c32-4b74-84bd-f06206ff3d2b.png";
+ x-mac-creator="4F50494D"
+Content-ID: <3.thetimes_blf2024_logo_19to24_99a05953-2c32-4b74-84bd-f06206ff3d2b.png>
+Content-disposition: inline;
+	filename="3.thetimes_blf2024_logo_19to24_99a05953-2c32-4b74-84bd-f06206ff3d2b.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAAEkAAAA3CAMAAAB3hZdfAAABAlBMVEUvmcwxmswumcz///8v
+mcwsmM0rmMwvmcwtmMzVuYI1nM47ns9brtdUob85ns+TyeXgyp9Mp9NBotE+oNDhzKRSqtVE
+pNLbv4tqttumt6pyud2azeZ5vd6isZ7o1rZXpsev1+vdwpHp9PrXu4SJxOLl0Kmg0Ojs3L+E
+wuG42+7e7/en0+o9ncjm06+pvrfbvIP4/P7hx5jJ5PLw+PzPuYnSvpGuxcN/v+BipbqNxuPT
+w5y2t5qYtK9jstmIrKlIn8V6qrLT6fV2scbA4PDXyKS6wKuTr6jc0LPdx5zFyrrVy6zU0b3K
+vJXFv6BjqcTf1buWvMTi2cOJtLxMo8rCtowynf8daPmDAAAAVnRSTlP3////////+vf5////
+////////////////////////////////////////////////////////////////////////
+////////////////////////97FSQVcAAAbwSURBVEjHrZcLW6pKF8djBjnnwMgIBCLgDhWJ
+W2WYonm/ddMuu/r+n+VdoGlWu9PzPuefyrBm1q+ZxVoDHBx80N+pNr8by86e2TYDDj6J3ROv
+aZqs8Yoswy/LMgwSZIZHiJFTuyLzSMy6FI3Zd2Q/kBDxfMezlS6lVCcc0hPVo8QwRMELzcQ2
+fI91HdrVE89Q0LckmNNMIjFxu9Qd8NLAsl3X7ZohUfgwEX2dxsT3TJcMYov/fk4sUmaSOpPM
+LjWJ7Pm2bfu+Hfqhw4QJ6+u67ZqOaRLJiAn3LyQtVNVQ8RzHMQYD2jVgVonuUEswLdE1dKJ7
+XtczHMPSPq+O35OoCKIiKiBZFAWB52VZBKMIptTK81mXIAv7bhkJxoPETGkj+6QGQdget71v
+pm17Y1mvDqH1VdY0heHQl2LSXhH9Wbs4MVZQtc3JTP9wRVgkponDO0HVlxD7jd5ISGpik/dx
+VUUsx3Hgg7IDIqEAJxxp4HANyuybTjhBn0lVbHImbgw4nhi6gpCiG7rMW9XqQHtHQoxqWIRX
+CSEyI7IaUZmvSPwMx4oYBrQaa1rs6hOXBLhpG2hHYmjsBU2qVxuxrPoymVhfkWZ205c4Dwdq
+gGmCbYVQWG8gs7s5IS3AuosDDewaxZY6E9AXJFufAGqGAwOoFsaBIzHgobyLE+KpT2xclYxG
+I4nxzKF/iBO4uzGuOt2uJdsY45DfJyFVILYPIyRlgoO42ZjsamafpDewna4HroyqWhPcVPdI
+SAj1ADsukDiKG7qPJyL6MgsYFzd1o4G7sqRZNi9PAg1WogobEiPSIGngJIT/wKnNmNcbu8W9
+y8xJYNPYNxjGC6qxq+pB6M0spAdNX4fwOEEwM8NJrPrNmVutOgwTWpzgv9sQtqRsl1SYNNkU
+VeI5VlYHablrqgzXmZHTbk1WWBE6JVWE7QeqVmG+2FXeygfJlpckiedJ3YnLIzYzvnWj9fl6
+YPr9Zn+CEnMxNnWz6U1wVfu20r7f6SC4DsYGh0xrYCcMx7EMy0CVwTJ4xKX3BpgIz6Ofk3iN
+WG4ok67tmDNdp3Y3jKlux6aAiAln/A9JFu8pCiSgBgkWNHFIYcEmfLvQpUxiwZjI6Gck354o
+yIYUhXwNLZsYMM1BA8qsianabJrSp3vUn0ie6spvJJdjufckIYaK9Jgfx0njtyS0T0Jk1sDN
+Affja8f+aU6aJ+oTnPyAxEBonfSiz6DkSBPbPIs8iDTQHKg+Vwo8xU036X8jIdmjNNEQkhxK
+BzqljoREi1IDmsaAUk9yQkrJT/Ip3fLR23HTfmuuv5CqP8rM/1cHB8x/pINyptJap2u1T9tb
+rS2b/vInlbaeB/+cnRWLlUrl/Py8UDis1+snJ79Ax2tB6+SkXj88LBRgQKVSLBbPUtXSn+LO
+sXB4ePBPrVYstnql0v1NoTA/PV1cb0m/f78j3dyXSr0WOPfK5dda7QIOq4x0s7i82ZJa4/xw
+lF8UFkcP/Zfp9fJ5+nR8fDudTtspqZ6RSqNxJxq3WsPRcDwqX3TywyjfS0ml/P1uTqtR/rLD
+jecPzGn9Ofd8PeWmx8sX4XbKt7M5HQLpme33mKhXZjq112hUjvIXndwYSL1RtCPVWr3eJdgX
+THRbP0Uv16doetxGL7/b3MPjG+mydFkCEgyrXeRzw15vTbrvMO9IaeTuo2jRz43u6qeAy0jM
+y7LNvix/ndzd3c3nhZvz83FuvALIWco4O+tFUa+4GvejD6Qx3z/fIz1O+ek0Jd0+gBZAuh/l
+V63RhlSrjaMyBPgKgPe7iBcrvXz/ZtFnIiCxo2VKOl6220/s0eOv69vFYgFzuhl3VitYHZDS
+iZXz5WIPoj5imM7lNk7FVT4/HHYWI35Rf+amv1LS8uH5+Il72mVBPxoPO1dXOYj4KOq95jvg
+AZl5FUX93ZxWnRzKcaPLUjRdHB3dXj9zD8vly1H76GG5JZWiHGjY6ozKw2j4mnrkRq1KBRZS
+2pJqq6urq36/NC8snp/7dyfLp6en2+Pbp6f247t86vdhVK94UR4Oy7XXq1TlVmXVB8fLd3H6
+WC3He9VyuK6WyrpaarX0865abjZzuri4aLVal6D5fA5X/Br0+Pj4OxUc4SzNgnk6AMa1LnZK
+TzPH1HN+kN/qKH+Ufr5W/jtlbgd/53bi0sC/KTNkj8vZYzN0ps8o2kAVVVXkLdMQ1k4oG8jl
+9vdMJMFASYLnGkmVVFUiBoFfRZMMQxcVeOejJmzitGvq8az74aawT+IITQaGlRgJdVzqJfBy
+llCLuHBf8Iho0q5tAox2fcsymzr3DQnJRNLgoV0kukGISgbQhjmlTUnm4ZXMInr6Z0nE6Uro
+27fX7SsP8/klZ9fc3nT2SH/9R/ofqsZHmAnHNiUAAAAASUVORK5CYII=
+--B_3851697046_1485605357
+Content-type: image/png; name="6.uk-leading-firm-2024_0e23f319-0c35-400c-97c8-893f213c1228.png";
+ x-mac-creator="4F50494D"
+Content-ID: <6.uk-leading-firm-2024_0e23f319-0c35-400c-97c8-893f213c1228.png>
+Content-disposition: inline;
+	filename="6.uk-leading-firm-2024_0e23f319-0c35-400c-97c8-893f213c1228.png"
+Content-transfer-encoding: base64
+
+
+iVBORw0KGgoAAAANSUhEUgAAACYAAAA3CAMAAABXaciiAAAAXVBMVEUAAABnaWkiJCQbHh4v
+MTIGCQkNEBADBgYFCAgHCgooKysUFxdwcnPn6Ok2ODjv8PFUVldERkY9QECPkZJdX19MT0+F
+h4je3+B6fH3R0tOvsLGkpqaYmpvBwsP8/f32g7VzAAAC9UlEQVRIx7WVB5KjMBBFWxFllMm+
+/zFX4DTY49mprVoZkATPCr8/DXS/KvCfMSF+hQF07O8Y11rAR4xzLmW7dM5ninVryuPWGWOE
+YKXapaMxoKwVJu1o5wkTnSoYgEYcMHNtMCAUSKGPya61BHOJAKslcwlJJw5mBncZQb5gqKcA
+aeiKXxJUDnUDZc0nTFM/JfAalglU/xHDLgwV4o7Jz9jkI7YVeCfbwD9gc9B95ZRzYxVumPgG
+k2kqAfcj6hXPvdsxLd8wRtOgYhnG3Csd+0IaFvkbRnwduPPTmK1SoUc7ht4wHNBoIfu55ovS
+eBhJj2Blr1Ggs0lWTQGlPBcn7YIvJm+3TdyDRj0NRAXqORQKyvGgFGo2ODtEwritaRlb+GdX
+K7RSTZwVyLORYO5tPzlwgyXpskK3XAztBwfsbMsScmhjLHbCabA0WGvoYNcTJkBHgpcV82kY
+SLI2mx2zwyY78dWWjILY+g1vV8x/izGotrJtsm7dJ7UDvk2abnu4TzpfFtj6ibdHOl3qsQXV
+T/hlbaRGvM0OwM0xjdCBXMfSBDlFoXHAiQYQDIBw2FcLmsCdemCKKqXoUdTRbhesKH55neFW
+uuPX6j1JHPVXjMeIQkHZ+0JyyD40tWMu3p+Dxc2YFpNNNSbMqC7JVLTmtKz8JC9Qpykm2EXF
+lcMYRxd1aPlCvu70ubrreeudt8CYYEIIxtjePBrtBmP/kFSPVYr9n2w/bmlVtIYQT5MfLdk1
+2+95EmSLyGGHq3Z3jDX3E4RJkahEXzyhJWiCXC7IIe4PA8P+HmRKEo+rNrwiWj0qnSaVIp8w
+QuMT8z4aF5BHIaCAx5BzJEYbP3qHULxhLQZEE8Klbp7QWopO45bQW7cdneZPQXY9j/CLQ9Cj
+81z/Q5BHuYpxrb/ceJO3qSe++R7B+6don1nyHzDRuZEi58YuEhCfR2sSjnnsDK0R2EesxQP5
+MXuEK3pk529GEzRyql3syI+TXrU6bCl+2undjK+S/NKWfwC8IEZ9TS7r+wAAAABJRU5ErkJg
+gg==
+--B_3851697046_1485605357--
+
+
+--B_3851697046_3529453238--
+
