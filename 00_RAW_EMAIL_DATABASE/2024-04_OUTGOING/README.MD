@@ -1,1 +1,2 @@
 This folder contains original .eml email files for the specified month and direction; files are published in raw form with headers preserved and without annotation or interpretation. Each .eml file contains the complete original email, including headers and all attachments, preserved in its native MIME format.
+2024-04-12_153417_OUT_001.eml Has 4 attachments: CHAT PHIL JENKINS (HIGHLIGHTED), CONFIDENTIAL REFERRAL PART 2 OF 3, CONFIDENTIAL REFERRAL PART 3 OF 3, Excerpts_from_recording_of_video_call_with_Olivia_Molina_on_9th.
