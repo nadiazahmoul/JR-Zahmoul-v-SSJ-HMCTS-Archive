@@ -1,5 +1,14 @@
 # Court Decisions and Orders
 
+This directory contains formal judicial decisions and orders relevant to the proceedings.
+
+Documents in this folder are limited to judicial acts only (orders, judgments, and decisions), and do not include party correspondence, pleadings, or evidence.
+
+The material is organised by jurisdiction to distinguish between:
+(a) background judicial history, and
+(b) documents before the Administrative Court in the Judicial Review.
+
+
 This folder contains judicial outputs, including orders, judgments,
 directions, and procedural decisions issued by the courts.
 
