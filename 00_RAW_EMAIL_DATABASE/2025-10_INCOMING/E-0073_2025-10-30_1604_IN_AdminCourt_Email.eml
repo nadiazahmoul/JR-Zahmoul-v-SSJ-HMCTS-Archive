@@ -1,0 +1,212 @@
+Received: from LO4P265MB6620.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:2f6::14)
+ by CWLP265MB3379.GBRP265.PROD.OUTLOOK.COM with HTTPS; Thu, 30 Oct 2025
+ 16:05:12 +0000
+Received: from CWLP265CA0502.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:18b::16)
+ by LO4P265MB6620.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:2f6::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9275.14; Thu, 30 Oct
+ 2025 16:04:53 +0000
+Received: from CW2PEPF000056BB.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:400:18b:cafe::5d) by CWLP265CA0502.outlook.office365.com
+ (2603:10a6:400:18b::16) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9275.14 via Frontend Transport; Thu,
+ 30 Oct 2025 16:04:48 +0000
+Authentication-Results: spf=pass (sender IP is 54.240.6.120)
+ smtp.mailfrom=eu-west-1.amazonses.com; dkim=pass (signature was verified)
+ header.d=optic.justice.gov.uk;dkim=pass (signature was verified)
+ header.d=amazonses.com;dmarc=pass action=none
+ header.from=optic.justice.gov.uk;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of eu-west-1.amazonses.com
+ designates 54.240.6.120 as permitted sender) receiver=protection.outlook.com;
+ client-ip=54.240.6.120; helo=a6-120.smtp-out.eu-west-1.amazonses.com; pr=C
+Received: from a6-120.smtp-out.eu-west-1.amazonses.com (54.240.6.120) by
+ CW2PEPF000056BB.mail.protection.outlook.com (10.167.240.6) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9275.10
+ via Frontend Transport; Thu, 30 Oct 2025 16:04:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=lgs2yxnfgsgfui3txt56yfesyxxqhlxv; d=optic.justice.gov.uk;
+	t=1761840292;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=sV/GvwvfKuKWIsWlB6EwEJRL7rStBHK//WFYFgS+m7g=;
+	b=nbcxlD0vBdwhcCnb7KKr7kZZRSNHl39lSWIjV5QgEdoUMqT1eWonPpxN/BdwnmiR
+	Yqk+wBvzMi9SJ8XMbL+zEqisWAoMe78GlhaZ9uf6uMORwWwwMqLlz/N5YLC0ApQDpJs
+	i7lHTRmNd2ucTLkfdteHXwscW57wc0afIw1s6yCA=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn; d=amazonses.com; t=1761840292;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=sV/GvwvfKuKWIsWlB6EwEJRL7rStBHK//WFYFgS+m7g=;
+	b=SRzFmTbhiYV0SRe4EtB2iUnPYWTJntLXdQHW19WwaDBOUmLwZFd+Tc1Cs11WjrJa
+	aVSXOqmiGN9ONrZBhIZLQJe6yBadlE6UuA81gPhLBWycMnsZuSjXPWYPXxE9Z6mc52s
+	czfvDOh3vmOP01DNenuG15BOGYZOXTGBy8FYcYzE=
+Date: Thu, 30 Oct 2025 16:04:51 +0000
+From: HM Courts and Tribunals Service <customerinvestigations@optic.justice.gov.uk>
+To: nadia@rosekross.com
+Message-ID: <0102019a35dd6088-b038def9-fd5c-4cfc-8675-31245cd76e7e-000000@eu-west-1.amazonses.com>
+Subject: Complaint (ref: 76334099)
+MIME-Version: 1.0
+X-Mailer: iCasework mailer
+Feedback-ID: ::1.eu-west-1.TivmYzgvW1hWo9IWxM/FcfBaFgnUSz26raW0MwZEB2E=:AmazonSES
+X-SES-Outgoing: 2025.10.30-54.240.6.120
+Return-Path:
+ 0102019a35dd6088-b038def9-fd5c-4cfc-8675-31245cd76e7e-000000@eu-west-1.amazonses.com
+X-MS-Exchange-Organization-ExpirationStartTime: 30 Oct 2025 16:04:52.7625
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 6b5a8038-8d39-4d23-456e-08de17ce0fb8
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 615372fc-d750-4bc9-b399-cc84f3fe3e95:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic:
+ CW2PEPF000056BB:EE_|LO4P265MB6620:EE_|CWLP265MB3379:EE_
+X-MS-Exchange-Organization-AuthSource:
+ CW2PEPF000056BB.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 6b5a8038-8d39-4d23-456e-08de17ce0fb8
+X-MS-Exchange-Organization-ExpirationInterval: 0:12:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: TenantCustomized
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam:
+ BCL:0;ARA:13230040|32142699015|69100299015|5073199012|4076899003|8096899003|13003099007;
+X-Forefront-Antispam-Report:
+ CIP:54.240.6.120;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:a6-120.smtp-out.eu-west-1.amazonses.com;PTR:a6-120.smtp-out.eu-west-1.amazonses.com;CAT:NONE;SFS:(13230040)(32142699015)(69100299015)(5073199012)(4076899003)(8096899003)(13003099007);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Oct 2025 16:04:52.5721
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6b5a8038-8d39-4d23-456e-08de17ce0fb8
+X-MS-Exchange-CrossTenant-Id: 615372fc-d750-4bc9-b399-cc84f3fe3e95
+X-MS-Exchange-CrossTenant-AuthSource: CW2PEPF000056BB.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LO4P265MB6620
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:19.9436453
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9275.012
+X-MS-Exchange-ExternalInOutlookResult: IsExternal
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(4710137)(4712097)(4999163)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?us-ascii?Q?t4qFHvPeL5tI2RpthBa3yL0fghAl07Jrjjz2Fr6b30LeBEv3OKlvluvcyoYA?=
+ =?us-ascii?Q?Nu0M1Fo/58tZ3fkkh7FKka2Ths7o65C0jpoDkcgqsC7hY8WcQlIy8EhcdHCu?=
+ =?us-ascii?Q?G02x1SOrRAurtrCT+93ZkRFZGh2KPw9xfAnHNKLsYDR+NJjiVJeznlvqlyBL?=
+ =?us-ascii?Q?K7fMaduKCYFw+aeGQlG4yPFrbR2lvF13yUIhxE/zbtn/IfcA/TbDLvWt2wqd?=
+ =?us-ascii?Q?Nd/KhJR6v/+/N0108mj3LJt5uijSI20v3Wz3dOeM7KywTSX6qq8n4MiaLIqt?=
+ =?us-ascii?Q?qlgIy4YzvfWIWgDkqgx8ePjjFKI3YXvh8iy3Ouxs5x9ZiaHCC3n2YF29iVmj?=
+ =?us-ascii?Q?AUJwUiYUNOiS1eGNje5d87qkMQTgt80WuBnKEb3u2YWchpMOFtBtGjqYPB3C?=
+ =?us-ascii?Q?+wbGrcCuY0g/8uCfJpMoGv29TekYkcnsS0PS6ho4yTr1Yi8j9Asavd9z23MF?=
+ =?us-ascii?Q?Qz8LKmIWewLHNMWRPsZ5sFT1fMZq+YkQNHytBnwsjpttWFkox9Lh0Ks13C9z?=
+ =?us-ascii?Q?6lRROCRnFHRsw0s2WegN76zgrZ6u6pBhSuhYo3IB0tkTtjJzJCrj8fzPIXRh?=
+ =?us-ascii?Q?E5GLu5GA1e+LApOx22OSAkyYy5IUoZyvcBI6dI617g4tdyucEVGtGus0o+r2?=
+ =?us-ascii?Q?KPAYj/C857UrY7bhrT2EIPh2iKVUJnnVeuEmj4x/yXTe9szP+oDD5PrM8hQm?=
+ =?us-ascii?Q?5diJrbEOpr3x98Q6P7KOJgflK/fGzERo3RxMqGrOjpkbwljB93NSeQ7jDGDu?=
+ =?us-ascii?Q?shxma/sjYAgVTBcvJnkn+Weiz7bjjSpmBfz2PTaC8ycvsVAfM5PFmlu6+7Pf?=
+ =?us-ascii?Q?j+zFXPJqXP+6/BYDLGVJkIqcBKtvb7MIlJY3mlKR8Dp3lozzdx+59HtQoksk?=
+ =?us-ascii?Q?QRPQ+Yn+QV6e6I2na4FGYBhTO3QcbGoP2rjzhd7gnDzuJateebev8+tR3WHH?=
+ =?us-ascii?Q?+fa8YbAMjYiMk130FGz+Yh0Il29/6mOJsbeLcmVqHnYAz84d2SQJ29z8xPvq?=
+ =?us-ascii?Q?1Q1Vyvu4Dwgg5xM5jVgqRS7G8NHTE/A1ybz0MbQRn8VJRKUye3AezL+C1ikj?=
+ =?us-ascii?Q?f28Ok/bnUOJqQ/gUHzBH4gZQZpw7eQarpUtM6eBoNoPOVW+upixPyJIFadb2?=
+ =?us-ascii?Q?cxGjJKeG2tslehdNJG777EcHeWz2HB7zLWPTAi/QLEdmYHB7O6KmGeg1Ii37?=
+ =?us-ascii?Q?ZnjS/aukylPh3pyXEMuD4va4BwcSH7LsvHXg/5JvfYeATUnlZYzE/E8zK31l?=
+ =?us-ascii?Q?vGwjWZ5y93hZysPy73Lm7wBjqYE/Gh0ek+ddnEPnIMsyysvT26T+OnD2Wf8J?=
+ =?us-ascii?Q?qZwPdvEV4uDgII1mv1y2X9EH984f1hMgV8+b2LWrMMVcaD/cjKtj6Mo4iaDW?=
+ =?us-ascii?Q?o3O10MRFVXPk6KYHjGW3XxF5ioP/XxxyNZkWz+uT+2ZmBnoyTJFYP3oWrtIs?=
+ =?us-ascii?Q?XvxL9KJkcfuLTVc+GUL/RFo/LkS1+A4NAkfK1CU15XNsY7Ad7QOCZfyUz/MI?=
+ =?us-ascii?Q?iVx8ZOjQI5hP7Hz3/BLs+1cCE2SJO9o9c/axJgQHx93+uGGpYVJcZcL83Oum?=
+ =?us-ascii?Q?LUH4EYjjb3qZqMNIZcE6jN7qBXv/R4qtcbVX1KAR/8v3bYN2kroAH4gxpXVn?=
+ =?us-ascii?Q?jro+uSfpB8bMk1Uxi6nnjQk9BtJISJ62elPAA/ZjE9bKas6nz19FVwTMQumy?=
+ =?us-ascii?Q?fyHpMNy5iHl8Rpu8O5fqdjXT649DVQEkAyiLVL68ZgvBncR0vflVWr/4FwDg?=
+ =?us-ascii?Q?qlNp6ibh6epvipMfB6NMXA+oB+qxwkkFYT6SUAnwXHrmW4q67qBk/8HEwmWB?=
+ =?us-ascii?Q?b/A4Nrz65u9807aOgxLwRTDLF804InWv0SwMfNdw7+HmHgCz4AEctxUMAUTV?=
+ =?us-ascii?Q?FDH5pKC0i8WsHWt3HS03s7zoeTN8+Mh+poKIyQxRQAOKdPCqeigJvJjd82R/?=
+ =?us-ascii?Q?TcNYQNmnacwUaQyKJb16h8PhsMqp60KggwoUeqh3jm+Kx0N5zNk41/hVeaZB?=
+ =?us-ascii?Q?Fla8ofHU4jlaqTxeUZ5Saxg4w32a5AdATNKkcS3mDW3umhxkxdDCldVxAfks?=
+ =?us-ascii?Q?Yoctir5iExUv+3nE6sKgJwLLnFZJuVHAjSJUtyY5cJvJn9EG6Qr/MosX7jhe?=
+ =?us-ascii?Q?dK5xV7bWWR+MRDTKpxA6Az3nDpNFFvWBYKgPQFsouhKOEdw6FkgMUWVyPDn3?=
+ =?us-ascii?Q?fyeEA+OzsHSG+eP2/GepMB32imM7VJHYmY6GNoyhka2i5VXSRKZhNHPpbpMU?=
+ =?us-ascii?Q?2VehNk34WeLcJe8IPQIZbFh5byH5bVHW955iCkdazkFKnTwteqlL+VAFMj0S?=
+ =?us-ascii?Q?2BZRV3iMbcVs+V/BWLbqasr2?=
+Content-type: multipart/alternative;
+	boundary="B_3852841373_3066171964"
+
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3852841373_3066171964
+Content-type: text/plain;
+	charset="UTF-8"
+Content-transfer-encoding: 7bit
+
+NOTE: Please do not edit the subject line when replying to this email.
+ 
+ 
+Dear Ms Zahmoul, 
+ 
+ 
+Thank you for escalating your complaint received on 30 October 2025 to the User Investigation Team. Whilst we usually aim to respond within 15 working days, we're currently experiencing high volumes of work, and you may have to wait longer than normal for a reply. You do not need to chase us for an update; your complaint has been logged on our system and you will get a response. Thank you for your patience.
+ 
+ 
+User Investigations Officer
+
+S Dixon
+
+User Investigations Team | Service Excellence and Delivery Division | Operations Directorate | 102 Petty France | London SW1H 9AJ |
+
+ 
+Here is how HMCTS uses personal data about you.
+
+ 
+IMPORTANT NOTE: Please do not edit the subject line when replying to this email. Any emails sent to this email address (replies@optic.justice.gov.uk) that are not about your complaint will not reach their intended recipient and won't be replied to. If you need to submit an application or require an update on your case, this must be sent to the court or tribunal managing your case using their approved enquiries in-box. Contact details are available at Find a court or tribunal - GOV.UK (www.gov.uk).
+
+ 
+ 
+ 
+ 
+
+ 
+
+
+--B_3852841373_3066171964
+Content-type: text/html;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//Dtd HTML 4.01 Transitional//EN"  "http://www=
+.w3.org/TR/html4/loose.dtd"><html lang=3D"en"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></head><=
+body style=3D"font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><d=
+iv style=3D"font-family: Arial;font-size: 10.0pt;"><div><span style=3D"color: rg=
+b(224,62,45);"><strong>NOTE: Please do not edit the subject line when replyi=
+ng to this email.</strong></span></div><div>&nbsp;</div><div><div style=3D"tex=
+t-align: right;">&nbsp;</div>Dear Ms Zahmoul,&nbsp;</div><div>&nbsp;</div><d=
+iv>&nbsp;</div><div>Thank you for escalating your complaint received on&nbsp=
+;30 October 2025 to the User Investigation Team. Whilst we usually aim to re=
+spond within 15 working days, we're currently experiencing high volumes of w=
+ork, and you may have to wait longer than normal for a reply. You do not nee=
+d to chase us for an update; your complaint has been logged on our system an=
+d you will get a response. Thank you for your patience.</div><div>&nbsp;</di=
+v><div><div>&nbsp;</div></div><div><div><p>User Investigations Officer</p><p=
+>S Dixon</p><p>User Investigations Team&nbsp;<strong>|</strong>&nbsp;Service=
+ Excellence and Delivery Division&nbsp;<strong>|</strong>&nbsp;Operations Di=
+rectorate&nbsp;<strong>|</strong> 102 Petty France&nbsp;<strong>|</strong>&n=
+bsp;London SW1H 9AJ&nbsp;<strong>|</strong></p></div><div>&nbsp;</div><div><=
+img src=3D"https://hmctsportal.icasework.com/resource?id=3D35901&amp;db=3Dhmcts" a=
+lt=3D"Email" width=3D"319" height=3D"29"></div><div><p><a href=3D"https://hmctsporta=
+l.icasework.com/resource?id=3D35901&amp;db=3Dhmcts" target=3D"_blank">Here is how =
+HMCTS uses personal data about you.</a></p></div></div><div>&nbsp;</div><div=
+><p><strong>IMPORTANT NOTE: </strong>Please do not edit the subject line whe=
+n replying to this email. Any emails sent to this email address (<a href=3D"ma=
+ilto:replies@optic.justice.gov.uk" target=3D"_blank">replies@optic.justice.gov=
+.uk</a>) that are not about your complaint will not reach their intended rec=
+ipient and won't be replied to. If you need to submit an application or requ=
+ire an update on your case, this must be sent to the court or tribunal manag=
+ing your case using their approved enquiries in-box. Contact details are ava=
+ilable at <a href=3D"https://www.gov.uk/find-court-tribunal" target=3D"_blank">F=
+ind a court or tribunal - GOV.UK (www.gov.uk)</a>.</p></div><div>&nbsp;</div=
+><div>&nbsp;</div><div>&nbsp;</div><div><p>&nbsp;</p></div></div><div style=3D=
+"font-family: Arial;font-size: 10.0pt;"><div>&nbsp;</div></div></body></html=
+>
+
+--B_3852841373_3066171964--
+

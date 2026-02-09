@@ -1,0 +1,444 @@
+Received: from CWLP265MB3281.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:ea::6) by
+ CWLP265MB3379.GBRP265.PROD.OUTLOOK.COM with HTTPS; Wed, 29 Oct 2025 08:11:38
+ +0000
+Received: from LO4P123CA0105.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:191::20)
+ by CWLP265MB3281.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:ea::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9275.13; Wed, 29 Oct
+ 2025 08:11:36 +0000
+Received: from LN2PEPF000100CD.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:191:cafe::21) by LO4P123CA0105.outlook.office365.com
+ (2603:10a6:600:191::20) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9275.13 via Frontend Transport; Wed,
+ 29 Oct 2025 08:11:36 +0000
+Authentication-Results: spf=pass (sender IP is 185.58.85.221)
+ smtp.helo=eu-smtp-delivery-221.mimecast.com; dkim=pass (signature was
+ verified) header.d=parliament.uk;dmarc=pass action=none
+ header.from=parliament.uk;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of
+ eu-smtp-delivery-221.mimecast.com designates 185.58.85.221 as permitted
+ sender) receiver=protection.outlook.com; client-ip=185.58.85.221;
+ helo=eu-smtp-delivery-221.mimecast.com; pr=C
+Received: from eu-smtp-delivery-221.mimecast.com (185.58.85.221) by
+ LN2PEPF000100CD.mail.protection.outlook.com (10.167.240.7) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9275.10
+ via Frontend Transport; Wed, 29 Oct 2025 08:11:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=parliament.uk;
+	s=mimecast20200507; t=1761725496;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=+uPB9SizquZyrr0AX/dejcNorZQoFwMQ1nvgFr+VcbM=;
+	b=EzYG5wCTysvglC0PZYpLTqAVozii/k6F5iEbvxGoPRa9okLLCrNqDRm/HyUpMmRrXuAN4X
+	8zZk2nzLlPevAliaeg/cHL3f2PMRbbAbb5PULO5WTShhZNOrkJlLZ0KWq9saGzJ5nG47s9
+	qBsukf6Cn+IyjBsv3Rb5rfed5T1MQas=
+Received: from LO2P265CU024.outbound.protection.outlook.com
+ (mail-uksouthazhn15011023.outbound.protection.outlook.com [52.102.164.23])
+ by relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id uk-mta-78-5XXpE6kfOBmNC2Y8Z5OTrA-1; Wed,
+ 29 Oct 2025 08:11:32 +0000
+X-MC-Unique: 5XXpE6kfOBmNC2Y8Z5OTrA-1
+X-Mimecast-MFC-AGG-ID: 5XXpE6kfOBmNC2Y8Z5OTrA_1761725492
+Received: from LO3P123MB3516.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:101::14)
+ by CWXP123MB3062.GBRP123.PROD.OUTLOOK.COM (2603:10a6:400:38::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9275.14; Wed, 29 Oct
+ 2025 08:11:31 +0000
+Received: from LO3P123MB3516.GBRP123.PROD.OUTLOOK.COM ([::1]) by
+ LO3P123MB3516.GBRP123.PROD.OUTLOOK.COM ([fe80::2433:8d68:c470:7dfd%5]) with
+ Microsoft SMTP Server id 15.20.9275.013; Wed, 29 Oct 2025 08:11:31 +0000
+From: "SACKMAN, Sarah (MP)" <sarah.sackman.mp@parliament.uk>
+To: Nadia <nadia@rosekross.com>
+Subject: =?Windows-1252?Q?Automatic_reply:_Stage_2_Escalation_=96_Misclassificatio?=
+ =?Windows-1252?Q?n_and_Non-Response_to_Pre-Action_Correspondence_(CA-2024?=
+ =?Windows-1252?Q?-001342_/_BV20D01752)?=
+Thread-Topic: =?Windows-1252?Q?Stage_2_Escalation_=96_Misclassification_and_Non-Respons?=
+ =?Windows-1252?Q?e_to_Pre-Action_Correspondence_(CA-2024-001342_/_BV20D01?=
+ =?Windows-1252?Q?752)?=
+Thread-Index: AQHcSKuGVEM0IrgQCUuaufXHX5aB8LTYxe2s
+Date: Wed, 29 Oct 2025 08:11:31 +0000
+Message-ID: <2c35dc2833124f308ac1603739b2ddca@LO3P123MB3516.GBRP123.PROD.OUTLOOK.COM>
+References: <471B1EDE-974B-479A-879B-EC7EB9E5F343@rosekross.com>
+In-Reply-To: <471B1EDE-974B-479A-879B-EC7EB9E5F343@rosekross.com>
+X-MS-Has-Attach:
+X-Auto-Response-Suppress: All
+X-MS-Exchange-Inbox-Rules-Loop: sarah.sackman.mp@parliament.uk
+X-MS-TNEF-Correlator:
+x-ms-exchange-parent-message-id: <471B1EDE-974B-479A-879B-EC7EB9E5F343@rosekross.com>
+auto-submitted: auto-generated
+x-ms-exchange-generated-message-source: Mailbox Rules Agent
+x-ms-traffictypediagnostic:
+ LO3P123MB3516:EE_|CWXP123MB3062:EE_|LN2PEPF000100CD:EE_|CWLP265MB3281:EE_|CWLP265MB3379:EE_
+X-MS-Office365-Filtering-Correlation-Id: 18a1a635-31c8-48c0-d926-08de16c2c7ed
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+X-Microsoft-Antispam-Untrusted:
+ BCL:0;ARA:13230040|50650200027|10070799003|1800799024|376014|366016|13003099007|8096899003|80100003
+X-Microsoft-Antispam-Message-Info-Original:
+ =?us-ascii?Q?U2GzLnTnhf1Xw2ue6ciw9fIapBCdYx3gpzy4ERp/so41Ogx4PqoIIOqHNtrS?=
+ =?us-ascii?Q?mzszjR3OKw3/IoYl+s4lV1D7gNKgz0O+EkypWqnjC7uNSN3QqIeN68cZFTHX?=
+ =?us-ascii?Q?Lg7mHGCLIumX5hp/79ayeYRF5QiKpfcSuo+junNxi+KH8+cILF9qEojNBE4x?=
+ =?us-ascii?Q?y96HmJ3L20gbXK6vX8UNYrdC5uqNZlxXLzanAma+uNRRtLETmYURaPynHhk1?=
+ =?us-ascii?Q?6k+o6XCmSFiBPJtNRqoPCQ0Bw0jfXEg6kOzfUWGkBWQzGmUvnZrFuflnoamX?=
+ =?us-ascii?Q?XBS26udSlxR9i5Dzxeh/aCyOTZzT597nf/um4o0pMo6itzx+IrpZ4kOlsTPo?=
+ =?us-ascii?Q?NIMlTgeGYzPwA9kOSjeCG7l8tGR6/+w728l+I4P/1y4W+IBZCPEgTcjIXnNX?=
+ =?us-ascii?Q?zSuR8HHt+WWzUoe1mQYYIb802z1qI8GkMUzraQ/RpN2B3rxqEnftfSMCtKYx?=
+ =?us-ascii?Q?ykioI08q0RCVdiJZQ62fM9LkK6jbmkQ8KlFT3a8saMbOdoEunjEubAJxDCSy?=
+ =?us-ascii?Q?FTHIwuabp1PtgKTR6k7hk7tiBDRY1zK1LjFBL3Bx89v0Z3LDwnh+V0A1VVFU?=
+ =?us-ascii?Q?bWfFqg3zBo7hlUn9+63tIiAvB0iLWnGm76L+SSBO634j31UgPmrlyHiyg6th?=
+ =?us-ascii?Q?JFHPmcf9eEq9paFBvRsy4TTPISDG9t/derQZuio203PuzIaTswpt2KwmR6/i?=
+ =?us-ascii?Q?65o1cAkFmswF2LtuLvnnYhiTBjhLTTxJoAgxTkwXG0BTcQ526BsHkgqkQ7qH?=
+ =?us-ascii?Q?UXLi00fTqvwNU3rU1lGoy+x8vWmX5BGbZilGn6qoChjqblU8xI1H/9mK3jK7?=
+ =?us-ascii?Q?l7mZIV3AU4SuFliciMJobKjy5lx+mh3qOAKIwLI8LBbGT2oU3W97sh/Hogzj?=
+ =?us-ascii?Q?AYatazGvwvdL14hWdU3RfUt8hMluzHRle5Npn1krFXHl7+g/RtNAu4SHlHg/?=
+ =?us-ascii?Q?heZK1ncDYP/RbAH+BCbUkmsozjV1XgiBt0BbK4TZdtTmeWT13OZRrQ7kcbOx?=
+ =?us-ascii?Q?zzv3JVq+sTv3zaaJUoUpF0FE80kOlmGmyGwfPAeWYvLHLvF6cZgv3yZyYpXK?=
+ =?us-ascii?Q?ewkwmFkYAqUYbTo9xuDMFndQMBmLYpn5/IJsxBowUSBkT1qeNSyDLh51cdyE?=
+ =?us-ascii?Q?/9LIVFuwEOBjhMHbGUeP8pVr7NZ2WYlrpZljqRCR225sFI4fy1HWhPqRYQTm?=
+ =?us-ascii?Q?kPeGh8D84rev5mNOB9T6kJI2Ow3vlKCWaizIInGJycDIVerFlemiJsxwI55G?=
+ =?us-ascii?Q?f7CXhKbIGpNj9L8J4MH7kQKImkD9ZfTkQI7BHRkoQnocZ6a5s5LlwVs5ayeO?=
+ =?us-ascii?Q?nz4Dyivf5g/Z7/hCuTm6oarwzh+w5rX614JGPZRsinuBSrh8IAgYz0tSUpfo?=
+ =?us-ascii?Q?oXbM92yW5AGWV2jc2jasfS6RPotlBNBYe7hm/a3wcIrpKMN/+m5D4N0xkAeX?=
+ =?us-ascii?Q?H8OACj7FWR5e1jWWYp31+7dRQ6324D/+?=
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:LO3P123MB3516.GBRP123.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(50650200027)(10070799003)(1800799024)(376014)(366016)(13003099007)(8096899003)(80100003);DIR:OUT;SFP:1501
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CWXP123MB3062
+X-Mimecast-Spam-Score: 0
+X-Mimecast-MFC-PROC-ID: Fo8kPF6LbnfVfZDrHeKAHZ-wqd1fbx4ZEwPWcB-G2vw_1761725492
+X-Mimecast-Originator: parliament.uk
+Return-Path: <>
+X-MS-Exchange-Organization-ExpirationStartTime: 29 Oct 2025 08:11:36.6909
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 18a1a635-31c8-48c0-d926-08de16c2c7ed
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 615372fc-d750-4bc9-b399-cc84f3fe3e95:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ LN2PEPF000100CD.GBRP265.PROD.OUTLOOK.COM
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource:
+ LN2PEPF000100CD.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+ b0e37b25-51ed-4909-5f01-08de16c2c4b5
+X-MS-Exchange-Organization-ExpirationInterval: 0:12:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: TenantCustomized
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam:
+ BCL:0;ARA:13230040|12012899012|31092699021|35042699022|13003099007|8096899003;
+X-Forefront-Antispam-Report:
+ CIP:185.58.85.221;CTRY:GB;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:eu-smtp-delivery-221.mimecast.com;PTR:eu-smtp-delivery-221.mimecast.com;CAT:NONE;SFS:(13230040)(12012899012)(31092699021)(35042699022)(13003099007)(8096899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Oct 2025 08:11:36.6794
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 18a1a635-31c8-48c0-d926-08de16c2c7ed
+X-MS-Exchange-CrossTenant-Id: 615372fc-d750-4bc9-b399-cc84f3fe3e95
+X-MS-Exchange-CrossTenant-AuthSource: LN2PEPF000100CD.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CWLP265MB3281
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.1790211
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9275.012
+X-MS-Exchange-ExternalInOutlookResult: IsExternal
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?us-ascii?Q?UpXrec8ymyJr6GsKtN3feEyGSPB16LtTXzPb/sx5pF0Jfz0pIbjPdJLdtylm?=
+ =?us-ascii?Q?EgpA28Z23Kd9TBjgBopR2aMsxDldTjpNV5qigOX5CTFcqosRIXpNYsY/u2SD?=
+ =?us-ascii?Q?oku1O8p6OkRcXrqsUOGG20napwVt1bDJnkkyGp8lz5RcKvA5yHSX/50MRMm2?=
+ =?us-ascii?Q?ReaOIoR7iyQhmjWePBzZwx8ZTgZo1U0nTh1BJynna1/4TnxoD3tjac3oDtH4?=
+ =?us-ascii?Q?4POUeon7K5merVDGhXb8hTRgM4l6kL8Nr0CjrPIDGOnr403FEljZo6l/TKFF?=
+ =?us-ascii?Q?/qlmT+XrSTl1aPKJcI0a0cHXmHk2GXwe7hnGop2d15AOws6BYlsiHPyR/wOk?=
+ =?us-ascii?Q?T9R2MeZKAheecvSGwRjTz/ET3B9B+Ev7+sxf6tkD7smv05cpbW0PJz0BJQEw?=
+ =?us-ascii?Q?k+29BwUWqxGPdtOnRrBoclknZzharvHksjqCEuDJB0uEl7oJ3Yr3ccmZWy6A?=
+ =?us-ascii?Q?8zAIXvpul2DPMefRBWTiz4VikkFbBWMrjR2f9dEayRDPECKZoVWGzfzjNDSD?=
+ =?us-ascii?Q?efDFj1l2M9hvPC5S09OgXQ0+9r8fSm6AG4VT3kP1AnDizGgc5wnjuHN+mhNr?=
+ =?us-ascii?Q?SqAzOX12uwXq8Ib8+/mptC05QEoG1wdtlTQpb5GQzEXbOaSDIpAvSdJJ33X4?=
+ =?us-ascii?Q?BsweR9LCjHMFJHadFy889kwGIl6B9SchM7nNxJsZSxMeN9p06si60eOlzRUx?=
+ =?us-ascii?Q?4s4uG6uxG21a6nc0XDyy0/EryriFjuqVMKn/i0UTNKcg0uqp4uN21nk5REhW?=
+ =?us-ascii?Q?kBc2/KBn1777H/vF26+vrNCi1mpLAL5c3aa+Hr9mLNIYVjAGsUgLMwSmY4ee?=
+ =?us-ascii?Q?OQxgVlOhBVXiTPClZu/aidTi+qFEcQFgBxCuR3qnUQhgD9owZjtbmxC2cOlB?=
+ =?us-ascii?Q?bOlYG/19Md/tbp+xOblrrqU6kzNObMmK1h9ethrZ9I95BSmrvH36EL8UpQe4?=
+ =?us-ascii?Q?ngM2e/Bo0ec0UrL9zSApTDPhRrSRbB4/92VQLvs7a1WaUxKZMWB/S5NMSOW+?=
+ =?us-ascii?Q?oWoNAPTfWzGz7gGBX96O8+V6I9JMiMjDBu+1UWXXmLHWstruMFAsNwQLRnAN?=
+ =?us-ascii?Q?/BwMOaOtDRnt27xaJhBasIyoP2x7OmNJN9525N4fHWDFTsw2cz6CixPHqo2V?=
+ =?us-ascii?Q?L0EG12iDL1FCXZUmqVcsCRgTucfpFdG7yJj1pptxED2tPYrmh4KjFdDkQGhG?=
+ =?us-ascii?Q?SzE1fGFCdI6dCKoJm0HPSlM3lo2q7D0usX7egbG6iDfeq2Az0tgaa0nl1fai?=
+ =?us-ascii?Q?LAdwcDZXNOx6yS4FVK2DB0jcllXNSmCspB15b3UDmo1TSPCPqcT8pvpe/9oF?=
+ =?us-ascii?Q?fA0Lqp2oKcGQZ7x69EHonkW5+bHwaxzYyDFv3ZHnL3uWQbXAs+Wokn1F+DjA?=
+ =?us-ascii?Q?mdNJFPayjVozuRlJ1j11dhxXeFdB3HEwonh10z09Kp4apKAazGxQh9d2gKaW?=
+ =?us-ascii?Q?KUCx2/SdlEQw5VnqlfZUoAq/UmxO9ARj0MKn1BdpayrhNhKh4bGel+YNTykA?=
+ =?us-ascii?Q?Nf3P+pChpmOXiIr36QWV80dKEsxfzFD4GqFlSGIuH7C7BN0DDIHrQiAatu4q?=
+ =?us-ascii?Q?ixtK/ku6oDvUHfP+SSzL3Gm0bIp551BOT4cGX5iZhJVAxLP7y0OKiCIpwl6e?=
+ =?us-ascii?Q?Mn7k0QKylfV23jpnVy5mRYPumTJ/aFfp7BRiMoHRYOfspRV2oLCkgyuc7kBU?=
+ =?us-ascii?Q?ZctyY8PK1bOyJElolGHSDYNddSkzW/VK22qsXlrc5/I/8NJHDNleqKyL7hJ/?=
+ =?us-ascii?Q?9kl5uZM1Xd43Y4u9bY1QPW5OlX7xvsvS3CktXdx27VEa/OlqwxlMhmSPc9Ex?=
+ =?us-ascii?Q?xENJYchHan5FQ1SFoi/JZIYbH30Omhfn2SAE1sXJWMHl3fCfAkIC4Yz+xqtt?=
+ =?us-ascii?Q?jPgzXkO/yz3lRIb6e2AALD0RAKSLEMTNyZDSdMco6HoMXxpvHCkz07kElVTZ?=
+ =?us-ascii?Q?1HqkNYNm8Jf5itTBLFVO3yMw30uA/WAvP1wVXlSZoUb7ZVWf6nks26H8SVxv?=
+ =?us-ascii?Q?QFLlol+PlDCn/Ti/B6xhQfaIu9zp/gvyFI11/IQDjO6oWvjrEPuu2zZ37m7h?=
+ =?us-ascii?Q?3r5ENajZpyoCZrjvv24SOL+w8/JfbJPs4hbOOHrMDX7VA4dViikgPynpMOCJ?=
+ =?us-ascii?Q?+8kJavDm0NmYCdBKz/IV0TO/NTNO1Qsb8fK5tSkIJzEg7zZmhlrYT3qpkaTn?=
+ =?us-ascii?Q?xyunFK1LXsFU7+4esGpDiIMnIj4pheZ76IgB3RojYqBcGVNTUm69UzmUJ+M?=
+ =?us-ascii?Q?=3D?=
+Content-type: multipart/alternative;
+	boundary="B_3852841150_1444155722"
+
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3852841150_1444155722
+Content-type: text/plain;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+Thank you for contacting my office. Please accept this as acknowledgement o=
+f receipt.=20
+
+
+To keep up-to-date with the latest from your MP, please sign up to my month=
+ly newsletter.
+=20
+
+Response time
+
+=20
+
+We will respond to you as soon as we can but please be aware that we receiv=
+e hundreds of emails every day so you may not hear back from us for a few we=
+eks. Please be assured that we have received your email and we will do our b=
+est to reply promptly. Do also note that we are unable to open any links or =
+attachments that you send with your email as part of our cyber security prot=
+ections so anything that requires our attention needs to be in the body of t=
+he email.
+
+=20
+
+If your query concerns housing, domestic violence or another urgent matter,=
+ my team will respond as a priority.
+
+
+
+Please note that my team will respond to all emails addressed to us directl=
+y. We do not routinely reply to emails where this email address has been cop=
+ied in.
+
+=20
+
+If your request is urgent, please contact the emergency services as the fir=
+st port of call. You may also want to reach out to:
+
+=20
+
+Barnet Council - Barnet Council | Barnet Council
+
+Citizens' Advice Barnet - Home - Citizens Advice Barnet
+
+=20
+
+Constituents
+
+=20
+
+Parliamentary protocol means that I can only raise issues on behalf of my c=
+onstituents. Therefore, please include your full name and address so we can =
+process your enquiry.
+
+=20
+
+To speak to a member of Sarah's constituency team by telephone, please call=
+ 07845 561 889 on Tuesdays between 10am and 12pm and Thursdays between 2pm a=
+nd 4pm. If there is no answer, please leave a message with your name, phone =
+number and email address and a member of the team will get back to you.
+
+=20
+
+Please note that this telephone line is for casework enquiries only. Please=
+ do not use this phone number for any policy enquiries.
+
+=20
+
+Ministerial enquiries
+
+=20
+
+If you are writing with an enquiry relating to Sarah=E2=80=99s role as Minister o=
+f State for Justice, you will need to contact the Ministry of Justice direct=
+ly on 0203 334 3555 or via the online form here.
+
+=20
+
+Date protection and code of conduct
+
+=20
+
+In line with data protection regulations, this office processes personal da=
+ta under the lawful basis of public task. In exceptional cases where the law=
+ful basis of public task is insufficient, personal data may be processed und=
+er the basis of consent. In such instances, a member of the office will cont=
+act you to establish your explicit consent.
+
+=20
+
+Please note that my team and I reserve the right to feel respected and safe=
+ at work. We will not respond to messages that contain aggressive language, =
+threats, or hateful comments about religion, race, gender, sexuality or any =
+other protected characteristic.
+
+=20
+
+A member of my team or I will be in touch as soon as possible.
+
+=20
+
+With best wishes,
+
+Sarah Sackman KC MP
+
+=20
+
+www.sarahsackman.com
+
+=20
+UK Parliament Disclaimer: this e-mail is confidential to the intended recip=
+ient. If you have received it in error, please notify the sender and delete =
+it from your system. Any unauthorised use, disclosure, or copying is not per=
+mitted. This e-mail has been checked for viruses, but no liability is accept=
+ed for any damage caused by any virus transmitted by this e-mail. This e-mai=
+l address is not secure, is not encrypted and should not be used for sensiti=
+ve data. 
+
+--B_3852841150_1444155722
+Content-type: text/html;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></head><=
+body><p style=3D"margin:0cm"><span style=3D"font-family:&quot;Helvetica Neue&quo=
+t;; font-size:10pt">Thank you for contacting my office. Please accept this a=
+s acknowledgement of receipt.&nbsp;</span></p><div style=3D"margin:0cm; font-f=
+amily:&quot;Helvetica Neue&quot;; font-size:10pt"><br></div><div style=3D"marg=
+in:0cm; font-family:&quot;Helvetica Neue&quot;; font-size:10pt; color:rgb(0,=
+0,0)">To keep up-to-date with the latest from your MP, please <a href=3D"https=
+://sarahsackman.com/blog/" title=3D"https://sarahsackman.com/blog/">sign up to=
+ my monthly newsletter</a>.</div><p style=3D"margin:0cm"><span style=3D"font-fam=
+ily:&quot;Helvetica Neue&quot;; font-size:10pt">&nbsp;</span></p><p style=3D"m=
+argin:0cm"><span style=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10=
+pt; color:black"><b>Response time</b></span></p><p style=3D"margin:0cm"><span =
+style=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10pt">&nbsp;</span>=
+</p><p style=3D"margin:0cm"><span style=3D"font-family:&quot;Helvetica Neue&quot=
+;; font-size:10pt">We will respond to you as soon as we can but please be aw=
+are that we receive hundreds of emails every day so you may not hear back fr=
+om us for a few weeks. <b>Please be assured that we have received your email=
+ and we will do our best to reply promptly</b>. Do also note that we are una=
+ble to open any links or attachments that you send with your email as part o=
+f our cyber security protections so anything that requires our attention nee=
+ds to be in the body of the email.</span></p><p style=3D"margin:0cm"><span sty=
+le=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10pt">&nbsp;</span></p=
+><p style=3D"margin:0cm"><span style=3D"font-family:&quot;Helvetica Neue&quot;; =
+font-size:10pt; color:black">If your query concerns housing, domestic violen=
+ce or another urgent matter, my team will respond as a priority.</span></p><=
+p style=3D"margin:0cm"><span style=3D"font-family:&quot;Helvetica Neue&quot;; fo=
+nt-size:10pt; color:black"><br></span></p><p style=3D"margin:0cm"><span style=3D=
+"font-family:&quot;Helvetica Neue&quot;; font-size:10pt; color:black">Please=
+ note that my team will respond to all emails addressed to us directly. We d=
+o not routinely reply to emails where this email address has been copied in.=
+</span></p><p style=3D"margin:0cm"><span style=3D"font-family:&quot;Helvetica Ne=
+ue&quot;; font-size:10pt">&nbsp;</span></p><p style=3D"margin:0cm"><span style=
+=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10pt"><b><u>If your requ=
+est is urgent, please contact the emergency services as the first port of ca=
+ll</u></b>. You may also want to reach out to:</span></p><p style=3D"margin:0c=
+m"><span style=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10pt">&nbs=
+p;</span></p><p style=3D"margin:0cm"><span style=3D"font-family:&quot;Helvetica =
+Neue&quot;; font-size:10pt; color:black">Barnet Council - </span><span style=
+=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10pt; color:blue"><u><a =
+href=3D"https://www.barnet.gov.uk/" style=3D"color:blue; margin-top:0px; margin-=
+bottom:0px">Barnet Council | Barnet Council</a></u></span></p><p style=3D"marg=
+in:0cm"><span style=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10pt;=
+ color:black">Citizens' Advice Barnet - </span><span style=3D"font-family:&quo=
+t;Helvetica Neue&quot;; font-size:10pt; color:blue"><u><a href=3D"https://barn=
+etcab.org.uk/" style=3D"color:blue; margin-top:0px; margin-bottom:0px">Home - =
+Citizens Advice Barnet</a></u></span></p><p style=3D"margin:0cm; min-height:15=
+px"><span style=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10pt">&nb=
+sp;</span></p><p style=3D"margin:0cm; min-height:15px"><span style=3D"font-famil=
+y:&quot;Helvetica Neue&quot;; font-size:10pt; color:black"><b>Constituents</=
+b></span></p><p style=3D"margin:0cm; min-height:15px"><span style=3D"font-family=
+:&quot;Helvetica Neue&quot;; font-size:10pt">&nbsp;</span></p><p style=3D"marg=
+in:0cm"><span style=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10pt"=
+>Parliamentary protocol means that I can only raise issues on behalf of my c=
+onstituents. Therefore, <b>please include your full name and address</b>&nbs=
+p;so we can process your enquiry.</span></p><p style=3D"margin:0cm"><span styl=
+e=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10pt">&nbsp;</span></p>=
+<p style=3D"margin:0cm"><span style=3D"font-family:&quot;Helvetica Neue&quot;; f=
+ont-size:10pt; color:black">To speak to a member of Sarah's constituency tea=
+m by <b>telephone</b>, please call 07845 561 889 on Tuesdays between 10am an=
+d 12pm and Thursdays between 2pm and 4pm. If there is no answer, please leav=
+e a message with your name, phone number and email address and a member of t=
+he team will get back to you.</span></p><p style=3D"margin:0cm; font-family:Ap=
+tos,sans-serif; font-size:12pt"><span style=3D"font-family:&quot;Helvetica Neu=
+e&quot;; font-size:10pt; color:black">&nbsp;</span></p><p style=3D"margin:0cm;=
+ font-family:Aptos,sans-serif; font-size:12pt"><span style=3D"font-family:&quo=
+t;Helvetica Neue&quot;; font-size:10pt; color:black">Please note that this t=
+elephone line is for casework enquiries only. Please do not use this phone n=
+umber for any policy enquiries.</span></p><p style=3D"margin:0cm"><span style=3D=
+"font-family:&quot;Helvetica Neue&quot;; font-size:10pt">&nbsp;</span></p><p=
+ style=3D"margin:0cm"><span style=3D"font-family:&quot;Helvetica Neue&quot;; fon=
+t-size:10pt; color:black"><b>Ministerial enquiries</b></span></p><p style=3D"m=
+argin:0cm; min-height:15px"><span style=3D"font-family:&quot;Helvetica Neue&qu=
+ot;; font-size:10pt">&nbsp;</span></p><p style=3D"margin:0cm"><span style=3D"fon=
+t-family:&quot;Helvetica Neue&quot;; font-size:10pt">If you are writing with=
+ an enquiry relating to Sarah=E2=80=99s role as Minister of State for Justice, you=
+ will need to contact the <b>Ministry of Justice</b>&nbsp;directly on <b>020=
+3 334 3555</b>&nbsp;or via the online form </span><span style=3D"font-family:&=
+quot;Helvetica Neue&quot;; font-size:10pt; color:rgb(220,161,13)"><u><a href=
+=3D"https://contact-moj.service.justice.gov.uk/" style=3D"color:rgb(220,161,13);=
+ margin-top:0px; margin-bottom:0px">here.</a></u></span></p><p style=3D"margin=
+:0cm; min-height:15px"><span style=3D"font-family:&quot;Helvetica Neue&quot;; =
+font-size:10pt">&nbsp;</span></p><p style=3D"margin:0cm; min-height:15px"><spa=
+n style=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10pt; color:black=
+"><b>Date protection and code of conduct</b></span></p><p style=3D"margin:0cm;=
+ min-height:15px"><span style=3D"font-family:&quot;Helvetica Neue&quot;; font-=
+size:10pt">&nbsp;</span></p><p style=3D"margin:0cm; min-height:15px"><span sty=
+le=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10pt; color:black">In =
+line with data protection regulations, this office processes personal data u=
+nder the lawful basis of public task. In exceptional cases where the lawful =
+basis of public task is insufficient, personal data may be processed under t=
+he basis of consent. In such instances, a member of the office will contact =
+you to establish your explicit consent.</span></p><p style=3D"margin:0cm; min-=
+height:15px"><span style=3D"font-family:&quot;Helvetica Neue&quot;; font-size:=
+10pt">&nbsp;</span></p><p style=3D"margin:0cm"><span style=3D"font-family:&quot;=
+Helvetica Neue&quot;; font-size:10pt">Please note that my team and I reserve=
+ the right to feel respected and safe at work. We will not respond to messag=
+es that contain aggressive language, threats, or hateful comments about reli=
+gion, race, gender, sexuality or any other protected characteristic.</span><=
+/p><p style=3D"margin:0cm; min-height:15px"><span style=3D"font-family:&quot;Hel=
+vetica Neue&quot;; font-size:10pt">&nbsp;</span></p><p style=3D"margin:0cm"><s=
+pan style=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10pt">A member =
+of my team or I will be in touch as soon as possible.</span></p><p style=3D"ma=
+rgin:0cm; min-height:15px"><span style=3D"font-family:&quot;Helvetica Neue&quo=
+t;; font-size:10pt">&nbsp;</span></p><p style=3D"margin:0cm"><span style=3D"font=
+-family:&quot;Helvetica Neue&quot;; font-size:10pt">With best wishes,</span>=
+</p><p style=3D"margin:0cm"><span style=3D"font-family:&quot;Helvetica Neue&quot=
+;; font-size:10pt">Sarah Sackman KC MP</span></p><p style=3D"margin:0cm"><span=
+ style=3D"font-family:&quot;Helvetica Neue&quot;; font-size:10pt">&nbsp;</span=
+></p><p style=3D"margin:0cm"><span style=3D"font-family:&quot;Helvetica Neue&quo=
+t;; font-size:10pt; color:blue"><u><a href=3D"http://www.sarahsackman.com" sty=
+le=3D"color:blue; margin-top:0px; margin-bottom:0px">www.sarahsackman.com</a><=
+/u></span></p><p style=3D"margin:0cm; font-family:Aptos,sans-serif; font-size:=
+12pt"><span style=3D"font-family:Calibri,sans-serif; font-size:11pt">&nbsp;</s=
+pan></p>UK Parliament Disclaimer: this e-mail is confidential to the intende=
+d recipient. If you have received it in error, please notify the sender and =
+delete it from your system. Any unauthorised use, disclosure, or copying is =
+not permitted. This e-mail has been checked for viruses, but no liability is=
+ accepted for any damage caused by any virus transmitted by this e-mail. Thi=
+s e-mail address is not secure, is not encrypted and should not be used for =
+sensitive data. </body></html>
+
+--B_3852841150_1444155722--
+
