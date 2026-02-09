@@ -1,0 +1,747 @@
+Received: from LNXP265MB2556.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:130::10)
+ by CWLP265MB3379.GBRP265.PROD.OUTLOOK.COM with HTTPS; Wed, 19 Nov 2025
+ 16:29:07 +0000
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=OJzpXK7Jkwp1YsJK254L8rpV2aaIAuuAx0xUAaxIweLKzeQKC0ZREo/9TP5gILwzKzkdJcOkY4oxKDYJ6wym0Wbnh/4kDBJRfjleJGB3WaS0f1kzvav/38aWNNh/OmCb6eZTcZuXoBk0ZnDbCVp8yJa5muYXwbuHmiJ0l95gqnkuk2511JnoW2N5gDma/u9HFYwmHefuoB98/BN1IkRRYs9EbZ3HKOY1AV1WSdPUJaF7fIvdB14wM9fnRqZsf93EvUYadkQS91cMbsyyqZxibuVCfDfrHNWze2wxdpl83UdGyMKqv12SrtLQSxZCYgfkmRT1/fPk1rRauZ6tdFq7hw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Ako6WXUDKDGZmhjnMoQz54CCUj9sh3vzcRohvhkP0M8=;
+ b=EQzNM3d14PneMA2QFm6e+D52N7svsu8t9Q7XJmei55Y4Az8kLf9jALF28mxCoTBWDR+S7/OBWLbU8qgieKPL9/PAksBxDgkduUZhNTMNdA7PPUmn6BelneB8lanhcoc4i/AQDMx2QkJeM/cuytLxOP69qrigveU9qpMhu5vQ+8XpZ5hb7/eiwbUEqt3moHZGQGDnxi91Gxgpi80+07iuh76MjHbKmjHgc0bbKYBhZsKRXXG1ZdjmNV3QmbaTok+guMbA+g0xvCS4UnPLVPREgFAETmeSzBvk2vEAFQKHAE3NyqWGjzFRw9czoZRZsD83xEShXwMs2XOOu9KQaTaoEw==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 2a01:111:f403:c205::1) smtp.rcpttodomain=rosekross.com
+ smtp.mailfrom=ombudsman.org.uk; dmarc=pass (p=quarantine sp=quarantine
+ pct=100) action=none header.from=ombudsman.org.uk; dkim=pass (signature was
+ verified) header.d=ombudsman.org.uk; arc=pass (0 oda=1 ltdi=1
+ spf=[1,1,smtp.mailfrom=ombudsman.org.uk] dkim=[1,1,header.d=ombudsman.org.uk]
+ dmarc=[1,1,header.from=ombudsman.org.uk])
+Received: from LO4P265CA0323.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:390::11)
+ by LNXP265MB2556.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:130::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9343.10; Wed, 19 Nov
+ 2025 16:29:04 +0000
+Received: from LO1PEPF000022FC.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:390:cafe::4d) by LO4P265CA0323.outlook.office365.com
+ (2603:10a6:600:390::11) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9343.10 via Frontend Transport; Wed,
+ 19 Nov 2025 16:29:04 +0000
+Authentication-Results: spf=pass (sender IP is 2a01:111:f403:c205::1)
+ smtp.mailfrom=ombudsman.org.uk; dkim=pass (signature was verified)
+ header.d=ombudsman.org.uk;dmarc=pass action=none
+ header.from=ombudsman.org.uk;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of ombudsman.org.uk
+ designates 2a01:111:f403:c205::1 as permitted sender)
+ receiver=protection.outlook.com; client-ip=2a01:111:f403:c205::1;
+ helo=LO3P265CU004.outbound.protection.outlook.com; pr=C
+Received: from LO3P265CU004.outbound.protection.outlook.com
+ (2a01:111:f403:c205::1) by LO1PEPF000022FC.mail.protection.outlook.com
+ (2603:10a6:608:1::14) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9343.9 via Frontend Transport; Wed,
+ 19 Nov 2025 16:29:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=FjIGZFvrTatakvL5p/btV4Kec1sJ1uQn3HPqX3uPf7j1qR77b8rKLR8HDbMpRrus+7UvJ5UUso2A0NSoTbjxxElYGcfAHEvCD7fzWBdPaN8tHpnL/4JnbfZFkKXNMLWJI4pAYcb4rrnKe+JHP3rrlKt20a4jVqXxkjxJYAvQHDEBTMiZQ3cadtNRiEiLNa7VJmmyK5Q/xgpFiLjfgCBnxKe7/y2nX8ZDCI29CLfUoyNEDo5Pbbl90Z3iBo4CmTIgIoNnVqlp4gOezozvcYPPS4xD9lQhK3vyvZ0FpAvHLlCGyz99cC44CHUMQtRrSWuwnHB1NR/6NglrjjyijoDNgw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Ako6WXUDKDGZmhjnMoQz54CCUj9sh3vzcRohvhkP0M8=;
+ b=RD9fP2XbJIlfrnS11wFuY8SfKXOk/00r8GoHY7RtnL4YMZy5RQ8CNtr04xU8RJUWP3vHCi5GhhGEClf32IFGqn58WWrCg5x7LZ4HtxgFLDROdEvPejccwJlqECUJflHqUI70YO3+b36xKsib7LnfTkckyWEe7XvbekVOIWmECmfneAiPLHZ+vjASEmNcVp4QMwTAYqbonOzjunKIGkXiyGsSsOORcnZn2rM5PiKkk14JLX+DMZ7yTtWOEsNvhe1yQJQEzsrPB68KaVBgkqUrtca7esk5T8gfN2qo0GKIHk/AKaMRyB5AXchxooYTJ7nlZV2zWYYr9IDau7Bgzu/6MQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=ombudsman.org.uk; dmarc=pass action=none
+ header.from=ombudsman.org.uk; dkim=pass header.d=ombudsman.org.uk; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ombudsman.org.uk;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ako6WXUDKDGZmhjnMoQz54CCUj9sh3vzcRohvhkP0M8=;
+ b=e4yiQI9xmO6AaRojvhSnAIHiPdQgFrASBz6VLl+X6TsxuTqw/NIFcfczmpPvviQxi5ZZI6QzwBaqokF+TOjF9FaiZ/P3y2jarN75QCs7hdWVip4CLTgw47L9WIOXdpX6LHjyTK2/CmMLI5hbm5yWz9P6OFJfZ6lfXnliABPGGmH93PsZUH/yLiiIhxNRdCXkU3vkWOWWvauVvRNaTrUGPMUTPzeQ9Ey2hcECwZshVPA0URKpP9aPQS2VlYiprwIeq5xlQIEVsWNoTiM5xLw0iZasFI2AC3P+ILgnOBWSOTV3Qrpo21prcXx7c72bGLNC22PwEBDMfJ13hyG3ZGdR5Q==
+Received: from CWLP265MB2737.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:a1::7) by
+ LO6P265MB6688.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:307::13) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9343.10; Wed, 19 Nov 2025 16:28:23 +0000
+Received: from CWLP265MB2737.GBRP265.PROD.OUTLOOK.COM
+ ([fe80::70c1:8042:8fcf:389c]) by CWLP265MB2737.GBRP265.PROD.OUTLOOK.COM
+ ([fe80::70c1:8042:8fcf:389c%6]) with mapi id 15.20.9343.009; Wed, 19 Nov 2025
+ 16:28:23 +0000
+From: Phso Enquiries <Phso.Enquiries@ombudsman.org.uk>
+To: "nadia@rosekross.com" <nadia@rosekross.com>
+Subject: Parliamentary and Health Service Ombudsman - Case Reference Number -
+ C-2182742
+Thread-Topic: Parliamentary and Health Service Ombudsman - Case Reference
+ Number - C-2182742
+Thread-Index: AdxZcCgMwxpJg971SaWdDaawzBcAwQ==
+Date: Wed, 19 Nov 2025 16:28:23 +0000
+Message-ID:
+ <CWLP265MB27373B7C3F5718A6F7E069D9BCD7A@CWLP265MB2737.GBRP265.PROD.OUTLOOK.COM>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+ MSIP_Label_ab163fcc-818b-4cb2-b419-a83492396809_ActionId=1009258c-22b2-4c8c-8496-d5376c98ca4e;MSIP_Label_ab163fcc-818b-4cb2-b419-a83492396809_ContentBits=0;MSIP_Label_ab163fcc-818b-4cb2-b419-a83492396809_Enabled=true;MSIP_Label_ab163fcc-818b-4cb2-b419-a83492396809_Method=Standard;MSIP_Label_ab163fcc-818b-4cb2-b419-a83492396809_Name=General
+ sensitivity
+ label;MSIP_Label_ab163fcc-818b-4cb2-b419-a83492396809_SetDate=2025-11-19T16:18:09Z;MSIP_Label_ab163fcc-818b-4cb2-b419-a83492396809_SiteId=7c88cec8-6411-4f32-9333-cf6877fd3515;MSIP_Label_ab163fcc-818b-4cb2-b419-a83492396809_Tag=10,
+ 3, 0, 1;
+x-$switch: demIdHint="emailPlain"; labelID="public"; processed="1";
+ software="outlook plugin/23.3.1236.0";
+ switchID="daniel.shelton@ombudsman.org.uk";
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=ombudsman.org.uk;
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-traffictypediagnostic:
+ CWLP265MB2737:EE_|LO6P265MB6688:EE_|LO1PEPF000022FC:EE_|LNXP265MB2556:EE_|CWLP265MB3379:EE_
+X-MS-Office365-Filtering-Correlation-Id: c1b4a9a2-0e8d-4b43-3598-08de2788c154
+x-ms-exchange-sharedmailbox-routingagent-processed: True
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+X-Microsoft-Antispam-Untrusted:
+ BCL:0;ARA:13230040|366016|376014|1800799024|38070700021|13003099007|8096899003;
+X-Microsoft-Antispam-Message-Info-Original:
+ =?us-ascii?Q?StV6Hj70WgTtp3ltVdk5VGAtyzT+qI0sICM+GqgjIfQfnmHV5boUw6lJj3vc?=
+ =?us-ascii?Q?ZuBSXNggj8bhtDybJhNMZ41y7Nil+YZ2gLT3FwDmD/Jzt5VDnyQ0Dli4xuzl?=
+ =?us-ascii?Q?F/8DXZ5/dycXsF5/uxsOIMa3rGOJRblv1+TsbqKzu1a1ZiZl540cB2x3/SVG?=
+ =?us-ascii?Q?DdZY5bI54gCGqXWkVEho7MJSGvLB7jV6II/dUBk4bt1/UgAWedBZc2yZAgZc?=
+ =?us-ascii?Q?RRkBSqmrz2St2AnEYQVo5wJc4x6HTO5mjQSEB67fJtQjWGIfCTrNPSr6/U1c?=
+ =?us-ascii?Q?kezxMG23EIb5sbm1mdl8xnuPkolr5URmfTinhahlJFTPh3fh2mINgcVPO9F0?=
+ =?us-ascii?Q?ErY+z8XdmRq9geQ0I+bWt+pNYkAuPWO2Qt0LBTpWy+usYld5eJwin54/zrrZ?=
+ =?us-ascii?Q?J/9NoDsfPf3UplB8PeUNphZF5b6zZTv2ZVxa++dqhH/T9IHYIgvgmfaYvJML?=
+ =?us-ascii?Q?1WS7mhskRK5OIFOVRSO6jWe51LnJjO9P2hY35f9YxwQ7STqmNqjOG3tpYWl4?=
+ =?us-ascii?Q?qCJ+fWsY/eEANY7GBxM51ZQ7R//IF1F8/cFkGE03T8PbNsWM0q6m+S/sM2WI?=
+ =?us-ascii?Q?RCTwkHwb8o1kpVGn0w7wKe+0Jl023RjJe8ZBO1tA+3DMD3b5AgzRNYuZQMry?=
+ =?us-ascii?Q?Sz/4XaOlS9sS8ORhQ+MmzKMDDNYcZ8IapU723V8Q1bOXJxtUhl5P6gcnrxE/?=
+ =?us-ascii?Q?2i6+Tk8OiGYCCk/umvHPYlLGyVwsHAIEMXtU872hXEG2YX3rlXKhpi0zs9Uj?=
+ =?us-ascii?Q?1Ql6nxXKn3EKSs4MiMBk8nPhUeXVzUN640newv9EZv1BbLSNqFFjpQ/QLIlD?=
+ =?us-ascii?Q?WAT/x9keVBEExnRVsLwYT0Hs2H6nmiBUC9E9Q8teVApmP2b1FOXXDbtytbyR?=
+ =?us-ascii?Q?qgg+cx1IsMaYFmHbIHABfPvc1pDDEN/vRzNU7J0R+9EDIp0o5srjdXgnrC4+?=
+ =?us-ascii?Q?m0tjvdEReGkNfouZpVPX6V0cOSTPH2U43gtzIG7BKbFs73D2vueIM5PIW7aC?=
+ =?us-ascii?Q?UiY4kGdNvrAx/IBOoEnrRms6Aegxi50gMaOkbPxL8KXGyjh8JPhyLYe5vN1Y?=
+ =?us-ascii?Q?zYrxHwD5uLDD8BdsCsTfCzAF86UcavYYsI9wt/haPJLvTJ17C6mk84VlWqc1?=
+ =?us-ascii?Q?gI++lFlzptJ6fqBDh2/kj0gEM+vpr8pTlSYX7gX9WA0j3s6d+FztXXdYd4Ny?=
+ =?us-ascii?Q?/zcxaFWzb5WluuI/f1Hpa3iqJq4djq9udMAcEutXs2l5NFJm6KTUZySPF/Nd?=
+ =?us-ascii?Q?rh9aQebyajuHye7CLRHL2WYwgW90DDOLTKwlal4lbXA73IzeAiUnjiTB5dSK?=
+ =?us-ascii?Q?huBJqwFRgUnP1BPGlHqz9wUXGwuCmvnxQXNHLloheG7zxO9ot0nvaBHBNTmr?=
+ =?us-ascii?Q?tn1MSLujRyYZ20r9F+oyfLgUoHf9OcsDZWHV++zjy+aP1HqUMqv6T5RgFe6+?=
+ =?us-ascii?Q?jhZVe5MldjHX9mic+zy8d4YU5kySto7O?=
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CWLP265MB2737.GBRP265.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024)(38070700021)(13003099007)(8096899003);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-Original-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-Original-0:
+ =?us-ascii?Q?2OhyEMSGfF7kPtUajjEld+FaW40w7e6XhCipnLR/g4ijFcix8aRv9fzyWZwn?=
+ =?us-ascii?Q?AoCS7O8GZS+wJ+kt6NKnGe98HC4TE7Aj2bpinC0h1DltbrEXVwlIwbyQBVuv?=
+ =?us-ascii?Q?n3lBrInFSi+0BLMLdGEeeJ7iskMytFfO5ass8aWJtsvVVLYJZ9FLHws6/sMm?=
+ =?us-ascii?Q?qR6V5NAQCanWSHWTJkyKpQ611sdB9tLvrs49oKCEh48du+V0WJbEf+p4VI2T?=
+ =?us-ascii?Q?KgHBtyv0xuGn5r4DlFHAlBrBI9lvc+/gnV9+0fNMlnTwr5xT9l9R1UknVMIF?=
+ =?us-ascii?Q?GFfH+QAW1e9zTg1jWX26oZbmugdNsd5lROPe6OvfUqUZz2LYG82Zt7r2zyjR?=
+ =?us-ascii?Q?llzlcnhvlX9Wr8kQuFvvbmzZVGEhKf+LuiAgMm7odWtrPMo/bUZ/5M7oU+C5?=
+ =?us-ascii?Q?OLOVdXuQl6MDt31M1/ggouYx+Ns/92Ov7pVE6NhAEolI48bFkU1/m3PKhcDh?=
+ =?us-ascii?Q?DYXqHUkgziwleQg0R7y+CLAvMeup6dalsYAlxJTYLysBO7kH/ZzDwcOcwxvk?=
+ =?us-ascii?Q?fD8P30u7bHCRLOKGC3E1kx3GwkfZ4MajW1wB8nGpk1u3gfVIuC8Ia21IeDhD?=
+ =?us-ascii?Q?DSQVt5HOe/tKi5oVwmRUIgmSYvHc7CQ96J+V1W7UbJslWNwPm6YbtZUFYRmL?=
+ =?us-ascii?Q?BvtNsMG+LAYozzrvSpet+lWKjufpClBueBC56xPFw37nmoF0WtsMGSKgwadZ?=
+ =?us-ascii?Q?z80wbLB3DeqcyMLurea7CGIk9d9LyihrIFO0OAENW/9VAra/uybPE1Qz5tRo?=
+ =?us-ascii?Q?0KRNx/+dTwhHNd7JyxjWU+e/A4JR7wS6JqNGOsn/YJ17x3+4T9kxzmWqUnK8?=
+ =?us-ascii?Q?PipYnP9PzKExuJMfK5vNkCda0XnZB4BbynqooRRqEzNsgxkYzorDZ9cK1TaR?=
+ =?us-ascii?Q?gClieMY5udMZU0SUWJUZMp4t7qMtPApS3o62JTGYftY/qxqXO2Y5PyticjFP?=
+ =?us-ascii?Q?ZMWjebzZvNuz903hh9zOUp9+V+8pTSablkam2HXbbIRruRkEMFHyWz3IvczA?=
+ =?us-ascii?Q?VOVRXoZx5xMDpNsBFnevtyKbadi5dhft/gNXpB8cVEi2v9Nqwbm+oHKi+iBg?=
+ =?us-ascii?Q?EDk6aoCg6IOOqLhicECIdj6ystJm8xttEpBXS5xtvidBkNBKFIt551navs3r?=
+ =?us-ascii?Q?UxJxiM2145o6eRQcKhAlaVXnl9pHGUBMOXqRP2G6asOLahTIh0Fsc+ax87p9?=
+ =?us-ascii?Q?NhmyNBzWDSlaH2yspqXR1nDr2h+9+z8Q1CppMT0FTFE9MqoczWFaWNgUAQn2?=
+ =?us-ascii?Q?1etlLNioQK88sbzRLBq439GURr2D15Tarwyv5/+/Iqw7WL24oaBFbJHl8lYs?=
+ =?us-ascii?Q?E9IiDXupXi4i8+UpqhoYOp1cdqKaJLE3UbzfC8N2tZphH9bkhOpC2HoIsKBd?=
+ =?us-ascii?Q?EOR+P/bEFJdBqcvwLxcASFfcrtD21GFrufyMARsRVYm0LuuuRy1kI2a55Atg?=
+ =?us-ascii?Q?n3hu7pWogxAhxpL40D7fYXX5+pY/FZbJO+eLVuTCiTB2LangbmcxcS7q/xmU?=
+ =?us-ascii?Q?10Cx10ggJzpYxA6ByXmO1kU0f7kA62EFTouX1d+dJlCHYVq1jnw1orT3hFez?=
+ =?us-ascii?Q?2M5FgQBl5W4k7uFWH6liGwzdoQiUU/m6B1E08gtFV7MGl0y2m9FAzC1G8Jal?=
+ =?us-ascii?Q?TA=3D=3D?=
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LO6P265MB6688
+Return-Path: Phso.Enquiries@ombudsman.org.uk
+X-MS-Exchange-Organization-ExpirationStartTime: 19 Nov 2025 16:29:04.5745
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ c1b4a9a2-0e8d-4b43-3598-08de2788c154
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 615372fc-d750-4bc9-b399-cc84f3fe3e95:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ LO1PEPF000022FC.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-Transport-CrossTenantHeadersPromoted:
+ LO1PEPF000022FC.GBRP265.PROD.OUTLOOK.COM
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource:
+ LO1PEPF000022FC.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+ da5d3102-adaf-48b5-1e45-08de2788a8b3
+X-MS-Exchange-Organization-ExpirationInterval: 0:12:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: TenantCustomized
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam:
+ BCL:0;ARA:13230040|12012899012|35042699022|8096899003|13003099007;
+X-Forefront-Antispam-Report:
+ CIP:2a01:111:f403:c205::1;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:LO3P265CU004.outbound.protection.outlook.com;PTR:mail-uksouthazlp170100001.outbound.protection.outlook.com;CAT:NONE;SFS:(13230040)(12012899012)(35042699022)(8096899003)(13003099007);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Nov 2025 16:29:04.3647
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: c1b4a9a2-0e8d-4b43-3598-08de2788c154
+X-MS-Exchange-CrossTenant-Id: 615372fc-d750-4bc9-b399-cc84f3fe3e95
+X-MS-Exchange-CrossTenant-AuthSource: LO1PEPF000022FC.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LNXP265MB2556
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.3605323
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9343.009
+X-MS-Exchange-ExternalInOutlookResult: IsExternal
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(4710137)(4713098)(4999163)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?us-ascii?Q?INqw0a06u3A2h9vCLLBPezdCYxUKL2kPGyFUm8/OqO05257RiCZ709QmNqPx?=
+ =?us-ascii?Q?/y+Ew1sZ4ha9M6ehtL/CAmScAhADWtKldGL3zAAsZ6X9qmD3EOuRMFxZVFmG?=
+ =?us-ascii?Q?DCK/0YuS4q1zHdxj+YlFP+RKdgqgF4sa4elWUVYnAJUxBy8ybitXFKISQN23?=
+ =?us-ascii?Q?gsIsWFESHKZ+/EU16Cit0Y0Xyng+xcA1iqbjkFD01c08TNvFpJ7Fp0CQovLU?=
+ =?us-ascii?Q?F8y5+u6OuP1JUAbAMiL7i2KmEudTQjUnLKpYBqgL6+lfPraSn/ePDt9fjK0S?=
+ =?us-ascii?Q?s5gne6NYDquIRRInIOpANdmWhG0cQ6B0hG53pMNx/js14GIJpaObStqgRyNV?=
+ =?us-ascii?Q?1LU9WBwkIBOf4XlwgYho0sYH4y2elugVUvbQpDdUD4bl4u2ZriyTmKFeAkDI?=
+ =?us-ascii?Q?KegN3RbMvPss0uZJCh5LsIZUZHvZll1mQS7w2SCnQhzajB3+UDHy12goH0Qd?=
+ =?us-ascii?Q?Hm9cHM4mLPvme26RV8KraX3gcyI6o+6wlH/7UPYPRHG78PZUrmgSg6IZc0EA?=
+ =?us-ascii?Q?QmF2TOCS4itcroKm7drCVlwse2rV3ym9gnCCLxQJ3RBe7LvJCRbNQHWqi9/z?=
+ =?us-ascii?Q?huXSOicbAGPVzjDytGeS0plMTEEUbRQEWrk/eVOfx9GMrXaYgthl3wbtzesg?=
+ =?us-ascii?Q?dYMpRdlJUJSoGlrLgJrRyW2fy0VxiEzCjmVKWP0MpF5P07HlFDsAUCK5jUm3?=
+ =?us-ascii?Q?K40tRT7DqqULMZffrJPJKRYEldiiY6NbLd1Vqj5KcB13xyrEttRElQgB6TTO?=
+ =?us-ascii?Q?oflLYZqfaLlt8cLINg2/UUQbjy9Nyx+RJXH5ANNTo+nzTrIRrNNonCjaVRt3?=
+ =?us-ascii?Q?z7kBIvM7AQVpHGVV1dcyWHbUCA4I8EPqvy5HCCtww/pcu7hqazelgV1AGiEr?=
+ =?us-ascii?Q?IJFxI5R2bB+z2f2eAB8Rh+WSSdnq70z9FTjj4u8hn64LOCOijEoY224mtwpV?=
+ =?us-ascii?Q?mHTxqU/FzeQ9irFNZctO6fadQhnDBKYNaimTDYaJhqlJrOiKpk4OBfCl0Y8M?=
+ =?us-ascii?Q?oCgVMMn/qZRHf8vc5uxCNYJq9C1TRhDkRT+8/V8DByuN7BMdvqUt2B1aU3bJ?=
+ =?us-ascii?Q?i8xhROWaYrW3Saa0//9OsBo/ZDJs6sdy8fFvrO2msy3/5oweXupaA5210duP?=
+ =?us-ascii?Q?zNJ2E/RaqcTuoHJlRV2GR8IErRZNWDPvAhwo2vU+dgBgZVDReL4vZGiAKSdP?=
+ =?us-ascii?Q?76ozUtEKj7xhwHrUgCq57QvIE3TCPRdi72uNEG5AExvtYoLtz0pEBdJ8Ba0T?=
+ =?us-ascii?Q?+Wk8zhg5iPPbYNkx/I95wFmd3rh9RQ1lvPVLSlt2oL3UCeFB4Biaz/5HMtSw?=
+ =?us-ascii?Q?bj0/n/FdelzUUqrRC+NEb1kH6a2dSZuZRbObHjkGHfPc+M3bvm5fPuTDWLhj?=
+ =?us-ascii?Q?5wpsrhefTMHMflgEezhueyzZJnOhVtruIrYE0kjwubj8AO1KWyAvpP70qwcf?=
+ =?us-ascii?Q?+OXN7dRxAY43kUVFSlsn0CWet0tDdTCgwoz8HoyIwYT9QicvLd6zDYF0d6U5?=
+ =?us-ascii?Q?asXqptrkdKXRk9gGEMd59uhbwfLI2mlSlYdEm1YcjEOTGNDzXw75YKb53Da3?=
+ =?us-ascii?Q?u5Q8GnI1YrAukv1Hh0K+RpPGmSffYndRpVKk8fn04BtwRxntkehXiSoRx+0u?=
+ =?us-ascii?Q?UjfBCgCi7DuH5frmom4zylWNymlRcB8Np9wt/F0hnRuGTizz/cc4DF7iAb+y?=
+ =?us-ascii?Q?KvbHpv6rmikwjUXKdAH3R7tCflgpvh9UeWn7kXNJFUmpaLnj6vXl3ktGXCCZ?=
+ =?us-ascii?Q?5iZU22L1s3ZswYSmhsr4CL3bedDBXhr1J82T2HrvmZeiQbFemk/SJkw7w0jh?=
+ =?us-ascii?Q?7/0+UlBfxg9ECld1ol25tJGKfVKRMLxUHewDXoFZ83OqEHqflip433hqfVpz?=
+ =?us-ascii?Q?UvS9BGRj9CcxV/edP07FePjw7DhgVcfCAnQCP/b4QpuNjV1NaME+RqusOOgd?=
+ =?us-ascii?Q?0qTEbAf+Jcn1HYj19EssL5XGTEOjqLU+T0WkGC6mTR355mGvWB0E5xiMM91x?=
+ =?us-ascii?Q?5hzqgzuASY8+41VVzMFLVRtxseH/R91pmNXSQX82JnliQpFieNzPgkT95yR2?=
+ =?us-ascii?Q?GYiPrLDU2GF3xCSjsuxskzwg/WvO5350i08AM9nxfcM7SmTLQYZpUUhsR2Dm?=
+ =?us-ascii?Q?LnMmQuZq4iq1xHWZ0VO6oXE/hR383xSocdAjWQXQNk+fZQ9XgHEeaTQ04Kw/?=
+ =?us-ascii?Q?Xv45XUL4E/DFCE62F2+WNWFa7Dw8wbHxniTBBNpGJZ4R1p8DBJDbw2qCmHND?=
+ =?us-ascii?Q?8vhOnVv63WSK5v3+oQEjBA1m7tM6D1eWyeewB5NohjwL5zomCj8hJFLynjCE?=
+ =?us-ascii?Q?uQZ+9fm3gWI0QUXZsrbSrzlS38u8UAjmPm1m4HddKgNMSBImOOlXHEgpEdwB?=
+ =?us-ascii?Q?PXGHC8SBR99fCh4Wce2L40VT68Uskob2qngMw0ccn0u9bV8KPRhQs+rKnniE?=
+ =?us-ascii?Q?WmvCsqrbhO7vva2T6aj676dU5kRnh6xlF/mysiFWHTZuoJ/6OGdBv4Qdz0pd?=
+ =?us-ascii?Q?LytZoLPuNOr5wp0eXO+zc+Bzw9XckbK7Fm3JTNoDsAA+h2wxKcifErTYZmlj?=
+ =?us-ascii?Q?SOTu09BtHneNvAzdzXm+52JitF2mkT8Gz0XL91gpVV9MdsD9m+F7lKTDvFZ6?=
+ =?us-ascii?Q?ATmPODfHDNhGglAjFj1cGg3H83BO8Vf/Q4Y7ADFY9YVNBank/t89j/Au4glI?=
+ =?us-ascii?Q?otC32zo/2kDKyCiBzT+2izVRpYDjQIYvRWGHcB9osT66zKveK8vrn607ilqy?=
+ =?us-ascii?Q?ymMe7jvy0uwYFbKmU39H7xGte03vx/dMMmN9Mf5zGpMRr1RHxBvRGwaL2Ar6?=
+ =?us-ascii?Q?kPt5WWuKVVrR7lLM5r0WpBmrxUi9N0nEVkqDmJyDwpopCuHkMD/FbF5qFGqj?=
+ =?us-ascii?Q?m154SLsmdkneVzozrF1ReiH0WUjbonK4pBd+7DnhPLSrwyEkV+kb8WsaLsTN?=
+ =?us-ascii?Q?2y/mk0/2NFqmjthAyNdnNM4Etn8NYT6ObEXYGeReJoQS7hP34E4eWSJck1iL?=
+ =?us-ascii?Q?yx6ETPQMFecXwylJYBEall/lW4XqdJ/3lyEAvc0yeSn+nVz4Yfgq0swTozTw?=
+ =?us-ascii?Q?7ZO4FhgWDpnqOVi5J6vV7sY8+Q6ZVQ=3D=3D?=
+Content-type: multipart/alternative;
+	boundary="B_3852841670_1675166042"
+
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3852841670_1675166042
+Content-type: text/plain;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+In Confidence
+
+Ms Nadia Zahmoul
+
+Via Email
+
+=20
+
+19 November 2025
+
+=20
+
+Dear Ms Zahmoul
+
+=20
+
+Your complaint about HM Courts and Tribunals Service (HMCTS)
+
+=20
+
+Thank you for giving us information on your complaint about HMCTS.=20
+
+=20
+
+Our role
+
+=20
+
+We make final decisions on complaints that the NHS in England, UK governmen=
+t departments and other UK public organisations have not resolved. Before we=
+ look at a complaint, we usually expect that you have complained in full to =
+the organisation and you have received a final response from it.
+
+=20
+
+We recognise that everyone has different needs and circumstances, and these=
+ are likely to influence the way you access our service.  If you need this l=
+etter in a different format or a reasonable adjustment in how we communicate=
+ with you, please contact me to discuss your accessibility needs. You can us=
+e the details listed above or our Sign Video service  to contact me.
+
+=20
+
+Our decision
+
+=20
+
+We have looked at everything you sent us and we consider your complaint is =
+not yet ready for us. We need to give you some further advice about how to g=
+et a response to your complaint from HMCTS before we can give it a more deta=
+iled consideration.=20
+
+=20
+
+This is because it appears you have not yet completed HMCTS=E2=80=99s complaints =
+process. =20
+
+=20
+
+It is important that HMCTS has the chance to look at your complaint, give y=
+ou a response, and put right any mistakes. Often this is the quickest way to=
+ resolve complaints. Therefore, your complaint is not yet ready for us and w=
+e cannot take any further action at this time. =20
+
+=20
+
+I have checked over the information you have submitted. I can clearly see y=
+ou have asked HMCTS questions. Relating to the handling and administration o=
+f your court of appeal case. HMCTS have responded to you twice and on 30/10/=
+2025 signposted you to the third and final stage in their complaints process=
+. I have not yet got a copy of a response from the third stage. Therefore, t=
+he case is not yet ready for us to investigate.=20
+
+=20
+
+Please note in order for us to investigate a HMCTS complaint we will also n=
+eed the case to be referred to us via a sitting MP. I do not have a counters=
+ignature from an MP on your complaint form, or any evidence a referral has b=
+een accepted. This is a requirement under our legislation. Once you have the=
+ response to the third tier of the complaint this should be sent to your loc=
+al MP to complete the process.
+
+=20
+
+What you can do next
+
+=20
+
+To complete the complaints process, you should write to the HMCTS User Inve=
+stigations Team and ask them to look at your concerns. Their address is:=20
+
+HM Courts & Tribunals Service,=20
+
+User Investigations Team,=20
+
+6th Floor (6.12),=20
+
+102 Petty France=20
+
+London,=20
+
+SW1H 9AJ
+
+E: userinvestigations@justice.gov.uk
+
+=20
+
+Getting help to make your complaint
+
+=20
+
+If you have not already complained, you can find some tips on our website: =
+  =20
+
+www.ombudsman.org.uk/complain-for-change/our-resources/tips-on-making-a-com=
+plaint-about-uk-government-services
+
+=20
+
+If you need help putting your complaint together, you can speak to the Citi=
+zens Advice Bureau. You can find your local branch at www.citizensadvice.org=
+.uk.
+
+=20
+
+What you can do after you get a response=20
+
+=20
+
+If you are still unhappy after you receive a response from HMCTS, you shoul=
+d then ask your local MP to send the complaint to us. By law you must refer =
+your complaint to an MP within one year of becoming aware of the issues you =
+complain about. =20
+
+=20
+
+We can extend this time limit if we think it is reasonable to do this. The =
+things we consider include your reasons for not complaining earlier and how =
+long the local complaints process took. We will also look at why you did not=
+ make the complaint to the MP within a year.=20
+
+=20
+
+Once we have all the information we need to progress your complaint, you wi=
+ll then be informed of the next steps.=20
+
+=20
+
+For further information on how we deal with complaints once they are progre=
+ssed, please visit our website https://www.ombudsman.org.uk/making-complaint=
+/how-we-deal-complaints.
+
+Please note there are some important details about how we use your informat=
+ion at the bottom of this email.
+
+=20
+
+Yours sincerely
+
+=20
+
+Daniel Shelton
+
+Intake Caseworker
+
+Parliamentary and Health Service Ombudsman
+
+T: 0345 015 4033
+
+E: phso.enquiries@ombudsman.org.uk
+
+W: www.ombudsman.org.uk
+
+=20
+
+Important details about how we use your information
+
+=20
+
+You can read more about how we use your information in our privacy notice. =
+The notice explains how we use and look after information about you, or that=
+ could identify you, and how long we keep it. It also explains your rights a=
+nd how to request your information. You can find the privacy notice online a=
+t www.ombudsman.org.uk/information-you-give-us. If you would like a copy in =
+a printed or other format, please contact informationrights@ombudsman.org.uk=
+ or call 0345 015 4033.
+
+=20
+
+You can find out more about how we deal with complaints in our detailed gui=
+de on our website: Go to www.ombudsman.org.uk/making-complaint/how-we-deal-c=
+omplaints. Further information about how we consider evidence in complaints =
+can be found here: https://www.ombudsman.org.uk/publications/balancing-evide=
+nce-guidance.
+
+=20
+
+Information on how we use clinical advice to inform our decision can be fou=
+nd here: www.ombudsman.org.uk/how-we-use-clinical-advice-inform-our-decision=
+s
+
+If you would like me to send you a copy of these documents, please let me k=
+now.=20
+
+=20
+
+Our Service Charter also describes what service you can expect from us. Go =
+to www.ombudsman.org.uk/about-us/our-service-charter to find out more.
+
+=20
+
+=20
+
+
+--B_3852841670_1675166042
+Content-type: text/html;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsof=
+t-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" xmlns:m=
+=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http://www.w3.org=
+/TR/REC-html40"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><meta na=
+me=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:"Trebuchet MS";
+	panose-1:2 11 6 3 2 2 2 2 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;
+	mso-ligatures:standardcontextual;
+	mso-fareast-language:EN-US;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#467886;
+	text-decoration:underline;}
+span.EmailStyle17
+	{mso-style-type:personal-compose;
+	font-family:"Trebuchet MS",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:11.0pt;
+	mso-fareast-language:EN-US;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3D"EN-GB" link=3D"#467886" =
+vlink=3D"#96607D" style=3D"word-wrap:break-word"><div class=3D"WordSection1"><p cl=
+ass=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet=
+ MS&quot;,sans-serif">In Confidence<o:p></o:p></span></b></p><p class=3D"MsoNo=
+rmal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,san=
+s-serif">Ms Nadia Zahmoul<o:p></o:p></span></p><p class=3D"MsoNormal"><span st=
+yle=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">Via E=
+mail<o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt=
+;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&nbsp;</o:p></span></=
+p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebu=
+chet MS&quot;,sans-serif">19 November 2025<o:p></o:p></span></p><p class=3D"Ms=
+oNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,=
+sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><span style=3D"fo=
+nt-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">Dear Ms Zahm=
+oul<o:p></o:p></span></p><p class=3D"MsoNormal"><b><span style=3D"font-size:12.0=
+pt;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&nbsp;</o:p></span>=
+</b></p><p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&q=
+uot;Trebuchet MS&quot;,sans-serif">Your complaint about HM Courts and Tribun=
+als Service (HMCTS)<o:p></o:p></span></b></p><p class=3D"MsoNormal"><span styl=
+e=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&n=
+bsp;</o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font=
+-family:&quot;Trebuchet MS&quot;,sans-serif">Thank you for giving us informa=
+tion on your complaint about HMCTS. <o:p></o:p></span></p><p class=3D"MsoNorma=
+l"><i><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,san=
+s-serif"><o:p>&nbsp;</o:p></span></i></p><p class=3D"MsoNormal"><b><span style=
+=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">Our role=
+<o:p></o:p></span></b></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt=
+;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&nbsp;</o:p></span></=
+p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebu=
+chet MS&quot;,sans-serif">We make final decisions on complaints that the NHS=
+ in England, UK government departments and other UK public organisations hav=
+e not resolved. Before we look at a complaint, we usually expect that you ha=
+ve complained in full to the organisation and you have received a final resp=
+onse from it.<o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-si=
+ze:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&nbsp;</o:p>=
+</span></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&q=
+uot;Trebuchet MS&quot;,sans-serif">We recognise that everyone has different =
+needs and circumstances, and these are likely to influence the way you acces=
+s our service.&nbsp; If you need this letter in a different format or a reas=
+onable adjustment in how we communicate with you, please contact me to discu=
+ss your accessibility needs. You can use the details listed above or our <a =
+href=3D"http://parliamentaryandhealthserviceombudsman.signvideo.net/" target=3D"=
+_blank"><b>Sign Video service</b></a>&nbsp; to contact me.<o:p></o:p></span>=
+</p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Tre=
+buchet MS&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"=
+><b><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-=
+serif">Our decision<o:p></o:p></span></b></p><p class=3D"MsoNormal"><span styl=
+e=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&n=
+bsp;</o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font=
+-family:&quot;Trebuchet MS&quot;,sans-serif">We have looked at everything yo=
+u sent us and we consider your complaint is not yet ready for us. We need to=
+ give you some further advice about how to get a response to your complaint =
+from HMCTS before we can give it a more detailed consideration. <o:p></o:p><=
+/span></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&qu=
+ot;Trebuchet MS&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoN=
+ormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sa=
+ns-serif">This is because it appears you have not yet completed HMCTS=E2=80=99s co=
+mplaints process.&nbsp; <o:p></o:p></span></p><p class=3D"MsoNormal"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&=
+nbsp;</o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;fon=
+t-family:&quot;Trebuchet MS&quot;,sans-serif">It is important that HMCTS has=
+ the chance to look at your complaint, give you a response, and put right an=
+y mistakes. Often this is the quickest way to resolve complaints. Therefore,=
+ your complaint is not yet ready for us and we cannot take any further actio=
+n at this time. &nbsp;<o:p></o:p></span></p><p class=3D"MsoNormal"><span style=
+=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&nb=
+sp;</o:p></span></p><p class=3D"MsoNormal"><i><span style=3D"font-size:12.0pt;fo=
+nt-family:&quot;Trebuchet MS&quot;,sans-serif">I have checked over the infor=
+mation you have submitted. I can clearly see you have asked HMCTS questions.=
+ Relating to the handling and administration of your court of appeal case. H=
+MCTS have responded to you twice and on 30/10/2025 signposted you to the thi=
+rd and final stage in their complaints process. I have not yet got a copy of=
+ a response from the third stage. Therefore, the case is not yet ready for u=
+s to investigate. <o:p></o:p></span></i></p><p class=3D"MsoNormal"><i><span st=
+yle=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>=
+&nbsp;</o:p></span></i></p><p class=3D"MsoNormal"><i><span style=3D"font-size:12=
+.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">Please note in order f=
+or us to investigate a HMCTS complaint we will also need the case to be refe=
+rred to us via a sitting MP. I do not have a countersignature from an MP on =
+your complaint form, or any evidence a referral has been accepted. This is a=
+ requirement under our legislation. Once you have the response to the third =
+tier of the complaint this should be sent to your local MP to complete the p=
+rocess.<o:p></o:p></span></i></p><p class=3D"MsoNormal"><b><span style=3D"font-s=
+ize:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&nbsp;</o:p=
+></span></b></p><p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-f=
+amily:&quot;Trebuchet MS&quot;,sans-serif">What you can do next<o:p></o:p></=
+span></b></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:=
+&quot;Trebuchet MS&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"M=
+soNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;=
+,sans-serif">To complete the complaints process, you should write to the HMC=
+TS User Investigations Team and ask them to look at your concerns. Their add=
+ress is: <o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:1=
+2.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">HM Courts &amp; Tribu=
+nals Service, <o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-s=
+ize:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">User Investigati=
+ons Team, <o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:=
+12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">6th Floor (6.12), <o=
+:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-=
+family:&quot;Trebuchet MS&quot;,sans-serif">102 Petty France <o:p></o:p></sp=
+an></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;=
+Trebuchet MS&quot;,sans-serif">London, <o:p></o:p></span></p><p class=3D"MsoNo=
+rmal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,san=
+s-serif">SW1H 9AJ<o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"fon=
+t-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">E: userinvest=
+igations@justice.gov.uk<o:p></o:p></span></p><p class=3D"MsoNormal"><span styl=
+e=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&n=
+bsp;</o:p></span></p><p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;f=
+ont-family:&quot;Trebuchet MS&quot;,sans-serif">Getting help to make your co=
+mplaint<o:p></o:p></span></b></p><p class=3D"MsoNormal"><span style=3D"font-size=
+:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&nbsp;</o:p></=
+span></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quo=
+t;Trebuchet MS&quot;,sans-serif">If you have not already complained, you can=
+ find some tips on our website:&nbsp;&nbsp;&nbsp; <o:p></o:p></span></p><p c=
+lass=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet M=
+S&quot;,sans-serif"><a href=3D"http://www.ombudsman.org.uk/complain-for-change=
+/our-resources/tips-on-making-a-complaint-about-uk-government-services">www.=
+ombudsman.org.uk/complain-for-change/our-resources/tips-on-making-a-complain=
+t-about-uk-government-services</a><o:p></o:p></span></p><p class=3D"MsoNormal"=
+><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-ser=
+if"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:=
+12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">If you need help put=
+ting your complaint together, you can speak to the Citizens Advice Bureau. Y=
+ou can find your local branch at www.citizensadvice.org.uk.<o:p></o:p></span=
+></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Tr=
+ebuchet MS&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal=
+"><b><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans=
+-serif">What you can do after you get a response <o:p></o:p></span></b></p><=
+p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuche=
+t MS&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><spa=
+n style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">I=
+f you are still unhappy after you receive a response from HMCTS, you should =
+then ask your local MP to send the complaint to us. By law you must refer yo=
+ur complaint to an MP within one year of becoming aware of the issues you co=
+mplain about.&nbsp; <o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"=
+font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&nbsp=
+;</o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-fa=
+mily:&quot;Trebuchet MS&quot;,sans-serif">We can extend this time limit if w=
+e think it is reasonable to do this. The things we consider include your rea=
+sons for not complaining earlier and how long the local complaints process t=
+ook. We will also look at why you did not make the complaint to the MP withi=
+n a year. <o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:=
+12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&nbsp;</o:p></s=
+pan></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot=
+;Trebuchet MS&quot;,sans-serif">Once we have all the information we need to =
+progress your complaint, you will then be informed of the next steps. <o:p><=
+/o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-fami=
+ly:&quot;Trebuchet MS&quot;,sans-serif">&nbsp;<o:p></o:p></span></p><p class=
+=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&qu=
+ot;,sans-serif">For further information on how we deal with complaints once =
+they are progressed, please visit our website <a href=3D"https://www.ombudsman=
+.org.uk/making-complaint/how-we-deal-complaints">https://www.ombudsman.org.u=
+k/making-complaint/how-we-deal-complaints</a>.<o:p></o:p></span></p><p class=
+=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&qu=
+ot;,sans-serif">Please note there are some important details about how we us=
+e your information at the bottom of this email.<o:p></o:p></span></p><p clas=
+s=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&q=
+uot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><span styl=
+e=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">Yours s=
+incerely<o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:12=
+.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p>&nbsp;</o:p></spa=
+n></p><p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&quo=
+t;Trebuchet MS&quot;,sans-serif;color:black;mso-ligatures:none;mso-fareast-l=
+anguage:EN-GB">Daniel Shelton<o:p></o:p></span></b></p><p class=3D"MsoNormal">=
+<b><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-s=
+erif;color:black;mso-ligatures:none;mso-fareast-language:EN-GB">Intake Casew=
+orker<o:p></o:p></span></b></p><p class=3D"MsoNormal"><span style=3D"font-size:1=
+2.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif;color:black;mso-ligatu=
+res:none;mso-fareast-language:EN-GB">Parliamentary and Health Service Ombuds=
+man<o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;=
+font-family:&quot;Trebuchet MS&quot;,sans-serif;color:black;mso-ligatures:no=
+ne;mso-fareast-language:EN-GB">T: 0345 015 4033<o:p></o:p></span></p><p clas=
+s=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&q=
+uot;,sans-serif;color:black;mso-ligatures:none;mso-fareast-language:EN-GB">E=
+: <a href=3D"mailto:phso.enquiries@ombudsman.org.uk"><span style=3D"color:#0563C=
+1">phso.enquiries@ombudsman.org.uk</span></a><o:p></o:p></span></p><p class=3D=
+"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quo=
+t;,sans-serif;color:black;mso-ligatures:none;mso-fareast-language:EN-GB">W: =
+<a href=3D"http://www.ombudsman.org.uk/" title=3D"http://www.ombudsman.org.uk/">=
+<span style=3D"color:black">www.ombudsman.org.uk</span></a><o:p></o:p></span><=
+/p><p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p><p class=3D"MsoNormal"><b><span s=
+tyle=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">Impo=
+rtant details about how we use your information<o:p></o:p></span></b></p><p =
+class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet =
+MS&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><span =
+style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">You=
+ can read more about how we use your information in our privacy notice. The =
+notice explains how we use and look after information about you, or that cou=
+ld identify you, and how long we keep it. It also explains your rights and h=
+ow to request your information. You can find the privacy notice online at <a=
+ href=3D"http://www.ombudsman.org.uk/information-you-give-us">www.ombudsman.or=
+g.uk/information-you-give-us</a>. If you would like a copy in a printed or o=
+ther format, please contact <a href=3D"mailto:informationrights@ombudsman.org.=
+uk">informationrights@ombudsman.org.uk</a> or call 0345 015 4033.<o:p></o:p>=
+</span></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&q=
+uot;Trebuchet MS&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"Mso=
+Normal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,s=
+ans-serif">You can find out more about how we deal with complaints in our de=
+tailed guide on our website: Go to <a href=3D"http://www.ombudsman.org.uk/maki=
+ng-complaint/how-we-deal-complaints">www.ombudsman.org.uk/making-complaint/h=
+ow-we-deal-complaints</a>. Further information about how we consider evidenc=
+e in complaints can be found here: <a href=3D"https://www.ombudsman.org.uk/pub=
+lications/balancing-evidence-guidance">https://www.ombudsman.org.uk/publicat=
+ions/balancing-evidence-guidance</a>.<o:p></o:p></span></p><p class=3D"MsoNorm=
+al"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-=
+serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-si=
+ze:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">Information on ho=
+w we use clinical advice to inform our decision can be found here: <a href=3D"=
+http://www.ombudsman.org.uk/how-we-use-clinical-advice-inform-our-decisions"=
+>www.ombudsman.org.uk/how-we-use-clinical-advice-inform-our-decisions</a><o:=
+p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-f=
+amily:&quot;Trebuchet MS&quot;,sans-serif">If you would like me to send you =
+a copy of these documents, please let me know. <o:p></o:p></span></p><p clas=
+s=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&q=
+uot;,sans-serif"><o:p>&nbsp;</o:p></span></p><p class=3D"MsoNormal"><span styl=
+e=3D"font-size:12.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif">Our Ser=
+vice Charter also describes what service you can expect from us. Go to <a hr=
+ef=3D"http://www.ombudsman.org.uk/about-us/our-service-charter">www.ombudsman.=
+org.uk/about-us/our-service-charter</a> to find out more.</span><o:p></o:p><=
+/p><p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p><p class=3D"MsoNormal"><o:p>&nbsp=
+;</o:p></p></div></body></html>
+
+--B_3852841670_1675166042--
+

@@ -1,0 +1,432 @@
+Received: from CWXP265MB3221.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:b9::13)
+ by CWLP265MB3379.GBRP265.PROD.OUTLOOK.COM with HTTPS; Tue, 11 Nov 2025
+ 12:30:07 +0000
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=C9JywcLfL0/pO+v1BTI8mtFyWHSeC5EUb4ycaYEneyduYhq66olhLVCxuCE2WAigD7skOIJViIYxQix/Ps9ZdgOxNr5dhAyZx6NCCxQ6C5gmDh4jH+iy8m2AAxCJlM0xeA70EEoojLSAH3n3P0m1UZ3fUV68TAyFXyGyhXlDtibKDhSt4TcEo4+vD4fKZq/B1ueH39oSBr0PWSdF+nHy/mOvQBtn/r79VmruHJg2osSYz1kdHzg55NoINeZPBRnKVm829KdYhfhlhyPFIBuL/GuTntmixMLjJrNvgXie7w/vAz+OEaQzYSr0J+qu4C3+vtdT0ix5CmuAIrnNxIO4xg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=yFO77AkFRk63ykUMCBwrUkABITfvx9JLvVPgrlYZK8U=;
+ b=hTI6OwiNEpr05E1rGwNAVpLZeepb5tlxUB2xXwuNNFkinZlxVqHLwS7tCobzw48HvJXB7XHpm25k/Z7mXG81Lil5IJS5MkPkajREw6INkrZqyiVJQONLOBvPLsAQtyokXhoTI1fjkvytykJWILQBAZ99/RdnGtMT5QRurGMAOrHTiWYxBlN6jZkZx5iY86CfPbI3sq8Gt51jDuM7rWm7m2Z5/awfxqMyRw1qUSiLId1OmNEjyjUDPoWaEEn8gjCwYVem2sipCMZXRWQso+a9hnDAZKc7QnUCiaxS1yqcC0AVE13HvxK/drA/slEKy5QR7DAx/Rvv7McqmVCLyPkimg==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 2a01:111:f403:da06::) smtp.rcpttodomain=rosekross.com
+ smtp.helo=cwxp265cu008.outbound.protection.outlook.com; dmarc=pass
+ (p=quarantine sp=quarantine pct=100) action=none
+ header.from=ombudsman.org.uk; dkim=pass (signature was verified)
+ header.d=ombudsman.org.uk; arc=pass (0 oda=1 ltdi=1
+ dkim=[1,1,header.d=ombudsman.org.uk]
+ dmarc=[1,1,header.from=ombudsman.org.uk])
+Received: from CWLP123CA0024.GBRP123.PROD.OUTLOOK.COM (2603:10a6:401:56::36)
+ by CWXP265MB3221.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:b9::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9320.15; Tue, 11 Nov
+ 2025 12:30:03 +0000
+Received: from CW2PEPF000056C0.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:401:56:cafe::42) by CWLP123CA0024.outlook.office365.com
+ (2603:10a6:401:56::36) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9298.16 via Frontend Transport; Tue,
+ 11 Nov 2025 12:29:56 +0000
+Authentication-Results: spf=pass (sender IP is 2a01:111:f403:da06::)
+ smtp.helo=CWXP265CU008.outbound.protection.outlook.com; dkim=pass (signature
+ was verified) header.d=ombudsman.org.uk;dmarc=pass action=none
+ header.from=ombudsman.org.uk;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of
+ CWXP265CU008.outbound.protection.outlook.com designates 2a01:111:f403:da06::
+ as permitted sender) receiver=protection.outlook.com;
+ client-ip=2a01:111:f403:da06::;
+ helo=CWXP265CU008.outbound.protection.outlook.com; pr=C
+Received: from CWXP265CU008.outbound.protection.outlook.com
+ (2a01:111:f403:da06::) by CW2PEPF000056C0.mail.protection.outlook.com
+ (2603:10a6:408:1::17) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9320.13 via Frontend Transport; Tue,
+ 11 Nov 2025 12:30:02 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=HYzaJbXchl/8xAdDfIcZ//SZIjDbAznh4s5DDuKENg99Vj+KhkuzTGX7WG/5HLbedahHL+l+Rhc19mIMgZ9n06QX3ZN7gv3DgCxRx1mfjVkSHVhxK1o7VqMHsKoJvu4S6FPVprn0DTTkkYnrGNUyZz7O69hTU8w3tn1aOF2ch5mAthO2bltFXsBbeEtYDzgqTEs+7BgWfIa381tylNPf56uR1zy3I0CVPIiGN08ag9nEphHYS7g+qF12uhwNsbbOAGH5VmVTxtg/uEkjOiZ6Vi9RLViWJZiik+xMgt2YYBuH0SIoKWDitAYaOTrSXj1MXXqzznj9dBfc2nm+KVRymQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=yFO77AkFRk63ykUMCBwrUkABITfvx9JLvVPgrlYZK8U=;
+ b=mAPUeP2+2HcD3OjFu7Ab9a4/LvD9tGPQYVdCjn1yvijjj0o08YZhbXkfx108ocLJdDqdjRFGU4T/jIrQ67CC69dF59qrPDd5FrL1Xhu+gomLfLxVX1dMJsmPJ6Ytya1K0d6euZohc+bZPP5sPsA37q0HU8SqN7nV5KDBvLAl4J6Er1Yxgp4kJOYTsNv9dZuKgoy9QQhfdsJ4wfwgUi3RdXubMmh1Osz49XobsC31ZLk85Cla4igUtydfTQA0iidmgk6nD78mrNih2NOd+2tq2O4FpfrEpdNEb22xtmA1oQYkJ0qau9VewYZS7xQKL9FzJ1sPP1xlhK606Q674+0Z/A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=pass
+ action=none header.from=ombudsman.org.uk; dkim=pass
+ header.d=ombudsman.org.uk; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ombudsman.org.uk;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=yFO77AkFRk63ykUMCBwrUkABITfvx9JLvVPgrlYZK8U=;
+ b=MtG0pp1XgfEnyvz9tfmJVon/JWODYVOYA/066ZD9kc0J85DbEWo2TxBknCk8YBtIbWYrbYelejGtb5fUMmaChL6yInyIipoxZ5YlN/66yBGALtCSFhzEMdge9nopwWTTy8x5ITIRxFCgWIN+SOsGUggSMcqiEinveetOwSoCEogSbFTJMb4zw6taKymyp42ucS55TjU5EtOFTqXp+NbWqOZXiZXio25Me/HEB8i4VqEEniF+skoQ2ZETKSyaXIIYynhjI5JRNPucD71Vi2htpQUHS8hUdcbaL4gf3guJL+6eou7L0Pr4CJELQcxZE8eN1K5oIJCzCeOOoWi1341Xfg==
+Received: from CWLP265MB4548.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:167::13)
+ by CWLP265MB6737.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:1e9::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9298.16; Tue, 11 Nov
+ 2025 12:29:58 +0000
+Received: from CWLP265MB4548.GBRP265.PROD.OUTLOOK.COM ([::1]) by
+ CWLP265MB4548.GBRP265.PROD.OUTLOOK.COM ([fe80::2bdd:e069:14ed:498e%4]) with
+ Microsoft SMTP Server id 15.20.9298.015; Tue, 11 Nov 2025 12:29:58 +0000
+From: Phso Enquiries <Phso.Enquiries@ombudsman.org.uk>
+To: Nadia <nadia@rosekross.com>
+Subject:
+ =?utf-8?B?QXV0b21hdGljIHJlcGx5OiBSZWZlcnJhbCB0byB0aGUgUGFybGlhbWVudGFy?=
+ =?utf-8?B?eSBhbmQgSGVhbHRoIFNlcnZpY2UgT21idWRzbWFuIChQSFNPKSDigJMgWmFo?=
+ =?utf-8?Q?moul_v_Zahmoul_(BV20D01752_/_CA-2024-001342)?=
+Thread-Topic:
+ =?utf-8?B?UmVmZXJyYWwgdG8gdGhlIFBhcmxpYW1lbnRhcnkgYW5kIEhlYWx0aCBTZXJ2?=
+ =?utf-8?B?aWNlIE9tYnVkc21hbiAoUEhTTykg4oCTIFphaG1vdWwgdiBaYWhtb3VsIChC?=
+ =?utf-8?Q?V20D01752_/_CA-2024-001342)?=
+Thread-Index: AQHcUhh8wgHuBQaE70akYmRIJG4o8bTtaZiS
+Date: Tue, 11 Nov 2025 12:29:58 +0000
+Message-ID:
+ <ab6608780653403287aace4e5af4cadf@CWLP265MB4548.GBRP265.PROD.OUTLOOK.COM>
+References: <1DE9BFBD-C423-484A-840F-6F2CFE1B5F1A@rosekross.com>
+In-Reply-To: <1DE9BFBD-C423-484A-840F-6F2CFE1B5F1A@rosekross.com>
+X-MS-Has-Attach:
+X-Auto-Response-Suppress: All
+X-MS-Exchange-Inbox-Rules-Loop: phso.enquiries@ombudsman.org.uk
+X-MS-TNEF-Correlator:
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=ombudsman.org.uk;
+x-ms-exchange-parent-message-id:
+ <1DE9BFBD-C423-484A-840F-6F2CFE1B5F1A@rosekross.com>
+auto-submitted: auto-generated
+x-ms-exchange-generated-message-source: Antispam Quarantine Agent,Mailbox
+ Rules Agent
+x-ms-traffictypediagnostic:
+ CWLP265MB4548:EE_|CWLP265MB6737:EE_|CW2PEPF000056C0:EE_|CWXP265MB3221:EE_|CWLP265MB3379:EE_
+X-MS-Office365-Filtering-Correlation-Id: 4804261c-c1fa-45fe-a80b-08de211e09d2
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+X-Microsoft-Antispam-Untrusted:
+ BCL:0;ARA:13230040|50650200027|366016|376014|1800799024|10070799003|19033499003|8096899003|80100003;
+X-Microsoft-Antispam-Message-Info-Original:
+ =?us-ascii?Q?SNtJcpQP9jcqNrFAU8ImfOXMxRfbouCoKT8R0d44MpYGRh5OK9OYDtljJw7N?=
+ =?us-ascii?Q?6nfbFD89wHCYuw2smjcP8PZUlej3KO169ctQ74Z82ccike4Dhj4HAfxdg+SM?=
+ =?us-ascii?Q?K0BDqF7Xc7a1A4IRJELkt6euypyNFiqf/WpHHddEk+OBsvQ/Z00xrXk8+mQ1?=
+ =?us-ascii?Q?QGNeEFtYKwM9oC7UiLoxnR8sli5LxvpxtIn7BcWyG2x2alwon5dOGRLNG3/t?=
+ =?us-ascii?Q?t2gnIdpsW5IispU6mj6r5mofuTqcmIYpfMl0VanFnOYRqn5p9mpZ3CtKrFVd?=
+ =?us-ascii?Q?zvSr9B9xuAuVLNP/IhOOAqFpUuOIAAJkB1NwLvmbumfVVFNwi/UTK9T+KOdS?=
+ =?us-ascii?Q?T65iDGVJxRsvcR5koPei07ae0OjTG1Roxr/juRkm0mJKl9HycVk90i1A/+gT?=
+ =?us-ascii?Q?S3msSul76yf8NquwKCBJB28tEHew5c6CKD4+gN1Ee0wtfr/hQC6YuOeMhc1e?=
+ =?us-ascii?Q?reLPI6oARWbPToPs1WkeS9lDxIdSg9K2yzbHp3O2YkDUI7ci2sk9xR4vwcgz?=
+ =?us-ascii?Q?gLviooMNiXu1KFKgQGbA35mtS8iSX9ruY9IQR97ur9GiB/pFnem4zmkdtY0b?=
+ =?us-ascii?Q?E3cUNbe3PYVkNr9R1UNU8IgYDstHPJeIMuSLiU/qiJQenpOIzhZ1+n4kumoF?=
+ =?us-ascii?Q?2G/ijnyfR3shVi819V/BtR5os8PyK7vfxuHvHO5JFEYg1D+DH25w5ZsfYQ/N?=
+ =?us-ascii?Q?0vj2CWs9M3mpaM61fSR3F6dXBtsXliGE7Ypbk4NnBvMtj6wH05/kblRDoOeQ?=
+ =?us-ascii?Q?ZNNAIy2UWUDe72n/HLHqYSNEQUhbQzUk10shnw8enrEWLx4IYDG4RjjnvK4I?=
+ =?us-ascii?Q?nFTQbbu9tI5L8pVRcTQE2Bz95Rb3z7ArPljMDWdpeBXp6NYUih3TfzDpSkGF?=
+ =?us-ascii?Q?3J976UgcRGpoiFYHdLUY91B6KCDJPxHs3pj2+rv2QOqfG18eZ0HpSyiWoFN1?=
+ =?us-ascii?Q?AeCAWmLiOkceFhT55nmxlttk8Si1sCdEDWGtNgcIE/AkNzEkfVxyp+sG/cGc?=
+ =?us-ascii?Q?cSdbBPuXjGClmIicLxXQJAVqCjk2AT1j8TgTmylWUxAkolMd069d/Pa6pBZN?=
+ =?us-ascii?Q?7BMbtwu/TSmn1Ci56wmJGwxIzOU5Hho2tycEk6YQtUCX2Y8Mfz4cpBZYZg2o?=
+ =?us-ascii?Q?E59yLWIGb3U4cF0rkU54hh/4R/4IReTZ/s24lD4BJvTK4RSJM42PtivMtvf2?=
+ =?us-ascii?Q?uRfXIERpC7JmUrRhU9Adf3ZIDpg8GqP5uyH/Kcjc8/p5Wuf6j86vdn9DlDtg?=
+ =?us-ascii?Q?IUnqjvgH4578KiIDLRuwdpvGGMBfYKwpxTAqEn9z+xT8as2HOFBb8rvh5J/G?=
+ =?us-ascii?Q?xWWEipp+S6VnD2M0kTbpFzP4hWSOn8pxXa9Iot3rvi3x9o34ZLu4nEpc2DWG?=
+ =?us-ascii?Q?b/4EI0aHz6TulSOW5j/g8FMi/I4ZW6qchEUy+hD04Z/H8o3nMQ=3D=3D?=
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CWLP265MB4548.GBRP265.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(50650200027)(366016)(376014)(1800799024)(10070799003)(19033499003)(8096899003)(80100003);DIR:OUT;SFP:1501;
+X-MS-Exchange-AntiSpam-MessageData-Original-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-Original-0:
+ Dz9B7QBQx7JZSyPWpbW737vPzOD7ZNqSXUsIZwR72nfTzLLQzjyi8yxOjjxAc0etb+8k+xgu4AVODU1lXSeXPVuMM55f/zILoq6SJgTVx3P43XMnVf2R3GgYptVx0Efx9J6l4rflfdDLvft9B6D4AJpi6bTPHPCq44SMbdIGg7m4wF0f4MJDeMF8MPVvrMSUwHQZnxQWZcyk1udGxL8h11daT/BLKok7ybfaBpgbhb+dm+prkTrDRIWJu5tyJQfSsVf4WpJcJCKy6cmur2vvpIztcfmbfeWgDhpVJmkcvUDFfuKNeUUb+NOQK7sF2Ddh
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CWLP265MB6737
+Return-Path: <>
+X-MS-Exchange-Organization-ExpirationStartTime: 11 Nov 2025 12:30:03.0725
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 4804261c-c1fa-45fe-a80b-08de211e09d2
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 615372fc-d750-4bc9-b399-cc84f3fe3e95:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ CW2PEPF000056C0.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-Transport-CrossTenantHeadersPromoted:
+ CW2PEPF000056C0.GBRP265.PROD.OUTLOOK.COM
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource:
+ CW2PEPF000056C0.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+ 25af6f30-c572-4cb3-cb86-08de211e070f
+X-MS-Exchange-Organization-ExpirationInterval: 0:12:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: TenantCustomized
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam:
+ BCL:0;ARA:13230040|35042699022|12012899012|12022799006|13003099007|8096899003;
+X-Forefront-Antispam-Report:
+ CIP:2a01:111:f403:da06::;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CWXP265CU008.outbound.protection.outlook.com;PTR:mail-ukwestazhn150100000.outbound.protection.outlook.com;CAT:NONE;SFS:(13230040)(35042699022)(12012899012)(12022799006)(13003099007)(8096899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Nov 2025 12:30:02.9082
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4804261c-c1fa-45fe-a80b-08de211e09d2
+X-MS-Exchange-CrossTenant-Id: 615372fc-d750-4bc9-b399-cc84f3fe3e95
+X-MS-Exchange-CrossTenant-AuthSource: CW2PEPF000056C0.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CWXP265MB3221
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:04.1498173
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9298.012
+X-MS-Exchange-ExternalInOutlookResult: IsExternal
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(4710137)(4713098)(4999163)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?us-ascii?Q?AnbXbnRm+IJJTeRwkPuuqpz9pQaftMGgsu7EGW+sZ4wtI1PMBCtkuKI9fsUZ?=
+ =?us-ascii?Q?VhlBHdpyO/k9nfIgRTkdMLSM3IeohCql6ESkYeapH19F/UAy9NU6G+ijSdmA?=
+ =?us-ascii?Q?5h6hZ5+JeZPkS+IgZzsD/4SlSKZq3XMtKDshJsOtTQ+9MfAxXOXw1B7D+0+H?=
+ =?us-ascii?Q?hh9cwuAbQ0JOk54LOWJrNoPTJgS+fR+aX5gDbquKhToucd3SJtOWcg3wZjfm?=
+ =?us-ascii?Q?Io3hLQWdrUBRK7HJY/D5avJS8hHIPUr+TiehpaYBEQzoftE9ITXWkdQYu3FH?=
+ =?us-ascii?Q?2S1AZe5jwWANwd+Z3xCcgYerDVjWtM91nBhItxlMNJXI7xcexiMVO+zYFazX?=
+ =?us-ascii?Q?E0cZzoYNeUmAzMgnRRXVSCV6WRIkBN4OtlUIClBLBR8A/KXojol+4zE1hFix?=
+ =?us-ascii?Q?AoLoPx1SufHzaUdWqW7L6EILIEIZ56V1fDQdoQ3jVw6RxvHjRiLtdHeDGYSl?=
+ =?us-ascii?Q?0TSaj6bnu88++BNRettxvWGUVie7akdegmuE9xVpiLkK0mndnQXPr9BqYZBI?=
+ =?us-ascii?Q?c/ryLqYBYilHGTg2EO8aidN9bTf8q0h/hgG09l4WwWrlA6yYSZ2PN0ZP6WaP?=
+ =?us-ascii?Q?KNFHBot7TGRkha/0EPm74KMqh2uF4WGekVInrX0caBNkGAUo+uvH7rxCHys/?=
+ =?us-ascii?Q?Jt7dK52CpMwpLClfOmtAq6e4c76knZiKWr5Zidgpp9jtEfitMgNQg12EtCNG?=
+ =?us-ascii?Q?Vcz2HdUEm04sy1X9VjwXM6dVLbYZJ7OpNUJebmIaIsRv7IDBVsEX6j1+trYy?=
+ =?us-ascii?Q?c+hSGSN8bsvJlMpE8yQFmogK0P/K44U7xo19eg+CqRWrkt/itzOxGyU7ikid?=
+ =?us-ascii?Q?w76Pl/xprPlMH8KyafRHvjgAWOmRzvYZI5Qvu6mU4E+qV7GXmaa6kjua5Xsr?=
+ =?us-ascii?Q?IqJG+HxVY7pYE+8Ogw2ZrS5fN6DPSI2JDc/3gnsMAKIbqh9j6WYzQMtcgEgR?=
+ =?us-ascii?Q?bBQ0xUVnGie1fCtsA6HB4sxVJeK+PIkPnDjvydFpaD1rHouIPXeiWzJx6/M2?=
+ =?us-ascii?Q?jirjDY/Qn2W5nYahIC9bwIg/G4SWVy8+EJViuVlmaefDXy+isy3cLKclDs7f?=
+ =?us-ascii?Q?BYFDU9/ijQ2m35fieH3inI4/LYoo7hUAuKk7t8dmXP+59iLcs7rfMMp/Z3tv?=
+ =?us-ascii?Q?B/nFj9AkOx8tAdGLSrQi4KTfhQeFPJ22+7rWfFO28Jph5tepwBIZkF5/d98D?=
+ =?us-ascii?Q?lYAezr+AZXXdxV3DDMG5bpCDE4f4/Ltw8ZwPmQyupFSKXLAaABHPHVaG0kLx?=
+ =?us-ascii?Q?7OarQwEDWhirvsnCYWczMOf5DITMdzx2h6Bx+3V5cXzcsO3BWuzYNsJoUuE5?=
+ =?us-ascii?Q?tUcla6fkfPkMNaI1hgwDeFnz1/BPke3YwmS2iEsXgjgzF7qoRKE0qU4iPKIM?=
+ =?us-ascii?Q?LVyfgJMiVXFOf86+t2GOdrl7f9fhxNBGC/1PtsfZFHjVmdgX9gmlZ/+PgPzr?=
+ =?us-ascii?Q?Ghy/6txN4TVyK3opErx2bFKyaLHDdUbHH2SlINiP11rkYWtpMGOjWoxedtap?=
+ =?us-ascii?Q?a1HOyzCm8EKLSxIjwAjgIR+E4nC0t3Elk3Ju29bwM2o3hhBuFfGtSZlHHEhE?=
+ =?us-ascii?Q?AfV01iCt7UOiERGVxSSV9HlcOfyIcoFDQ6JV2z7ZZHd1g2d9mg9rh5N62PBF?=
+ =?us-ascii?Q?sB99/rGXAA4ZuH3SaGT2+Uq48CjaotOCMufvY3CHysECGjDXiNOgbBV5ck9L?=
+ =?us-ascii?Q?NK6BHvHisp5oyG/YVPGuTcKMWdNrZleFO9/v739OG3/ThYV4OV8i2D2HPBog?=
+ =?us-ascii?Q?gxwMoFvLVR4to5+exbMteGEVmeMJlBjJmzhW1ofR0NAZvkG8AjA5ygAq2eXG?=
+ =?us-ascii?Q?d0+/NqJbbFRdOLwIQHazeHq5JrSUefyjUnOLqmSE8/q0gjRDlmlQZbA8UhtH?=
+ =?us-ascii?Q?lWiM/8dwAz8gVx6S5y/4ENMGJ8l500QqmJo3bp7XuQ95i/RkQssHZ7uf5+4l?=
+ =?us-ascii?Q?CTCh/i0SIT+6v+fmmJjFLOXmalEw2Yw+4i5+9zyRoQELkhU+HPhFu54IgSWJ?=
+ =?us-ascii?Q?tqQQC+a2mrAOL2No3aNtLTQeToyA3TfXLzQ3KfzTfF8Gk/qL8640Wjm/KNwb?=
+ =?us-ascii?Q?ErBCgs4hqEX4+/i5eh9AMaQlBDD/xTv1zvOePTBwHKH08V8fcnc9pIOqjzI2?=
+ =?us-ascii?Q?QcNesSHVrEi9+usvBQbTgooaTgF7fjxXS1k1Xe10hL0cOm6Mx3goGOFmJmKW?=
+ =?us-ascii?Q?DWSguZDoR9SU/2ZXLdoypRum/zSiTlqL/DU7sfixBNDinA7k4ZE57itaYCBi?=
+ =?us-ascii?Q?3KUxmoZZDMO4q8m3IekXWRg9GpneHgV6Msm7BtWvmlvkCQ53HQYiZrRLk/OQ?=
+ =?us-ascii?Q?dIhj9E2j6iuGkDumB9JWeCzxaimTHXX9zdtHymmreDodWbwvVXUr+/10nhzc?=
+ =?us-ascii?Q?2jRsk+E0L++B9aD+YjyHb+p3jfCatzfFLeLkmvDaV8TI5xZF7cQN2PPzV3Cj?=
+ =?us-ascii?Q?77LRxFdKOYsG/+kFuJdmMG3mZx4KFzSfzbXsC5plamSROcNlIukRmOU4Lxyh?=
+ =?us-ascii?Q?FunNt2ZTm3+1jlCjGWec1B+NP9yD7pp7AC2lBl7MNZQdLfPAZpzG+7+uv5nV?=
+ =?us-ascii?Q?2FDyrRabf01C2gMuHculdQyenXFJJnZZqLQnuWqSBHD97205AECRVWyxhTAF?=
+ =?us-ascii?Q?T4au62CkKVwwI9uFaoYncvMyUNH0fKCGlx4MKTcI6cJfXvibqOGMQmFBiUCS?=
+ =?us-ascii?Q?LY62xKEpJkemH1xYVzgvGJOOdmsl6OQfyzFUW5LJbOIsDCrfhjTOw7bjyEM7?=
+ =?us-ascii?Q?OoP3OSy86znZrHI97l85JVIwXxVcBWCSIVVPderNSTGCrs1OyWgkaOhoUyqN?=
+ =?us-ascii?Q?ZtRgoJgvC+0AU3o8w4MaclLR+WyJ2N5y1pQ3FJoCKIy3MBHa2ZpUGS2uNwoX?=
+ =?us-ascii?Q?zda9QNGkuCRXdx8ubjD8wgjoQnDIkmMyat6IDyGWMbHQP+nOn17RIK81jj+L?=
+ =?us-ascii?Q?PJtJkp6mWpPHPzKEXUs9WbtlgYlmTanR3aGvZw6L/HwLnGqPQvMZ302wmLqG?=
+ =?us-ascii?Q?oF8AAPIibmgvnhew/Mwiz8HJsCa3mqZO9NQACd16DHX84hEv+856Fam80sor?=
+ =?us-ascii?Q?KHXcXtNrVkwhgTSSY4120UmPLsWzftRGTb/E2jtKMpLoJrzmpMg=3D?=
+Content-type: multipart/alternative;
+	boundary="B_3852841568_1049313310"
+
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3852841568_1049313310
+Content-type: text/plain;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+
+
+This is an automated response to confirm we have received your email.  =20
+
+=20
+
+Please read the section which relates to why you have contacted us. =20
+
+=20
+
+You are bringing or have a complaint with us.=20
+
+=20
+If you are bringing a complaint to us and this is your first contact:=20
+=20
+
+We are sorry that you have had reason to contact us. The best way to submit=
+ your complaint to us is to complete our complaint form. You can complete th=
+e complaint form online, or you can get copies of our Parliamentary and Heal=
+th forms (including large print format) on our website.=20
+
+=20
+
+If you are unsure if your complaint is ready for us to look at, you can fin=
+d out more on our website.=20
+
+=20
+
+If you need a different format such as a different language or Braille, or =
+if you need any further support to help you get your complaint to us, you ca=
+n call us on 0345 015 4033. We can also provide paper copies of the forms. O=
+ur opening hours are Monday to Thursday 9am to 4pm, Friday 8.30am to 12pm=20
+
+
+2. If you have an existing case with us:=20
+
+=20
+
+Your email will be added to your case and your caseworker will usually be i=
+n contact with you =E2=80=82=E2=80=82=E2=80=82=E2=80=82within one month.=20
+
+=20
+
+3. If you are making an FOI request:=20
+
+=20
+
+Please resend your email to informationrights@ombudsman.org.uk. =20
+
+
+
+You are contacting us from an organisation or MP's office:=20
+
+=20
+If you are providing records or a response to enquiries on a case, your ema=
+il will be added to the case and if necessary, the caseworker will be in con=
+tact with you. =20
+=20
+If you have a general query, you will be responded to within one month.=20
+=20
+
+If you are emailing about any of the following, please redirect your email:=
+=20
+
+Recruitment =E2=80=93 HRSharedservices@ombudsman.org.uk=20
+Invoicing =E2=80=93 invoices@ombudsman.org.uk
+
+
+--B_3852841568_1049313310
+Content-type: text/html;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></head><=
+body><div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Ca=
+libri,Helvetica,sans-serif; font-size:12pt; color:rgb(0,0,0)"><br></div><p s=
+tyle=3D"margin:0cm; font-family:Calibri,sans-serif; font-size:11pt"><span styl=
+e=3D"font-family:&quot;Trebuchet MS&quot;,sans-serif; font-size:12pt">This is =
+an automated response to confirm we have received your email.&nbsp; &nbsp;</=
+span></p><p style=3D"margin:0cm; font-family:Calibri,sans-serif; font-size:11p=
+t"><span style=3D"font-family:&quot;Trebuchet MS&quot;,sans-serif; font-size:1=
+2pt">&nbsp;</span></p><p style=3D"margin:0cm; font-family:Calibri,sans-serif; =
+font-size:11pt"><span style=3D"font-family:&quot;Trebuchet MS&quot;,sans-serif=
+; font-size:14pt"><b>Please read the section which relates to why you have c=
+ontacted us.</b></span><span style=3D"font-family:&quot;Trebuchet MS&quot;,san=
+s-serif; font-size:12pt">&nbsp;&nbsp;</span></p><p style=3D"margin:0cm; font-f=
+amily:Calibri,sans-serif; font-size:11pt"><span style=3D"font-family:&quot;Tre=
+buchet MS&quot;,sans-serif; font-size:12pt">&nbsp;</span></p><p style=3D"margi=
+n:0cm; font-family:Calibri,sans-serif; font-size:11pt"><span style=3D"font-fam=
+ily:&quot;Trebuchet MS&quot;,sans-serif; font-size:14pt"><b><u>You are bring=
+ing or have a complaint with us.&nbsp;</u></b></span></p><p style=3D"margin:0c=
+m; font-family:Calibri,sans-serif; font-size:11pt"><span style=3D"font-size:12=
+pt">&nbsp;</span></p><ol start=3D"1" style=3D"margin-top:0cm; margin-bottom:0cm"=
+><li style=3D"font-family:&quot;Trebuchet MS&quot;,sans-serif; font-size:14pt;=
+ color:rgb(51,51,51); margin:0cm 0cm 0cm 18pt"><span role=3D"presentation" sty=
+le=3D"background-color:white">If you are bringing a complaint to us and&nbsp;t=
+his is your first contact:&nbsp;</span></li></ol><p style=3D"margin:0cm; font-=
+family:Calibri,sans-serif; font-size:11pt"><span style=3D"font-family:&quot;Tr=
+ebuchet MS&quot;,sans-serif; font-size:12pt; color:rgb(51,51,51); background=
+-color:white">&nbsp;</span></p><p style=3D"margin:0cm 0cm 0cm 36pt; font-famil=
+y:Calibri,sans-serif; font-size:11pt"><span style=3D"font-family:&quot;Trebuch=
+et MS&quot;,sans-serif; font-size:12pt; color:rgb(51,51,51); background-colo=
+r:white">We are sorry that you have had reason to contact us. The best way t=
+o submit your complaint to us is to complete our complaint form. </span><spa=
+n style=3D"font-family:&quot;Trebuchet MS&quot;,sans-serif; font-size:12pt">Yo=
+u can complete the <a href=3D"https://complaintform.ombudsman.org.uk/complaint=
+checker" title=3D"https://complaintform.ombudsman.org.uk/complaintchecker" sty=
+le=3D"margin-top:0px; margin-bottom:0px">complaint form online</a>, or you can=
+ get copies of our Parliamentary and Health forms (including large print for=
+mat) <a href=3D"https://www.ombudsman.org.uk/making-complaint/complain-us-gett=
+ing-started/complaint-forms" title=3D"https://www.ombudsman.org.uk/making-comp=
+laint/complain-us-getting-started/complaint-forms" style=3D"margin:0px">on our=
+ website.</a>&nbsp;</span></p><p style=3D"margin:0cm; font-family:Calibri,sans=
+-serif; font-size:11pt"><span style=3D"font-family:&quot;Trebuchet MS&quot;,sa=
+ns-serif; font-size:12pt">&nbsp;</span></p><p style=3D"margin:0cm 0cm 0cm 36pt=
+; font-family:Calibri,sans-serif; font-size:11pt"><span style=3D"font-family:&=
+quot;Trebuchet MS&quot;,sans-serif; font-size:12pt; color:rgb(51,51,51); bac=
+kground-color:white">If you are unsure if your complaint is ready for us to =
+look at, you can find out more on </span><span style=3D"font-family:&quot;Treb=
+uchet MS&quot;,sans-serif; font-size:12pt; background-color:white"><a href=3D"=
+https://www.ombudsman.org.uk/#complaint-checker" title=3D"https://www.ombudsma=
+n.org.uk/#complaint-checker" style=3D"margin:0px">our website</a></span>.&nbsp=
+;</p><p style=3D"margin:0cm; font-family:Calibri,sans-serif; font-size:11pt">&=
+nbsp;</p><p style=3D"text-indent:2.25pt; margin:0cm 0cm 0cm 36pt; font-family:=
+Calibri,sans-serif; font-size:11pt"><span style=3D"font-family:&quot;Trebuchet=
+ MS&quot;,sans-serif; font-size:12pt">If you need a different format such as=
+ a <b>different language or Braille</b>, or if you need any <b>further suppo=
+rt</b>&nbsp;to help you get your complaint to us, you can call us on <b>0345=
+ 015 4033</b>. We can also provide paper copies of the forms. Our opening ho=
+urs are Monday to Thursday 9am to 4pm, Friday 8.30am to 12pm</span>&nbsp;</p=
+><p style=3D"margin:0cm 0cm 0cm 36pt; font-family:Calibri,sans-serif; font-siz=
+e:11pt"><span style=3D"font-family:&quot;Trebuchet MS&quot;,sans-serif; font-s=
+ize:12pt"><br></span><span style=3D"font-family:&quot;Trebuchet MS&quot;,sans-=
+serif; font-size:14pt; color:rgb(51,51,51); background-color:white">2. If yo=
+u have an <b>existing case with us</b>:</span><span style=3D"font-family:&quot=
+;Trebuchet MS&quot;,sans-serif; font-size:14pt">&nbsp;</span></p><p style=3D"m=
+argin:0cm; font-family:Calibri,sans-serif; font-size:11pt"><span style=3D"font=
+-family:&quot;Trebuchet MS&quot;,sans-serif; font-size:12pt">&nbsp;</span></=
+p><p style=3D"text-indent:36pt; margin:0cm; font-family:Calibri,sans-serif; fo=
+nt-size:11pt"><span style=3D"font-family:&quot;Trebuchet MS&quot;,sans-serif; =
+font-size:12pt">Your email will be added to your case and your caseworker wi=
+ll usually be in </span><span style=3D"font-family:&quot;Trebuchet MS&quot;,sa=
+ns-serif; font-size:12pt; color:rgb(0,0,0); background-color:rgb(255,255,255=
+)">contact with you =E2=80=82=E2=80=82=E2=80=82=E2=80=82within one month</span><span style=3D"font-fam=
+ily:&quot;Trebuchet MS&quot;,sans-serif; font-size:12pt">.&nbsp;</span></p><=
+p style=3D"margin:0cm; font-family:Calibri,sans-serif; font-size:11pt"><span s=
+tyle=3D"font-family:&quot;Trebuchet MS&quot;,sans-serif; font-size:12pt">&nbsp=
+;</span></p><p style=3D"margin:0cm 0cm 0cm 36pt; font-family:Calibri,sans-seri=
+f; font-size:11pt"><span style=3D"font-family:&quot;Trebuchet MS&quot;,sans-se=
+rif; font-size:14pt; color:rgb(51,51,51); background-color:white">3.&nbsp;If=
+ you are <b>making an FOI request</b>:&nbsp;</span></p><p style=3D"margin:0cm =
+0cm 0cm 36pt; font-family:Calibri,sans-serif; font-size:11pt"><span style=3D"f=
+ont-family:&quot;Trebuchet MS&quot;,sans-serif; font-size:12pt">&nbsp;</span=
+></p><p style=3D"text-indent:36pt; margin:0cm; font-family:Calibri,sans-serif;=
+ font-size:11pt"><span style=3D"font-family:&quot;Trebuchet MS&quot;,sans-seri=
+f; font-size:12pt">Please resend your email to <a href=3D"mailto:informationri=
+ghts@ombudsman.org.uk" style=3D"margin:0px">informationrights@ombudsman.org.uk=
+</a>.&nbsp;&nbsp;</span></p><p style=3D"margin:0cm; font-family:Calibri,sans-s=
+erif; font-size:11pt"><span style=3D"font-family:&quot;Trebuchet MS&quot;,sans=
+-serif; font-size:12pt"><br><br></span><span style=3D"font-family:&quot;Trebuc=
+het MS&quot;,sans-serif; font-size:14pt"><b><u>You are contacting us from an=
+ organisation or MP's office:</u></b></span><span style=3D"font-family:&quot;T=
+rebuchet MS&quot;,sans-serif; font-size:12pt"><u>&nbsp;</u></span></p><p sty=
+le=3D"margin:0cm; font-family:Calibri,sans-serif; font-size:11pt"><span style=3D=
+"font-family:&quot;Trebuchet MS&quot;,sans-serif; font-size:12pt">&nbsp;</sp=
+an></p><ol start=3D"1" style=3D"margin-top:0cm; margin-bottom:0cm"><li style=3D"fo=
+nt-family:&quot;Trebuchet MS&quot;,sans-serif; font-size:12pt; margin:0cm">I=
+f you are providing records or a response to enquiries on a case, your email=
+ will be added to the case and if necessary, the caseworker will be in conta=
+ct with you.&nbsp;&nbsp;</li></ol><p style=3D"margin:0cm 0cm 0cm 36pt; font-fa=
+mily:Calibri,sans-serif; font-size:11pt"><span style=3D"font-family:&quot;Treb=
+uchet MS&quot;,sans-serif; font-size:12pt">&nbsp;</span></p><ol start=3D"2" st=
+yle=3D"margin-top:0cm; margin-bottom:0cm"><li style=3D"font-family:&quot;Trebuch=
+et MS&quot;,sans-serif; font-size:12pt; margin:0cm">If you have a general qu=
+ery, you will be responded to within one month.&nbsp;</li></ol><p style=3D"mar=
+gin:0cm 0cm 0cm 36pt; font-family:Calibri,sans-serif; font-size:11pt"><span =
+style=3D"font-family:&quot;Trebuchet MS&quot;,sans-serif; font-size:12pt">&nbs=
+p;</span></p><div style=3D"font-family:&quot;Trebuchet MS&quot;,sans-serif; fo=
+nt-size:12pt"><b><u>If you are emailing about any of the following, please r=
+edirect your email:&nbsp;</u></b></div><div style=3D"font-family:&quot;Trebuch=
+et MS&quot;,sans-serif; font-size:12pt"><br></div><ol start=3D"3" data-editing=
+-info=3D"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}" st=
+yle=3D"margin-top:0cm; margin-bottom:0cm; list-style-type:decimal"><ol start=3D"=
+1" style=3D"list-style-type:lower-alpha"><li style=3D"font-family:Calibri,sans-s=
+erif; font-size:11pt; margin:0cm"><span role=3D"presentation" style=3D"font-fami=
+ly:&quot;Trebuchet MS&quot;,sans-serif; font-size:12pt">Recruitment =E2=80=93 <a h=
+ref=3D"mailto:HRSharedservices@ombudsman.org.uk" style=3D"margin:0px">HRSharedse=
+rvices@ombudsman.org.uk</a>&nbsp;</span></li><li style=3D"font-family:Calibri,=
+sans-serif; font-size:11pt; margin:0cm"><span role=3D"presentation" style=3D"fon=
+t-family:&quot;Trebuchet MS&quot;,sans-serif; font-size:12pt">Invoicing =E2=80=93 =
+<a href=3D"mailto:invoices@ombudsman.org.uk" style=3D"margin:0px">invoices@ombud=
+sman.org.uk</a></span></li></ol></ol></body></html>
+
+--B_3852841568_1049313310--
+
