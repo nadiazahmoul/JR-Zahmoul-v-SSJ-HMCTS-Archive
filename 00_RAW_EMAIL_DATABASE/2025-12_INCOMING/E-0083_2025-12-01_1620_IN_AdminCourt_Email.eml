@@ -1,0 +1,2118 @@
+Received: from CWLP265MB7267.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:229::5)
+ by CWLP265MB3379.GBRP265.PROD.OUTLOOK.COM with HTTPS; Mon, 1 Dec 2025
+ 16:20:15 +0000
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=b2MUIkx6UzvzXuPKHNwbbyIPOrjyZZtcvVbwtrodsym1dkuUwW9A+pOT8FIG7FMjrrcY2MS5l/d7fCkbDiAA9q223yPEzdblSlnFOWepFVrQuqGPb07H3mSiGhlTm+bfLtsU1h4iIH3EBmxaEmrFNLMizvEQ7VTaUCuSIuoV1HRkHQ5j92gnbJ2HAMgH0gkoXKvFj5fi/JztLhOd02paTFamZltyPZQNR4Wo92XRszXnY4FAEvG+JYsTzJj/q43Yh6sb//liadTzxw8wol3plAbUY9kdWZeBH7aQ5fCj44xirO/m9NbSfbctrSm+BWvVxqeh+OUXbi+piY7lyYrMcg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=tvhNw58zjZdhzJsUk6HpMsernu02REZowh72SJ85BX4=;
+ b=qqjVKlE4CQxNAA5XADdQCA2+KBYjjzySijHTMR6jAzWqvT/iTZ7Yz1PULBcZOcQvoY1AR8BgUfIy1yPZm1W2F6zY5BMAl7UGz5jVsE865KP8YpxpSzbvSXw/Xe9TDH1ftX56j3zh7OqzrdOrUHOvK5YPTbpSEme/cvNSyLwl29+0CvMAy+G8vkvLU2a83/WbPrwbMQZhqDfEwwn6E0jlt+WswXJht+C26Go2GlxyeNalm6EgONWLsohUY1S3GiXVxpnnHMZtOtoe8V5NelCYcMfaM62t5GJWczEkVY7Q6cRilVgg6mdBRcNLNfapTT2+lwJkgduRcnbBilXmV8RNDg==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 2a01:111:f403:c206::1) smtp.rcpttodomain=rosekross.com
+ smtp.mailfrom=justice.gov.uk; dmarc=pass (p=reject sp=reject pct=100)
+ action=none header.from=justice.gov.uk; dkim=pass (signature was verified)
+ header.d=justice.gov.uk; arc=pass (0 oda=1 ltdi=1
+ spf=[1,1,smtp.mailfrom=justice.gov.uk] dkim=[1,1,header.d=justice.gov.uk]
+ dmarc=[1,1,header.from=justice.gov.uk])
+Received: from LO4P123CA0072.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:153::23)
+ by CWLP265MB7267.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:229::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9366.17; Mon, 1 Dec
+ 2025 16:20:07 +0000
+Received: from LN2PEPF000100CA.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:153:cafe::b8) by LO4P123CA0072.outlook.office365.com
+ (2603:10a6:600:153::23) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9366.17 via Frontend Transport; Mon,
+ 1 Dec 2025 16:19:35 +0000
+Authentication-Results: spf=pass (sender IP is 2a01:111:f403:c206::1)
+ smtp.mailfrom=justice.gov.uk; dkim=pass (signature was verified)
+ header.d=justice.gov.uk;dmarc=pass action=none
+ header.from=justice.gov.uk;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of justice.gov.uk
+ designates 2a01:111:f403:c206::1 as permitted sender)
+ receiver=protection.outlook.com; client-ip=2a01:111:f403:c206::1;
+ helo=CWXP265CU008.outbound.protection.outlook.com; pr=C
+Received: from CWXP265CU008.outbound.protection.outlook.com
+ (2a01:111:f403:c206::1) by LN2PEPF000100CA.mail.protection.outlook.com
+ (2603:10a6:608:1::4) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9388.8 via Frontend Transport; Mon, 1
+ Dec 2025 16:20:07 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=UXO+aYl6gKq1XkbIbQgTYkfxSiaIL4BzGgjSdMVvPP9NSP8G6c7UCK4eC493IMOVDbdCXprHTPuvuibGL2B66brM7MRswdGVTSmJBNTQPYm2FaCdCo1JslDy6updGxUJTTbUXQLHBOKcCX1e2ap2LNs/b0yGVwsmYcF40afoQAF80pO8NOvWIk15jVuuTO1jOlvpKM+1QHEkB9/Mw3hE6c6mNcMdZEkWtKmuxHUhxpkGWTfRWozt5uQptdL2tvzdX1oGpCv3mMTiTbHP2UzZOvgSwGawCt0UCnf1ao4cG78MA3I85z8eNSYlxZ+ith+nw4pYv+ajI7a094GRG5l8vw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=tvhNw58zjZdhzJsUk6HpMsernu02REZowh72SJ85BX4=;
+ b=MjtiLmfyoldeAZWx4vwVCAenj4zHJIBHJHXckZ/UALi8YbPzTv01LiB/A2zBz3swa7oCGdeNRbKTtVc8myq6Rw2xwM19OijFomEm4tZL/Q97aPpmu9R5aBl8amR/NIC5c4Fyx91ZuWTOSxJEAUMnt00dnXuC9AcMz+XH/dv/qzvd7351oRdFyBqo6EH/4L9y4tKnYh64YqOSFwTlAwtDWny6i9VySE9VeNoFHNL6+hI4zgKkAaotvapjupMJfTx/tBmltn4N31PY49bwjpDAYk4P1o7OG1y/e5dznKx5bAXUihbByG6tApqFjzHxlJmzWXXGGZ3PF0H0lu86kMd02A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=justice.gov.uk; dmarc=pass action=none
+ header.from=justice.gov.uk; dkim=pass header.d=justice.gov.uk; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=justice.gov.uk;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tvhNw58zjZdhzJsUk6HpMsernu02REZowh72SJ85BX4=;
+ b=XmrnzS371jEcmMFZq1uX+nefdDjtOAjN4L6FA+KflJhmaAWJPkT7hG0PaDAdiaGhd037bBgrrwIwo5lxiKuxWqsqay+rM8VCRMy2yl9l+qleS66HB6vGrOU2IvqIxOWf1SFvXybudlcHoS0qsW7IgmKQQ4+EVQzcx/pfA+2d1mU=
+Received: from LO2P123MB5111.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:1ee::9)
+ by CWXP123MB3159.GBRP123.PROD.OUTLOOK.COM (2603:10a6:400:42::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9366.17; Mon, 1 Dec
+ 2025 16:20:04 +0000
+Received: from LO2P123MB5111.GBRP123.PROD.OUTLOOK.COM
+ ([fe80::b20f:e59f:2f2d:8bc6]) by LO2P123MB5111.GBRP123.PROD.OUTLOOK.COM
+ ([fe80::b20f:e59f:2f2d:8bc6%5]) with mapi id 15.20.9366.012; Mon, 1 Dec 2025
+ 16:20:04 +0000
+From: Administrative Court Office Immediates
+	<administrativecourtoffice.immediates@justice.gov.uk>
+To: Nadia <nadia@rosekross.com>
+Subject:
+ =?utf-8?B?UmU6IFVSR0VOVDogRmlsaW5nIG9mIE40NjEgSnVkaWNpYWwgUmV2aWV3IEJ1?=
+ =?utf-8?B?bmRsZSDigJQgUmVxdWVzdCBmb3IgSW1tZWRpYXRlIFNlYWxpbmcgJiBKdWRp?=
+ =?utf-8?B?Y2lhbCBDb25zaWRlcmF0aW9uL1VSR0VOVCDigJMgUmVxdWVzdCBmb3IgQ2Fz?=
+ =?utf-8?B?ZSBSZWZlcmVuY2UgTnVtYmVyIChONDYxIEpSIENsYWltIOKAkyBaYWhtb3Vs?=
+ =?utf-8?B?IHYgTW9KICYgSE1DVFMpL1VSR0VOVCDigJMgUmVzdWJtaXNzaW9uIG9mIEFD?=
+ =?utf-8?Q?O-Compliant_Bundle_(N461_+_N463)_an...?=
+Thread-Topic:
+ =?utf-8?B?VVJHRU5UOiBGaWxpbmcgb2YgTjQ2MSBKdWRpY2lhbCBSZXZpZXcgQnVuZGxl?=
+ =?utf-8?B?IOKAlCBSZXF1ZXN0IGZvciBJbW1lZGlhdGUgU2VhbGluZyAmIEp1ZGljaWFs?=
+ =?utf-8?B?IENvbnNpZGVyYXRpb24vVVJHRU5UIOKAkyBSZXF1ZXN0IGZvciBDYXNlIFJl?=
+ =?utf-8?B?ZmVyZW5jZSBOdW1iZXIgKE40NjEgSlIgQ2xhaW0g4oCTIFphaG1vdWwgdiBN?=
+ =?utf-8?B?b0ogJiBITUNUUykvVVJHRU5UIOKAkyBSZXN1Ym1pc3Npb24gb2YgQUNPLUNv?=
+ =?utf-8?Q?mpliant_Bundle_(N461_+_N463)_an...?=
+Thread-Index: AQHcYo6/DVYXvnXeTUmG6xSQNnHZJLUM9tRF
+Date: Mon, 1 Dec 2025 16:20:03 +0000
+Message-ID:
+ <LO2P123MB51117C2D320D5732414E1078A2DBA@LO2P123MB5111.GBRP123.PROD.OUTLOOK.COM>
+References: <B47306F3-27B2-47A0-B389-4FAF58A2134D@rosekross.com>
+In-Reply-To: <B47306F3-27B2-47A0-B389-4FAF58A2134D@rosekross.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+msip_labels:
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=justice.gov.uk;
+x-ms-traffictypediagnostic:
+ LO2P123MB5111:EE_|CWXP123MB3159:EE_|LN2PEPF000100CA:EE_|CWLP265MB7267:EE_|CWLP265MB3379:EE_
+X-MS-Office365-Filtering-Correlation-Id: 493c60d0-a753-408b-e6e5-08de30f57e36
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+X-Microsoft-Antispam-Untrusted:
+ BCL:0;ARA:13230040|376014|366016|1800799024|38070700021|4053099003|13003099007|8096899003;
+X-Microsoft-Antispam-Message-Info-Original:
+ =?us-ascii?Q?U8234ct6Yig4+NEoiNAcxyabPjOmTpc+VKl2IoO6ccFf5Mz9zgKAnGLSCWeY?=
+ =?us-ascii?Q?bAOpc8KcH3x+iMmaIPoF9dHRhiGpRu+W5Lc+Ezt09OE0xi8qwSRZl8qxmEtw?=
+ =?us-ascii?Q?9ymha2J13mUsdaYfHqX+FzabVI3Q6+8hYc2L3XlRSCU5XeO7hKZ0+DWaww92?=
+ =?us-ascii?Q?ExKGFnsFYbCMWysRsHN29Vs+xqXYeiuiwgDs7+LaXxJroJkav8b7eE4iBvbQ?=
+ =?us-ascii?Q?T94BEKPdqn2tfxGqaxoxLB5uANQANbdvAvjYzQOG3xa74xLq2Vfa/JpDNuC+?=
+ =?us-ascii?Q?P44nx7wTuz1XRdNZGC0h9ORQMbxQDcScxw27Hlw8z92eKS9aHswMr60kqpex?=
+ =?us-ascii?Q?fOe0Pgcx4zhJakel+pb6BSD7hM3vjB/5luYyyIuxRttl1uGeY//+DhkWX+bp?=
+ =?us-ascii?Q?VDM3+SF3d6UIdS6pbOI0UVlvKaLnLBOG/43iA1eEHPzNdMm6Z0K/nHB4gON8?=
+ =?us-ascii?Q?+/d8tp2tRNr/cmnQhDTSgOCSJcN9miz07XltfkPv5MhSJt/FXB+/D4IBNtX/?=
+ =?us-ascii?Q?JNs80f8+ofa8mmHEJrWTNKYXJsJ1/LqHLB2URjlg5ak+V4+u8INayD4c71Bd?=
+ =?us-ascii?Q?ZMpZPHVChbXJAmIE02jvJ7/VA+nbaqA7oU92ZrX4vQj6uIevZtIJ3nrpTdyz?=
+ =?us-ascii?Q?tu9om4LSgjbZHH07rWC3CC+9rRE0H6jFKXM/18PdRwJYVXfiOUpUsUuEUb87?=
+ =?us-ascii?Q?KV9fnOlmcd2peUa5yuFoR5KKRi34iXquj+2mkaOrMAUCAPVFZ3Y4AIeQtMLB?=
+ =?us-ascii?Q?3tGpuqf8z1JRBLFazySZw3SOCCuYLkrqRr2kjRTqCULqknW6n8zPo7Qrk+PT?=
+ =?us-ascii?Q?Mfl82Izo3f9SzzfAhgeC7w9poiLK4ZDa8xvOWtWnNkARVqYkzrbe1VuygnBn?=
+ =?us-ascii?Q?SXdi8HJHAQEln+ZOYnguVpIheGDvbGW2RCqKvxoAw76dva1oNSZAA93DL14V?=
+ =?us-ascii?Q?KsYWTh9T8ratrCNycq4AuC5sI+yD0rhjtISNBWxAopYjs6D0sAG973tR6fc2?=
+ =?us-ascii?Q?PNAkoAdFhvAEp1JfNFZEB1t4uHUMreKDQ6vC8X2Wi3Qq7Dwn1Udvdqw3q18N?=
+ =?us-ascii?Q?t2s8kdoEVYcbbm+010M04Ua75rRgKE6nR3I4cLr0iTMyY5mMcQxEOel7FDUN?=
+ =?us-ascii?Q?Y6AW3+zfLJgp5oQusKvj8qKRHtTIdLIPhTJ0X4LsNaSocvtRcbX9SC3nVIG1?=
+ =?us-ascii?Q?FizVoj7xGcDZIXv0BXy04dPofCrFJapl0wIua9LG6BkJXNyhHXI3giNUu+S/?=
+ =?us-ascii?Q?UHWPkmlH5z8Beyz95YRyBWReAKpJqe5F7rQhmvQ9agf9tMXHczxchBX5203Y?=
+ =?us-ascii?Q?FkpVFsgD/F5KLFqGyuJOCrCiXgj8mIBSfIp8YMrj6vT5vIvT8mNY9/4dogUk?=
+ =?us-ascii?Q?Ph9mC2lXeJKqiucilApStyU5xQdJFgImKHsyAte6ZiZ3KqZ5VaAMED4KO6U7?=
+ =?us-ascii?Q?Zn3E5RNvaKdoKvaYPd4+4mB5vk1uvOf/+c6Whec1YEowTn4n5lMUugKqENLG?=
+ =?us-ascii?Q?j4PulYclQ/TE7ONdWZHfuAOzAtUhYkcKD5ViYbd2AOn5e+Hu4A/MtvKoQA?=
+ =?us-ascii?Q?=3D=3D?=
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:LO2P123MB5111.GBRP123.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024)(38070700021)(4053099003)(13003099007)(8096899003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-Original-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-Original-0:
+ =?utf-8?B?TUcvdFQ0Z013OTV5K1E3SThNR0JpNmpQaFBxVzYreGtHbmdkclllbnRpbGdk?=
+ =?utf-8?B?dzM3NzczeFhqWWloNzBBOFEvdUZwMFVkdHl6Y0dVQTdrVUE3M2tsWkpxSU1I?=
+ =?utf-8?B?enB3MGZhbThUR1JUbTNjdlNwWXJJRzhCSk9hYU50ZWljYkh3cTlEaGhHZlJI?=
+ =?utf-8?B?bHUwT0cvZUNBVklhQmlQbHFLVlZMRmRMSFJMM3VYRnVuM0MzUVcxVW01b2dv?=
+ =?utf-8?B?VWpyUUhaT3pVdnJXQ0RtTGxqNE5tTUNCQkZUNHd2RU1wNURlZmN4enJFNWVK?=
+ =?utf-8?B?UFpOTFo1dHZkZ3BEaVNXZmN5cTNQOFBzdHozQlFJR0p2aTZuMjhCQk1vcXVx?=
+ =?utf-8?B?STRTMEZrQkpEZEw2SFhLWHBpUkhxTVdBTk9UbHRJWmlqSkI4bUp2Ym5OYWIx?=
+ =?utf-8?B?OU9YQ3FXTUlGb0ZmNlNPTmRHMTdkU1kwc1pZOHBDU2pmVG9Pc2s1WkpGTml3?=
+ =?utf-8?B?K0NndXZlQm5rMmJrUXdDZlJHRDRBUXAzVE1CVThXTkNYMlA5K1R0bmJMM2dR?=
+ =?utf-8?B?ZWU4a0pkbHJjR0grc2U1RFkvczgxYnlPVVBTam8yNjJjeGNwZHFNYTQ5enZO?=
+ =?utf-8?B?bjluTTluSWVZV1MyVC9pSHF2MVAzNlpwSXhDSFRQOFBGVDVGOHl1U2tCWVpC?=
+ =?utf-8?B?UXlKdTJBaEQvRjNZZlZvbHFoV29obTkreERmZWkrU0tzWDkwWURaZERibFBD?=
+ =?utf-8?B?T0p0NVJwMm5jd2JUNS90SVJEY3BSWnJWUXVkZEdCTlRmcTVudUt1ZERseUdt?=
+ =?utf-8?B?YVhQZWE1V2M5MkFuK2hzV2tqYmphM21hU0tGaThQNVR3VDVaZDlHMDdNRWdU?=
+ =?utf-8?B?dkxDTldqWW1ITm9EYjFaZUdXbk5IZGNVZ1ZuSEQ2cTYrUXcxdU5QaEZHT2Zp?=
+ =?utf-8?B?ZFg0aHpTbkpFRUY5SHAwUkJYbTdINXcxV0ljK3BjSWZkY2gxUjViWGU2TjJw?=
+ =?utf-8?B?WEFPVDZPR2M5NEEwSG95UmVpWXpMVnBBa0dLS1p4a1V2clh1TlhmY3o4M25v?=
+ =?utf-8?B?Yjc4aUV3SE5kcU5ZaURhRlRyV3hpTmR0OXhqaWlaNGVNcER4cnlzb0hFTDVF?=
+ =?utf-8?B?endvc1MyZkdCdUZ6VkN6Z2dnWEdLSVRRUXhEUzhJQmdSem4zcHprVTJ5ZGNF?=
+ =?utf-8?B?YmEvellqK3I3TTViTE1TbHhlTGJMWU9mcjBWUTE4cnpMVGJXWWc0QUdRWTVy?=
+ =?utf-8?B?VXZmL0FWOUdFN1lWL2o4ZUYrU3ZoSDVwSlFVZnJadjFmdWhocFRrNzZ2YUlG?=
+ =?utf-8?B?UmRNc3VhWm96M2ROa09VRmNncjI3ZFd4MlgxeFgvSlVubmF0SC9qL2srM0Nr?=
+ =?utf-8?B?Mk9RTjU5M3lFclE2OWhLbjhiamR0QkMwTmI0ZEF5VHdQa0tUUFhxT2JaNkdl?=
+ =?utf-8?B?Um5nYkh5dyt1VWJyNzV5SitrQ0VITUJwaERUMnlIY3VuUUI4NUI1YUpkWkRp?=
+ =?utf-8?B?N1ZieVZlZjBIdmdwVnBhYjFZSXFydGxlUFZmNmlRdnRPeVRFNFpRY0pGMk8r?=
+ =?utf-8?B?aHE4NndOSzM2Y09OcTVmeDhkdW0wUmJyL3BsREFzZzJuVXpuc3NpRHh6SnlP?=
+ =?utf-8?B?cjdmSzU0ME5pUVZGTU95aHpxMkpnS3lGNFd0VHVUTUNZWEpRanArQ0JOaFp2?=
+ =?utf-8?B?S2t3Z1ZIZ0VVQVppRjU0L3RMUlZEaFRuSTZGN0V5WDFlSVFKdVRpODczbE9w?=
+ =?utf-8?B?MFlGdWVFUmc4RWQ5Ry9Zc0dpZVd5aDRSWkJJelNwbUxRODJhbTRkOXhLOWE2?=
+ =?utf-8?B?OEJrWU9vdVhYTHlvNU1WZVN4dG56dUQ3Mk9yM1d1Nkd1TFBzSWd1bm9HalNP?=
+ =?utf-8?B?dTZ3WkxBSUNXUVpCWTdxRnVDaHJEeXVYM0pJWDBuUzU3czB1MllTdFZyYWNr?=
+ =?utf-8?B?Z1Q5OTZoV0RMY250bXJiTzdUU3NNbFRPbldtVzd1SUludUprajIxMUV0NjJ0?=
+ =?utf-8?B?dkxnOTAyVUhRbFFtcnlrd1ZtOXRwa1pwb3J5bkpGcVh1dlhLYlgxNml2OGor?=
+ =?utf-8?B?UCtZM09oSXdkUUpoRiszU0JuaGhXMmtSZG5NRDlwQytTS2ZXUlRtbWFQL3o1?=
+ =?utf-8?B?Z2FCYXg2aEpOU1c4YXNFVkFCR1Y0eEFUNllqV3AzaXpBdk8xSElndStOaEhS?=
+ =?utf-8?B?VURNL09QK0F2dWpZd2hMYXdmTkt2N2tmc3VnMGdzeEU5Y0swaHhhTWY4SitD?=
+ =?utf-8?B?QXIwRm1NMmpRWTFjQ1U3dEI5TFQ4dERRZHRuQ2xLcmt4V2xqczBwVGIxeEtk?=
+ =?utf-8?B?M1VwRUwvc1pnT2g5Q1puTmlkcE9RPT0=?=
+	type="multipart/alternative"
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CWXP123MB3159
+Return-Path: administrativecourtoffice.immediates@justice.gov.uk
+X-MS-Exchange-Organization-ExpirationStartTime: 01 Dec 2025 16:20:07.5837
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 493c60d0-a753-408b-e6e5-08de30f57e36
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 615372fc-d750-4bc9-b399-cc84f3fe3e95:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ LN2PEPF000100CA.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-Transport-CrossTenantHeadersPromoted:
+ LN2PEPF000100CA.GBRP265.PROD.OUTLOOK.COM
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource:
+ LN2PEPF000100CA.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+ 43b291af-ef5a-4861-782c-08de30f57c0f
+X-MS-Exchange-Organization-ExpirationInterval: 0:12:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: TenantCustomized
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam:
+ BCL:0;ARA:13230040|31052699007|39142699007|35042699022|12012899012|8096899003|4053099003|4076899003|13003099007;
+X-Forefront-Antispam-Report:
+ CIP:2a01:111:f403:c206::1;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CWXP265CU008.outbound.protection.outlook.com;PTR:mail-ukwestazlp170100001.outbound.protection.outlook.com;CAT:NONE;SFS:(13230040)(31052699007)(39142699007)(35042699022)(12012899012)(8096899003)(4053099003)(4076899003)(13003099007);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Dec 2025 16:20:07.4555
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 493c60d0-a753-408b-e6e5-08de30f57e36
+X-MS-Exchange-CrossTenant-Id: 615372fc-d750-4bc9-b399-cc84f3fe3e95
+X-MS-Exchange-CrossTenant-AuthSource: LN2PEPF000100CA.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CWLP265MB7267
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:08.2081602
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9366.012
+X-MS-Exchange-ExternalInOutlookResult: IsExternal
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?us-ascii?Q?NgJkUl+j2li5BcY+QLBhkoyLkJe1ocd/8gAUVahzAlJtrAmopdyBU5LhjWCx?=
+ =?us-ascii?Q?LT6tf0ZxGnUEukVNfik0VRmzs0gFEd5wI/CfeuKp9AhPQ6kfyv5fShtf0eEo?=
+ =?us-ascii?Q?LfMkHQ4TwdFG626HB8v064MLZzurCS0R7Tzgh5MBGxuERbw3PJZsuxKHv5by?=
+ =?us-ascii?Q?axAURvArvAZo7G9/c8pg3NaiwP/f4N2LJmCx8ryd+l07TYITOZolWiw5WJZG?=
+ =?us-ascii?Q?qURg3JsRN+Im6tMhh2pS1/6Kb+SY18ViCiaDh6SKWcecSiUy9YQbvTwlPHod?=
+ =?us-ascii?Q?qBKNYAHJu7GQUGc4o59atLJ0zwUrG8KmjCfO2K+VRZmUK8UtsuS/Msh9oNTQ?=
+ =?us-ascii?Q?NZWr1B/E6eSX9S4s/mmsUVKp/cE2HnfVml7lZg201nxZ1h8RGlmmJTVSJKGM?=
+ =?us-ascii?Q?7MreULNCU5tf6ufJ+U0ZtvUBxmXIlF9gMKJHPWv2eTm3Vldhn2PuweoDQery?=
+ =?us-ascii?Q?/InC6I+D2/pseVXXqiJmkaxy0DVxqVzZBKx0JaCyBkgJpJH+pHtpETZxr+7Y?=
+ =?us-ascii?Q?p57/K+OVQtKU76uyDCT4LGPclLshNd3tEwCXkq2dgaWo8RKhMWggZnLT9buo?=
+ =?us-ascii?Q?CG5XfA3/9PJcA4IIxLKqpW7SQtQKkDvj7C5Ued6EvK61Do2oLu7+ebdBPne7?=
+ =?us-ascii?Q?D07PtueJZU5ZJN0ncmsRpUUEhu5LoWHPChcd8h40QG88BpPg++uiSk2s9266?=
+ =?us-ascii?Q?5Qk6FDR6YCda/XOczvDgA0muNMWeGgv2V2JXtKAn2xnGpxDEf2vf+e3L7sb7?=
+ =?us-ascii?Q?qTwFpfaUmAF8VAEluOvQX9u2f+R5FYXwWxwoztAItveQUd6pkExsdD61l1ud?=
+ =?us-ascii?Q?edVLivVA9rRq2dNYJIu6sPRqdBppVRKIEah46DmltwLhpnX5CUCRhRoBY5iW?=
+ =?us-ascii?Q?roK6TUGJHC7hswgEqlm47h0TVDOYSnIitP3gOUtOZpVzzmZaFpU4YvIioslT?=
+ =?us-ascii?Q?/UvnRPHgi1QYws8xUUJkDzcDEOJdjrNHxAxsWKx1JTuZgf9KIIeVW+tQNSVw?=
+ =?us-ascii?Q?MIqsDk0ie689DzlHjicaWGNRSSf/SPd01zgdJpxb171ntLTY63n8TEesJvUk?=
+ =?us-ascii?Q?JFeIsrhQzW8zzNNsyGa4I5620BJWs9f6P2YZyFcoiVm3P0SwoQYvNn073w0p?=
+ =?us-ascii?Q?09sDro5XQH2LmlERlXiIkple2G7QOkSK0YGbC3rUepjsOtmO/ees/Tr/e8D0?=
+ =?us-ascii?Q?/445UZMPgh5jL4pd6xWUsBM5ixoB2UTCoDhHgay5fTceoKhcWNu6mQS+iueX?=
+ =?us-ascii?Q?IJEDbowk/f8It2yWoJw0fFQw4yvDBM0C4L+VHNAUNkdRuWiiaaibDf6c/x8g?=
+ =?us-ascii?Q?d22Gkd/8Y6jXHf7Y2aHZoRHxfpcwmffx8Vf02QzWRgko+UzoT57wxDxW6hMr?=
+ =?us-ascii?Q?j/0w5JN5yvAYnFGhoTdGn5PfOqCL696hUcIMaJx8cg3K8/+oNfWh3kfRDplb?=
+ =?us-ascii?Q?N8kniKVQ1PzeEDynIZUPj7NCPSveUGZhacK3/iqg0tN5cDVAVYMGL87Tpndo?=
+ =?us-ascii?Q?5SNg4bK/bzj/NmZH2Sv2NY74G6KIu6dQpqoFkdU/z6nGDmAXm8u8a8VPzReF?=
+ =?us-ascii?Q?D44N1MiK1XsmB8Nb+1bZ/oyWDHJqwTwHmjPL5oyj9JUJBC9dLz6f8TQaodM5?=
+ =?us-ascii?Q?DznhO4/tJm0ev9bEluAwlbx43cPF6ne6gMNZSOVc5rgNTx2n2qtGkhfE7g0G?=
+ =?us-ascii?Q?ZiYYTr8mc9Xx44VtLsZxfCTxIYBWfm12r9UeVbnMnZwj47NojPT658qpuXua?=
+ =?us-ascii?Q?Ev6ro+g/Vu9+B8cL56xFK6Z9V+uNC5tdZ/OrqeaIRDwGTm//RHfCr1uEmIBv?=
+ =?us-ascii?Q?nzd+sWeej1tGhifiuyLazUWe5Rie63/S3eK0IkLi2truIfFeZKyFX2BEEaaE?=
+ =?us-ascii?Q?ssXP0aGG0wzAxHDnf+7HjqpvZSzG5RgdTKvMlA/9NoopNZe5w8r0nq6Aq4gm?=
+ =?us-ascii?Q?ZTrDoRVsLRlUAaXqg41TqDRovPR9swYg8yhh4hzrHc7qggKqnchVDJw8qnp+?=
+ =?us-ascii?Q?9Z9cX5nOHvM+C+Y7rxcHhjmTu+i+Z3PHNuIO31HriKVtuojN6/BHgQvUOfWZ?=
+ =?us-ascii?Q?6XKCDbLb6lugurLnoT+zaKzb/CGG7sA+fYHLNXh/3VakJcmQ/z+ePVYKJTCt?=
+ =?us-ascii?Q?57wzag9T+xoSJCKTV/B/cYYf0OLRnnRvABWarCcYmmJol0BYGb5gacdMJ0Ag?=
+ =?us-ascii?Q?zoDKTeH1NENEV+3RmyPxnx5dDMJ8ls8GDlrrnNclR8EXSyxDSQFXsu0SVg8H?=
+ =?us-ascii?Q?9X2VMGw9Vb/9KdqY/ez0S51lOpvknS7ylKOPwSz+lGAZiYcxYWDhqUByLgZR?=
+ =?us-ascii?Q?DA58sthNmGn6AfKjGrjilcHBZuXcdnUsbnGzkAU9FoIscM59WjFkH6rmh8h2?=
+ =?us-ascii?Q?9OKwyIjhuGF6E++o99bVYjRZ+SZH0wRjbzjTNdN6DJ/iTShPaQAzkSl0l2hr?=
+ =?us-ascii?Q?toI5MY8efUmM0jk8vLTFY/Ohrfgd2O5xSjKUE96lL6jPMw1iXUKhMc6dZuZH?=
+ =?us-ascii?Q?L2HwyanE60WjAPNDKbMgWn7eis15b+uncUVhrwoWe1WUGJ9TqmwZra/fXgcz?=
+ =?us-ascii?Q?AaRw+m7eBAkIucJmfCm08yJMU0Fq/aC5cwsptzdZQF8ebG35xb7hLJCXuMPB?=
+ =?us-ascii?Q?i3Y4uOZ/47R2duRAdTRttGhwFuzbDYPx6UR/SnL3Fm3c?=
+Content-type: multipart/mixed;
+	boundary="B_3852842007_1494350915"
+
+> This message is in MIME format. Since your mail reader does not understand
+this format, some or all of this message may not be legible.
+
+--B_3852842007_1494350915
+Content-type: multipart/related;
+	boundary="B_3852842007_2637667054"
+
+--B_3852842007_2637667054
+Content-type: multipart/alternative;
+	boundary="B_3852842007_4073033612"
+
+
+--B_3852842007_4073033612
+Content-type: text/plain;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+Dear Ms Zahmoul,
+
+=20
+
+We acknowledge receipt of your applications. We understand that you are see=
+king permission to apply for judicial review challenging the acts or omissio=
+ns of the Defendants in handling criminal evidence you have provided regardi=
+ng Mr Zahmoul.=20
+
+
+
+To assist the Administrative Court to understand the current position to de=
+al with it expeditiously for urgent consideration, please can you confirm if=
+ there are there are any ongoing financial remedy case or active Family case=
+ at the moment? If so at what level of court and what stage the proceedings =
+are at.=E2=80=9D
+
+
+Kind regards,
+
+S Sikity **OFFICIAL**
+
+Administrative Court Office | Issues and Enquiries
+
+=20
+
+King's Bench Division | HMCTS | Royal Courts of Justice| Strand, London | W=
+C2A 2LL
+
+Phone: 020 7947 6000
+
+Web: www.gov.uk/hmcts
+
+PLEASE DO NOT SEND EMAILS TO PERSONAL INBOXES AS NO ACTION WILL BE TAKEN. P=
+ERSONAL INBOXES ARE NOT MONITORED. PLEASE SEND ALL EMAILS TO :
+
+administrativecourtoffice.generaloffice@justice.gov.uk
+
+
+Daily Cause List: http://www.justice.gov.uk/courts/court-lists/list-rcj
+Listing Enquiries: listoffice@administrativecourtoffice.justice.gov.uk
+
+General Enquiries: generaloffice@administrativecourtoffice.justice.gov.uk
+
+Criminal & Extradition Enquiries: crimex@administrativecourtoffice.justice.=
+gov.uk
+
+Skeleton Arguments: london.skeletonarguments@administrativecourtoffice.just=
+ice.gov.uk
+
+=20
+
+For information on how HMCTS uses personal data about you please see: https=
+://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about=
+/personal-information-charter
+
+=20
+
+In accordance with Practice Direction 5B - Electronic communication and fil=
+ing we ask you to do the following when sending an e-mail message to the cou=
+rt:
+Clearly state the Court's action number, parties=E2=80=99 names and any dates rel=
+ating to an up-coming hearing in the subject header.
+In accordance with Practice Direction 3.3a, please do not submit documents =
+which carry a payable fee; such e-mails will be deleted.
+We do not accept documents over 50 pages by electronic means.
+=20
+
+From: Nadia <nadia@rosekross.com>
+Sent: Monday, December 1, 2025 6:50 AM
+To: Administrative Court Office Immediates <administrativecourtoffice.immed=
+iates@justice.gov.uk>
+Cc: Administrative Court Office, List Office <administrativecourtoffice.lis=
+toffice@justice.gov.uk>; Administrative Court Office, Case Progression <admi=
+nistrativecourtoffice.caseprogression@justice.gov.uk>
+Subject: Re: URGENT: Filing of N461 Judicial Review Bundle =E2=80=94 Request for =
+Immediate Sealing & Judicial Consideration/URGENT =E2=80=93 Request for Case Refer=
+ence Number (N461 JR Claim =E2=80=93 Zahmoul v MoJ & HMCTS)/URGENT =E2=80=93 Resubmissio=
+n of ACO-Compliant Bundle (N461 + N463) an...=20
+=20
+Dear Administrative Court,
+
+Further to your email of 28 November, I now resubmit the fully ACO-complian=
+t consolidated bundle for my Judicial Review claim (N461) together with the =
+urgent application for expedition (N463).
+
+The bundle is now presented as a single paginated PDF including:
+Full Index
+N461 Claim Form + continuation sheets
+N463 Urgent Application + continuation sheets
+Detailed Grounds
+Witness Statement (WS1)
+Exhibits A=E2=80=93D
+Medical evidence (including the signed report from Dr Bruce Hayse)
+Draft Order
+Authorities
+=20
+
+This addresses every point raised in your guidance, including the requireme=
+nt for a single document, pagination, and inclusion of both applications wit=
+hin one bundle.
+
+=20
+
+Medical urgency =E2=80=94 Equality Act and PSED duties engaged
+
+=20
+
+As the Court is aware, I am a vulnerable litigant with Autism Spectrum Cond=
+ition and PTSD.
+
+My treating physician, Dr Bruce Hayse, has confirmed in his signed medical =
+report that:
+I am at acute medical and psychiatric risk,
+delays in the Court process are materially worsening my condition, and
+urgent judicial action is required to prevent clinical deterioration.
+=20
+
+I was hospitalised this weekend with acute abdominal pain directly linked t=
+o stress.
+
+The Court owes duties under:
+Equality Act 2010 (ss.20=E2=80=9321),
+Public Sector Equality Duty (s.149), and
+the Overriding Objective
+=20
+
+to ensure that my applications are processed promptly and safely.
+
+Urgent Request
+
+Given that:
+the N463 application has been pending since 25 November,
+the Defendants were properly served,
+and the complete ACO-compliant bundle is now filed,
+=20
+
+I respectfully request that the Court:
+Confirm sealing of the claim today,
+Issue a case reference number, and
+Place the N463 before a judge immediately for urgent consideration.
+=20
+
+Any further delay would present a significant, medically-documented safegua=
+rding risk.
+
+=20
+
+I would be grateful for confirmation as soon as possible.
+
+=20
+
+Yours faithfully,
+
+Nadia Zahmoul
+
+Litigant in Person
+
+Email: nadia@rosekross.com
+
+=20
+
+CC:
+
+Administrative Court Office =E2=80=94 Case Progression
+
+Administrative Court Office =E2=80=94 List Office
+
+=20
+
+=20
+
+=20
+
+From: Administrative Court Office Immediates <administrativecourtoffice.imm=
+ediates@justice.gov.uk>
+Date: Friday, November 28, 2025 at 9:39=E2=80=AFAM
+To: Nadia <nadia@rosekross.com>
+Subject: Re: URGENT: Filing of N461 Judicial Review Bundle =E2=80=94 Request for =
+Immediate Sealing & Judicial Consideration/URGENT =E2=80=93 Request for Case Refer=
+ence Number (N461 JR Claim =E2=80=93 Zahmoul v MoJ & HMCTS)
+
+=20
+
+Good afternoon,
+
+=20
+
+Please note the court requires your bundle to contain your applications and=
+ supporting documents.
+
+=20
+
+You have provided an N461 bundle with no index and I have been unable to lo=
+cate the N463 in the application.
+
+=20
+
+Kind regards,
+
+S Sikity **OFFICIAL**
+
+Administrative Court Office | Issues and Enquiries
+
+=20
+
+King's Bench Division | HMCTS | Royal Courts of Justice| Strand, London | W=
+C2A 2LL
+
+Phone: 020 7947 6000
+
+Web: www.gov.uk/hmcts
+
+PLEASE DO NOT SEND EMAILS TO PERSONAL INBOXES AS NO ACTION WILL BE TAKEN. P=
+ERSONAL INBOXES ARE NOT MONITORED. PLEASE SEND ALL EMAILS TO :
+
+administrativecourtoffice.generaloffice@justice.gov.uk
+
+
+Daily Cause List: http://www.justice.gov.uk/courts/court-lists/list-rcj
+Listing Enquiries: listoffice@administrativecourtoffice.justice.gov.uk
+
+General Enquiries: generaloffice@administrativecourtoffice.justice.gov.uk
+
+Criminal & Extradition Enquiries: crimex@administrativecourtoffice.justice.=
+gov.uk
+
+Skeleton Arguments: london.skeletonarguments@administrativecourtoffice.just=
+ice.gov.uk
+
+=20
+
+For information on how HMCTS uses personal data about you please see: https=
+://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about=
+/personal-information-charter
+
+=20
+
+In accordance with Practice Direction 5B - Electronic communication and fil=
+ing we ask you to do the following when sending an e-mail message to the cou=
+rt:
+Clearly state the Court's action number, parties=E2=80=99 names and any dates rel=
+ating to an up-coming hearing in the subject header.
+In accordance with Practice Direction 3.3a, please do not submit documents =
+which carry a payable fee; such e-mails will be deleted.
+We do not accept documents over 50 pages by electronic means.
+=20
+
+=20
+
+From: Nadia <nadia@rosekross.com>
+Sent: Friday, November 28, 2025 2:52 PM
+To: Administrative Court Office Immediates <administrativecourtoffice.immed=
+iates@justice.gov.uk>
+Cc: Administrative Court Office, List Office <administrativecourtoffice.lis=
+toffice@justice.gov.uk>; Administrative Court Office, Case Progression <admi=
+nistrativecourtoffice.caseprogression@justice.gov.uk>
+Subject: FW: URGENT: Filing of N461 Judicial Review Bundle =E2=80=94 Request for =
+Immediate Sealing & Judicial Consideration/URGENT =E2=80=93 Request for Case Refer=
+ence Number (N461 JR Claim =E2=80=93 Zahmoul v MoJ & HMCTS)=20
+
+=20
+
+Dear Administrative Court General Office,
+
+=20
+
+I write further to my urgent filing today of an ACO-compliant N461 Judicial=
+ Review bundle in Zahmoul v Ministry of Justice & HMCTS, and to my email to =
+Case Progression requesting a case reference number.
+
+=20
+
+I have been informed that no assistance can be provided by Case Progression=
+ until a case reference number has been allocated, and that I must therefore=
+ contact the General Office.
+
+=20
+
+Accordingly, I respectfully request that:
+A case reference number for my N461 Judicial Review claim be allocated as a=
+ matter of urgency; and
+Confirmation be provided that my N461 bundle (sent today under the subject =
+line =E2=80=9CN461 Urgent Bundle =E2=80=93 Zahmoul v MoJ & HMCTS=E2=80=9D) has been received a=
+nd accepted for issue.
+=20
+
+This matter is medically urgent. My treating physician, Dr Bruce Hayse, has=
+ provided a signed report confirming that I am in a clinically fragile psych=
+iatric state and that delay in the Court process creates a significant safeg=
+uarding risk. I am a disabled litigant (Autism and PTSD), and the Court=E2=80=99s =
+duties under the Equality Act 2010 and the Public Sector Equality Duty (s.14=
+9) are therefore engaged.
+
+=20
+
+I am acting as a litigant in person and do not have the financial means to =
+obtain legal representation. I have done everything I can to comply with the=
+ Administrative Court=E2=80=99s requirements and to provide a single, court-ready =
+N461 bundle.
+
+=20
+
+For these reasons, I would be very grateful if a case reference number coul=
+d be issued today, and if my claim could then be progressed to case progress=
+ion for urgent consideration alongside my N463 application.
+
+=20
+
+Yours faithfully,
+
+Nadia Zahmoul
+
+Litigant in Person
+
+Email: Nadia@rosekross.com
+
+=20
+
+=20
+
+=20
+
+=20
+
+=20
+
+From: Nadia <nadia@rosekross.com>
+Date: Friday, November 28, 2025 at 7:32=E2=80=AFAM
+To: Administrative Court Office Immediates <administrativecourtoffice.immed=
+iates@justice.gov.uk>
+Cc: "Administrative Court Office, List Office" <administrativecourtoffice.l=
+istoffice@justice.gov.uk>
+Subject: Re: URGENT: Filing of N461 Judicial Review Bundle =E2=80=94 Request for =
+Immediate Sealing & Judicial Consideration
+
+=20
+
+Dear Administrative Court,
+
+Further to your email requesting an ACO-compliant single-PDF bundle, I now =
+resubmit the entire Judicial Review application in one consolidated document=
+:
+
+=20
+
+Attachment: N461 Urgent Bundle =E2=80=93 28 November 2025 (single PDF)
+
+=20
+
+This document contains:
+N461 Claim Form (with continuation sheets)
+Detailed Statement of Facts
+Detailed Grounds
+Witness Statement and Exhibits
+Draft Order
+Signed medical evidence from my treating physician, Dr. Bruce Hayse
+All supporting materials in the correct order
+=20
+
+I confirm that this is a single, unified, ACO-compliant PDF as requested.
+
+1. Medical Emergency =E2=80=94 Urgent Judicial Action Required Today
+
+=20
+
+My treating physician, Dr Bruce Hayse, has submitted a signed clinical repo=
+rt (included within the PDF bundle) confirming:
+I am currently in a severe psychiatric crisis
+My stability depends on timely judicial action
+Any delay significantly increases the risk of hospitalisation
+The matter must be treated as urgent for safeguarding reasons
+=20
+
+This places the Court under statutory duties engaged by:
+Equality Act 2010, ss.20=E2=80=9321 (reasonable adjustments)
+Equality Act 2010, s.149 (Public Sector Equality Duty)
+The overriding objective, particularly protections for vulnerable litigants
+Administrative Court disability guidance
+=20
+
+Given the seriousness of my condition, I respectfully request sealing and j=
+udicial consideration today.
+
+=20
+
+Waiting until Monday would contradict the medical evidence and expose me to=
+ significant and documented clinical risk.
+
+=20
+
+2. I am a litigant in person with no access to legal representation
+
+=20
+
+I respectfully reiterate that I cannot obtain legal advice due to financial=
+ constraints.
+
+Your request that I =E2=80=9Cseek legal advice=E2=80=9D cannot act as a barrier to my r=
+ight to access the Administrative Court.
+
+=20
+
+I have now:
+Complied fully with PD 54A
+Provided the N461
+Provided the N463
+Filed every required continuation sheet
+Assembled the bundle exactly as requested, in one coherent PDF
+Served the Defendants
+Provided urgent medical evidence
+=20
+
+3. Request for Immediate Action
+
+=20
+
+Given:
+the medically urgent situation,
+the ACO-compliant bundle now filed,
+the fact that the N463 has been pending since 25 November,
+and the statutory duties engaged,
+=20
+
+I respectfully request:
+
+=20
+
+(1) Sealing of the N461 today
+
+=20
+
+(2) Immediate referral of the N463 to a judge today
+
+=20
+
+(3) Confirmation of urgent listing
+
+=20
+
+I would be grateful for written confirmation of receipt, acceptance, and se=
+aling.
+
+=20
+
+Thank you for your attention to this urgent and medically fragile matter.
+
+=20
+
+Yours faithfully,
+
+Nadia Zahmoul
+
+Litigant in Person
+
+Email: nadia@rosekross.com
+
+=20
+
+=20
+
+=20
+
+=20
+
+=20
+
+From: Administrative Court Office Immediates <administrativecourtoffice.imm=
+ediates@justice.gov.uk>
+Date: Friday, November 28, 2025 at 7:06=E2=80=AFAM
+To: Nadia <nadia@rosekross.com>
+Subject: Re: URGENT: Filing of N461 Judicial Review Bundle =E2=80=94 Request for =
+Immediate Sealing & Judicial Consideration
+
+=20
+
+Good afternoon,
+
+=20
+
+Please note an ACO compliant bundle must be filed as soon as possible: Admi=
+nistrative Court: Information for Court Users =E2=80=93 June 2022 - Courts and Tri=
+bunals Judiciary
+
+=20
+
+Please see guidance attached https://www.judiciary.uk/wp-content/uploads/20=
+22/07/Administrative-Court-Information-for-court-users-June22.pdf)
+
+=20
+
+The court cannot accept your application and supporting documents in separa=
+ted documents and multiple emails.
+
+=20
+
+Please resubmit and ensure all key supporting documents are available for r=
+eview.
+
+=20
+
+=20
+
+Kind regards,
+
+S Sikity**OFFICIAL**
+
+Administrative Court Office | Issues and Enquiries
+
+=20
+
+King's Bench Division | HMCTS | Royal Courts of Justice| Strand, London | W=
+C2A 2LL
+
+Phone: 020 7947 6000
+
+Web: www.gov.uk/hmcts
+
+PLEASE DO NOT SEND EMAILS TO PERSONAL INBOXES AS NO ACTION WILL BE TAKEN. P=
+ERSONAL INBOXES ARE NOT MONITORED. PLEASE SEND ALL EMAILS TO :
+
+administrativecourtoffice.generaloffice@justice.gov.uk
+
+
+Daily Cause List: http://www.justice.gov.uk/courts/court-lists/list-rcj
+Listing Enquiries: listoffice@administrativecourtoffice.justice.gov.uk
+
+General Enquiries: generaloffice@administrativecourtoffice.justice.gov.uk
+
+Criminal & Extradition Enquiries: crimex@administrativecourtoffice.justice.=
+gov.uk
+
+Skeleton Arguments: london.skeletonarguments@administrativecourtoffice.just=
+ice.gov.uk
+
+=20
+
+For information on how HMCTS uses personal data about you please see: https=
+://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about=
+/personal-information-charter
+
+=20
+
+In accordance with Practice Direction 5B - Electronic communication and fil=
+ing we ask you to do the following when sending an e-mail message to the cou=
+rt:
+Clearly state the Court's action number, parties=E2=80=99 names and any dates rel=
+ating to an up-coming hearing in the subject header.
+In accordance with Practice Direction 3.3a, please do not submit documents =
+which carry a payable fee; such e-mails will be deleted.
+We do not accept documents over 50 pages by electronic means.
+=20
+
+=20
+
+From: Nadia <nadia@rosekross.com>
+Sent: Friday, November 28, 2025 1:31 PM
+To: Administrative Court Office Immediates <administrativecourtoffice.immed=
+iates@justice.gov.uk>
+Subject: URGENT: Filing of N461 Judicial Review Bundle =E2=80=94 Request for Imme=
+diate Sealing & Judicial Consideration=20
+
+=20
+
+=20
+
+Dear Administrative Court,
+
+=20
+
+I write as a litigant in person without access to legal representation, and=
+ in extremely urgent medical circumstances, to file the complete N461 Judici=
+al Review bundle as directed.
+
+=20
+
+Please find attached:
+
+=20
+
+1. N461 Claim Form (with continuation sheets)
+
+2. Full N461 Bundle =E2=80=94 including Detailed Grounds, WS, and exhibits
+
+3. Signed medical report from Dr Bruce Hayse confirming clinical crisis and=
+ the need for urgent judicial intervention
+
+=20
+
+1. Why this must be sealed and listed today
+
+=20
+
+Your earlier emails indicated that an N463 cannot be considered unless acco=
+mpanied by a full N461.
+
+I have now complied fully and precisely with the requirements of PD 54A.
+
+=20
+
+Given that:
+the N463 urgent application was filed on 25 November,
+the Defendants have been properly served,
+and the full N461 bundle is now filed,
+=20
+
+I respectfully request that the claim be sealed today and immediately place=
+d before a judge for urgent consideration pursuant to:
+PD 54A,
+s.31A Senior Courts Act,
+and the overriding objective, particularly for vulnerable court users.
+=20
+
+=20
+2. Medical urgency =E2=80=94 exceptional vulnerability (clinical evidence attache=
+d)
+=20
+
+My treating physician, Dr Bruce Hayse, has issued a signed medical report c=
+onfirming:
+
+I am in a severe state of psychiatric risk,
+
+=20
+my stability depends on the certainty and timing of the Court=E2=80=99s process,
+and that this matter must be expedited for safeguarding reasons,
+and he specifically warns that hospitalisation may be required absent timel=
+y judicial action.
+=20
+
+This must be treated as exceptional vulnerability under:
+the Equality Act 2010,
+the Public Sector Equality Duty,
+and the Court=E2=80=99s duty to provide reasonable adjustments.
+=20
+
+=20
+
+3. I am a litigant in person =E2=80=94 I cannot afford legal advice
+
+=20
+
+Your previous message stated:
+
+=E2=80=9CPlease seek legal advice.=E2=80=9D
+
+=20
+
+I wish to clarify respectfully that:
+
+=20
+I do not have the financial means to obtain legal representation;
+I am acting entirely as a litigant in person;
+and the Administrative Court Guide expressly anticipates, and protects, LiP=
+s;
+the requirement to =E2=80=9Cseek legal advice=E2=80=9D cannot be a condition of access =
+to the Court.
+=20
+
+I have now followed every procedural instruction and provided the materials=
+ the Court indicated were required.
+
+=20
+
+4. Request
+
+=20
+
+In light of:
+the urgent medical evidence,
+the statutory disability duties owed,
+the fact that all procedural documents are now filed,
+and the fact that the N463 urgent application has been pending for three da=
+ys,
+=20
+
+I respectfully request that the Court:
+
+=20
+
+(1) Seal the N461 claim today
+
+=20
+
+(2) Refer the N463 to a judge immediately, today
+
+=20
+
+(3) Confirm listing for an urgent oral consideration
+
+=20
+
+(as requested in Section 3 of N463)
+
+=20
+
+Please confirm receipt and sealing at your earliest opportunity.
+
+=20
+
+Yours faithfully,
+
+=20
+
+Nadia Zahmoul
+
+Litigant in Person
+
+Email: Nadia@rosekross.com
+
+=20
+
+=20
+
+=20
+
+=20
+
+=20
+
+This e-mail and any attachments is intended only for the attention of the a=
+ddressee(s). Its unauthorised use, disclosure, storage or copying is not per=
+mitted. If you are not the intended recipient, please destroy all copies and=
+ inform the sender by return e-mail. Internet e-mail is not a secure medium.=
+ Any reply to this message could be intercepted and read by someone else. Pl=
+ease bear that in mind when deciding whether to send material in response to=
+ this message by e-mail. This e-mail (whether you are the sender or the reci=
+pient) may be monitored, recorded and retained by the Ministry of Justice. M=
+onitoring / blocking software may be used, and e-mail content may be read at=
+ any time. You have a responsibility to ensure laws are not broken when comp=
+osing or forwarding e-mails and their contents.=20
+
+This e-mail and any attachments is intended only for the attention of the a=
+ddressee(s). Its unauthorised use, disclosure, storage or copying is not per=
+mitted. If you are not the intended recipient, please destroy all copies and=
+ inform the sender by return e-mail. Internet e-mail is not a secure medium.=
+ Any reply to this message could be intercepted and read by someone else. Pl=
+ease bear that in mind when deciding whether to send material in response to=
+ this message by e-mail. This e-mail (whether you are the sender or the reci=
+pient) may be monitored, recorded and retained by the Ministry of Justice. M=
+onitoring / blocking software may be used, and e-mail content may be read at=
+ any time. You have a responsibility to ensure laws are not broken when comp=
+osing or forwarding e-mails and their contents.=20
+This e-mail and any attachments is intended only for the attention of the a=
+ddressee(s). Its unauthorised use, disclosure, storage or copying is not per=
+mitted. If you are not the intended recipient, please destroy all copies and=
+ inform the sender by return e-mail. Internet e-mail is not a secure medium.=
+ Any reply to this message could be intercepted and read by someone else. Pl=
+ease bear that in mind when deciding whether to send material in response to=
+ this message by e-mail. This e-mail (whether you are the sender or the reci=
+pient) may be monitored, recorded and retained by the Ministry of Justice. M=
+onitoring / blocking software may be used, and e-mail content may be read at=
+ any time. You have a responsibility to ensure laws are not broken when comp=
+osing or forwarding e-mails and their contents. 
+
+--B_3852842007_4073033612
+Content-type: text/html;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><style t=
+ype=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bottom:0;} </st=
+yle></head><body dir=3D"ltr"><p style=3D"text-align: left; text-indent: 0px; bac=
+kground-color: rgb(255, 255, 255); margin: 0px;" class=3D"elementToProof"><spa=
+n style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibr=
+i, Helvetica, sans-serif; font-size: 11pt; color: rgb(36, 36, 36);"><i>Dear =
+Ms Zahmoul,</i></span></p><p style=3D"text-align: left; text-indent: 0px; back=
+ground-color: rgb(255, 255, 255); margin: 0px;" class=3D"elementToProof"><span=
+ style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri=
+, Helvetica, sans-serif; font-size: 11pt; color: rgb(36, 36, 36);"><i>&nbsp;=
+</i></span></p><p style=3D"text-align: left; text-indent: 0px; background-colo=
+r: rgb(255, 255, 255); margin: 0px;" class=3D"elementToProof"><span style=3D"fon=
+t-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica=
+, sans-serif; font-size: 11pt; color: rgb(51, 51, 51);"><i>We acknowledge re=
+ceipt of your applications. We understand that you are seeking permission to=
+ apply for judicial review challenging the acts or omissions of the Defendan=
+ts in handling criminal evidence you have provided regarding Mr Zahmoul.&nbs=
+p;</i></span></p><p style=3D"text-align: left; text-indent: 0px; background-co=
+lor: rgb(255, 255, 255); margin: 0px;" class=3D"elementToProof"><span style=3D"f=
+ont-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helveti=
+ca, sans-serif; font-size: 11pt; color: rgb(51, 51, 51);"><i><br></i></span>=
+</p><p style=3D"text-align: left; text-indent: 0px; background-color: rgb(255,=
+ 255, 255); margin: 0px;" class=3D"elementToProof"><span style=3D"font-family: A=
+ptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-seri=
+f; font-size: 11pt; color: rgb(51, 51, 51);"><i>To assist the Administrative=
+ Court to understand the current position to deal with it expeditiously for =
+urgent consideration, please can you confirm if there are there are any ongo=
+ing financial remedy case or active Family case at the moment? If so at what=
+ level of court and what stage the proceedings are at.=E2=80=9D</i></span></p><p s=
+tyle=3D"text-align: left; text-indent: 0px; background-color: rgb(255, 255, 25=
+5); margin: 0px;" class=3D"elementToProof"><span style=3D"color: rgb(51, 51, 51)=
+;"></span><span style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontS=
+ervice, Calibri, Helvetica, sans-serif; font-size: 11pt; color: rgb(0, 0, 0)=
+;"><br></span></p><div class=3D"elementToProof" id=3D"Signature"><p style=3D"margi=
+n: 0cm;" class=3D"elementToProof"><span style=3D"font-family: Aptos, sans-serif;=
+ font-size: 11pt; color: rgb(31, 78, 121);"><b>Kind regards,</b></span></p><=
+p style=3D"margin: 0cm;" class=3D"elementToProof"><span style=3D"font-family: Apto=
+s, sans-serif; font-size: 11pt; color: rgb(31, 78, 121);"><b>S Sikity **OFFI=
+CIAL**</b></span></p><p style=3D"margin: 0cm;" class=3D"elementToProof"><span st=
+yle=3D"font-family: Aptos, sans-serif; font-size: 11pt; color: rgb(31, 78, 121=
+);"><b>Administrative Court Office | Issues and Enquiries</b></span></p><p s=
+tyle=3D"margin: 0cm;" class=3D"elementToProof"><span style=3D"font-family: Aptos, =
+sans-serif; font-size: 11pt; color: rgb(31, 78, 121);">&nbsp;</span></p><p s=
+tyle=3D"margin: 0cm;" class=3D"elementToProof"><span style=3D"font-family: Aptos, =
+sans-serif; font-size: 11pt; color: rgb(31, 78, 121);">King's Bench Division=
+ <b>|</b>&nbsp;HMCTS <b>|</b>&nbsp;Royal Courts of Justice<b>|</b>&nbsp;Stra=
+nd, London <b>|</b>&nbsp;WC2A 2LL</span></p><p style=3D"margin: 0cm;" class=3D"e=
+lementToProof"><span style=3D"font-family: Aptos, sans-serif; font-size: 11pt;=
+ color: rgb(31, 78, 121);"><b>Phone:</b>&nbsp;020 7947 6000</span></p><p sty=
+le=3D"margin: 0cm;" class=3D"elementToProof"><span style=3D"font-family: Aptos, sa=
+ns-serif; font-size: 11pt; color: rgb(31, 78, 121);"><b>Web:</b> <u><a style=
+=3D"color: rgb(31, 78, 121); margin-top: 0px; margin-bottom: 0px;" href=3D"http:=
+//www.gov.uk/hmcts">www.gov.uk/hmcts</a></u></span></p><p style=3D"margin: 0cm=
+;" class=3D"elementToProof"><span style=3D"font-family: Calibri, sans-serif; fon=
+t-size: 11pt; color: rgb(31, 73, 125);"><img style=3D"width: 2.979in; height: =
+0.291in; max-width: 707px; margin-top: 0px; margin-bottom: 0px;" height=3D"27"=
+ width=3D"285" data-outlook-trace=3D"F:1|T:1" src=3D"cid:1b3d379a-8caa-4fde-9d79-2=
+4afb50cb1f2"></span></p><p style=3D"text-align: center; margin: 0cm;" class=3D"e=
+lementToProof"><span style=3D"font-family: Aptos, sans-serif; font-size: 16pt;=
+ color: red;"><b>PLEASE DO NOT SEND EMAILS TO PERSONAL INBOXES AS NO ACTION =
+WILL BE TAKEN. PERSONAL INBOXES ARE NOT MONITORED. PLEASE SEND ALL EMAILS TO=
+ :</b></span></p><p style=3D"text-align: center; margin: 0cm;" class=3D"elementT=
+oProof"><span style=3D"font-family: Aptos, sans-serif; font-size: 14pt; color:=
+ rgb(0, 0, 0);"><b><u>administrativecourtoffice.<a style=3D"color: rgb(0, 0, 0=
+); margin-top: 0px; margin-bottom: 0px;" href=3D"mailto:generaloffice@justice.=
+gov.uk">generaloffice@justice.gov.uk</a></u></b></span></p><p style=3D"margin:=
+ 0cm;" class=3D"elementToProof"><span style=3D"font-family: Arial, sans-serif; f=
+ont-size: 9pt; color: rgb(31, 73, 125);"><b><br></b></span><span style=3D"font=
+-family: Calibri, sans-serif; font-size: 9pt; color: rgb(54, 95, 145);"><b>D=
+aily Cause List: </b></span><span style=3D"font-family: Calibri, sans-serif; f=
+ont-size: 9pt; color: rgb(31, 78, 121);"><b><u><a style=3D"color: rgb(31, 78, =
+121); margin-top: 0px; margin-bottom: 0px;" href=3D"http://www.justice.gov.uk/=
+courts/court-lists/list-rcj">http://www.justice.gov.uk/courts/court-lists/li=
+st-rcj</a></u></b></span><span style=3D"font-family: Calibri, sans-serif; font=
+-size: 9pt; color: rgb(54, 95, 145);"><br><b>Listing Enquiries:</b> </span><=
+span style=3D"font-family: Calibri, sans-serif; font-size: 9pt; color: rgb(31,=
+ 78, 121);"><b><u><a style=3D"color: rgb(31, 78, 121); margin-top: 0px; margin=
+-bottom: 0px;" href=3D"mailto:listoffice@">listoffice@</a>administrativecourto=
+ffice.justice.gov.uk</u></b></span></p><p style=3D"margin: 0cm;" class=3D"elemen=
+tToProof"><span style=3D"font-family: Calibri, sans-serif; font-size: 9pt; col=
+or: rgb(31, 73, 125);"><b>General Enquiries: </b></span><span style=3D"font-fa=
+mily: Calibri, sans-serif; font-size: 9pt; color: rgb(31, 78, 121);"><b><u><=
+a style=3D"color: rgb(31, 78, 121); margin-top: 0px; margin-bottom: 0px;" href=
+=3D"mailto:generaloffice@administrativecourtoffice.justice.gov.uk">generaloffi=
+ce@administrativecourtoffice.justice.gov.uk</a></u></b></span></p><p style=3D"=
+margin: 0cm;" class=3D"elementToProof"><span style=3D"font-family: Calibri, sans=
+-serif; font-size: 9pt; color: rgb(31, 73, 125);"><b>Criminal &amp; Extradit=
+ion Enquiries: </b></span><span style=3D"font-family: Calibri, sans-serif; fon=
+t-size: 9pt; color: rgb(31, 78, 121);"><b><u><a style=3D"color: rgb(31, 78, 12=
+1); margin-top: 0px; margin-bottom: 0px;" href=3D"mailto:crimex@">crimex@</a>a=
+dministrativecourtoffice</u></b><u>.</u><b><u>justice.gov.uk</u></b></span><=
+/p><p style=3D"margin: 0cm;" class=3D"elementToProof"><span style=3D"font-family: =
+Calibri, sans-serif; font-size: 9pt; color: rgb(54, 95, 145);"><b>Skeleton A=
+rguments</b></span><span style=3D"font-family: Calibri, sans-serif; font-size:=
+ 9pt; color: rgb(31, 73, 125);"><b>: </b></span><span style=3D"font-family: Ca=
+libri, sans-serif; font-size: 9pt; color: rgb(10, 47, 65);"><b><u><a style=3D"=
+color: rgb(10, 47, 65); margin-top: 0px; margin-bottom: 0px;" href=3D"mailto:l=
+ondon.skeletonarguments@administrativecourtoffice.justice.gov.uk">london.ske=
+letonarguments@administrativecourtoffice.justice.gov.uk</a></u></b></span></=
+p><p style=3D"margin: 0cm;" class=3D"elementToProof"><span style=3D"font-family: C=
+alibri, sans-serif; font-size: 9pt; color: rgb(10, 47, 65);"><b>&nbsp;</b></=
+span></p><p style=3D"margin: 0cm;" class=3D"elementToProof"><span style=3D"font-fa=
+mily: Calibri, sans-serif; font-size: 9pt; color: rgb(31, 73, 125);"><b>For =
+information on how HMCTS uses personal data about you please see: </b></span=
+><span style=3D"font-family: Calibri, sans-serif; font-size: 9pt; color: blue;=
+"><b><u><a style=3D"color: blue; margin-top: 0px; margin-bottom: 0px;" href=3D"h=
+ttps://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/a=
+bout/personal-information-charter">https://www.gov.uk/government/organisatio=
+ns/hm-courts-and-tribunals-service/about/personal-information-charter</a></u=
+></b></span></p><p style=3D"margin: 0cm;" class=3D"elementToProof"><span style=3D"=
+font-family: Calibri, sans-serif; font-size: 8pt; color: rgb(31, 73, 125);">=
+<b>&nbsp;</b></span></p><p style=3D"margin: 0cm;" class=3D"elementToProof"><span=
+ style=3D"font-family: Calibri, sans-serif; font-size: 8pt; color: rgb(31, 73,=
+ 125);"><b>In accordance with <u><a style=3D"color: rgb(31, 73, 125); margin-t=
+op: 0px; margin-bottom: 0px;" title=3D"http://www.justice.gov.uk/courts/proced=
+ure-rules/civil/rules/pd_part05b" href=3D"http://www.justice.gov.uk/courts/pro=
+cedure-rules/civil/rules/pd_part05b">Practice Direction 5B - Electronic comm=
+unication and filing</a></u>&nbsp;we ask you to do the following when sendin=
+g an e-mail message to the court:</b></span></p><ul style=3D"margin-top: 0cm; =
+margin-bottom: 0cm;"><li style=3D"font-family: Calibri, sans-serif; font-size:=
+ 11pt; color: rgb(31, 73, 125); margin: 0cm;"><span role=3D"presentation" styl=
+e=3D"font-size: 8pt;"><b>Clearly state the Court's action number, parties=E2=80=99 n=
+ames and any dates relating to an up-coming hearing in the subject header.</=
+b></span></li><li style=3D"font-family: Calibri, sans-serif; font-size: 11pt; =
+color: rgb(31, 73, 125); margin: 0cm;"><span role=3D"presentation" style=3D"font=
+-size: 8pt;"><b>In accordance with Practice Direction 3.3a, please do not su=
+bmit documents which carry a payable fee; such e-mails will be deleted.</b><=
+/span></li><li style=3D"font-family: Calibri, sans-serif; font-size: 11pt; col=
+or: rgb(31, 73, 125); margin: 0cm;"><span role=3D"presentation" style=3D"font-si=
+ze: 8pt;"><b>We do not accept documents over 50 pages by electronic means.</=
+b></span></li></ul><p style=3D"margin: 0cm;" class=3D"elementToProof"><span styl=
+e=3D"font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(0, 0, 0);">=
+&nbsp;</span></p><div style=3D"margin: 0in; font-family: Aptos, Aptos_Embedded=
+Font, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 11pt; =
+color: rgb(0, 0, 0);" class=3D"elementToProof"><br></div></div><div id=3D"append=
+onsend"></div><hr style=3D"display:inline-block;width:98%" tabindex=3D"-1"><div =
+id=3D"divRplyFwdMsg" dir=3D"ltr"><font face=3D"Calibri, sans-serif" style=3D"font-si=
+ze:11pt" color=3D"#000000"><b>From:</b> Nadia &lt;nadia@rosekross.com&gt;<br><=
+b>Sent:</b> Monday, December 1, 2025 6:50 AM<br><b>To:</b> Administrative Co=
+urt Office Immediates &lt;administrativecourtoffice.immediates@justice.gov.u=
+k&gt;<br><b>Cc:</b> Administrative Court Office, List Office &lt;administrat=
+ivecourtoffice.listoffice@justice.gov.uk&gt;; Administrative Court Office, C=
+ase Progression &lt;administrativecourtoffice.caseprogression@justice.gov.uk=
+&gt;<br><b>Subject:</b> Re: URGENT: Filing of N461 Judicial Review Bundle =E2=80=
+=94 Request for Immediate Sealing &amp; Judicial Consideration/URGENT =E2=80=93 Requ=
+est for Case Reference Number (N461 JR Claim =E2=80=93 Zahmoul v MoJ &amp; HMCTS)/=
+URGENT =E2=80=93 Resubmission of ACO-Compliant Bundle (N461 + N463) an...</font> <=
+div>&nbsp;</div></div><style>
+<!--
+@font-face
+	{font-family:Wingdings}
+@font-face
+	{font-family:"Cambria Math"}
+@font-face
+	{font-family:Calibri}
+@font-face
+	{font-family:Aptos}
+@font-face
+	{font-family:"Aptos Display"}
+@font-face
+	{}
+p.x_MsoNormal, li.x_MsoNormal, div.x_MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif}
+h2
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:18.0pt;
+	font-family:"Aptos",sans-serif;
+	font-weight:bold}
+a:link, span.x_MsoHyperlink
+	{color:#467886;
+	text-decoration:underline}
+p.x_elementtoproof, li.x_elementtoproof, div.x_elementtoproof
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif}
+span.x_Heading2Char
+	{font-family:"Aptos Display",sans-serif;
+	color:#0F4761}
+p.x_xmsonormal, li.x_xmsonormal, div.x_xmsonormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif}
+p.x_xelementtoproof1, li.x_xelementtoproof1, div.x_xelementtoproof1
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif}
+p.x_xxmsonormal, li.x_xxmsonormal, div.x_xxmsonormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif}
+p.x_xxmsonospacing, li.x_xxmsonospacing, div.x_xxmsonospacing
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif}
+p.x_xp1, li.x_xp1, div.x_xp1
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif}
+p.x_xp2, li.x_xp2, div.x_xp2
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif}
+p.x_xp4, li.x_xp4, div.x_xp4
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif}
+span.x_xs1
+	{}
+span.x_xs3
+	{}
+span.x_xelementtoproof
+	{}
+span.x_EmailStyle35
+	{font-family:"Aptos",sans-serif;
+	color:windowtext;
+	letter-spacing:0pt;
+	font-weight:normal;
+	font-style:normal}
+.x_MsoChpDefault
+	{font-size:10.0pt}
+@page WordSection1
+	{margin:72.0pt 72.0pt 72.0pt 72.0pt}
+div.x_WordSection1
+	{}
+ol
+	{margin-bottom:0cm}
+ul
+	{margin-bottom:0cm}
+-->
+</style><div lang=3D"EN-US" link=3D"#467886" vlink=3D"purple" style=3D"word-wrap:br=
+eak-word"><div class=3D"x_WordSection1"><div><div><div><p class=3D"x_MsoNormal" =
+style=3D"line-height:150%">Dear Administrative Court,</p><p class=3D"x_MsoNormal=
+" style=3D"line-height:150%">Further to your email of 28 November, I now resub=
+mit the <b>fully ACO-compliant consolidated bundle</b> for my Judicial Revie=
+w claim (N461) together with the urgent application for expedition (N463).</=
+p><p class=3D"x_MsoNormal" style=3D"line-height:150%">The bundle is now presente=
+d as a <b>single paginated PDF including:</b></p><ul type=3D"disc"><li class=3D"=
+x_MsoNormal" style=3D"line-height:150%">Full Index</li><li class=3D"x_MsoNormal"=
+ style=3D"line-height:150%">N461 Claim Form + continuation sheets</li><li clas=
+s=3D"x_MsoNormal" style=3D"line-height:150%">N463 Urgent Application + continuat=
+ion sheets</li><li class=3D"x_MsoNormal" style=3D"line-height:150%">Detailed Gro=
+unds</li><li class=3D"x_MsoNormal" style=3D"line-height:150%">Witness Statement =
+(WS1)</li><li class=3D"x_MsoNormal" style=3D"line-height:150%">Exhibits A=E2=80=93D</l=
+i><li class=3D"x_MsoNormal" style=3D"line-height:150%">Medical evidence (includi=
+ng the signed report from Dr Bruce Hayse)</li><li class=3D"x_MsoNormal" style=3D=
+"line-height:150%">Draft Order</li><li class=3D"x_MsoNormal" style=3D"line-heigh=
+t:150%">Authorities</li></ul><p class=3D"x_MsoNormal" style=3D"line-height:150%"=
+>&nbsp;</p><p class=3D"x_MsoNormal" style=3D"line-height:150%">This addresses ev=
+ery point raised in your guidance, including the requirement for a single do=
+cument, pagination, and inclusion of both applications within one bundle.</p=
+><p class=3D"x_MsoNormal" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_MsoNo=
+rmal" style=3D"line-height:150%"><b>Medical urgency =E2=80=94 Equality Act and PSED =
+duties engaged</b></p><p class=3D"x_MsoNormal" style=3D"line-height:150%">&nbsp;=
+</p><p class=3D"x_MsoNormal" style=3D"line-height:150%">As the Court is aware, I=
+ am a vulnerable litigant with Autism Spectrum Condition and PTSD.</p><p cla=
+ss=3D"x_MsoNormal" style=3D"line-height:150%">My treating physician, <b>Dr Bruce=
+ Hayse</b>, has confirmed in his signed medical report that:</p><ul type=3D"di=
+sc"><li class=3D"x_MsoNormal" style=3D"line-height:150%">I am at acute medical a=
+nd psychiatric risk,</li><li class=3D"x_MsoNormal" style=3D"line-height:150%">de=
+lays in the Court process are materially worsening my condition, and</li><li=
+ class=3D"x_MsoNormal" style=3D"line-height:150%">urgent judicial action is requ=
+ired to prevent clinical deterioration.</li></ul><p class=3D"x_MsoNormal" styl=
+e=3D"line-height:150%">&nbsp;</p><p class=3D"x_MsoNormal" style=3D"line-height:150=
+%">I was hospitalised this weekend with acute abdominal pain directly linked=
+ to stress.</p><p class=3D"x_MsoNormal" style=3D"line-height:150%">The Court owe=
+s duties under:</p><ul type=3D"disc"><li class=3D"x_MsoNormal" style=3D"line-heigh=
+t:150%"><b>Equality Act 2010 (ss.20=E2=80=9321),</b></li><li class=3D"x_MsoNormal" s=
+tyle=3D"line-height:150%"><b>Public Sector Equality Duty (s.149),</b> and</li>=
+<li class=3D"x_MsoNormal" style=3D"line-height:150%"><b>the Overriding Objective=
+</b></li></ul><p class=3D"x_MsoNormal" style=3D"line-height:150%">&nbsp;</p><p c=
+lass=3D"x_MsoNormal" style=3D"line-height:150%">to ensure that my applications a=
+re processed promptly and safely.</p><p class=3D"x_MsoNormal" style=3D"line-heig=
+ht:150%"><b>Urgent Request</b></p><p class=3D"x_MsoNormal" style=3D"line-height:=
+150%">Given that:</p><ul type=3D"disc"><li class=3D"x_MsoNormal" style=3D"line-hei=
+ght:150%">the N463 application has been pending since 25 November,</li><li c=
+lass=3D"x_MsoNormal" style=3D"line-height:150%">the Defendants were properly ser=
+ved,</li><li class=3D"x_MsoNormal" style=3D"line-height:150%">and the complete A=
+CO-compliant bundle is now filed,</li></ul><p class=3D"x_MsoNormal" style=3D"lin=
+e-height:150%">&nbsp;</p><p class=3D"x_MsoNormal" style=3D"line-height:150%">I r=
+espectfully request that the Court:</p><ol start=3D"1" type=3D"1"><li class=3D"x_M=
+soNormal" style=3D"line-height:150%"><b>Confirm sealing of the claim today</b>=
+,</li><li class=3D"x_MsoNormal" style=3D"line-height:150%"><b>Issue a case refer=
+ence number</b>, and</li><li class=3D"x_MsoNormal" style=3D"line-height:150%"><b=
+>Place the N463 before a judge immediately</b> for urgent consideration.</li=
+></ol><p class=3D"x_MsoNormal" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_=
+MsoNormal" style=3D"line-height:150%">Any further delay would present a signif=
+icant, medically-documented safeguarding risk.</p><p class=3D"x_MsoNormal" sty=
+le=3D"line-height:150%">&nbsp;</p><p class=3D"x_MsoNormal" style=3D"line-height:15=
+0%">I would be grateful for confirmation as soon as possible.</p><p class=3D"x=
+_MsoNormal" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_MsoNormal" style=3D=
+"line-height:150%">Yours faithfully,</p><p class=3D"x_MsoNormal" style=3D"line-h=
+eight:150%"><b>Nadia Zahmoul</b></p><p class=3D"x_MsoNormal" style=3D"line-heigh=
+t:150%">Litigant in Person</p><p class=3D"x_MsoNormal" style=3D"line-height:150%=
+">Email: <a href=3D"mailto:nadia@rosekross.com">nadia@rosekross.com</a></p><p =
+class=3D"x_MsoNormal" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_MsoNormal=
+" style=3D"line-height:150%"><b>CC:</b></p><p class=3D"x_MsoNormal" style=3D"line-=
+height:150%">Administrative Court Office =E2=80=94 Case Progression</p><p class=3D"x=
+_MsoNormal" style=3D"line-height:150%">Administrative Court Office =E2=80=94 List Of=
+fice</p><p class=3D"x_MsoNormal">&nbsp;</p></div></div></div><p class=3D"x_MsoNo=
+rmal">&nbsp;</p><p class=3D"x_MsoNormal">&nbsp;</p><div style=3D"border:none; bo=
+rder-top:solid #B5C4DF 1.0pt; padding:3.0pt 0cm 0cm 0cm"><p class=3D"x_MsoNorm=
+al"><b><span style=3D"font-family:&quot;Calibri&quot;,sans-serif; color:black"=
+>From: </span></b><span style=3D"font-family:&quot;Calibri&quot;,sans-serif; c=
+olor:black">Administrative Court Office Immediates &lt;administrativecourtof=
+fice.immediates@justice.gov.uk&gt;<br><b>Date: </b>Friday, November 28, 2025=
+ at 9:39=E2=80=AFAM<br><b>To: </b>Nadia &lt;nadia@rosekross.com&gt;<br><b>Subject:=
+ </b>Re: URGENT: Filing of N461 Judicial Review Bundle =E2=80=94 Request for Immed=
+iate Sealing &amp; Judicial Consideration/URGENT =E2=80=93 Request for Case Refere=
+nce Number (N461 JR Claim =E2=80=93 Zahmoul v MoJ &amp; HMCTS)</span></p></div><di=
+v><p class=3D"x_MsoNormal">&nbsp;</p></div><p class=3D"x_MsoNormal" style=3D"backg=
+round:white"><span style=3D"font-size:11.0pt; color:black">Good afternoon,</sp=
+an></p><p class=3D"x_MsoNormal" style=3D"background:white"><span style=3D"font-siz=
+e:11.0pt; color:black">&nbsp;</span></p><p class=3D"x_MsoNormal" style=3D"backgr=
+ound:white"><span style=3D"font-size:11.0pt; color:black">Please note the cour=
+t requires your bundle to contain your applications and supporting documents=
+.</span></p><p class=3D"x_MsoNormal" style=3D"background:white"><span style=3D"fon=
+t-size:11.0pt; color:black">&nbsp;</span></p><p class=3D"x_MsoNormal" style=3D"b=
+ackground:white"><span style=3D"font-size:11.0pt; color:black">You have provid=
+ed an N461 bundle with no index and I have been unable to locate the N463 in=
+ the application.</span></p><div><p class=3D"x_MsoNormal"><span style=3D"font-si=
+ze:11.0pt; color:black">&nbsp;</span></p></div><div id=3D"x_Signature"><p clas=
+s=3D"x_elementtoproof"><b><span style=3D"font-size:11.0pt; color:#1F4E79">Kind r=
+egards,</span></b></p><p class=3D"x_elementtoproof"><b><span style=3D"font-size:=
+11.0pt; color:#1F4E79">S Sikity **OFFICIAL**</span></b></p><p class=3D"x_eleme=
+nttoproof"><b><span style=3D"font-size:11.0pt; color:#1F4E79">Administrative C=
+ourt Office | Issues and Enquiries</span></b></p><p class=3D"x_elementtoproof"=
+><span style=3D"font-size:11.0pt; color:#1F4E79">&nbsp;</span></p><p class=3D"x_=
+elementtoproof"><span style=3D"font-size:11.0pt; color:#1F4E79">King's Bench D=
+ivision <b>|</b>&nbsp;HMCTS <b>|</b>&nbsp;Royal Courts of Justice<b>|</b>&nb=
+sp;Strand, London <b>|</b>&nbsp;WC2A 2LL</span></p><p class=3D"x_elementtoproo=
+f"><b><span style=3D"font-size:11.0pt; color:#1F4E79">Phone:</span></b><span s=
+tyle=3D"font-size:11.0pt; color:#1F4E79">&nbsp;020 7947 6000</span></p><p clas=
+s=3D"x_elementtoproof"><b><span style=3D"font-size:11.0pt; color:#1F4E79">Web:</=
+span></b><span style=3D"font-size:11.0pt; color:#1F4E79"> <u><a href=3D"http://w=
+ww.gov.uk/hmcts"><span style=3D"color:#1F4E79">www.gov.uk/hmcts</span></a></u>=
+</span></p><p class=3D"x_elementtoproof"><span style=3D"font-size:11.0pt; font-f=
+amily:&quot;Calibri&quot;,sans-serif; color:#1F497D"><img border=3D"0" width=3D"=
+285" height=3D"27" id=3D"x__x0000_i1030" style=3D"width:2.9687in; height:.2812in" =
+data-outlook-trace=3D"F:1|T:1" src=3D"cid:image001.gif@01DC6254.106F5960"></span=
+></p><p class=3D"x_elementtoproof" align=3D"center" style=3D"text-align:center"><b=
+><span style=3D"font-size:16.0pt; color:red">PLEASE DO NOT SEND EMAILS TO PERS=
+ONAL INBOXES AS NO ACTION WILL BE TAKEN. PERSONAL INBOXES ARE NOT MONITORED.=
+ PLEASE SEND ALL EMAILS TO :</span></b></p><p class=3D"x_elementtoproof" align=
+=3D"center" style=3D"text-align:center"><b><u><span style=3D"font-size:14.0pt; col=
+or:black">administrativecourtoffice.<a href=3D"mailto:generaloffice@justice.go=
+v.uk"><span style=3D"color:black">generaloffice@justice.gov.uk</span></a></spa=
+n></u></b></p><p class=3D"x_elementtoproof"><b><span style=3D"font-size:9.0pt; f=
+ont-family:&quot;Arial&quot;,sans-serif; color:#1F497D"><br></span></b><b><s=
+pan style=3D"font-size:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; colo=
+r:#365F91">Daily Cause List: </span></b><b><u><span style=3D"font-size:9.0pt; =
+font-family:&quot;Calibri&quot;,sans-serif; color:#1F4E79"><a href=3D"http://w=
+ww.justice.gov.uk/courts/court-lists/list-rcj"><span style=3D"color:#1F4E79">h=
+ttp://www.justice.gov.uk/courts/court-lists/list-rcj</span></a></span></u></=
+b><span style=3D"font-size:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; =
+color:#365F91"><br><b>Listing Enquiries:</b> </span><b><u><span style=3D"font-=
+size:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; color:#1F4E79"><a hr=
+ef=3D"mailto:listoffice@"><span style=3D"color:#1F4E79">listoffice@</span></a>ad=
+ministrativecourtoffice.justice.gov.uk</span></u></b></p><p class=3D"x_element=
+toproof"><b><span style=3D"font-size:9.0pt; font-family:&quot;Calibri&quot;,sa=
+ns-serif; color:#1F497D">General Enquiries: </span></b><b><u><span style=3D"fo=
+nt-size:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; color:#1F4E79"><a=
+ href=3D"mailto:generaloffice@administrativecourtoffice.justice.gov.uk"><span =
+style=3D"color:#1F4E79">generaloffice@administrativecourtoffice.justice.gov.uk=
+</span></a></span></u></b></p><p class=3D"x_elementtoproof"><b><span style=3D"fo=
+nt-size:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; color:#1F497D">Cr=
+iminal &amp; Extradition Enquiries: </span></b><b><u><span style=3D"font-size:=
+9.0pt; font-family:&quot;Calibri&quot;,sans-serif; color:#1F4E79"><a href=3D"m=
+ailto:crimex@"><span style=3D"color:#1F4E79">crimex@</span></a>administrativec=
+ourtoffice</span></u></b><u><span style=3D"font-size:9.0pt; font-family:&quot;=
+Calibri&quot;,sans-serif; color:#1F4E79">.<b>justice.gov.uk</b></span></u></=
+p><p class=3D"x_elementtoproof"><b><span style=3D"font-size:9.0pt; font-family:&=
+quot;Calibri&quot;,sans-serif; color:#365F91">Skeleton Arguments</span></b><=
+b><span style=3D"font-size:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; =
+color:#1F497D">: </span></b><b><u><span style=3D"font-size:9.0pt; font-family:=
+&quot;Calibri&quot;,sans-serif; color:#0A2F41"><a href=3D"mailto:london.skelet=
+onarguments@administrativecourtoffice.justice.gov.uk"><span style=3D"color:#0A=
+2F41">london.skeletonarguments@administrativecourtoffice.justice.gov.uk</spa=
+n></a></span></u></b></p><p class=3D"x_elementtoproof"><b><span style=3D"font-si=
+ze:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; color:#0A2F41">&nbsp;<=
+/span></b></p><p class=3D"x_elementtoproof"><b><span style=3D"font-size:9.0pt; f=
+ont-family:&quot;Calibri&quot;,sans-serif; color:#1F497D">For information on=
+ how HMCTS uses personal data about you please see: </span></b><b><u><span s=
+tyle=3D"font-size:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; color:blu=
+e"><a href=3D"https://www.gov.uk/government/organisations/hm-courts-and-tribun=
+als-service/about/personal-information-charter">https://www.gov.uk/governmen=
+t/organisations/hm-courts-and-tribunals-service/about/personal-information-c=
+harter</a></span></u></b></p><p class=3D"x_elementtoproof"><b><span style=3D"fon=
+t-size:8.0pt; font-family:&quot;Calibri&quot;,sans-serif; color:#1F497D">&nb=
+sp;</span></b></p><p class=3D"x_elementtoproof"><b><span style=3D"font-size:8.0p=
+t; font-family:&quot;Calibri&quot;,sans-serif; color:#1F497D">In accordance =
+with <u><a href=3D"http://www.justice.gov.uk/courts/procedure-rules/civil/rule=
+s/pd_part05b" title=3D"http://www.justice.gov.uk/courts/procedure-rules/civil/=
+rules/pd_part05b"><span style=3D"color:#1F497D">Practice Direction 5B - Electr=
+onic communication and filing</span></a></u>&nbsp;we ask you to do the follo=
+wing when sending an e-mail message to the court:</span></b></p><ul type=3D"di=
+sc" style=3D"margin-top:0cm"><li class=3D"x_MsoNormal" style=3D"color:#1F497D"><b>=
+<span style=3D"font-size:8.0pt; font-family:&quot;Calibri&quot;,sans-serif">Cl=
+early state the Court's action number, parties=E2=80=99 names and any dates relati=
+ng to an up-coming hearing in the subject header.</span></b><span style=3D"fon=
+t-size:11.0pt; font-family:&quot;Calibri&quot;,sans-serif"></span></li><li c=
+lass=3D"x_MsoNormal" style=3D"color:#1F497D"><b><span style=3D"font-size:8.0pt; fo=
+nt-family:&quot;Calibri&quot;,sans-serif">In accordance with Practice Direct=
+ion 3.3a, please do not submit documents which carry a payable fee; such e-m=
+ails will be deleted.</span></b><span style=3D"font-size:11.0pt; font-family:&=
+quot;Calibri&quot;,sans-serif"></span></li><li class=3D"x_MsoNormal" style=3D"co=
+lor:#1F497D"><b><span style=3D"font-size:8.0pt; font-family:&quot;Calibri&quot=
+;,sans-serif">We do not accept documents over 50 pages by electronic means.<=
+/span></b><span style=3D"font-size:11.0pt; font-family:&quot;Calibri&quot;,san=
+s-serif"></span></li></ul><p class=3D"x_elementtoproof"><span style=3D"font-size=
+:11.0pt; font-family:&quot;Calibri&quot;,sans-serif; color:black">&nbsp;</sp=
+an></p><div><p class=3D"x_MsoNormal"><span style=3D"font-size:11.0pt; color:blac=
+k">&nbsp;</span></p></div></div><div class=3D"x_MsoNormal" align=3D"center" styl=
+e=3D"text-align:center"><hr size=3D"0" width=3D"100%" align=3D"center"></div><div id=
+=3D"x_divRplyFwdMsg"><p class=3D"x_MsoNormal"><b><span style=3D"font-size:11.0pt; =
+font-family:&quot;Calibri&quot;,sans-serif; color:black">From:</span></b><sp=
+an style=3D"font-size:11.0pt; font-family:&quot;Calibri&quot;,sans-serif; colo=
+r:black"> Nadia &lt;nadia@rosekross.com&gt;<br><b>Sent:</b> Friday, November=
+ 28, 2025 2:52 PM<br><b>To:</b> Administrative Court Office Immediates &lt;a=
+dministrativecourtoffice.immediates@justice.gov.uk&gt;<br><b>Cc:</b> Adminis=
+trative Court Office, List Office &lt;administrativecourtoffice.listoffice@j=
+ustice.gov.uk&gt;; Administrative Court Office, Case Progression &lt;adminis=
+trativecourtoffice.caseprogression@justice.gov.uk&gt;<br><b>Subject:</b> FW:=
+ URGENT: Filing of N461 Judicial Review Bundle =E2=80=94 Request for Immediate Sea=
+ling &amp; Judicial Consideration/URGENT =E2=80=93 Request for Case Reference Numb=
+er (N461 JR Claim =E2=80=93 Zahmoul v MoJ &amp; HMCTS)</span> </p><div><p class=3D"x=
+_MsoNormal">&nbsp;</p></div></div><div><div><p class=3D"x_xp1" style=3D"margin:0=
+cm; line-height:150%"><span style=3D"font-family:&quot;Aptos&quot;,sans-serif"=
+>Dear Administrative Court General Office,</span></p><p class=3D"x_xp2" style=3D=
+"margin:0cm; line-height:150%"><span style=3D"font-family:&quot;Aptos&quot;,sa=
+ns-serif">&nbsp;</span></p><p class=3D"x_xp1" style=3D"margin:0cm; line-height:1=
+50%"><span style=3D"font-family:&quot;Aptos&quot;,sans-serif">I write further =
+to my urgent filing today of an ACO-compliant N461 Judicial Review bundle in=
+ <span class=3D"x_xs1"><b>Zahmoul v Ministry of Justice &amp; HMCTS</b></span>=
+, and to my email to Case Progression requesting a case reference number.</s=
+pan></p><p class=3D"x_xp2" style=3D"margin:0cm; line-height:150%"><span style=3D"f=
+ont-family:&quot;Aptos&quot;,sans-serif">&nbsp;</span></p><p class=3D"x_xp1" s=
+tyle=3D"margin:0cm; line-height:150%"><span style=3D"font-family:&quot;Aptos&quo=
+t;,sans-serif">I have been informed that no assistance can be provided by Ca=
+se Progression until a case reference number has been allocated, and that I =
+must therefore contact the General Office.</span></p><p class=3D"x_xp2" style=3D=
+"margin:0cm; line-height:150%"><span style=3D"font-family:&quot;Aptos&quot;,sa=
+ns-serif">&nbsp;</span></p><p class=3D"x_xp1" style=3D"margin:0cm; line-height:1=
+50%"><span style=3D"font-family:&quot;Aptos&quot;,sans-serif">Accordingly, I r=
+espectfully request that:</span></p><ol start=3D"1" type=3D"1"><li class=3D"x_xp1"=
+ style=3D"line-height:150%"><span style=3D"font-family:&quot;Aptos&quot;,sans-se=
+rif">A <span class=3D"x_xs1"><b>case reference number</b></span> for my N461 J=
+udicial Review claim be allocated <span class=3D"x_xs1"><b>as a matter of urge=
+ncy</b></span>; and</span></li><li class=3D"x_xp1" style=3D"line-height:150%"><s=
+pan style=3D"font-family:&quot;Aptos&quot;,sans-serif">Confirmation be provide=
+d that my N461 bundle (sent today under the subject line <i>=E2=80=9CN461 Urgent B=
+undle =E2=80=93 Zahmoul v MoJ &amp; HMCTS=E2=80=9D</i>) has been <span class=3D"x_xs1"><b>=
+received and accepted for issue</b></span>.</span></li></ol><p class=3D"x_xp2"=
+ style=3D"margin:0cm; line-height:150%"><span style=3D"font-family:&quot;Aptos&q=
+uot;,sans-serif">&nbsp;</span></p><p class=3D"x_xp1" style=3D"margin:0cm; line-h=
+eight:150%"><span style=3D"font-family:&quot;Aptos&quot;,sans-serif">This matt=
+er is medically urgent. My treating physician, <span class=3D"x_xs1"><b>Dr Bru=
+ce Hayse</b></span>, has provided a signed report confirming that I am in a =
+clinically fragile psychiatric state and that delay in the Court process cre=
+ates a <span class=3D"x_xs1"><b>significant safeguarding risk</b></span>. I am=
+ a <span class=3D"x_xs1"><b>disabled litigant</b></span> (Autism and PTSD), an=
+d the Court=E2=80=99s duties under the <span class=3D"x_xs1"><b>Equality Act 2010</b=
+></span> and the <span class=3D"x_xs1"><b>Public Sector Equality Duty (s.149)<=
+/b></span> are therefore engaged.</span></p><p class=3D"x_xp2" style=3D"margin:0=
+cm; line-height:150%"><span style=3D"font-family:&quot;Aptos&quot;,sans-serif"=
+>&nbsp;</span></p><p class=3D"x_xp1" style=3D"margin:0cm; line-height:150%"><spa=
+n style=3D"font-family:&quot;Aptos&quot;,sans-serif">I am acting as a <span cl=
+ass=3D"x_xs1"><b>litigant in person</b></span> and do not have the financial m=
+eans to obtain legal representation. I have done everything I can to comply =
+with the Administrative Court=E2=80=99s requirements and to provide a single, cour=
+t-ready N461 bundle.</span></p><p class=3D"x_xp2" style=3D"margin:0cm; line-heig=
+ht:150%"><span style=3D"font-family:&quot;Aptos&quot;,sans-serif">&nbsp;</span=
+></p><p class=3D"x_xp1" style=3D"margin:0cm; line-height:150%"><span style=3D"font=
+-family:&quot;Aptos&quot;,sans-serif">For these reasons, I would be very gra=
+teful if a case reference number could be issued <span class=3D"x_xs1"><b>toda=
+y</b></span>, and if my claim could then be progressed to case progression f=
+or urgent consideration alongside my N463 application.</span></p><p class=3D"x=
+_xp2" style=3D"margin:0cm; line-height:150%"><span style=3D"font-family:&quot;Ap=
+tos&quot;,sans-serif">&nbsp;</span></p><p class=3D"x_xp1" style=3D"margin:0cm; l=
+ine-height:150%"><span style=3D"font-family:&quot;Aptos&quot;,sans-serif">Your=
+s faithfully,</span></p><p class=3D"x_xp4" style=3D"margin:0cm; line-height:150%=
+"><b><span style=3D"font-family:&quot;Aptos&quot;,sans-serif">Nadia Zahmoul</s=
+pan></b></p><p class=3D"x_xp1" style=3D"margin:0cm; line-height:150%"><span styl=
+e=3D"font-family:&quot;Aptos&quot;,sans-serif">Litigant in Person</span></p><p=
+ class=3D"x_xp4" style=3D"margin:0cm; line-height:150%"><span class=3D"x_xs3"><spa=
+n style=3D"font-family:&quot;Aptos&quot;,sans-serif">Email: </span></span><b><=
+span style=3D"font-family:&quot;Aptos&quot;,sans-serif"><a href=3D"mailto:Nadia@=
+rosekross.com">Nadia@rosekross.com</a></span></b></p><p class=3D"x_xmsonormal"=
+>&nbsp;</p><div><p class=3D"x_xmsonormal"><span style=3D"font-family:&quot;Calib=
+ri&quot;,sans-serif">&nbsp;</span></p><div><div><p class=3D"x_xmsonormal">&nbs=
+p;</p></div></div></div><p class=3D"x_xmsonormal">&nbsp;</p><p class=3D"x_xmsono=
+rmal">&nbsp;</p><div style=3D"border:none; border-top:solid #B5C4DF 1.0pt; pad=
+ding:3.0pt 0cm 0cm 0cm"><p class=3D"x_xmsonormal"><b><span style=3D"font-family:=
+&quot;Calibri&quot;,sans-serif; color:black">From: </span></b><span style=3D"f=
+ont-family:&quot;Calibri&quot;,sans-serif; color:black">Nadia &lt;nadia@rose=
+kross.com&gt;<br><b>Date: </b>Friday, November 28, 2025 at 7:32=E2=80=AFAM<br><b>T=
+o: </b>Administrative Court Office Immediates &lt;administrativecourtoffice.=
+immediates@justice.gov.uk&gt;<br><b>Cc: </b>&quot;Administrative Court Offic=
+e, List Office&quot; &lt;administrativecourtoffice.listoffice@justice.gov.uk=
+&gt;<br><b>Subject: </b>Re: URGENT: Filing of N461 Judicial Review Bundle =E2=80=
+=94 Request for Immediate Sealing &amp; Judicial Consideration</span></p></div=
+><div><p class=3D"x_xmsonormal">&nbsp;</p></div><div><p class=3D"x_xmsonormal" s=
+tyle=3D"line-height:150%">Dear Administrative Court,</p><p class=3D"x_xmsonormal=
+" style=3D"line-height:150%">Further to your email requesting an <b>ACO-compli=
+ant single-PDF bundle</b>, I now resubmit the entire Judicial Review applica=
+tion in one consolidated document:</p><p class=3D"x_xmsonormal" style=3D"line-he=
+ight:150%">&nbsp;</p><p class=3D"x_xmsonormal" style=3D"line-height:150%"><b>Att=
+achment:</b> <i>N461 Urgent Bundle =E2=80=93 28 November 2025 (single PDF)</i></p>=
+<p class=3D"x_xmsonormal" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xmson=
+ormal" style=3D"line-height:150%">This document contains:</p><ul type=3D"disc" s=
+tyle=3D"margin-top:0cm"><li class=3D"x_xmsonormal" style=3D"line-height:150%">N461=
+ Claim Form (with continuation sheets)</li><li class=3D"x_xmsonormal" style=3D"l=
+ine-height:150%">Detailed Statement of Facts</li><li class=3D"x_xmsonormal" st=
+yle=3D"line-height:150%">Detailed Grounds</li><li class=3D"x_xmsonormal" style=3D"=
+line-height:150%">Witness Statement and Exhibits</li><li class=3D"x_xmsonormal=
+" style=3D"line-height:150%">Draft Order</li><li class=3D"x_xmsonormal" style=3D"l=
+ine-height:150%">Signed medical evidence from my treating physician, Dr. Bru=
+ce Hayse</li><li class=3D"x_xmsonormal" style=3D"line-height:150%">All supportin=
+g materials in the correct order</li></ul><p class=3D"x_xmsonormal" style=3D"lin=
+e-height:150%">&nbsp;</p><p class=3D"x_xmsonormal" style=3D"line-height:150%">I =
+confirm that this is <b>a single, unified, ACO-compliant</b> PDF as requeste=
+d.</p><p class=3D"x_xmsonormal" style=3D"line-height:150%"><b><span style=3D"font-=
+size:18.0pt; line-height:150%">1. Medical Emergency =E2=80=94 Urgent Judicial Acti=
+on Required Today</span></b></p><p class=3D"x_xmsonormal" style=3D"line-height:1=
+50%">&nbsp;</p><p class=3D"x_xmsonormal" style=3D"line-height:150%">My treating =
+physician, <b>Dr Bruce Hayse</b>, has submitted a <b>signed clinical report<=
+/b> (included within the PDF bundle) confirming:</p><ul type=3D"disc" style=3D"m=
+argin-top:0cm"><li class=3D"x_xmsonormal" style=3D"line-height:150%">I am curren=
+tly in a <b>severe psychiatric crisis</b></li><li class=3D"x_xmsonormal" style=
+=3D"line-height:150%">My stability <b>depends on timely judicial action</b></l=
+i><li class=3D"x_xmsonormal" style=3D"line-height:150%">Any delay <b>significant=
+ly increases the risk of hospitalisation</b></li><li class=3D"x_xmsonormal" st=
+yle=3D"line-height:150%">The matter must be treated as <b>urgent for safeguard=
+ing reasons</b></li></ul><p class=3D"x_xmsonormal" style=3D"line-height:150%">&n=
+bsp;</p><p class=3D"x_xmsonormal" style=3D"line-height:150%">This places the Cou=
+rt under statutory duties engaged by:</p><ul type=3D"disc" style=3D"margin-top:0=
+cm"><li class=3D"x_xmsonormal" style=3D"line-height:150%"><b>Equality Act 2010, =
+ss.20=E2=80=9321 (reasonable adjustments)</b></li><li class=3D"x_xmsonormal" style=3D"=
+line-height:150%"><b>Equality Act 2010, s.149 (Public Sector Equality Duty)<=
+/b></li><li class=3D"x_xmsonormal" style=3D"line-height:150%"><b>The overriding =
+objective</b>, particularly protections for vulnerable litigants</li><li cla=
+ss=3D"x_xmsonormal" style=3D"line-height:150%"><b>Administrative Court disabilit=
+y guidance</b></li></ul><p class=3D"x_xmsonormal" style=3D"line-height:150%">&nb=
+sp;</p><p class=3D"x_xmsonormal" style=3D"line-height:150%">Given the seriousnes=
+s of my condition, <b>I respectfully request sealing and judicial considerat=
+ion today</b>.</p><p class=3D"x_xmsonormal" style=3D"line-height:150%">&nbsp;</p=
+><p class=3D"x_xmsonormal" style=3D"line-height:150%">Waiting until Monday would=
+ contradict the medical evidence and expose me to significant and documented=
+ clinical risk.</p><p class=3D"x_xmsonormal" style=3D"line-height:150%">&nbsp;</=
+p><p class=3D"x_xmsonormal" style=3D"line-height:150%"><b><span style=3D"font-size=
+:18.0pt; line-height:150%">2. I am a litigant in person with no access to le=
+gal representation</span></b></p><p class=3D"x_xmsonormal" style=3D"line-height:=
+150%">&nbsp;</p><p class=3D"x_xmsonormal" style=3D"line-height:150%">I respectfu=
+lly reiterate that I cannot obtain legal advice due to financial constraints=
+.</p><p class=3D"x_xmsonormal" style=3D"line-height:150%">Your request that I =E2=80=
+=9Cseek legal advice=E2=80=9D cannot act as a barrier to my right to access the Admi=
+nistrative Court.</p><p class=3D"x_xmsonormal" style=3D"line-height:150%">&nbsp;=
+</p><p class=3D"x_xmsonormal" style=3D"line-height:150%">I have now:</p><ul type=
+=3D"disc" style=3D"margin-top:0cm"><li class=3D"x_xmsonormal" style=3D"line-height:1=
+50%">Complied fully with PD 54A</li><li class=3D"x_xmsonormal" style=3D"line-hei=
+ght:150%">Provided the N461</li><li class=3D"x_xmsonormal" style=3D"line-height:=
+150%">Provided the N463</li><li class=3D"x_xmsonormal" style=3D"line-height:150%=
+">Filed every required continuation sheet</li><li class=3D"x_xmsonormal" style=
+=3D"line-height:150%">Assembled the bundle exactly as requested, in one cohere=
+nt PDF</li><li class=3D"x_xmsonormal" style=3D"line-height:150%">Served the Defe=
+ndants</li><li class=3D"x_xmsonormal" style=3D"line-height:150%">Provided urgent=
+ medical evidence</li></ul><p class=3D"x_xmsonormal" style=3D"line-height:150%">=
+&nbsp;</p><p class=3D"x_xmsonormal" style=3D"line-height:150%"><b><span style=3D"f=
+ont-size:18.0pt; line-height:150%">3. Request for Immediate Action</span></b=
+></p><p class=3D"x_xmsonormal" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_=
+xmsonormal" style=3D"line-height:150%">Given:</p><ul type=3D"disc" style=3D"margin=
+-top:0cm"><li class=3D"x_xmsonormal" style=3D"line-height:150%">the medically ur=
+gent situation,</li><li class=3D"x_xmsonormal" style=3D"line-height:150%">the AC=
+O-compliant bundle now filed,</li><li class=3D"x_xmsonormal" style=3D"line-heigh=
+t:150%">the fact that the N463 has been pending since <b>25 November</b>,</l=
+i><li class=3D"x_xmsonormal" style=3D"line-height:150%">and the statutory duties=
+ engaged,</li></ul><p class=3D"x_xmsonormal" style=3D"line-height:150%">&nbsp;</=
+p><p class=3D"x_xmsonormal" style=3D"line-height:150%">I respectfully request:</=
+p><p class=3D"x_xmsonormal" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xms=
+onormal" style=3D"line-height:150%"><b><span style=3D"font-size:13.5pt; line-hei=
+ght:150%">(1) Sealing of the N461 today</span></b></p><p class=3D"x_xmsonormal=
+" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xmsonormal" style=3D"line-hei=
+ght:150%"><b><span style=3D"font-size:13.5pt; line-height:150%">(2) Immediate =
+referral of the N463 to a judge today</span></b></p><p class=3D"x_xmsonormal" =
+style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xmsonormal" style=3D"line-heigh=
+t:150%"><b><span style=3D"font-size:13.5pt; line-height:150%">(3) Confirmation=
+ of urgent listing</span></b></p><p class=3D"x_xmsonormal" style=3D"line-height:=
+150%">&nbsp;</p><p class=3D"x_xmsonormal" style=3D"line-height:150%">I would be =
+grateful for written confirmation of receipt, acceptance, and sealing.</p><p=
+ class=3D"x_xmsonormal" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xmsonor=
+mal" style=3D"line-height:150%">Thank you for your attention to this urgent an=
+d medically fragile matter.</p><p class=3D"x_xmsonormal" style=3D"line-height:15=
+0%">&nbsp;</p><p class=3D"x_xmsonormal" style=3D"line-height:150%">Yours faithfu=
+lly,</p><p class=3D"x_xmsonormal" style=3D"line-height:150%"><b>Nadia Zahmoul</b=
+></p><p class=3D"x_xmsonormal" style=3D"line-height:150%">Litigant in Person</p>=
+<p class=3D"x_xmsonormal" style=3D"line-height:150%">Email: <b><a href=3D"mailto:n=
+adia@rosekross.com">nadia@rosekross.com</a></b></p><p class=3D"x_xmsonormal"><=
+span style=3D"color:#0B76A0">&nbsp;</span></p><p class=3D"x_xmsonormal"><span st=
+yle=3D"font-family:&quot;Calibri&quot;,sans-serif">&nbsp;</span></p><div><div>=
+<p class=3D"x_xmsonormal">&nbsp;</p></div></div></div><p class=3D"x_xmsonormal">=
+&nbsp;</p><p class=3D"x_xmsonormal">&nbsp;</p><div style=3D"border:none; border-=
+top:solid #B5C4DF 1.0pt; padding:3.0pt 0cm 0cm 0cm"><p class=3D"x_xmsonormal">=
+<b><span style=3D"font-family:&quot;Calibri&quot;,sans-serif; color:black">Fro=
+m: </span></b><span style=3D"font-family:&quot;Calibri&quot;,sans-serif; color=
+:black">Administrative Court Office Immediates &lt;administrativecourtoffice=
+.immediates@justice.gov.uk&gt;<br><b>Date: </b>Friday, November 28, 2025 at =
+7:06=E2=80=AFAM<br><b>To: </b>Nadia &lt;nadia@rosekross.com&gt;<br><b>Subject: </b=
+>Re: URGENT: Filing of N461 Judicial Review Bundle =E2=80=94 Request for Immediate=
+ Sealing &amp; Judicial Consideration</span></p></div><div><p class=3D"x_xmson=
+ormal">&nbsp;</p></div><p class=3D"x_xmsonormal" style=3D"line-height:11.55pt; b=
+ackground:white"><span class=3D"x_xelementtoproof"><span style=3D"font-size:11.0=
+pt; color:black">Good afternoon,</span></span></p><p class=3D"x_xmsonormal" st=
+yle=3D"line-height:11.55pt; background:white"><span style=3D"font-size:11.0pt; c=
+olor:black">&nbsp;</span></p><p class=3D"x_xmsonormal" style=3D"line-height:11.5=
+5pt; background:white"><span style=3D"font-size:11.0pt; color:black">Please no=
+te an ACO compliant bundle must be filed as soon as possible: </span><u><spa=
+n style=3D"font-size:11.0pt; color:#4472C4"><a href=3D"https://www.judiciary.uk/=
+guidance-and-resources/administrative-court-information-for-court-users-june=
+-2022/" title=3D"https://www.judiciary.uk/guidance-and-resources/administrativ=
+e-court-information-for-court-users-june-2022/"><span style=3D"color:#4472C4">=
+Administrative Court: Information for Court Users =E2=80=93 June 2022 - Courts and=
+ Tribunals Judiciary</span></a></span></u></p><p class=3D"x_xmsonormal" style=3D=
+"background:white"><span style=3D"font-size:11.0pt; color:black">&nbsp;</span>=
+</p><p class=3D"x_xmsonormal" style=3D"background:white"><span style=3D"font-size:=
+11.0pt; color:black">Please see guidance attached </span><u><span style=3D"fon=
+t-size:11.0pt; color:#0563C1"><a href=3D"https://www.judiciary.uk/wp-content/u=
+ploads/2022/07/Administrative-Court-Information-for-court-users-June22.pdf)"=
+ title=3D"https://www.judiciary.uk/wp-content/uploads/2022/07/Administrative-C=
+ourt-Information-for-court-users-June22.pdf)"><span style=3D"color:#0563C1">ht=
+tps://www.judiciary.uk/wp-content/uploads/2022/07/Administrative-Court-Infor=
+mation-for-court-users-June22.pdf)</span></a></span></u></p><p class=3D"x_xmso=
+normal" style=3D"background:white"><span style=3D"font-size:11.0pt; color:black"=
+>&nbsp;</span></p><p class=3D"x_xmsonormal" style=3D"background:white"><span sty=
+le=3D"font-size:11.0pt; color:black">The court cannot accept your application =
+and supporting documents in separated documents and multiple emails.</span><=
+/p><p class=3D"x_xmsonormal" style=3D"background:white"><span style=3D"font-size:1=
+1.0pt; color:black">&nbsp;</span></p><p class=3D"x_xmsonormal" style=3D"backgrou=
+nd:white"><span style=3D"font-size:11.0pt; color:black">Please resubmit and en=
+sure all key supporting documents are available for review.</span></p><div><=
+p class=3D"x_xmsonormal"><span style=3D"font-size:11.0pt; color:black">&nbsp;</s=
+pan></p></div><div id=3D"x_x_Signature"><div><p class=3D"x_xmsonormal"><span sty=
+le=3D"font-size:11.0pt; color:black">&nbsp;</span></p></div><p class=3D"x_xeleme=
+nttoproof1"><b><span style=3D"font-size:11.0pt; color:#1F4E79">Kind regards,</=
+span></b></p><p class=3D"x_xelementtoproof1"><b><span style=3D"font-size:11.0pt;=
+ color:#1F4E79">S Sikity**OFFICIAL**</span></b></p><p class=3D"x_xelementtopro=
+of1"><b><span style=3D"font-size:11.0pt; color:#1F4E79">Administrative Court O=
+ffice | Issues and Enquiries</span></b></p><p class=3D"x_xelementtoproof1"><sp=
+an style=3D"font-size:11.0pt; color:#1F4E79">&nbsp;</span></p><p class=3D"x_xele=
+menttoproof1"><span style=3D"font-size:11.0pt; color:#1F4E79">King's Bench Div=
+ision <b>|</b>&nbsp;HMCTS <b>|</b>&nbsp;Royal Courts of Justice<b>|</b>&nbsp=
+;Strand, London <b>|</b>&nbsp;WC2A 2LL</span></p><p class=3D"x_xelementtoproof=
+1"><b><span style=3D"font-size:11.0pt; color:#1F4E79">Phone:</span></b><span s=
+tyle=3D"font-size:11.0pt; color:#1F4E79">&nbsp;020 7947 6000</span></p><p clas=
+s=3D"x_xelementtoproof1"><b><span style=3D"font-size:11.0pt; color:#1F4E79">Web:=
+</span></b><span style=3D"font-size:11.0pt; color:#1F4E79"> <u><a href=3D"http:/=
+/www.gov.uk/hmcts"><span style=3D"color:#1F4E79">www.gov.uk/hmcts</span></a></=
+u></span></p><p class=3D"x_xelementtoproof1"><span style=3D"font-size:11.0pt; fo=
+nt-family:&quot;Calibri&quot;,sans-serif; color:#1F497D"><img border=3D"0" wid=
+th=3D"285" height=3D"27" id=3D"x_x__x005f_x0000_i1027" style=3D"width:2.9687in; heig=
+ht:.2812in" data-outlook-trace=3D"F:1|T:1" src=3D"cid:image002.gif@01DC6254.106F=
+5960"></span></p><p class=3D"x_xelementtoproof1" align=3D"center" style=3D"text-al=
+ign:center"><b><span style=3D"font-size:16.0pt; color:red">PLEASE DO NOT SEND =
+EMAILS TO PERSONAL INBOXES AS NO ACTION WILL BE TAKEN. PERSONAL INBOXES ARE =
+NOT MONITORED. PLEASE SEND ALL EMAILS TO :</span></b></p><p class=3D"x_xelemen=
+ttoproof1" align=3D"center" style=3D"text-align:center"><b><u><span style=3D"font-=
+size:14.0pt; color:black">administrativecourtoffice.<a href=3D"mailto:generalo=
+ffice@justice.gov.uk"><span style=3D"color:black">generaloffice@justice.gov.uk=
+</span></a></span></u></b></p><p class=3D"x_xelementtoproof1"><b><span style=3D"=
+font-size:9.0pt; font-family:&quot;Arial&quot;,sans-serif; color:#1F497D"><b=
+r></span></b><b><span style=3D"font-size:9.0pt; font-family:&quot;Calibri&quot=
+;,sans-serif; color:#365F91">Daily Cause List: </span></b><b><u><span style=3D=
+"font-size:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; color:#1F4E79"=
+><a href=3D"http://www.justice.gov.uk/courts/court-lists/list-rcj"><span style=
+=3D"color:#1F4E79">http://www.justice.gov.uk/courts/court-lists/list-rcj</span=
+></a></span></u></b><span style=3D"font-size:9.0pt; font-family:&quot;Calibri&=
+quot;,sans-serif; color:#365F91"><br><b>Listing Enquiries:</b> </span><b><u>=
+<span style=3D"font-size:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; co=
+lor:#1F4E79"><a href=3D"mailto:listoffice@"><span style=3D"color:#1F4E79">listof=
+fice@</span></a>administrativecourtoffice.justice.gov.uk</span></u></b></p><=
+p class=3D"x_xelementtoproof1"><b><span style=3D"font-size:9.0pt; font-family:&q=
+uot;Calibri&quot;,sans-serif; color:#1F497D">General Enquiries: </span></b><=
+b><u><span style=3D"font-size:9.0pt; font-family:&quot;Calibri&quot;,sans-seri=
+f; color:#1F4E79"><a href=3D"mailto:generaloffice@administrativecourtoffice.ju=
+stice.gov.uk"><span style=3D"color:#1F4E79">generaloffice@administrativecourto=
+ffice.justice.gov.uk</span></a></span></u></b></p><p class=3D"x_xelementtoproo=
+f1"><b><span style=3D"font-size:9.0pt; font-family:&quot;Calibri&quot;,sans-se=
+rif; color:#1F497D">Criminal &amp; Extradition Enquiries: </span></b><b><u><=
+span style=3D"font-size:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; col=
+or:#1F4E79"><a href=3D"mailto:crimex@"><span style=3D"color:#1F4E79">crimex@</sp=
+an></a>administrativecourtoffice</span></u></b><u><span style=3D"font-size:9.0=
+pt; font-family:&quot;Calibri&quot;,sans-serif; color:#1F4E79">.<b>justice.g=
+ov.uk</b></span></u></p><p class=3D"x_xelementtoproof1"><b><span style=3D"font-s=
+ize:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; color:#365F91">Skelet=
+on Arguments</span></b><b><span style=3D"font-size:9.0pt; font-family:&quot;Ca=
+libri&quot;,sans-serif; color:#1F497D">: </span></b><b><u><span style=3D"font-=
+size:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; color:#0A2F41"><a hr=
+ef=3D"mailto:london.skeletonarguments@administrativecourtoffice.justice.gov.uk=
+"><span style=3D"color:#0A2F41">london.skeletonarguments@administrativecourtof=
+fice.justice.gov.uk</span></a></span></u></b></p><p class=3D"x_xelementtoproof=
+1"><b><span style=3D"font-size:9.0pt; font-family:&quot;Calibri&quot;,sans-ser=
+if; color:#0A2F41">&nbsp;</span></b></p><p class=3D"x_xelementtoproof1"><b><sp=
+an style=3D"font-size:9.0pt; font-family:&quot;Calibri&quot;,sans-serif; color=
+:#1F497D">For information on how HMCTS uses personal data about you please s=
+ee: </span></b><b><u><span style=3D"font-size:9.0pt; font-family:&quot;Calibri=
+&quot;,sans-serif; color:blue"><a href=3D"https://www.gov.uk/government/organi=
+sations/hm-courts-and-tribunals-service/about/personal-information-charter">=
+https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/=
+about/personal-information-charter</a></span></u></b></p><p class=3D"x_xelemen=
+ttoproof1"><b><span style=3D"font-size:8.0pt; font-family:&quot;Calibri&quot;,=
+sans-serif; color:#1F497D">&nbsp;</span></b></p><p class=3D"x_xelementtoproof1=
+"><b><span style=3D"font-size:8.0pt; font-family:&quot;Calibri&quot;,sans-seri=
+f; color:#1F497D">In accordance with <u><a href=3D"http://www.justice.gov.uk/c=
+ourts/procedure-rules/civil/rules/pd_part05b" title=3D"http://www.justice.gov.=
+uk/courts/procedure-rules/civil/rules/pd_part05b"><span style=3D"color:#1F497D=
+">Practice Direction 5B - Electronic communication and filing</span></a></u>=
+&nbsp;we ask you to do the following when sending an e-mail message to the c=
+ourt:</span></b></p><ul type=3D"disc" style=3D"margin-top:0cm"><li class=3D"x_xmso=
+normal" style=3D"color:#1F497D"><b><span style=3D"font-size:8.0pt; font-family:&=
+quot;Calibri&quot;,sans-serif">Clearly state the Court's action number, part=
+ies=E2=80=99 names and any dates relating to an up-coming hearing in the subject h=
+eader.</span></b></li><li class=3D"x_xmsonormal" style=3D"color:#1F497D"><b><spa=
+n style=3D"font-size:8.0pt; font-family:&quot;Calibri&quot;,sans-serif">In acc=
+ordance with Practice Direction 3.3a, please do not submit documents which c=
+arry a payable fee; such e-mails will be deleted.</span></b></li><li class=3D"=
+x_xmsonormal" style=3D"color:#1F497D"><b><span style=3D"font-size:8.0pt; font-fa=
+mily:&quot;Calibri&quot;,sans-serif">We do not accept documents over 50 page=
+s by electronic means.</span></b></li></ul><p class=3D"x_xelementtoproof1"><sp=
+an style=3D"font-size:11.0pt; font-family:&quot;Calibri&quot;,sans-serif; colo=
+r:black">&nbsp;</span></p><div><p class=3D"x_xmsonormal"><span style=3D"font-siz=
+e:11.0pt; color:black">&nbsp;</span></p></div></div><div class=3D"x_MsoNormal"=
+ align=3D"center" style=3D"text-align:center"><hr size=3D"0" width=3D"100%" align=3D"c=
+enter"></div><div id=3D"x_x_divRplyFwdMsg"><p class=3D"x_xmsonormal"><b><span st=
+yle=3D"font-size:11.0pt; font-family:&quot;Calibri&quot;,sans-serif; color:bla=
+ck">From:</span></b><span style=3D"font-size:11.0pt; font-family:&quot;Calibri=
+&quot;,sans-serif; color:black"> Nadia &lt;nadia@rosekross.com&gt;<br><b>Sen=
+t:</b> Friday, November 28, 2025 1:31 PM<br><b>To:</b> Administrative Court =
+Office Immediates &lt;administrativecourtoffice.immediates@justice.gov.uk&gt=
+;<br><b>Subject:</b> URGENT: Filing of N461 Judicial Review Bundle =E2=80=94 Reque=
+st for Immediate Sealing &amp; Judicial Consideration</span> </p><div><p cla=
+ss=3D"x_xmsonormal">&nbsp;</p></div></div><div><div><p class=3D"x_xxmsonospacing=
+" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"line=
+-height:150%">Dear Administrative Court,</p><p class=3D"x_xxmsonospacing" styl=
+e=3D"line-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"line-heigh=
+t:150%">I write as a litigant in person without access to legal representati=
+on, and in extremely urgent medical circumstances, to file the complete N461=
+ Judicial Review bundle as directed.</p><p class=3D"x_xxmsonospacing" style=3D"l=
+ine-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"line-height:15=
+0%">Please find attached:</p><p class=3D"x_xxmsonospacing" style=3D"line-height:=
+150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"line-height:150%">1. N461=
+ Claim Form (with continuation sheets)</p><p class=3D"x_xxmsonospacing" style=3D=
+"line-height:150%">2. Full N461 Bundle =E2=80=94 including Detailed Grounds, WS, a=
+nd exhibits</p><p class=3D"x_xxmsonospacing" style=3D"line-height:150%">3. Signe=
+d medical report from Dr Bruce Hayse confirming clinical crisis and the need=
+ for urgent judicial intervention</p><p class=3D"x_xxmsonospacing" style=3D"line=
+-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"line-height:150%"=
+><b><span style=3D"font-size:14.0pt; line-height:150%">1. Why this must be sea=
+led and listed today</span></b></p><p class=3D"x_xxmsonospacing" style=3D"line-h=
+eight:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"line-height:150%">Y=
+our earlier emails indicated that an N463 cannot be considered unless accomp=
+anied by a full N461.</p><p class=3D"x_xxmsonospacing" style=3D"line-height:150%=
+">I have now complied fully and precisely with the requirements of PD 54A.</=
+p><p class=3D"x_xxmsonospacing" style=3D"line-height:150%">&nbsp;</p><p class=3D"x=
+_xxmsonospacing" style=3D"line-height:150%">Given that:</p><ul type=3D"disc" sty=
+le=3D"margin-top:0cm"><li class=3D"x_xxmsonospacing" style=3D"line-height:150%">th=
+e N463 urgent application was filed on 25 November,</li><li class=3D"x_xxmsono=
+spacing" style=3D"line-height:150%">the Defendants have been properly served,<=
+/li><li class=3D"x_xxmsonospacing" style=3D"line-height:150%">and the full N461 =
+bundle is now filed,</li></ul><p class=3D"x_xxmsonospacing" style=3D"line-height=
+:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"line-height:150%">I resp=
+ectfully request that the claim be sealed today and immediately placed befor=
+e a judge for urgent consideration pursuant to:</p><ul type=3D"disc" style=3D"ma=
+rgin-top:0cm"><li class=3D"x_xxmsonospacing" style=3D"line-height:150%">PD 54A,<=
+/li><li class=3D"x_xxmsonospacing" style=3D"line-height:150%">s.31A Senior Court=
+s Act,</li><li class=3D"x_xxmsonospacing" style=3D"line-height:150%">and the ove=
+rriding objective, particularly for vulnerable court users.</li></ul><p clas=
+s=3D"x_xxmsonospacing" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xxmsonos=
+pacing" style=3D"line-height:150%">&nbsp;</p><h2><span style=3D"font-size:14.0pt=
+">2. Medical urgency =E2=80=94 exceptional vulnerability (clinical evidence attach=
+ed)</span></h2><p class=3D"x_xxmsonospacing" style=3D"line-height:150%">&nbsp;</=
+p><p class=3D"x_xxmsonospacing" style=3D"line-height:150%">My treating physician=
+, Dr Bruce Hayse, has issued a signed medical report confirming:</p><p class=
+=3D"x_xxmsonospacing" style=3D"line-height:150%">I am in a severe state of psych=
+iatric risk,</p><p class=3D"x_xxmsonospacing" style=3D"line-height:150%">&nbsp;<=
+/p><ul type=3D"disc" style=3D"margin-top:0cm"><li class=3D"x_xxmsonospacing" style=
+=3D"line-height:150%">my stability depends on the certainty and timing of the =
+Court=E2=80=99s process,</li><li class=3D"x_xxmsonospacing" style=3D"line-height:150%"=
+>and that this matter must be expedited for safeguarding reasons,</li><li cl=
+ass=3D"x_xxmsonospacing" style=3D"line-height:150%">and he specifically warns th=
+at hospitalisation may be required absent timely judicial action.</li></ul><=
+p class=3D"x_xxmsonospacing" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xx=
+msonospacing" style=3D"line-height:150%">This must be treated as exceptional v=
+ulnerability under:</p><ul type=3D"disc" style=3D"margin-top:0cm"><li class=3D"x_x=
+xmsonospacing" style=3D"line-height:150%">the Equality Act 2010,</li><li class=
+=3D"x_xxmsonospacing" style=3D"line-height:150%">the Public Sector Equality Duty=
+,</li><li class=3D"x_xxmsonospacing" style=3D"line-height:150%">and the Court=E2=80=99=
+s duty to provide reasonable adjustments.</li></ul><p class=3D"x_xxmsonospacin=
+g" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"lin=
+e-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"line-height:150%=
+"><b><span style=3D"font-size:14.0pt; line-height:150%">3. I am a litigant in =
+person =E2=80=94 I cannot afford legal advice</span></b></p><p class=3D"x_xxmsonospa=
+cing" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"=
+line-height:150%">Your previous message stated:</p><p class=3D"x_xxmsonospacin=
+g" style=3D"line-height:150%">=E2=80=9CPlease seek legal advice.=E2=80=9D</p><p class=3D"x_x=
+xmsonospacing" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing=
+" style=3D"line-height:150%">I wish to clarify respectfully that:</p><p class=3D=
+"x_xxmsonospacing" style=3D"line-height:150%">&nbsp;</p><ul type=3D"disc" style=3D=
+"margin-top:0cm"><li class=3D"x_xxmsonospacing" style=3D"line-height:150%">I do =
+not have the financial means to obtain legal representation;</li><li class=3D"=
+x_xxmsonospacing" style=3D"line-height:150%">I am acting entirely as a litigan=
+t in person;</li><li class=3D"x_xxmsonospacing" style=3D"line-height:150%">and t=
+he Administrative Court Guide expressly anticipates, and protects, LiPs;</li=
+><li class=3D"x_xxmsonospacing" style=3D"line-height:150%">the requirement to =E2=80=
+=9Cseek legal advice=E2=80=9D cannot be a condition of access to the Court.</li></ul=
+><p class=3D"x_xxmsonospacing" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_=
+xxmsonospacing" style=3D"line-height:150%">I have now followed every procedura=
+l instruction and provided the materials the Court indicated were required.<=
+/p><p class=3D"x_xxmsonospacing" style=3D"line-height:150%">&nbsp;</p><p class=3D"=
+x_xxmsonospacing" style=3D"line-height:150%"><b><span style=3D"font-size:14.0pt;=
+ line-height:150%">4. Request</span></b></p><p class=3D"x_xxmsonospacing" styl=
+e=3D"line-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"line-heigh=
+t:150%">In light of:</p><ul type=3D"disc" style=3D"margin-top:0cm"><li class=3D"x_=
+xxmsonospacing" style=3D"line-height:150%">the urgent medical evidence,</li><l=
+i class=3D"x_xxmsonospacing" style=3D"line-height:150%">the statutory disability=
+ duties owed,</li><li class=3D"x_xxmsonospacing" style=3D"line-height:150%">the =
+fact that all procedural documents are now filed,</li><li class=3D"x_xxmsonosp=
+acing" style=3D"line-height:150%">and the fact that the N463 urgent applicatio=
+n has been pending for three days,</li></ul><p class=3D"x_xxmsonospacing" styl=
+e=3D"line-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"line-heigh=
+t:150%">I respectfully request that the Court:</p><p class=3D"x_xxmsonospacing=
+" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"line=
+-height:150%"><b>(1) Seal the N461 claim today</b></p><p class=3D"x_xxmsonospa=
+cing" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"=
+line-height:150%"><b>(2) Refer the N463 to a judge immediately, today</b></p=
+><p class=3D"x_xxmsonospacing" style=3D"line-height:150%"><b>&nbsp;</b></p><p cl=
+ass=3D"x_xxmsonospacing" style=3D"line-height:150%"><b>(3) Confirm listing for a=
+n urgent oral consideration</b></p><p class=3D"x_xxmsonospacing" style=3D"line-h=
+eight:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"line-height:150%">(=
+as requested in Section 3 of N463)</p><p class=3D"x_xxmsonospacing" style=3D"lin=
+e-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing" style=3D"line-height:150%=
+"><b>Please confirm receipt and sealing at your earliest opportunity.</b></p=
+><p class=3D"x_xxmsonospacing" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_=
+xxmsonospacing" style=3D"line-height:150%">Yours faithfully,</p><p class=3D"x_xx=
+msonospacing" style=3D"line-height:150%">&nbsp;</p><p class=3D"x_xxmsonospacing"=
+ style=3D"line-height:150%">Nadia Zahmoul</p><p class=3D"x_xxmsonospacing" style=
+=3D"line-height:150%">Litigant in Person</p><p class=3D"x_xxmsonospacing" style=3D=
+"line-height:150%">Email: <a href=3D"mailto:Nadia@rosekross.com">Nadia@rosekro=
+ss.com</a></p><p class=3D"x_xxmsonormal"><span style=3D"font-family:&quot;Aptos =
+Display&quot;,sans-serif">&nbsp;</span></p><p class=3D"x_xxmsonormal"><span st=
+yle=3D"color:#0B76A0">&nbsp;</span></p><p class=3D"x_xxmsonormal"><span style=3D"f=
+ont-family:&quot;Calibri&quot;,sans-serif">&nbsp;</span></p><div><div><p cla=
+ss=3D"x_xxmsonormal">&nbsp;</p></div></div><p class=3D"x_xxmsonormal">&nbsp;</p>=
+</div></div><div class=3D"x_MsoNormal" align=3D"center" style=3D"text-align:center=
+"><hr size=3D"0" width=3D"100%" align=3D"center"></div><p class=3D"x_xmsonormal">Thi=
+s e-mail and any attachments is intended only for the attention of the addre=
+ssee(s). Its unauthorised use, disclosure, storage or copying is not permitt=
+ed. If you are not the intended recipient, please destroy all copies and inf=
+orm the sender by return e-mail. Internet e-mail is not a secure medium. Any=
+ reply to this message could be intercepted and read by someone else. Please=
+ bear that in mind when deciding whether to send material in response to thi=
+s message by e-mail. This e-mail (whether you are the sender or the recipien=
+t) may be monitored, recorded and retained by the Ministry of Justice. Monit=
+oring / blocking software may be used, and e-mail content may be read at any=
+ time. You have a responsibility to ensure laws are not broken when composin=
+g or forwarding e-mails and their contents. </p></div></div><div class=3D"x_Ms=
+oNormal" align=3D"center" style=3D"text-align:center"><hr size=3D"0" width=3D"100%" =
+align=3D"center"></div><p class=3D"x_MsoNormal">This e-mail and any attachments =
+is intended only for the attention of the addressee(s). Its unauthorised use=
+, disclosure, storage or copying is not permitted. If you are not the intend=
+ed recipient, please destroy all copies and inform the sender by return e-ma=
+il. Internet e-mail is not a secure medium. Any reply to this message could =
+be intercepted and read by someone else. Please bear that in mind when decid=
+ing whether to send material in response to this message by e-mail. This e-m=
+ail (whether you are the sender or the recipient) may be monitored, recorded=
+ and retained by the Ministry of Justice. Monitoring / blocking software may=
+ be used, and e-mail content may be read at any time. You have a responsibil=
+ity to ensure laws are not broken when composing or forwarding e-mails and t=
+heir contents. </p></div></div><hr>This e-mail and any attachments is intend=
+ed only for the attention of the addressee(s). Its unauthorised use, disclos=
+ure, storage or copying is not permitted. If you are not the intended recipi=
+ent, please destroy all copies and inform the sender by return e-mail. Inter=
+net e-mail is not a secure medium. Any reply to this message could be interc=
+epted and read by someone else. Please bear that in mind when deciding wheth=
+er to send material in response to this message by e-mail. This e-mail (whet=
+her you are the sender or the recipient) may be monitored, recorded and reta=
+ined by the Ministry of Justice. Monitoring / blocking software may be used,=
+ and e-mail content may be read at any time. You have a responsibility to en=
+sure laws are not broken when composing or forwarding e-mails and their cont=
+ents. </body></html>
+
+--B_3852842007_4073033612--
+
+
+--B_3852842007_2637667054
+Content-type: image/gif; name="image001.gif";
+ x-mac-creator="4F50494D";
+ x-mac-type="47494666"
+Content-ID: <image001.gif@01DC6254.106F5960>
+Content-disposition: inline;
+	filename="image001.gif"
+Content-transfer-encoding: base64
+
+
+R0lGODlhHgEcAHcAMSH/C01TT0ZGSUNFOS4wDQAAAAFzUkdCAK7OHOkAIf8LTVNPRkZJQ0U5
+LjAXAAAAC21zT1BNU09GRklDRTkuMEI8pPUAIf8LTVNPRkZJQ0U5LjAVAAAACXBIWXMAAA7E
+AAAOxAGVKw4bACwAAAAAHgEcAIcAAACAAAAAgACAgAAAAICAAIAAgIDAwMDA3MCmyvBAIABg
+IACAIACgIADAIADgIAAAQAAgQABAQABgQACAQACgQADAQADgQAAAYAAgYABAYABgYACAYACg
+YADAYADgYAAAgAAggABAgABggACAgACggADAgADggAAAoAAgoABAoABgoACAoACgoADAoADg
+oAAAwAAgwABAwABgwACAwACgwADAwADgwAAA4AAg4ABA4ABg4ACA4ACg4ADA4ADg4AAAAEAg
+AEBAAEBgAECAAECgAEDAAEDgAEAAIEAgIEBAIEBgIECAIECgIEDAIEDgIEAAQEAgQEBAQEBg
+QECAQECgQEDAQEDgQEAAYEAgYEBAYEBgYECAYECgYEDAYEDgYEAAgEAggEBAgEBggECAgECg
+gEDAgEDggEAAoEAgoEBAoEBgoECAoECgoEDAoEDgoEAAwEAgwEBAwEBgwECAwECgwEDAwEDg
+wEAA4EAg4EBA4EBg4ECA4ECg4EDA4EDg4EAAAIAgAIBAAIBgAICAAICgAIDAAIDgAIAAIIAg
+IIBAIIBgIICAIICgIIDAIIDgIIAAQIAgQIBAQIBgQICAQICgQIDAQIDgQIAAYIAgYIBAYIBg
+YICAYICgYIDAYIDgYIAAgIAggIBAgIBggICAgICggIDAgIDggIAAoIAgoIBAoIBgoICAoICg
+oIDAoIDgoIAAwIAgwIBAwIBgwICAwICgwIDAwIDgwIAA4IAg4IBA4IBg4ICA4ICg4IDA4IDg
+4IAAAMAgAMBAAMBgAMCAAMCgAMDAAMDgAMAAIMAgIMBAIMBgIMCAIMCgIMDAIMDgIMAAQMAg
+QMBAQMBgQMCAQMCgQMDAQMDgQMAAYMAgYMBAYMBgYMCAYMCgYMDAYMDgYMAAgMAggMBAgMBg
+gMCAgMCggMDAgMDggMAAoMAgoMBAoMBgoMCAoMCgoMDAoMDgoMAAwMAgwMBAwMBgwMCAwMCg
+wMD/+/CgoKSAgID/AAAA/wD//wAAAP//AP8A//////8I/wABkPpHsKDBgwbtkTqQ0B7ChxAj
+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
+--B_3852842007_2637667054
+Content-type: image/gif; name="image002.gif";
+ x-mac-creator="4F50494D";
+ x-mac-type="47494666"
+Content-ID: <image002.gif@01DC6254.106F5960>
+Content-disposition: inline;
+	filename="image002.gif"
+Content-transfer-encoding: base64
+
+
+R0lGODlhHgEcAHcAMSH/C01TT0ZGSUNFOS4wDQAAAAFzUkdCAK7OHOkAIf8LTVNPRkZJQ0U5
+LjAXAAAAC21zT1BNU09GRklDRTkuMEI8pPUAIf8LTVNPRkZJQ0U5LjAVAAAACXBIWXMAAA7E
+AAAOxAGVKw4bACwAAAAAHgEcAIcAAACAAAAAgACAgAAAAICAAIAAgIDAwMDA3MCmyvBAIABg
+IACAIACgIADAIADgIAAAQAAgQABAQABgQACAQACgQADAQADgQAAAYAAgYABAYABgYACAYACg
+YADAYADgYAAAgAAggABAgABggACAgACggADAgADggAAAoAAgoABAoABgoACAoACgoADAoADg
+oAAAwAAgwABAwABgwACAwACgwADAwADgwAAA4AAg4ABA4ABg4ACA4ACg4ADA4ADg4AAAAEAg
+AEBAAEBgAECAAECgAEDAAEDgAEAAIEAgIEBAIEBgIECAIECgIEDAIEDgIEAAQEAgQEBAQEBg
+QECAQECgQEDAQEDgQEAAYEAgYEBAYEBgYECAYECgYEDAYEDgYEAAgEAggEBAgEBggECAgECg
+gEDAgEDggEAAoEAgoEBAoEBgoECAoECgoEDAoEDgoEAAwEAgwEBAwEBgwECAwECgwEDAwEDg
+wEAA4EAg4EBA4EBg4ECA4ECg4EDA4EDg4EAAAIAgAIBAAIBgAICAAICgAIDAAIDgAIAAIIAg
+IIBAIIBgIICAIICgIIDAIIDgIIAAQIAgQIBAQIBgQICAQICgQIDAQIDgQIAAYIAgYIBAYIBg
+YICAYICgYIDAYIDgYIAAgIAggIBAgIBggICAgICggIDAgIDggIAAoIAgoIBAoIBgoICAoICg
+oIDAoIDgoIAAwIAgwIBAwIBgwICAwICgwIDAwIDgwIAA4IAg4IBA4IBg4ICA4ICg4IDA4IDg
+4IAAAMAgAMBAAMBgAMCAAMCgAMDAAMDgAMAAIMAgIMBAIMBgIMCAIMCgIMDAIMDgIMAAQMAg
+QMBAQMBgQMCAQMCgQMDAQMDgQMAAYMAgYMBAYMBgYMCAYMCgYMDAYMDgYMAAgMAggMBAgMBg
+gMCAgMCggMDAgMDggMAAoMAgoMBAoMBgoMCAoMCgoMDAoMDgoMAAwMAgwMBAwMBgwMCAwMCg
+wMD/+/CgoKSAgID/AAAA/wD//wAAAP//AP8A//////8I/wABkPpHsKDBgwbtkTqQ0B7ChxAj
+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
+--B_3852842007_2637667054
+Content-type: image/gif; name="Outlook-c5nwxxla.gif";
+ x-mac-creator="4F50494D";
+ x-mac-type="47494666"
+Content-ID: <1b3d379a-8caa-4fde-9d79-24afb50cb1f2>
+Content-disposition: inline;
+	filename="Outlook-c5nwxxla.gif"
+Content-transfer-encoding: base64
+
+
+R0lGODlhHgEcAHcAMSH/C01TT0ZGSUNFOS4wDQAAAAFzUkdCAK7OHOkAIf8LTVNPRkZJQ0U5
+LjAXAAAAC21zT1BNU09GRklDRTkuMEI8pPUAIf8LTVNPRkZJQ0U5LjAVAAAACXBIWXMAAA7E
+AAAOxAGVKw4bACwAAAAAHgEcAIcAAACAAAAAgACAgAAAAICAAIAAgIDAwMDA3MCmyvBAIABg
+IACAIACgIADAIADgIAAAQAAgQABAQABgQACAQACgQADAQADgQAAAYAAgYABAYABgYACAYACg
+YADAYADgYAAAgAAggABAgABggACAgACggADAgADggAAAoAAgoABAoABgoACAoACgoADAoADg
+oAAAwAAgwABAwABgwACAwACgwADAwADgwAAA4AAg4ABA4ABg4ACA4ACg4ADA4ADg4AAAAEAg
+AEBAAEBgAECAAECgAEDAAEDgAEAAIEAgIEBAIEBgIECAIECgIEDAIEDgIEAAQEAgQEBAQEBg
+QECAQECgQEDAQEDgQEAAYEAgYEBAYEBgYECAYECgYEDAYEDgYEAAgEAggEBAgEBggECAgECg
+gEDAgEDggEAAoEAgoEBAoEBgoECAoECgoEDAoEDgoEAAwEAgwEBAwEBgwECAwECgwEDAwEDg
+wEAA4EAg4EBA4EBg4ECA4ECg4EDA4EDg4EAAAIAgAIBAAIBgAICAAICgAIDAAIDgAIAAIIAg
+IIBAIIBgIICAIICgIIDAIIDgIIAAQIAgQIBAQIBgQICAQICgQIDAQIDgQIAAYIAgYIBAYIBg
+YICAYICgYIDAYIDgYIAAgIAggIBAgIBggICAgICggIDAgIDggIAAoIAgoIBAoIBgoICAoICg
+oIDAoIDgoIAAwIAgwIBAwIBgwICAwICgwIDAwIDgwIAA4IAg4IBA4IBg4ICA4ICg4IDA4IDg
+4IAAAMAgAMBAAMBgAMCAAMCgAMDAAMDgAMAAIMAgIMBAIMBgIMCAIMCgIMDAIMDgIMAAQMAg
+QMBAQMBgQMCAQMCgQMDAQMDgQMAAYMAgYMBAYMBgYMCAYMCgYMDAYMDgYMAAgMAggMBAgMBg
+gMCAgMCggMDAgMDggMAAoMAgoMBAoMBgoMCAoMCgoMDAoMDgoMAAwMAgwMBAwMBgwMCAwMCg
+wMD/+/CgoKSAgID/AAAA/wD//wAAAP//AP8A//////8I/wABkPpHsKDBgwbtkTqQ0B7ChxAj
+SpxIsaLFixgzatzIsaNHjQIlHrjnEKEUhgXtHUDwsaXLlzBjypxJk2JIiCrv3UP57x6pe1J+
+kmL5TyHRmkiTKl3KtOnDmw9VbkkS9N9IewgOHFA5kKA9KZtKOh1LtqzZs/+gIvwqZctUlVkR
+3MtqjyTBA1IAAOCJtq/fv4Arqj1oj+q9TQIVktoUdNNCgvcAUNUrFm3lwJidXsY8OGHekwCk
+/CNFVYqUJFtKIli4RS9fhD4vK2Rob9OmowYX34t4YFMSyVten63rGLfB3rYdL7bd9e7t0buV
+rjY+Ee/voJs5zm7Z2SBiyaGLkv8itcUxXwS/XUtsbfwAgC1W9W5C6P49xMihN7Xu3vFAaoxf
+gbfXQ/ckYWB6B0ohVmQMhacUgxchloRteSVB3Ub2ADDfR90dsBBeerlWYIgC+YdAbXnZtx4A
+7Wn4DwIhXkaKfA+5J8VRCOQlXEczXshbSDCKJhGM8EW11T9ULeXejjW+t6CKH8HFXXMFubcJ
+SftJ9t1PQL13wGRgbSHXcw+xd5CVL4YGQHReTbbhQb8ZF6RBcTVkZ1EEIXDijEfmudKPKCU5
+pIteeYVbklKmVJk9JanWZ0paibWkoX8+xOdBp4mVqFcOYcUoYdnRhVCdT1FZlFuRhphEgavu
+NN4WQaX/KJlKNkLU2mUwzgcjKaYdtyahvr55HEog6nVjUWAZBKtVFiJmWogKfgnthYUlodCa
+E+Xapk6SFcgQVTMai9KyBZGm0qqydnVtiGHFx9CIev13UGTtpnRUuJKhBJa0pLH5T1uFdSVt
+vKrJKq9Bg8U10HeSmcalh1IAdVt9LGrl346traSnnmjCyC1PmQJbUGT+0qeXq7OmJSRBp/Wk
+5iZatbZQkFrNaG2Tv5n6kLZFqbnFx/9262HKLReEmErigsjQjDD7h+2SNA+9ckoVLnQZYguN
+yNJp4NZ6V2Ihubeq1EUZiPLUBHWmENL5suXhTm+3FRyICu6EJ0IMk0jjrhl2/8W3yARdGpGO
+VYaEmkEti31UZA6519w9B6e0n5CfQsRzhgO6/G3m8Q1UdOAAIL1y3/+OHvZe7rFJ3mYKpRca
+sVBlCF9ebyJG1IyMhpSXWD3iXvhrnVnt+o1tefjwl0lY/N18dpe55kg6Da1rSLeOxmKGwoLO
+ZM9oG1hYkSwnEZ+/Pb7428+PJvTb0LsloXNBlzuoOZLdi/+59UiziT2kTg+0JOZX2h78IEej
+GXFJJ78JkKSwRb+ekUJ2oDKbTnwymM4Y73zsMZ5jfLIQA8WHRFopWUGqRycX7cpdDdzfvLpD
+Hp4VJFOHe6H4IFQuFuUpS+5DiOBkxsCdEUqF84uhDP//Jb4a5i8lLrJOaU7HEKfpZVVrwZWO
+8KUqBd2vgZPqG+kI4zpVmao7jMpZxOJzkp9xyYToEshifGSmYKVpIN9LXc+ylya09cxa8iOI
+94RIxPnVEDdY6dJrPhegm1nuh1CBkKAK4sFeGS10cvQK2JLXKSZCakSDLKKvPsaoTjrkirjz
+nRZFppLCKMiTlSsIf+hVm+DkSI0jIc318KKVkGSHIG0s3PS6MqNMzdF5JZvRbvJyFDQtMkMz
+5Bz+mMUTx2HKhl8zpA83tMUgQjM+87lfAiPpQG46c0kFKmYPcalM681FLW7pYwl5RU3Dhe6P
+5cvTSQ7SHW+NjCq9cdiIdLL/hcdYZZ4RyeXXdpknGvUMfOrT0FZ6E5rG5UsuemGJzLRSIT+C
+7kMPVdqZ8jUS8EjzIESS5OMG9JtVySVO1vtQio4o0qjhJyxQyygxQaoXq62GaCVy2jA1+UL1
+ONBlJyEbjEwqrct0CG1y0dN+8ImA4MxLhN65ZkEHckJyogSIIJUVwao0PJS8sqaMQSH8Ssos
+VUGViqlxT+Tgh8jmTMo0DEueVwxmLm4GzHpP7NJOBgSvfNVIq6Ehij2ydBNH+sp0XcHPVv8J
+LeGAESztghdDcjSUoGmoUT+TSCrppBpNLeqWd5kgdWglHK2w5FNYWcuJvGIx0NLqKKnFiWft
+xakXjEXqTFopVFE+66cjlfJFjWqtSEQ7qtvWdlS8ZW2lhsUk/jBmISn6DDatZyC/Qi4z2M2u
+dpnCH+KIq5fm200va2Osym73vOhNL0f4wyz3OXQunsrKhO6Slweq9774zS8935eQlLiuuj7V
+rX4HTODtsvevehtjgRfM4AY7+MEQjrCEJ0zhClv4whhGSEAAADs=
+--B_3852842007_2637667054--
+
+
+--B_3852842007_1494350915--
+
